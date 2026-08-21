@@ -12,6 +12,27 @@ An execution instance capable of reasoning and acting within an assigned role.
 ## Orchestrator
 The coordinating role responsible for routing work, managing context, enforcing authority and workflow, resolving conflicts, and deciding when human escalation is required.
 
+## Front Agent
+The project-specific DPT-facing Agent instance through which a connected project communicates with DPT. It represents one project at the DPT boundary and maintains project-specific interaction context. It is not a project coding agent.
+
+## Gateway Agent
+The DPT-side network boundary that mediates communication between Project Front Agent instances and the DPT ecosystem. Direct external access to DPT internal services or Pools is not a supported path.
+
+## Project Scout
+The discovery role responsible for understanding an existing project's product/technical context, capabilities, architecture, components, dependencies, interfaces, constraints, and evidence. Scout reports facts and observations rather than making final adoption judgments.
+
+## AI Analyst
+The analytical role that consumes Project Intelligence, project intent, and DPT Pool intelligence to identify needs, compare solutions, and produce recommendations or a DPT Adoption Proposal. Analyst does not modify the project.
+
+## DPT Adoption Proposal
+An advisory output describing how a project could benefit from DPT assets/intelligence, what should remain unchanged, relevant risks/benefits, and what work would be required from the project team. It is not an instruction for DPT to modify the project.
+
+## Project Intelligence
+A structured, durable, evidence-backed representation of the minimum sufficient understanding DPT has about a project. It may include product intent, architecture, capabilities, components, dependencies, interfaces, constraints, risks, evidence, confidence, and metadata.
+
+## Capability
+A meaningful ability or responsibility of a product or DPT system. Capabilities can be represented and composed through Components, Modules, Skills, Agents, or other bounded assets.
+
 ## Authority
 The set of decisions a role may make autonomously, the decisions it may recommend, and the decisions it must escalate.
 
@@ -48,11 +69,20 @@ A validation or approval condition that must be satisfied before a workflow can 
 ## Registry
 A queryable inventory of reusable project resources, such as components, assets, patterns, APIs, or games.
 
+## Pool
+A DPT-managed collection of reusable assets or intelligence, such as Components, Modules, Skills, Agents, Pitfalls, Decisions, Patterns, or Templates.
+
 ## Analogue
 An existing implementation that is structurally similar to a requested feature and can provide a reliable pattern for reuse or extension.
 
 ## Source of Truth
 The highest-authority source for a particular type of information. Apex AI DPT prefers verified repository state and explicit project contracts over assumptions.
+
+## Evidence
+A concrete source or observation supporting a Project Intelligence finding, recommendation input, or durable knowledge record.
+
+## Confidence
+A representation of how strongly available evidence supports a finding. Confidence must not be treated as a substitute for evidence.
 
 ## Human Decision Boundary
 A point where AI cannot responsibly infer the answer from available evidence and authority and must request a human decision.
