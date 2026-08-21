@@ -9,19 +9,23 @@ It is intentionally Pool-agnostic and implementation-neutral. REST, GraphQL, eve
 ## Fundamental relationship
 
 ```text
+Project
+  ↕
+Project Front Agent
+  ↕
+DPT Trust Boundary
+  ↕
+Gateway Agent
+  ↕
 DPT Intelligence + Pools
-          ↕
-    DPT Network API
-          ↕
-   Project Connector
-          ↕
-      Project
 ```
 
 The API supports both directions:
 
-- DPT provides assets, knowledge, capabilities, warnings, and updates to projects.
-- Projects provide validated reusable assets, Pitfalls, improvements, and evidence back to DPT.
+- DPT provides recommendations, reusable assets, knowledge, capabilities, warnings, and updates to projects.
+- Projects provide validated reusable assets, Pitfalls, improvements, evidence, and other approved intelligence back to DPT.
+
+The API is an intelligence/advisory boundary. It is not a mechanism for DPT to write or inject code into consuming projects.
 
 ## Core operations
 
@@ -41,15 +45,19 @@ SEARCH decisions: rendering strategy
 
 ### Fetch
 
-Retrieve a selected asset, knowledge record, version, contract, or related artifact.
+Retrieve a selected asset, knowledge record, version, contract, recommendation, or related artifact.
+
+### Analyze / Recommend
+
+A project may submit relevant Project Intelligence or an advisory request and receive an analysis or DPT Adoption Proposal.
 
 ### Contribute
 
-Submit a new or improved component, module, skill, agent, Pitfall, pattern, decision, or evidence package.
+Submit a candidate reusable component, module, skill, agent, Pitfall, pattern, decision, or evidence package for validation and possible Pool acceptance.
 
 ### Subscribe
 
-Register project interest in an asset or Pool so DPT can deliver relevant updates/events.
+Register project interest in an asset, capability, or Pool so DPT can deliver relevant updates/events.
 
 ### Receive / Push
 
@@ -58,7 +66,9 @@ DPT can proactively notify or deliver information to subscribed projects, includ
 - security Pitfalls;
 - relevant new Pitfalls;
 - component/module updates;
-- migration requirements;
+- adoption opportunities;
+- compatibility information;
+- migration guidance for the project team;
 - new compatible skills/agents;
 - deprecation notices.
 
@@ -75,33 +85,28 @@ asset.deprecated
 pitfall.published
 pitfall.updated
 capability.available
+project.contribution.received
 project.contribution.accepted
-migration.required
+recommendation.available
+adoption.proposal.available
 security.alert
 ```
 
 Events should be idempotent and versioned.
 
-## Project Connector
+## Project Front Agent
 
-Projects should communicate through a DPT Connector rather than coupling application agents directly to DPT infrastructure.
+Each connected project has a project-specific DPT Front Agent instance. External project agents communicate with DPT through that instance rather than directly with DPT internal services or Pools.
 
-The connector handles:
+The Front Agent is responsible for the project-side DPT interaction boundary and project-specific context. It does not implement DPT recommendations in the project codebase.
 
-- authentication and project identity;
-- API calls;
-- event delivery;
-- local cache;
-- retry;
-- offline queue;
-- synchronization;
-- local policy enforcement.
+## Gateway Agent
 
-## Offline behavior
+The Gateway Agent is the DPT-side network boundary between Project Front Agent instances and the DPT ecosystem.
 
-A project must remain capable of local development if the DPT network is temporarily unavailable.
+It routes approved protocol messages and events to the appropriate DPT capabilities, intelligence services, and Pools, and returns responses through the originating Front Agent.
 
-Contributions/events that can safely be delayed should enter a durable local queue and synchronize when connectivity returns.
+Direct external access to DPT internal services or Pool storage is not a supported communication path.
 
 ## Security and tenancy
 
@@ -122,10 +127,18 @@ The default should be the least permissive classification.
 
 Secrets, credentials, customer data, and private business information MUST NOT be contributed as reusable knowledge.
 
+The eventual platform must enforce the trust boundary technically; a prompt-only Agent instruction is insufficient as a security control.
+
 ## Versioning
 
-The API contract itself must be versioned. Assets and knowledge records must also carry their own versions and compatibility metadata.
+The API contract itself must be versioned. Assets, recommendations, Project Intelligence packages, and knowledge records must also carry versions and compatibility metadata.
+
+## Offline behavior
+
+A project must remain capable of local development if the DPT network is temporarily unavailable.
+
+Contributions/events that can safely be delayed should enter a durable local queue and synchronize when connectivity returns.
 
 ## Implementation status
 
-This is a conceptual contract, not a frozen protocol specification. The next engineering phase should turn this document into an explicit schema, authentication model, event envelope, SDK/connector contract, and reference implementation.
+This is a conceptual contract, not a frozen protocol specification. The next engineering phase should turn this document into explicit schemas, authentication/identity model, event envelopes, Front Agent/Gateway contract, SDK/connector contract, and reference implementation.
