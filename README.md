@@ -47,8 +47,12 @@ The goal is compounding development:
 - **Update & propagation** — projects can receive compatible improvements, security fixes, and new reusable assets from DPT.
 - **DPT Network API** — the two-way boundary between subscribed projects and DPT.
 - **Project Connector** — the project-side runtime boundary for authentication, synchronization, fetch/contribute operations, events, caching, and offline queuing.
+- **Progressive onboarding** — greenfield projects can bootstrap natively, while existing projects can adopt DPT incrementally without a forced rewrite.
+- **Contribution economy** — validated reusable contributions can earn Credits while consumption of reusable DPT value can spend Credits. The economy is documented as a concept and is not yet finalized.
 
 ## Project lifecycle
+
+### Greenfield
 
 ```text
 Idea
@@ -74,6 +78,24 @@ Contribute reusable learning
 Receive safe DPT updates
 ```
 
+### Existing project
+
+```text
+Existing Project
+ ↓
+DPT Discovery
+ ↓
+Understand architecture and current state
+ ↓
+Generate integration plan
+ ↓
+Minimum safe integration
+ ↓
+Observe / Advise / Contribute / Manage
+ ↓
+Progressive DPT adoption when valuable
+```
+
 ## What Apex AI DPT is not
 
 - A single giant system prompt.
@@ -85,7 +107,7 @@ Receive safe DPT updates
 
 ## Repository map
 
-- `docs/` — vision, constitution, terminology, runtime/bootstrap, Pool architecture, Network API, capability engine, and failure intelligence.
+- `docs/` — vision, constitution, terminology, runtime/bootstrap, existing-project onboarding, Pool architecture, Network API, capability engine, failure intelligence, and business/credit concepts.
 - `core/` — reusable operating-system behavior.
 - `brains/` — role/brain definitions and contracts.
 - `templates/` — artifacts generated into client projects.
@@ -95,6 +117,8 @@ Receive safe DPT updates
 ## Current status
 
 This repository defines the Apex AI DPT V0 framework and architecture. It is intentionally specification-first. The project runtime/connector and Network API implementation are the next engineering layer; their exact transport and packaging mechanism remains an explicit design decision.
+
+The credit economy and business model are also intentionally conceptual until real usage and infrastructure data are available.
 
 ## First real-world validation
 
