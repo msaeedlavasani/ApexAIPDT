@@ -1,141 +1,182 @@
 # Apex AI DPT — Existing Project Onboarding
 
-**Status:** Concept / V0 — architecture direction
+**Status:** Architecture direction / V0
 
 ## Purpose
 
 Apex AI DPT must support projects that did not start with DPT.
 
-A project may be partially implemented, feature-complete, in production, actively maintained, or legacy. DPT integration must add capability without requiring a disruptive rewrite or forcing the project into a greenfield architecture immediately.
+A project may be partially implemented, feature-complete, in production, actively maintained, or legacy. DPT integration must add advisory and intelligence value without requiring a disruptive rewrite or forcing the project into a greenfield architecture.
 
 ## Core principle
 
 > **DPT must meet projects where they are.**
 
-DPT integration is additive before it becomes transformative.
+The first objective is to understand the existing project, not to change it.
 
-The first objective is to understand and connect to the existing project, not to refactor it.
+DPT is an advisory/intelligence layer. The project owner and the project's developers or AI development agents remain responsible for implementation.
 
-## Progressive integration levels
-
-### Level 0 — Observer
-
-DPT is read-only.
-
-Typical capabilities:
-
-- architecture discovery;
-- dependency discovery;
-- documentation analysis;
-- test/CI discovery;
-- component and module inventory;
-- Pitfall discovery;
-- capability assessment.
-
-No product code changes are required.
-
-### Level 1 — Advisor
-
-DPT can produce recommendations, plans, risk assessments, missing-capability reports, and targeted improvement proposals.
-
-DPT does not automatically modify production code.
-
-### Level 2 — Contributor
-
-DPT may create isolated branches, changes, tests, documentation, or pull requests according to project policy.
-
-```text
-DPT
- ↓
-Branch
- ↓
-Change + Tests
- ↓
-PR
- ↓
-Project approval
-```
-
-### Level 3 — Managed
-
-DPT participates in a larger portion of project execution, including tasks, components, Pitfalls, skills, agents, reusable modules, and controlled updates.
-
-### Level 4 — Native DPT Project
-
-The project adopts the full DPT runtime model, including the project DPT boundary, Network API, Pools, capabilities, agents, and update mechanisms.
-
-A project does not need to reach Level 4 to receive meaningful value from DPT.
-
-## Existing Project Onboarding Flow
+## Existing Project Flow
 
 ```text
 Existing Project
       ↓
-DPT Discovery
+Project Front Agent
       ↓
-Architecture + State Assessment
+Project Scout
       ↓
-Inventory Components / Modules / Dependencies
+Project Intelligence
       ↓
-Assess Tests, CI/CD, Documentation, Risks
+AI Analyst
       ↓
-Capability Assessment
+DPT Adoption Proposal
       ↓
-Pitfall / Pool Discovery
+Project Owner / Project Development Team
       ↓
-Generate Integration Plan
-      ↓
-Select Minimum Safe Integration Level
-      ↓
-Install/Initialize DPT Connector
-      ↓
-Validate Integration Boundary
-      ↓
-Enable DPT Services Incrementally
+Optional implementation by the project team
 ```
 
-## Onboarding Agent
+DPT does not execute the implementation step.
 
-An Existing Project should use a dedicated **DPT Onboarding Agent**.
+## Stage 1 — Discovery
 
-Its responsibility is discovery and safe integration planning, not uncontrolled refactoring.
+Project Scout builds an evidence-backed understanding of the existing project.
 
-The agent should answer:
+Typical discovery areas:
 
-1. What exists?
-2. What is stable and should not be disturbed?
-3. What architectural boundaries already exist?
-4. What components/modules can DPT understand and reuse?
-5. What DPT capabilities are immediately useful?
-6. What integration changes are strictly necessary?
-7. What risks could integration introduce?
-8. What can be deferred?
-9. What is the safest next integration level?
+- product purpose and intent where available;
+- lifecycle stage;
+- technology stack;
+- architecture;
+- capabilities;
+- components/modules;
+- dependencies;
+- interfaces;
+- constraints;
+- risks;
+- existing reusable solutions;
+- relevant tests/documentation/operational evidence.
 
-## Non-destructive integration rules
+Scout should produce/update the Project Intelligence package and should not modify project code.
+
+## Stage 2 — Analysis
+
+The AI Analyst consumes Project Intelligence together with DPT Pool intelligence and explicit project intent.
+
+It should:
+
+1. identify project needs;
+2. identify existing project solutions;
+3. discover relevant DPT assets;
+4. compare alternatives objectively;
+5. identify compatibility and value;
+6. identify what should remain unchanged;
+7. identify possible project-to-DPT contribution candidates;
+8. generate a DPT Adoption Proposal.
+
+The Analyst does not modify project code.
+
+## Stage 3 — DPT Adoption Proposal
+
+The proposal is advisory. It may recommend:
+
+- keep the existing solution;
+- adopt a DPT Component/Module/asset;
+- extend an existing solution using a DPT capability;
+- do nothing because DPT adds insufficient value;
+- identify a project-owned solution as a DPT Pool contribution candidate;
+- identify unresolved capability gaps.
+
+The proposal should explain expected benefits, relevant work required from the project team, compatibility considerations, risks, and optional adoption sequencing.
+
+## DPT must not assume its own solution is better
+
+A project-owned Authentication, Notification, Payment, UI, or other capability may be better than the corresponding DPT asset.
+
+The correct outcome can therefore be:
+
+```text
+Project Solution
+      ↓
+Better / more appropriate
+      ↓
+KEEP
+      │
+      └── optional → DPT Contribution Candidate
+```
+
+DPT adoption is value-driven, not replacement-driven.
+
+## Contribution is part of onboarding
+
+The relationship is intentionally two-way:
+
+```text
+              DPT
+             ↙   ↘
+       Consume   Learn
+           ↓       ↑
+        Project ───┘
+```
+
+A project may benefit from DPT reusable assets while DPT benefits from validated project-owned Components, Modules, Patterns, Skills, Agents, Pitfalls, evidence, or other reusable intelligence, subject to privacy, licensing, validation, and contribution policy.
+
+## Existing project integration boundary
+
+Each connected project has a project-specific DPT Front Agent instance.
+
+Conceptually:
+
+```text
+Existing Product
+│
+├── Existing architecture
+├── Existing business logic
+├── Existing tests
+│
+└── DPT Boundary
+     └── Project Front Agent
+              ↓
+        DPT Trust Boundary
+              ↓
+        Gateway Agent
+              ↓
+         DPT Ecosystem
+```
+
+The exact packaging and transport mechanisms remain open engineering decisions.
+
+## Direct access rule
+
+External project agents must not communicate directly with DPT internal services or Pools. The supported path is through the project's Front Agent and the DPT Gateway boundary.
+
+This is a communication/trust-boundary rule. It does not mean the Front Agent is the only security control.
+
+## Non-invasive integration rules
 
 DPT MUST NOT:
 
 - rewrite the repository merely to make DPT integration easier;
-- perform broad refactors without a justified product/engineering reason;
-- replace established frameworks without authorization;
-- introduce DPT dependencies into unrelated product modules unnecessarily;
-- move working code merely to satisfy an idealized greenfield structure;
-- weaken production stability for architectural purity.
+- inject code into the project;
+- refactor project code;
+- perform migration work itself;
+- replace established frameworks or Components;
+- deploy project changes;
+- force an idealized greenfield structure onto an existing project.
 
 DPT SHOULD:
 
-- establish a narrow connector boundary;
-- preserve existing interfaces where possible;
-- integrate incrementally;
+- establish a narrow communication boundary;
+- preserve existing interfaces where practical;
+- understand existing architecture before making recommendations;
 - isolate DPT metadata from product code;
-- use adapters around existing architecture where needed;
-- document discovered constraints;
-- improve architecture selectively when there is measurable value.
+- provide evidence-backed recommendations;
+- minimize required project-side changes;
+- allow the project team to implement or reject recommendations.
 
-## Existing Project State Model
+## Project state
 
-The onboarding process should classify the project approximately as:
+Scout should classify the project approximately as:
 
 ```text
 GREENFIELD / EARLY
@@ -146,73 +187,18 @@ MATURE / STABLE
 LEGACY
 ```
 
-The classification affects the integration strategy and acceptable change radius.
+The state affects the relevance and urgency of recommendations, but it does not change the fundamental non-invasive DPT boundary.
 
-For example, a production or legacy project should generally begin closer to Observer/Advisor mode, while an early-stage project may move more quickly toward Contributor or Managed mode.
+## Open architecture questions
 
-## DPT Boundary
+The following remain to be finalized:
 
-The preferred direction is to introduce a DPT-owned boundary without mixing DPT infrastructure into business logic unnecessarily.
-
-```text
-Existing Product
-│
-├── Existing architecture
-├── Existing business logic
-├── Existing tests
-│
-└── DPT Integration Boundary
-     ├── Connector
-     ├── Project Manifest / metadata
-     ├── Local cache
-     ├── Sync queue
-     └── DPT policies
-```
-
-The exact packaging mechanism remains an open engineering decision.
-
-## Progressive adoption
-
-Existing projects can move through the levels over time:
-
-```text
-Existing Project
- ↓
-Observe
- ↓
-Understand
- ↓
-Assist
- ↓
-Contribute
- ↓
-Manage selected capabilities
- ↓
-Native DPT project (optional)
-```
-
-This prevents DPT from becoming an all-or-nothing migration.
-
-## Success criteria
-
-An onboarding is successful when DPT can provide meaningful value while:
-
-- preserving existing product behavior;
-- maintaining project ownership and authority boundaries;
-- avoiding unnecessary architectural churn;
-- establishing a reliable DPT Connector;
-- discovering reusable assets and Pitfalls;
-- enabling the appropriate capabilities;
-- creating a path toward deeper DPT adoption when valuable.
-
-## Future implementation work
-
-This document should eventually be translated into:
-
-- an onboarding protocol;
-- DPT Onboarding Agent contract;
-- project scanner/discovery tooling;
-- integration-level detection rules;
-- migration checklists;
-- connector installation strategy;
-- rollback and recovery procedures.
+- Project Intelligence machine-readable schema;
+- Scout discovery/incremental update strategy;
+- Front Agent lifecycle and update mechanism;
+- Gateway/Trust Boundary implementation;
+- DPT Adoption Proposal schema;
+- compatibility/value scoring framework;
+- contribution acceptance workflow;
+- privacy/data classification;
+- network protocol and connector packaging.
