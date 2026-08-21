@@ -2,7 +2,7 @@
 
 **Apex AI Development Product Team** is a reusable AI-native product development operating system.
 
-Its purpose is to turn a product idea into a project-specific AI development team with explicit roles, decision authority, managed context, persistent memory, workflows, quality gates, and a clear human/AI boundary.
+Its purpose is to turn a product idea into a project-specific AI development team with explicit roles, decision authority, managed context, persistent memory, reusable capabilities, shared intelligence, workflows, quality gates, and a clear human/AI boundary.
 
 ## Core promise
 
@@ -16,15 +16,63 @@ Every meaningful product capability, including the smallest functional or interf
 
 The project's interface is a **component hub**. It does not become a monolithic implementation. The hub selects, composes, mounts, switches between, and invokes the components required by the current route, state, task, permissions, and context.
 
-This principle exists to make every part of a product reusable, replaceable, testable, independently evolvable, and easy for AI agents to reason about.
+## DPT as a compounding development ecosystem
 
-## What Apex AI DPT is
+DPT is not only a team of agents. It is a two-way intelligence network.
 
-- A framework for assembling project-specific AI product teams.
-- A system of brains, roles, authority, context, memory, workflows, components, and gates.
-- A way to minimize AI token waste and human micromanagement.
-- A reusable project bootstrap model that can be applied to different product types.
-- A component-first product development architecture.
+A subscribed project consumes reusable assets and knowledge from DPT and can contribute validated reusable assets and knowledge back to DPT.
+
+```text
+DPT
+ ↕
+Project Connector
+ ↕
+Project
+ ↕
+validated learning
+ ↕
+DPT
+```
+
+The goal is compounding development:
+
+> **Every project should make future projects faster, safer, smarter, and cheaper.**
+
+## Core systems
+
+- **Component-first architecture** — every meaningful product unit is composable; the project interface acts as a runtime composition hub.
+- **Capability Engine** — discovers required capabilities and builds/acquires skills and agents when needed, including during a project.
+- **DPT Pools** — shared reusable assets and intelligence: Components, Modules, Skills, Agents, Pitfalls, Decisions, Patterns, and Templates.
+- **Failure Intelligence** — a Pitfall Agent enters at the first meaningful failure, consults known Pitfalls and authoritative documentation, avoids speculative fixes, validates the resolution, and enriches the shared Pitfall Pool.
+- **Update & propagation** — projects can receive compatible improvements, security fixes, and new reusable assets from DPT.
+- **DPT Network API** — the two-way boundary between subscribed projects and DPT.
+- **Project Connector** — the project-side runtime boundary for authentication, synchronization, fetch/contribute operations, events, caching, and offline queuing.
+
+## Project lifecycle
+
+```text
+Idea
+ ↓
+DPT Project Bootstrap
+ ↓
+Connect + identify project
+ ↓
+Capability analysis
+ ↓
+Pool/Pitfall discovery
+ ↓
+Build/acquire missing skills and agents
+ ↓
+Assemble project team
+ ↓
+Develop using reusable components/modules
+ ↓
+Failure intelligence + validation
+ ↓
+Contribute reusable learning
+ ↓
+Receive safe DPT updates
+```
 
 ## What Apex AI DPT is not
 
@@ -33,25 +81,11 @@ This principle exists to make every part of a product reusable, replaceable, tes
 - A license for agents to make uncontrolled architectural or product decisions.
 - A requirement to use one specific AI vendor or coding tool.
 - A justification for meaningless micro-components or unnecessary abstraction.
-
-## Design principles
-
-1. **Component first** — build the product from composable, contract-driven components; keep the interface a composition hub.
-2. Outcome before implementation.
-3. Targeted context before code generation.
-4. Reuse before creation.
-5. Authority before autonomy.
-6. Plan before implementation.
-7. Validate before claiming completion.
-8. Human input only at genuine decision boundaries.
-9. Project knowledge is persistent and continuously improved.
-10. The smallest sufficient context is preferred over full-repository context.
-11. Durable discoveries become system knowledge instead of being rediscovered repeatedly.
-12. Prefer modular replacement and composition over monolithic expansion.
+- A collection of isolated project-specific agents with no reusable ecosystem.
 
 ## Repository map
 
-- `docs/` — Apex AI DPT vision, constitution, terminology, architecture, and operating principles.
+- `docs/` — vision, constitution, terminology, runtime/bootstrap, Pool architecture, Network API, capability engine, and failure intelligence.
 - `core/` — reusable operating-system behavior.
 - `brains/` — role/brain definitions and contracts.
 - `templates/` — artifacts generated into client projects.
@@ -60,7 +94,7 @@ This principle exists to make every part of a product reusable, replaceable, tes
 
 ## Current status
 
-This repository defines the Apex AI DPT V0 framework. It is intentionally specification-first. The first validation target is an existing product codebase where DPT can be installed without forcing a rewrite.
+This repository defines the Apex AI DPT V0 framework and architecture. It is intentionally specification-first. The project runtime/connector and Network API implementation are the next engineering layer; their exact transport and packaging mechanism remains an explicit design decision.
 
 ## First real-world validation
 
