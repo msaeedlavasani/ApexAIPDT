@@ -95,6 +95,8 @@ Project Agents / Orchestrator
 
 Agents MUST NOT directly depend on Pool storage, databases, or DPT infrastructure details.
 
+In this diagram, Orchestrator means the separately governed Execution Orchestrator. The Front Agent and Connector/Gateway boundary remain communication and trust roles and do not assume orchestration authority.
+
 The connector is responsible for:
 
 - authentication;

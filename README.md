@@ -1,14 +1,14 @@
 # Apex AI DPT
 
-**Apex AI Development Product Team** is a reusable AI-native product intelligence and development advisory ecosystem.
+**Apex AI Development Product Team** is a reusable AI-native product intelligence, advisory, and governed execution-control platform.
 
-Its purpose is to help a project establish product structure, understand its capabilities and architecture, discover reusable DPT assets and intelligence, identify risks and Pitfalls, and continuously receive evidence-based recommendations — while allowing the project's own developers or AI development agents to remain responsible for implementation.
+Its purpose is to help a project establish product structure, understand its capabilities and architecture, discover reusable DPT assets and intelligence, identify risks and Pitfalls, and continuously receive evidence-based recommendations. When the Owner explicitly delegates scoped authority, DPT can also coordinate implementation work performed by the project's developers, AI development agents, tools, or services.
 
 ## Core promise
 
-> **The human defines product intent and meaningful decisions. DPT understands, analyzes, recommends, connects projects to reusable intelligence, and learns from validated project contributions. The project team remains responsible for implementation.**
+> **The human owns product intent, meaningful decisions, and delegated authority. DPT understands, advises, connects projects to reusable intelligence, and—when explicitly authorized—coordinates verified execution within policy.**
 
-DPT is intentionally **advisory, not invasive**. It does not write, inject, modify, refactor, migrate, or deploy code in consuming projects.
+DPT's **Intelligence / Advisory Plane is non-invasive**. Its separate **Execution Control Plane** may coordinate action only within explicit, auditable, scoped, and revocable Owner authority.
 
 ## First principle — Component-first product architecture
 
@@ -49,6 +49,8 @@ The goal is compounding development:
 - **Project Intelligence** — structured, evidence-backed understanding of product intent, architecture, capabilities, components, dependencies, interfaces, constraints, risks, and project state.
 - **Project Scout + AI Analyst** — Scout discovers facts/evidence; Analyst interprets them and generates DPT Adoption Proposals.
 - **Front Agent + Gateway Agent** — each connected project has a project-specific Front Agent, while the DPT Gateway mediates the external trust boundary.
+- **Authority Model** — six graduated Service/Authority Modes governed by specific action permissions, risk envelopes, approval gates, escalation, inheritance ceilings, and revocation.
+- **Execution Control** — an Execution Orchestrator manages authorized Intent, Plans, Task DAGs, Work Orders, Attempts, Resource Claims, Verification, Decisions, and Escalations; Result is never treated as Completion.
 - **Update & propagation** — projects can receive compatible improvements, security information, recommendations, and new reusable assets from DPT.
 - **DPT Network API** — the two-way boundary between subscribed projects and DPT.
 - **Contribution economy** — validated reusable contributions can earn Credits while consumption of reusable DPT value can spend Credits. The economy is documented as a concept and is not yet finalized.
@@ -101,16 +103,16 @@ Project team implements if desired
 
 - A single giant system prompt.
 - A replacement for product ownership.
-- A coding/injection service for consuming projects.
+- An uncontrolled coding/injection service for consuming projects.
 - A system that assumes DPT's own Components are always better.
-- A license for agents to make uncontrolled architectural or product decisions.
+- A license for agents to act outside explicit Owner authority.
 - A requirement to use one specific AI vendor or coding tool.
 - A justification for meaningless micro-components or unnecessary abstraction.
 - A collection of isolated project-specific agents with no reusable ecosystem.
 
 ## Repository map
 
-- `docs/` — vision, constitution, terminology, architecture decisions, open decisions, Project Intelligence, agent architecture, runtime/bootstrap, existing-project onboarding, Pool architecture, Network API, capability engine, failure intelligence, and business/credit concepts.
+- `docs/` — vision, constitution, terminology, system/authority/execution models, architecture decisions, open decisions, Project Intelligence, agent architecture, runtime/bootstrap, onboarding, Pools, Network API, capability engine, failure intelligence, and business/credit concepts.
 - `core/` — reusable operating-system behavior.
 - `brains/` — role/brain definitions and contracts.
 - `templates/` — artifacts generated into client projects.
@@ -121,9 +123,9 @@ Project team implements if desired
 
 This repository defines the Apex AI DPT V0 framework and architecture. It is intentionally specification-first.
 
-The current design phase is focused on finalizing Agent boundaries and the machine-readable Project Intelligence contract before implementation details are frozen.
+The current design phase is focused on finalizing Agent boundaries, Authority Policy, execution entity lifecycles, and the machine-readable Project Intelligence contract before implementation details are frozen.
 
-The runtime/connector and Network API implementation remain future engineering layers. Their exact transport and packaging mechanisms are explicit open decisions.
+The runtime/connector, execution runtime, persistence, and Network API implementation remain future engineering layers. Their exact transport, schema, locking, and packaging mechanisms are explicit open decisions.
 
 The credit economy and business model are also intentionally conceptual until real usage and infrastructure data are available.
 

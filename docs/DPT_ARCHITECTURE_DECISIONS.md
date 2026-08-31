@@ -5,13 +5,15 @@
 
 ## ADR-001 — DPT is advisory, not an implementation engine
 
-**Status:** Accepted
+**Status:** Superseded by ADR-018
 
 DPT does not write, inject, modify, refactor, migrate, or deploy code in a consuming project. DPT observes project context, analyzes needs, provides recommendations, exposes reusable capabilities and intelligence, and learns from validated project contributions.
 
 Implementation remains the responsibility of the project owner and/or the project's own developers or AI development agents.
 
 This applies to both greenfield and existing projects.
+
+This decision described the original Advisory Plane. ADR-018 preserves that non-invasive plane while adding a separately authorized Execution Control Plane.
 
 ## ADR-002 — Existing projects are observed before they are advised
 
@@ -187,3 +189,89 @@ The objective is cumulative quality, speed, safety, and reuse rather than one-wa
 A validated contribution may receive a contribution status and, after acceptance, Credits. A working example discussed is a valid Pitfall contribution earning +3 Credits, while consuming a reusable component may cost Credits such as 10.
 
 The exact economy, validation rules, pricing, free period, subscription plans, and request limits remain open decisions and are not part of the core architecture yet.
+
+## ADR-018 — DPT is one platform with separate advisory and execution-control planes
+
+**Status:** Accepted
+
+DPT is a single platform with two responsibility planes:
+
+- the **Intelligence / Advisory Plane** observes, structures evidence, analyzes, compares, and recommends without changing a consuming project;
+- the **Execution Control Plane** may plan, authorize, coordinate, verify, retry, replan, cancel, and escalate project work only under explicit Authority Policy.
+
+The planes share product intent, Project Intelligence, durable decisions, policy, and audit context, but do not collapse their roles. Advisory output does not itself authorize execution.
+
+## ADR-019 — Authority is owner-controlled, scoped, revocable, and auditable
+
+**Status:** Accepted
+
+The Owner grants authority through an explicit Authority Policy. Authority is scoped by project, environment, resource, action, time, budget, risk, and other applicable constraints; it can be narrowed or revoked at any time and every policy evaluation and authorized action must be auditable.
+
+Specific policy overrides general Service/Authority Mode. An action is allowed only when it remains within action-level permissions, the risk envelope, approval gates, escalation rules, and the inherited policy ceiling. A kill switch or revocation prevents new work and causes active work to move toward the safest permitted stop/cancel behavior.
+
+## ADR-020 — DPT uses six Service/Authority Modes
+
+**Status:** Accepted
+
+The platform recognizes these graduated delegation modes:
+
+0. **Observe**
+1. **Advise**
+2. **Assisted Execution**
+3. **Managed Execution**
+4. **Autonomous Within Policy**
+5. **Delegated Autonomy**
+
+A mode is a default delegation posture, not a blanket permission set. Higher modes reduce routine approval dependence; they do not remove governance. Exact machine identifiers and whether user-facing "Service Mode" and policy-facing "Authority Mode" remain aliases are open decisions.
+
+## ADR-021 — Front Agent and Gateway remain boundary roles, not Orchestrators
+
+**Status:** Accepted
+
+The Front Agent remains the project-specific DPT-facing representative. The Gateway remains the DPT-side trust, protocol, and routing boundary. Neither owns task decomposition, execution scheduling, retries, verification decisions, or task-graph mutation merely because it receives or routes a request.
+
+## ADR-022 — Analysis and execution orchestration are separate responsibilities
+
+**Status:** Accepted
+
+The AI Analyst produces interpretations, comparisons, recommendations, and advisory artifacts. The **Execution Orchestrator** coordinates authorized execution. An Analyst recommendation may inform a Plan but cannot silently become an authorized Work Order.
+
+This separation preserves evidentiary and authority boundaries and prevents recommendation confidence from being treated as execution permission.
+
+## ADR-023 — Execution uses explicit entities and a Task DAG
+
+**Status:** Accepted
+
+The Execution Entity Model contains:
+
+```text
+Intent → Plan → Task → Work Order → Attempt
+                                  ↓
+                              Artifact / Result
+                                  ↓
+                              Verification
+                                  ↓
+                               Decision
+                                  ↓
+                Complete / Retry / Replan / Cancel / Escalate
+```
+
+Escalation is also a first-class entity because it must preserve the blocked decision, evidence, authority boundary, alternatives, and requested owner action.
+
+Tasks form a directed acyclic graph. Readiness should be computed deterministically wherever practical from dependencies, required inputs, policy, gates, resource availability, and cancellation state rather than inferred from agent confidence.
+
+## ADR-024 — Parallel execution requires Resource Claims
+
+**Status:** Accepted
+
+A ready Task is not automatically safe to run concurrently. Before parallel execution, the Execution Orchestrator must account for declared Resource Claims such as files, branches, services, environments, locks, budgets, exclusive tools, or other collision domains.
+
+The exact lock/lease implementation remains open, but undeclared optimistic concurrency is not the default.
+
+## ADR-025 — Result is not Completion and Verification is first-class
+
+**Status:** Accepted
+
+An Attempt producing a Result or Artifact does not complete a Task. Completion requires Verification against acceptance criteria, required quality gates, and Authority Policy, followed by an explicit Decision.
+
+Verification must be modeled, persisted, and auditable independently from execution output. The required degree of verifier independence remains an open decision.

@@ -56,7 +56,7 @@ Apex AI DPT is built from:
 - **Hubs** — composition/orchestration points that select and invoke components without owning their internal responsibilities.
 - **Artifacts** — structured outputs such as requirements, design specs, decisions, and test plans.
 - **Gates** — conditions that must be satisfied before work can advance.
-- **Orchestrator** — coordinates the team and enforces the system.
+- **Execution Orchestrator** — coordinates only authorized execution and enforces policy, readiness, resource, verification, and escalation rules.
 
 ## 5. Human/AI boundary
 
@@ -73,14 +73,16 @@ When information is missing, the system should distinguish between:
 
 ## 6. Autonomy model
 
-Apex AI DPT supports graduated autonomy:
+Apex AI DPT supports six graduated Service/Authority Modes:
 
-- **Assisted** — plan and wait for approval.
-- **Supervised autonomous** — plan internally, execute, validate, report.
-- **Established-pattern autonomous** — execute established work without approval, escalating only when a boundary is crossed.
-- **Restricted** — human approval required before execution.
+0. **Observe**
+1. **Advise**
+2. **Assisted Execution**
+3. **Managed Execution**
+4. **Autonomous Within Policy**
+5. **Delegated Autonomy**
 
-Autonomy is granted by task and authority, not by agent confidence.
+A mode is a default delegation posture. Actual authority is granted by an Owner-controlled, scoped, auditable, and revocable Authority Policy. Specific action permissions, prohibitions, risk rules, approval gates, and policy ceilings override a general mode. Autonomy is never granted by agent confidence.
 
 ## 7. Context philosophy
 

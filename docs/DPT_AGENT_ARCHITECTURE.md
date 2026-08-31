@@ -21,7 +21,7 @@ Primary responsibilities:
 
 It is the official communication face of DPT for that project.
 
-It is not a project coding agent and does not implement DPT recommendations.
+It is not a project coding agent, does not implement DPT recommendations, and is not the Execution Orchestrator. Receiving a request does not give it task-graph, scheduling, retry, or completion authority.
 
 ## 2. Gateway Agent
 
@@ -35,6 +35,8 @@ Primary responsibilities:
 - maintain the network boundary and protocol semantics.
 
 Direct external access to DPT internal services and Pools is not a supported communication path.
+
+The Gateway is not an Orchestrator. It enforces and mediates a trust/protocol boundary; it does not turn a routed request into an authorized Plan or Work Order.
 
 ## 3. Project Scout
 
@@ -69,6 +71,8 @@ Primary responsibilities:
 - generate a DPT Adoption Proposal.
 
 Analyst does not modify the project.
+
+Analyst is distinct from the Execution Orchestrator. Its recommendation may be an input to planning, but it does not grant execution authority.
 
 ## 5. Greenfield Product / Architecture Agent
 
@@ -125,5 +129,24 @@ In particular:
 - Gateway Agent mediates network access;
 - Greenfield Product/Architecture Agent advises on initial structure;
 - Pitfall Agent handles failure intelligence.
+- Execution Orchestrator coordinates only explicitly authorized execution.
 
 These boundaries are intended to reduce context overload, token waste, accidental authority, and repeated work.
+
+## 9. Execution Orchestrator
+
+The Execution Orchestrator belongs to the Execution Control Plane. It is activated only when Authority Policy permits execution.
+
+Primary responsibilities:
+
+- turn authorized Intent into a Plan and Task DAG;
+- compute deterministic Task readiness where practical;
+- evaluate policy and approval gates before Work Orders and material actions;
+- select capable executors and issue bounded Work Orders;
+- coordinate Resource Claims and safe parallel execution;
+- track Attempts, Artifacts, Results, Verification, budget, and risk;
+- decide to complete, retry, replan, cancel, or escalate within authority;
+- react safely to policy changes, revocation, or the kill switch;
+- maintain an auditable execution history.
+
+The Orchestrator does not replace the Owner, Front Agent, Gateway, Analyst, verifier, or executor. It coordinates those contracts while remaining below the inherited policy ceiling.

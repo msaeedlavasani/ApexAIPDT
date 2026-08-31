@@ -12,6 +12,9 @@ An execution instance capable of reasoning and acting within an assigned role.
 ## Orchestrator
 The coordinating role responsible for routing work, managing context, enforcing authority and workflow, resolving conflicts, and deciding when human escalation is required.
 
+## Execution Orchestrator
+The Execution Control Plane role that converts authorized Intent into Plans and Task DAGs, evaluates readiness and Authority Policy, issues bounded Work Orders, coordinates Resource Claims and Attempts, requires Verification, and decides whether to complete, retry, replan, cancel, or escalate. It is distinct from the Front Agent, Gateway Agent, and AI Analyst.
+
 ## Front Agent
 The project-specific DPT-facing Agent instance through which a connected project communicates with DPT. It represents one project at the DPT boundary and maintains project-specific interaction context. It is not a project coding agent.
 
@@ -36,6 +39,18 @@ A meaningful ability or responsibility of a product or DPT system. Capabilities 
 ## Authority
 The set of decisions a role may make autonomously, the decisions it may recommend, and the decisions it must escalate.
 
+## Authority Policy
+The Owner-controlled, scoped, auditable, and revocable rules that determine whether an action is advisory-only, approval-gated, authorized, or prohibited. Specific applicable policy overrides a general Service/Authority Mode.
+
+## Service / Authority Mode
+One of the graduated delegation postures: Observe, Advise, Assisted Execution, Managed Execution, Autonomous Within Policy, or Delegated Autonomy. A mode is a default posture, not a blanket permission grant.
+
+## Policy Ceiling
+The maximum authority that may be inherited or delegated. Downstream grants may narrow but cannot expand the intersection of applicable upstream authority.
+
+## Risk Envelope
+The explicit risk bounds inside which autonomous action may occur, including applicable impact, cost, reversibility, environment, data, security, and operational constraints.
+
 ## Context
 Information made available to an agent for a specific decision or task.
 
@@ -56,6 +71,39 @@ The explicit interface describing a component's inputs, outputs, dependencies, c
 
 ## Artifact
 A structured output of work, such as a product requirement, design specification, architecture decision, test plan, or asset request.
+
+## Intent
+The requested outcome that originates from the Owner or another authorized source. Intent is not yet a Plan or authorization for a particular action.
+
+## Plan
+A structured interpretation of Intent containing proposed Tasks, constraints, success criteria, risks, dependencies, gates, and execution strategy.
+
+## Task
+A logical, executor-independent unit of work in a Task Graph, with dependencies, acceptance criteria, required capabilities, risk, authority requirements, Resource Claims, and state.
+
+## Task Graph
+A directed acyclic graph of Tasks and prerequisite relationships used to compute readiness and coordinate work.
+
+## Work Order
+A bounded, authorized assignment of a Task to an executor with explicit scope, inputs, expected outputs, policy context, Resource Claims, and termination conditions.
+
+## Attempt
+One identified execution of a Work Order, including lifecycle, outputs, telemetry, and termination reason.
+
+## Resource Claim
+A declaration of a resource that an Attempt may read, change, reserve, consume, or require exclusively so that parallel execution can be scheduled safely.
+
+## Result
+The executor-reported outcome of an Attempt. A Result is evidence for Verification and is not Completion.
+
+## Verification
+A first-class evaluation of Result and Artifacts against acceptance criteria, quality gates, and Authority Policy using recorded evidence and provenance.
+
+## Completion
+The state reached only after required Verification succeeds and an explicit Decision records that the Task or Plan satisfies its completion conditions.
+
+## Escalation
+A durable decision package for a matter beyond current evidence or authority, including context, evidence, options, risks, and the smallest required Owner action.
 
 ## Decision
 A deliberate choice between meaningful alternatives, including rationale, authority, evidence, consequences, and status.

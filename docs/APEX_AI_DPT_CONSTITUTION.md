@@ -133,15 +133,17 @@ When a decision genuinely exceeds available evidence or authority, the agent mus
 
 Repeated failures, repeated manual corrections, recurring patterns, successful reusable assets, and recurring capability gaps should become candidates for improvements to brains, registries, workflows, Pools, or validation gates.
 
-## Article 21 — DPT is advisory, not invasive
+## Article 21 — Advisory is non-invasive; execution requires delegated authority
 
-DPT MUST NOT write, inject, modify, refactor, migrate, or deploy code in a consuming project.
+DPT is one platform with an Intelligence / Advisory Plane and an Execution Control Plane.
 
-DPT's responsibility is to observe, understand, analyze, recommend, expose reusable intelligence/assets, and learn from validated project contributions.
+The Advisory Plane MUST remain non-invasive. Observation, Project Intelligence, analysis, comparison, and recommendation MUST NOT silently write, inject, modify, refactor, migrate, or deploy code in a consuming project. An advisory artifact is not execution authority.
 
-Implementation remains the responsibility of the project owner and/or the project's developers or AI development agents.
+The Execution Control Plane MAY coordinate action only under an explicit, auditable, scoped, and revocable Authority Policy controlled by the Owner. Every action must remain within applicable action permissions, risk envelope, approval gates, escalation rules, budget/environment constraints, and inherited policy ceiling. Specific policy overrides a general mode or grant.
 
-This rule applies equally to greenfield and existing projects.
+Authority can be narrowed or revoked at any time. The platform MUST provide a kill-switch/revocation path, prevent unauthorized new work, preserve an audit trail, and move active work toward the safest policy-permitted stop or containment behavior.
+
+Execution may be performed by the project's developers, AI development agents, tools, or services under bounded Work Orders. No role may infer authority from technical capability, analytical confidence, or a high autonomy mode.
 
 ## Article 22 — Existing project solutions are first-class candidates
 
@@ -190,3 +192,17 @@ Important findings should distinguish facts from interpretations and should carr
 For a project beginning from an idea, DPT may provide product and architecture analysis, capability mapping, component/module structure, relevant reusable assets, and recommended team/agent capabilities.
 
 The resulting blueprint is advisory. The project owner and development team implement the project.
+
+If the Owner separately enables the Execution Control Plane, implementation may subsequently be coordinated under the applicable Authority Policy. The blueprint itself never grants that authority.
+
+## Article 28 — Result is not completion
+
+An execution Result or produced Artifact is not equivalent to Completion. Completion requires first-class Verification against acceptance criteria, required quality gates, and applicable Authority Policy, followed by an explicit recorded Decision.
+
+## Article 29 — Delegation cannot expand authority
+
+Authority inheritance MUST obey a policy ceiling. A role, Orchestrator, Agent, or Work Order may narrow delegated authority but MUST NOT grant permissions outside the intersection of applicable Owner policies and upstream grants.
+
+## Article 30 — Boundary and execution roles remain separate
+
+The Front Agent represents the project and the Gateway mediates the trust/protocol boundary; neither is the Execution Orchestrator. The Analyst interprets and recommends; the Execution Orchestrator coordinates authorized work. Advisory confidence, message routing, and boundary access do not imply execution authority.

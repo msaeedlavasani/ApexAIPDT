@@ -25,7 +25,7 @@ The API supports both directions:
 - DPT provides recommendations, reusable assets, knowledge, capabilities, warnings, and updates to projects.
 - Projects provide validated reusable assets, Pitfalls, improvements, evidence, and other approved intelligence back to DPT.
 
-The API is an intelligence/advisory boundary. It is not a mechanism for DPT to write or inject code into consuming projects.
+The API is the project-facing intelligence/advisory boundary. It does not turn advisory messages into execution authority and is not, by itself, a code-writing or injection mechanism. Any future execution-control operations require a separately defined, authenticated, policy-evaluated, auditable contract.
 
 ## Core operations
 
@@ -98,7 +98,7 @@ Events should be idempotent and versioned.
 
 Each connected project has a project-specific DPT Front Agent instance. External project agents communicate with DPT through that instance rather than directly with DPT internal services or Pools.
 
-The Front Agent is responsible for the project-side DPT interaction boundary and project-specific context. It does not implement DPT recommendations in the project codebase.
+The Front Agent is responsible for the project-side DPT interaction boundary and project-specific context. It does not implement DPT recommendations in the project codebase and does not become the Execution Orchestrator.
 
 ## Gateway Agent
 
@@ -107,6 +107,8 @@ The Gateway Agent is the DPT-side network boundary between Project Front Agent i
 It routes approved protocol messages and events to the appropriate DPT capabilities, intelligence services, and Pools, and returns responses through the originating Front Agent.
 
 Direct external access to DPT internal services or Pool storage is not a supported communication path.
+
+The Gateway is a trust/protocol routing boundary, not the Execution Orchestrator. Routing a request does not authorize, schedule, verify, retry, or complete project work.
 
 ## Security and tenancy
 
