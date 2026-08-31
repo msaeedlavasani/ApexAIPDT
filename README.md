@@ -50,7 +50,7 @@ The goal is compounding development:
 - **Project Scout + AI Analyst** — Scout discovers facts/evidence; Analyst interprets them and generates DPT Adoption Proposals.
 - **Front Agent + Gateway Agent** — each connected project has a project-specific Front Agent, while the DPT Gateway mediates the external trust boundary.
 - **Authority Model** — six graduated Service/Authority Modes governed by specific action permissions, risk envelopes, approval gates, escalation, inheritance ceilings, and revocation.
-- **Execution Control** — an Execution Orchestrator manages authorized Intent, Plans, Task DAGs, Work Orders, Attempts, Resource Claims, Verification, Decisions, and Escalations; Result is never treated as Completion.
+- **Execution Control** — an Execution Orchestrator manages authorized Intent, Plans, Task DAGs, Work Orders, Attempts, hierarchical physical/logical/external Resources and their Claims, Verification, Decisions, and Escalations; Result is never treated as Completion.
 - **Update & propagation** — projects can receive compatible improvements, security information, recommendations, and new reusable assets from DPT.
 - **DPT Network API** — the two-way boundary between subscribed projects and DPT.
 - **Contribution economy** — validated reusable contributions can earn Credits while consumption of reusable DPT value can spend Credits. The economy is documented as a concept and is not yet finalized.

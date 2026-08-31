@@ -9,7 +9,7 @@
 |---|---|
 | Intent | The outcome the Owner or an authorized system requests. |
 | Plan | A structured interpretation of Intent: constraints, success criteria, risks, and proposed work. |
-| Task | A logical unit of work in the Task Graph, independent of a particular executor. |
+| Task | A logical unit of work in the Task Graph, independent of a particular executor; it declares Resource Claims before execution. |
 | Work Order | A bounded, authorized assignment of a Task to an executor, including inputs, scope, policy, claims, and expected outputs. |
 | Attempt | One execution of a Work Order with identity, lifecycle, telemetry, and termination reason. |
 | Artifact | A durable work product produced or consumed during execution. |
@@ -35,9 +35,61 @@ Agent confidence alone cannot make a Task ready.
 
 ## Resource Claims and parallelism
 
-Parallel execution requires explicit Resource Claims. Claims describe resources whose concurrent use could conflict or exceed policy, including repository paths, branches, environments, services, data sets, credentials, exclusive tools, budgets, or rate limits.
+Parallel execution requires explicit Resource Claims. A Resource is not only a file: it is any bounded physical, logical, or external asset, capability, namespace, or dependency whose use matters to concurrency, authority, governance, or execution safety. Examples include repository paths, branches, modules, API contracts, services, data sets, environments, credential scopes, exclusive tools, external systems, budgets, and rate limits.
 
-The Orchestrator schedules Tasks in parallel only when claims and dependencies are compatible. The exact lock, lease, expiry, renewal, and recovery model is an open decision.
+Resources form a hierarchy. A Resource may have parent and child scopes, and a claim may address one node or a subtree. Logical Resources such as an API contract or service have stable identities independent of filesystem paths and may map to multiple paths or no path at all.
+
+Every Task declares its Resource Claims before execution. The initial access modes are:
+
+| Mode | Meaning |
+|---|---|
+| `READ` | Observe or consume the Resource without intending to mutate it. |
+| `WRITE` | Mutate the Resource within the declared scope. |
+| `EXCLUSIVE` | Reserve the declared scope against every incompatible concurrent interaction. |
+
+The Orchestrator schedules Tasks in parallel only when dependencies and all relevant claims are compatible. V1 uses conservative conflict handling: if compatibility cannot be established, a claim is missing, or a conflict domain is unresolved, the Tasks do not run concurrently.
+
+Execution-time discovery may produce a claim-expansion request. The Orchestrator must approve the expanded scope and re-evaluate compatibility, Authority Policy, Resource sensitivity, and approval gates before affected work continues. Executors must not silently expand scope.
+
+### Conceptual Resource record
+
+```text
+Resource
+├── id
+├── type
+├── name / description
+├── parent_id and hierarchy scope
+├── logical identity and optional locator bindings
+├── conflict domain(s)
+├── sensitivity / governance classification
+├── owner / authority scope
+├── status
+└── metadata
+```
+
+Conceptual Resource statuses are `AVAILABLE`, `RESTRICTED`, `UNAVAILABLE`, and `RETIRED`. These describe control-plane usability, not the health model of the underlying service. Exact machine identifiers remain subject to schema finalization.
+
+### Conceptual ResourceClaim record
+
+```text
+ResourceClaim
+├── id
+├── task_id
+├── work_order_id (when assigned)
+├── resource_id
+├── access_mode
+├── claimed scope / subtree
+├── reason
+├── source and confidence
+├── requested / effective time bounds
+├── authority and approval references
+├── status
+└── expansion lineage / metadata
+```
+
+Conceptual claim states are `DECLARED`, `APPROVAL_REQUIRED`, `ACQUIRABLE`, `ACQUIRED`, `RELEASED`, `DENIED`, `REVOKED`, and `EXPIRED`. A claim cannot become effective merely because an executor inferred or requested it. Exact transition guards and lock/lease behavior remain open.
+
+Resource sensitivity is evaluated through Authority Policy and Governance. It may narrow eligible actors, environments, actions, providers, or approval paths even when concurrency would otherwise be safe.
 
 ## Result, Verification, and Completion
 
@@ -57,6 +109,7 @@ The Execution Orchestrator:
 - produces or validates Plans and Task DAGs;
 - computes readiness and prioritizes ready Tasks;
 - evaluates Authority Policy before issuing Work Orders and at material action boundaries;
+- validates declared Resource Claims and approves or rejects any runtime expansion;
 - assigns bounded Work Orders to capable executors;
 - coordinates Resource Claims and safe parallelism;
 - tracks Attempts, Artifacts, Results, Verification, budgets, and deadlines;

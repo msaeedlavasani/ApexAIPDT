@@ -44,7 +44,7 @@ The exact serialization is intentionally not defined in V0.
 
 ## Evaluation rules
 
-1. Identify the action, actor, target, environment, resource claims, risk, cost, and applicable time window.
+1. Identify the action, actor, target, environment, Resource Claims, Resource sensitivity/governance classification, risk, cost, and applicable time window.
 2. Resolve inherited policies from general to specific.
 3. Apply the most specific applicable rule; a specific prohibition or approval gate overrides a general mode allowance.
 4. Enforce the strictest inherited ceiling. A delegate cannot grant authority it did not receive.
@@ -52,6 +52,8 @@ The exact serialization is intentionally not defined in V0.
 6. Record the policy version, evidence, decision, actor, and resulting action in the audit trail.
 
 Ambiguity does not widen authority. If applicable rules cannot be resolved safely, execution pauses and escalates.
+
+Resource sensitivity is an Authority/Governance input, not scheduling metadata alone. A compatible claim may still require a narrower actor, provider, environment, action, or explicit approval. Runtime claim expansion requires Orchestrator approval and a fresh policy evaluation; an executor cannot use discovery to expand its own authority or Resource scope.
 
 ## Revocation and kill switch
 

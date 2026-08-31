@@ -83,7 +83,18 @@ Define policy storage, versioning, resolution, effective-time behavior, audit re
 
 ### 8. Resource lock / lease model
 
-Define claim compatibility, lock versus lease semantics, acquisition order, expiry, renewal, fencing, deadlock avoidance, stale executor recovery, and behavior during network partitions.
+Finalize the V1 Resource and ResourceClaim mechanics without reopening ADR-026. Decide:
+
+- the V1 Resource type set;
+- `READ` + `WRITE` compatibility and upgrade semantics;
+- claim granularity and hierarchy overlap rules;
+- whether and how automatic claim inference may propose claims;
+- conflict-domain generation and maintenance;
+- snapshot-read and stale-read semantics;
+- the adapter model for external Resources;
+- lock versus lease semantics, acquisition order, expiry, renewal, fencing, deadlock avoidance, stale executor recovery, and behavior during network partitions.
+
+Accepted constraints: every Task declares claims before execution; silent runtime scope expansion is forbidden; only the Orchestrator may approve expansion; sensitivity participates in Authority/Governance evaluation; uncertain V1 compatibility prevents parallel execution.
 
 ### 9. Verifier independence
 

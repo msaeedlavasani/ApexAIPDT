@@ -47,7 +47,7 @@ This plane coordinates action only when an Owner-controlled Authority Policy exp
 - translates authorized Intent into Plans and Task DAGs;
 - evaluates authority at action boundaries;
 - creates Work Orders and manages Attempts;
-- schedules safe parallel work using Resource Claims;
+- models physical, logical, and external Resources and schedules parallel work only when declared Resource Claims are compatible;
 - records Artifacts and Results;
 - requires Verification before Completion;
 - decides whether to complete, retry, replan, cancel, or escalate;

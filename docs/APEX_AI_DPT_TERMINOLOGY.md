@@ -91,7 +91,10 @@ A bounded, authorized assignment of a Task to an executor with explicit scope, i
 One identified execution of a Work Order, including lifecycle, outputs, telemetry, and termination reason.
 
 ## Resource Claim
-A declaration of a resource that an Attempt may read, change, reserve, consume, or require exclusively so that parallel execution can be scheduled safely.
+A Task's pre-execution declaration of bounded access to a Resource, including access mode, scope, rationale, authority context, lifecycle status, and any approved expansion lineage. Claims enable safe scheduling and parallelism; executors cannot silently widen them.
+
+## Resource
+A hierarchical physical, logical, or external control-plane object whose use matters to concurrency, authority, governance, or execution safety. A Resource may be a path, but logical Resources such as API contracts and services have identities independent of paths.
 
 ## Result
 The executor-reported outcome of an Attempt. A Result is evidence for Verification and is not Completion.

@@ -275,3 +275,17 @@ The exact lock/lease implementation remains open, but undeclared optimistic conc
 An Attempt producing a Result or Artifact does not complete a Task. Completion requires Verification against acceptance criteria, required quality gates, and Authority Policy, followed by an explicit Decision.
 
 Verification must be modeled, persisted, and auditable independently from execution output. The required degree of verifier independence remains an open decision.
+
+## ADR-026 — Resources are hierarchical control-plane objects
+
+**Status:** Accepted
+
+A Resource is any bounded asset, capability, namespace, or external dependency whose use matters to concurrency, authority, governance, or execution safety. Resources are not limited to files or repository paths. They include logical resources such as an API contract or service and external resources such as an environment, provider, credential scope, budget, or rate-limited system.
+
+Every Task must declare Resource Claims before execution. The initial access modes are `READ`, `WRITE`, and `EXCLUSIVE`. Parallel execution is permitted only when dependencies and all relevant claims are compatible. V1 conflict handling is conservative: uncertainty, incomplete coverage, or an unresolved conflict domain prevents concurrency rather than permitting optimistic overlap.
+
+Resources may form a hierarchy so a claim on a parent, child, subtree, or logical scope can be evaluated consistently. Logical identity is independent of filesystem location: moving a file does not implicitly create a new API contract or service identity, and a logical Resource may map to multiple paths or no path at all.
+
+Runtime discovery may propose claim expansion, but only the Execution Orchestrator may approve it after re-evaluating compatibility, Authority Policy, sensitivity, and any required approval gate. An executor must not silently widen claim scope. Resource sensitivity is governance input and must be evaluated through the Authority Model rather than treated only as scheduling metadata.
+
+The conceptual Resource and ResourceClaim fields and lifecycle states are defined in the Execution Control Model. The exact V1 type set, compatibility matrix, granularity, inference, conflict-domain generation, snapshot semantics, external adapters, and lock/lease mechanism remain open decisions.
