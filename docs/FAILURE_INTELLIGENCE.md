@@ -12,7 +12,7 @@ It should enter the flow when a meaningful failure is first detected, not only a
 
 Its responsibilities include:
 
-- classify the failure;
+- classify the failure using both domain and runtime dimensions;
 - search the Pitfall Pool;
 - inspect authoritative documentation;
 - identify known patterns and likely root causes;
@@ -21,6 +21,16 @@ Its responsibilities include:
 - validate the resolution;
 - capture reusable root cause and prevention knowledge;
 - contribute validated knowledge to the Pitfall Pool.
+
+## Runtime failure classification
+
+Failure Intelligence consumes Attempt telemetry, Results, Artifacts, verifier evidence, and policy/resource events. A failure record should distinguish:
+
+- **domain class** — product, design, architecture, implementation, data, security, operations, test, or another project-defined class;
+- **runtime class** — executor error, verification failure, policy denial/revocation, Resource Claim conflict, timeout/stall, cancellation, integration conflict, release-gate failure, or external dependency failure;
+- **termination and recovery** — retryable, replan-required, cancellation/containment-required, escalation-required, or non-failure completion state.
+
+Classification is evidence for the Apex Orchestrator's explicit Decision; the Failure Intelligence Agent does not independently widen authority, retry budget, Work Order scope, or Resource Claims.
 
 ## First-failure protocol
 
@@ -37,7 +47,11 @@ Diagnosis / root cause hypothesis
   ↓
 Evidence-based resolution
   ↓
-Validation
+Attempt / Result / Artifact
+  ↓
+Verification
+  ↓
+Orchestrator Decision
   ↓
 Pitfall contribution
 ```

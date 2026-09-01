@@ -6,6 +6,8 @@ This document defines how a project becomes a DPT-connected project and how the 
 
 The implementation mechanism is intentionally separated from the contract. A project may eventually use a local package, CLI bootstrapper, sidecar, service, or another runtime adapter. The project-facing contract must remain stable.
 
+Any current Orchestrator, connector, queue, adapter, or project-local runtime code is a **validation implementation** for real-project R&D. It may test the accepted semantic contracts, but it is not the frozen production transport or packaging architecture. Real-project evidence must inform the final choice before transport, persistence, deployment topology, or packaging is standardized.
+
 ## Core rule
 
 A DPT-managed project MUST establish its DPT connection before substantive product implementation begins.
@@ -184,3 +186,5 @@ The exact transport and packaging mechanism is intentionally not frozen yet. Can
 - hybrid local connector with cloud DPT API.
 
 The architecture must be selected only after evaluating security, developer experience, offline behavior, language/framework support, update propagation, and operational cost.
+
+Validation implementations should therefore preserve replaceable boundaries, identify which assumptions they test, record evidence and failures, and avoid making experimental transport or packaging details part of DPT's public contracts.

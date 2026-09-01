@@ -75,7 +75,7 @@ Reusable DPT assets are living assets. Projects may receive validated updates fr
 
 Updates MUST be compatibility-aware and MUST NOT silently break consuming projects. Breaking changes require migration planning and appropriate validation.
 
-DPT provides update information, recommendations, assets, and migration guidance; it does not directly modify consuming project code.
+Through its Advisory Plane, DPT provides update information, recommendations, assets, and migration guidance without directly modifying consuming project code. Any adoption executed through the Execution Control Plane requires separate delegated authority and the applicable gates.
 
 ## Article 8 — Project connection is established before substantive work
 

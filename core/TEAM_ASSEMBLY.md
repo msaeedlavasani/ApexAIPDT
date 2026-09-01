@@ -1,6 +1,6 @@
 # Dynamic Team Assembly
 
-APDT does not assume every project or task needs the same team.
+Apex AI DPT does not assume every project or Task needs the same team. Dynamic Team Assembly supplies capable workers and verifiers to the Apex Orchestrator; it does not grant authority or execute work by itself.
 
 ## Assembly principles
 
@@ -9,6 +9,8 @@ APDT does not assume every project or task needs the same team.
 3. Add independent review when risk warrants it.
 4. Avoid assigning every brain to every task.
 5. Preserve one clear coordinating role.
+6. Distinguish executor, verifier, integrator, and release responsibilities when risk or policy requires separation.
+7. Bind every execution assignment to a Work Order whose scope, inputs, outputs, Resource Claims, policy context, and termination conditions fit the assignee's capability.
 
 ## Baseline brain catalog
 
@@ -48,3 +50,21 @@ A project initialization should produce a team manifest containing:
 - expected outputs;
 - escalation targets;
 - validation responsibilities.
+- eligible executor/verifier/integrator/release responsibilities;
+- capability and environment constraints;
+- delegation ceiling and required human gates.
+
+## Runtime assembly flow
+
+```text
+Ready Task + effective Authority Policy
+  → capability and risk routing
+  → executor/verifier selection
+  → bounded Work Order
+  → Attempt and Result/Artifacts
+  → required Verification
+  → integration/release Work Orders and gates, when applicable
+  → Orchestrator Decision
+```
+
+Workers may be project developers, AI development agents, tools, or services. They remain bounded by the Work Order and inherited policy ceiling; membership in an assembled team never permits silent scope expansion.

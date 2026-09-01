@@ -27,6 +27,8 @@
 - [ ] Run visual change test
 - [ ] Run new-game/Catan discovery test
 - [ ] Measure token/context usage and human interventions
+- [ ] Validate Apex Orchestrator Task/Work Order/Attempt/Verification flow on bounded real-project work
+- [ ] Record runtime, transport, persistence, packaging, failure, and human-gate evidence without freezing implementation choices
 
 ## V0.2 — Machine-readable layer
 
@@ -43,7 +45,7 @@
 - [ ] Registry generator
 - [ ] Team-assembly assistant
 
-## V1 — Runtime
+## V1 — Production runtime (after validation evidence)
 
 - [ ] Provider-neutral orchestrator runtime
 - [ ] Agent adapters
@@ -51,6 +53,7 @@
 - [ ] Workflow state management
 - [ ] Quality-gate execution
 - [ ] Human approval interface
+- [ ] Freeze transport, persistence, deployment topology, and packaging decisions supported by real-project evidence
 
 ## V2 — Learning system
 

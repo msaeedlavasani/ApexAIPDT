@@ -70,7 +70,9 @@ Capability + Agent/Skill assessment
  ↓
 Pool / Pitfall discovery
  ↓
-Project development team implements
+Owner selects advisory-only or authorized execution path
+↓
+Project team implements, or Apex Orchestrator coordinates bounded Work Orders
  ↓
 Failure intelligence + validation
  ↓
@@ -94,9 +96,9 @@ AI Analyst
  ↓
 DPT Adoption Proposal
  ↓
-Project owner / developers decide
- ↓
-Project team implements if desired
+Project owner decides whether to remain advisory-only or delegate scoped authority
+↓
+Project team implements, or Apex Orchestrator coordinates authorized execution
 ```
 
 ## What Apex AI DPT is not
@@ -125,7 +127,7 @@ This repository defines the Apex AI DPT V0 framework and architecture. It is int
 
 The current design phase is focused on finalizing Agent boundaries, Authority Policy, execution entity lifecycles, and the machine-readable Project Intelligence contract before implementation details are frozen.
 
-The runtime/connector, execution runtime, persistence, and Network API implementation remain future engineering layers. Their exact transport, schema, locking, and packaging mechanisms are explicit open decisions.
+Current runtime/connector and Orchestrator R&D is a validation implementation for real-project learning, not the frozen production runtime. Exact transport, schema, locking, persistence, deployment topology, and packaging remain explicit open decisions until evidence supports standardization.
 
 The credit economy and business model are also intentionally conceptual until real usage and infrastructure data are available.
 

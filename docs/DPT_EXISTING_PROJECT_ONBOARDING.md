@@ -14,7 +14,7 @@ A project may be partially implemented, feature-complete, in production, activel
 
 The first objective is to understand the existing project, not to change it.
 
-DPT is an advisory/intelligence layer. The project owner and the project's developers or AI development agents remain responsible for implementation.
+Existing-project onboarding belongs to DPT's non-invasive Intelligence / Advisory Plane. The Owner may keep implementation with the project team or separately delegate scoped execution to the Execution Control Plane.
 
 ## Existing Project Flow
 
@@ -31,12 +31,13 @@ AI Analyst
       ↓
 DPT Adoption Proposal
       ↓
-Project Owner / Project Development Team
+Project Owner authority decision
       ↓
-Optional implementation by the project team
+Remain advisory-only, implement through the project team,
+or authorize Apex Orchestrator Work Orders
 ```
 
-DPT does not execute the implementation step.
+The onboarding flow itself does not execute implementation or grant execution authority. Any later DPT-coordinated implementation must enter the separately governed Execution Control Plane through an applicable Authority Policy.
 
 ## Stage 1 — Discovery
 
@@ -152,9 +153,9 @@ External project agents must not communicate directly with DPT internal services
 
 This is a communication/trust-boundary rule. It does not mean the Front Agent is the only security control.
 
-## Non-invasive integration rules
+## Non-invasive Advisory Plane integration rules
 
-DPT MUST NOT:
+During onboarding and advisory integration, DPT MUST NOT:
 
 - rewrite the repository merely to make DPT integration easier;
 - inject code into the project;
@@ -173,6 +174,8 @@ DPT SHOULD:
 - provide evidence-backed recommendations;
 - minimize required project-side changes;
 - allow the project team to implement or reject recommendations.
+
+These rules do not prohibit separately authorized Execution Control Plane work. Such work is governed by bounded Work Orders, Resource Claims, Verification, human gates, and revocation rather than by the onboarding flow.
 
 ## Project state
 

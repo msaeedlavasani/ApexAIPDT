@@ -201,6 +201,10 @@ DPT is a single platform with two responsibility planes:
 
 The planes share product intent, Project Intelligence, durable decisions, policy, and audit context, but do not collapse their roles. Advisory output does not itself authorize execution.
 
+The **Apex Orchestrator** is the Execution Control Plane's runtime coordinating role. It governs Plans, Task DAGs, Work Orders, Attempts, Verification, integration, release, Decisions, and Escalations while delegating actual work to bounded executors. This name refers to the same role called the Execution Orchestrator elsewhere in the framework.
+
+Current runtime experiments are validation implementations, not a decision to freeze transport, persistence, deployment topology, provider integration, or packaging. Those mechanisms remain open until evidence from real project execution supports a stable production choice.
+
 ## ADR-019 — Authority is owner-controlled, scoped, revocable, and auditable
 
 **Status:** Accepted
