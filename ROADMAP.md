@@ -27,7 +27,7 @@
 - [ ] Run visual change test
 - [ ] Run new-game/Catan discovery test
 - [ ] Measure token/context usage and human interventions
-- [ ] Validate Apex Orchestrator Task/Work Order/Attempt/Verification flow on bounded real-project work
+- [ ] Validate the Execution Orchestrator Task/Work Order/Attempt/Verification flow on bounded real-project work
 - [ ] Record runtime, transport, persistence, packaging, failure, and human-gate evidence without freezing implementation choices
 
 ## V0.2 — Machine-readable layer

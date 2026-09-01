@@ -13,7 +13,7 @@ An execution instance capable of reasoning and acting within an assigned role.
 The coordinating role responsible for routing work, managing context, enforcing authority and workflow, resolving conflicts, and deciding when human escalation is required.
 
 ## Execution Orchestrator
-Also named the **Apex Orchestrator**: the Execution Control Plane's runtime coordinating role that converts authorized Intent into Plans and Task DAGs, evaluates readiness and Authority Policy, issues bounded Work Orders, coordinates Resource Claims and Attempts, requires Verification, and decides whether to complete, retry, replan, cancel, or escalate. It is distinct from the Front Agent, Gateway Agent, AI Analyst, executors, and verifiers.
+The Execution Control Plane's runtime coordinating role that converts authorized Intent into Plans and Task DAGs, evaluates readiness and Authority Policy, issues bounded Work Orders, coordinates Resource Claims and Attempts, requires Verification, and decides whether to complete, retry, replan, cancel, or escalate. Its full framework name is **Apex AI DPT Execution Orchestrator**. It is distinct from the Front Agent, Gateway Agent, AI Analyst, executors, and verifiers.
 
 ## Front Agent
 The project-specific DPT-facing Agent instance through which a connected project communicates with DPT. It represents one project at the DPT boundary and maintains project-specific interaction context. It is not a project coding agent.

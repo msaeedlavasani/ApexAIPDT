@@ -1,6 +1,6 @@
 # Dynamic Team Assembly
 
-Apex AI DPT does not assume every project or Task needs the same team. Dynamic Team Assembly supplies capable workers and verifiers to the Apex Orchestrator; it does not grant authority or execute work by itself.
+Apex AI DPT does not assume every project or Task needs the same team. Dynamic Team Assembly supplies capable workers and verifiers to the Execution Orchestrator; it does not grant authority or execute work by itself.
 
 ## Assembly principles
 

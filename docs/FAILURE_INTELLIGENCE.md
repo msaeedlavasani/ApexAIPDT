@@ -30,7 +30,7 @@ Failure Intelligence consumes Attempt telemetry, Results, Artifacts, verifier ev
 - **runtime class** — executor error, verification failure, policy denial/revocation, Resource Claim conflict, timeout/stall, cancellation, integration conflict, release-gate failure, or external dependency failure;
 - **termination and recovery** — retryable, replan-required, cancellation/containment-required, escalation-required, or non-failure completion state.
 
-Classification is evidence for the Apex Orchestrator's explicit Decision; the Failure Intelligence Agent does not independently widen authority, retry budget, Work Order scope, or Resource Claims.
+Classification is evidence for the Execution Orchestrator's explicit Decision; the Failure Intelligence Agent does not independently widen authority, retry budget, Work Order scope, or Resource Claims.
 
 ## First-failure protocol
 

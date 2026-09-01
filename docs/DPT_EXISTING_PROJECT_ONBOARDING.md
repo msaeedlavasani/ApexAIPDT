@@ -34,7 +34,7 @@ DPT Adoption Proposal
 Project Owner authority decision
       ↓
 Remain advisory-only, implement through the project team,
-or authorize Apex Orchestrator Work Orders
+or authorize Execution Orchestrator Work Orders
 ```
 
 The onboarding flow itself does not execute implementation or grant execution authority. Any later DPT-coordinated implementation must enter the separately governed Execution Control Plane through an applicable Authority Policy.

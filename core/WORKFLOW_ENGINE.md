@@ -2,7 +2,7 @@
 
 ## Workflow model
 
-A workflow is a versioned state machine with explicit entry conditions, responsible roles, artifacts, Authority Policy checks, gates, and exit conditions. The Workflow Engine is the state-transition mechanism used by the Apex Orchestrator; it does not grant authority on its own.
+A workflow is a versioned state machine with explicit entry conditions, responsible roles, artifacts, Authority Policy checks, gates, and exit conditions. The Workflow Engine is the state-transition mechanism used by the Execution Orchestrator; it does not grant authority on its own.
 
 ## Universal lifecycle
 
@@ -12,7 +12,7 @@ Not every task requires every state explicitly, but non-trivial work must not sk
 
 ## State ownership
 
-The Apex Orchestrator owns execution routing and authorized state transitions. Advisory roles own evidence and recommendations but do not advance work into execution.
+The Execution Orchestrator owns execution routing and authorized state transitions. Advisory roles own evidence and recommendations but do not advance work into execution.
 
 Specialist brains own domain work inside their authority.
 

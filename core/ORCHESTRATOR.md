@@ -1,8 +1,8 @@
-# Apex Orchestrator Core
+# Execution Orchestrator Core
 
 ## Purpose
 
-The **Apex Orchestrator** is the runtime coordinating role of the Apex AI DPT Execution Control Plane. It converts authorized Intent into governed execution without becoming a universal implementation agent or absorbing the Advisory Plane, executor, verifier, Front Agent, or Gateway roles.
+The **Apex AI DPT Execution Orchestrator**, shortened to **Execution Orchestrator**, is the runtime coordinating role of the Execution Control Plane. It converts authorized Intent into governed execution without becoming a universal implementation agent or absorbing the Advisory Plane, executor, verifier, Front Agent, or Gateway roles.
 
 ## Responsibilities
 

@@ -72,7 +72,7 @@ Pool / Pitfall discovery
  ↓
 Owner selects advisory-only or authorized execution path
 ↓
-Project team implements, or Apex Orchestrator coordinates bounded Work Orders
+Project team implements, or the Execution Orchestrator coordinates bounded Work Orders
  ↓
 Failure intelligence + validation
  ↓
@@ -98,7 +98,7 @@ DPT Adoption Proposal
  ↓
 Project owner decides whether to remain advisory-only or delegate scoped authority
 ↓
-Project team implements, or Apex Orchestrator coordinates authorized execution
+Project team implements, or the Execution Orchestrator coordinates authorized execution
 ```
 
 ## What Apex AI DPT is not
