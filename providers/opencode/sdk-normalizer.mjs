@@ -69,12 +69,17 @@ export function normalizePromptResponse({
   let text_content = null;
 
   for (const part of parts) {
-    if (part.type === "tool-invocation") {
+    const tool = part.type === "tool-invocation"
+      ? normalizeLegacyToolPart(part.toolInvocation)
+      : part.type === "tool"
+        ? normalizeSdkToolPart(part)
+        : null;
+
+    if (tool) {
       has_tool_use = true;
-      const tool = part.toolInvocation;
 
       events.push(createEvent({
-        event_type: tool.state === "result" ? EVENT_TYPE.TOOL_COMPLETED :
+        event_type: tool.state === "completed" ? EVENT_TYPE.TOOL_COMPLETED :
                    tool.state === "error" ? EVENT_TYPE.TOOL_FAILED :
                    EVENT_TYPE.TOOL_REQUESTED,
         task_id,
@@ -82,10 +87,10 @@ export function normalizePromptResponse({
         attempt_id,
         provider_session_id,
         execution_phase: "TOOL_EXECUTION",
-        status: tool.state === "result" ? "SUCCESS" :
+        status: tool.state === "completed" ? "SUCCESS" :
                 tool.state === "error" ? "FAIL" : "PENDING",
         normalized_payload: {
-          tool_name: tool.toolName,
+          tool_name: tool.tool_name,
           tool_state: tool.state,
           args: tool.args,
           result: tool.result,
@@ -93,11 +98,10 @@ export function normalizePromptResponse({
         recovery_generation,
       }));
 
-      // Tool evidence
-      const tool_evidence_type = inferToolEvidenceType(tool.toolName);
+      const tool_evidence_type = inferToolEvidenceType(tool.tool_name);
       evidence.push(createEvidence({
         evidence_type: tool_evidence_type,
-        authority: tool.state === "result"
+        authority: tool.state === "completed"
           ? EVIDENCE_AUTHORITY.INDEPENDENTLY_VERIFIED
           : EVIDENCE_AUTHORITY.CLAIM,
         task_id,
@@ -105,7 +109,7 @@ export function normalizePromptResponse({
         attempt_id,
         provider_session_id,
         payload: {
-          tool_name: tool.toolName,
+          tool_name: tool.tool_name,
           tool_state: tool.state,
           args: tool.args,
           result: tool.result,
@@ -233,6 +237,25 @@ export function normalizeFailure({
       provider_session_id,
       payload: { failure_class, disposition, error_message: msg },
     }),
+  };
+}
+
+function normalizeLegacyToolPart(tool) {
+  if (!tool) return null;
+  return {
+    tool_name: tool.toolName,
+    state: tool.state === "result" ? "completed" : tool.state,
+    args: tool.args,
+    result: tool.result,
+  };
+}
+
+function normalizeSdkToolPart(part) {
+  return {
+    tool_name: part.tool,
+    state: part.state?.status,
+    args: part.state?.input,
+    result: part.state?.output ?? part.state?.error,
   };
 }
 

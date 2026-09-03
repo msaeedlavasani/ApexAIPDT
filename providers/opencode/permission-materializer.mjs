@@ -124,22 +124,85 @@ function constructBashRules(envelope) {
  * AUTO_ALLOW → "allow", ASK → "ask", DENY → "deny"
  */
 function constructPathRules(envelope, operation) {
-  const rules = {};
+  // OpenCode evaluates path rules in insertion order with the last match winning.
+  // Start fail-closed so static project rules cannot leak access outside this envelope.
+  const rules = { "*": "deny" };
+  const operations = operation === "write" ? new Set(["write", "create"]) : new Set([operation]);
 
   for (const p of envelope.permissions) {
     if (p.domain !== DOMAIN.FILESYSTEM) continue;
-    if (p.operation !== operation) continue;
+    if (!operations.has(p.operation)) continue;
 
-    if (p.decision === AUTHORITY_MODE.AUTO_ALLOW) {
-      rules[p.resource_pattern] = "allow";
-    } else if (p.decision === AUTHORITY_MODE.ASK) {
-      rules[p.resource_pattern] = "ask";
-    } else if (p.decision === AUTHORITY_MODE.DENY) {
-      rules[p.resource_pattern] = "deny";
+    const action = p.decision === AUTHORITY_MODE.AUTO_ALLOW
+      ? "allow"
+      : p.decision === AUTHORITY_MODE.ASK
+        ? "ask"
+        : p.decision === AUTHORITY_MODE.DENY
+          ? "deny"
+          : null;
+    if (!action) continue;
+
+    // OpenCode matches paths inside the active worktree relative to that
+    // worktree, while external-directory checks use canonical absolute paths.
+    // Retain the canonical envelope pattern for audit/compatibility and add
+    // the native internal form; never broaden the external boundary.
+    const nativePattern = operation === "external_dir"
+      ? p.resource_pattern
+      : toNativePathPattern(p.resource_pattern, envelope.workspace);
+    const patterns = [...new Set([
+      p.resource_pattern,
+      nativePattern,
+    ])];
+    for (const sourcePattern of patterns) {
+      for (const pattern of expandPathPattern(sourcePattern)) {
+        rules[pattern] = action;
+      }
+    }
+  }
+
+  // Keep known secret-bearing file shapes denied after the repository allow.
+  // Include both native internal forms and absolute forms for provider paths
+  // that are evaluated outside the active worktree.
+  if ((operation === "read" || operation === "write") && envelope.workspace) {
+    for (const pattern of sensitivePathPatterns(envelope.workspace)) {
+      rules[pattern] = "deny";
     }
   }
 
   return rules;
+}
+
+function toNativePathPattern(pattern, workspace) {
+  if (!workspace) return pattern;
+  const normalizedWorkspace = workspace.replace(/[\\/]+$/, "");
+  if (pattern === `${normalizedWorkspace}/**`) return "**";
+  if (pattern.startsWith(`${normalizedWorkspace}/`)) {
+    return pattern.slice(normalizedWorkspace.length + 1);
+  }
+  return pattern;
+}
+
+function expandPathPattern(pattern) {
+  if (!pattern.endsWith("/**")) return [pattern];
+  const base = pattern.slice(0, -3);
+  // Keep the canonical /** rule and add explicit direct/nested forms. The
+  // unique forms remain after a static config's catch-all during deep merge.
+  return [pattern, `${base}/*`, `${base}/**/*`];
+}
+
+function sensitivePathPatterns(workspace) {
+  return [
+    ".env*",
+    "**/.env*",
+    "**/*.pem",
+    "**/*.key",
+    "**/*credentials*",
+    `${workspace}/.env*`,
+    `${workspace}/**/.env*`,
+    `${workspace}/**/*.pem`,
+    `${workspace}/**/*.key`,
+    `${workspace}/**/*credentials*`,
+  ];
 }
 
 /**
