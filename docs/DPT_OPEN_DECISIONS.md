@@ -219,6 +219,34 @@ Decide when/how the two-way DPT API moves from free contribution/data enrichment
 
 Define the actual project-side packaging and deployment mechanism for the Front Agent/Connector and any local DPT boundary. Select the persistence model for Plans, Task DAGs, Work Orders, Attempts, Artifacts, Results, Verification, Decisions, Escalations, policy snapshots, and audit history, including recovery and consistency guarantees.
 
+## Execution-control decision status (DPT-RECON-003 reconciliation)
+
+Appendix added by DPT-RECON-003. The numbered items above are the canonical
+living backlog. The execution-control register (OD codes traced to the
+DPT-RECON-001 audit) is reconciled here. Status semantics:
+
+- **BOUND** — the framework contract is now explicit (`docs/DPT_TASK_SYSTEM.md`,
+  ADR-027); the implementation decision remains OPEN pending Foundation work
+  and real-project evidence. BOUND does not falsely close implementation
+  decisions.
+- **OPEN** — genuinely unresolved; unchanged.
+
+| ID | Decision | Status after DPT-RECON-003 |
+|----|----------|---------------------------|
+| OD-001 | Task Passport schema and lifecycle | BOUND at contract level; runtime lifecycle OPEN |
+| OD-002 | Work Order contract formalization | BOUND at contract level; serialization/transport OPEN |
+| OD-003 | Delta relationship to Work Order | BOUND at contract level; storage mechanism OPEN |
+| OD-004 | Task DAG scheduling algorithm | READY rule BOUND (deterministic); scheduling algorithm OPEN |
+| OD-005 | Runtime authority policy evaluation mechanism | BOUND: materialize-before-execute + preflight; mechanism OPEN |
+| OD-006 | Runtime intent intake format | OPEN |
+| OD-007 | Batch scheduling and subagent delegation | Delegation contract BOUND; batch scheduling OPEN |
+| OD-008 | Provider-neutral orchestrator runtime transport | OPEN |
+| OD-009 | Persistent project memory schema | OPEN |
+| OD-010 | Workflow state management mechanism | Lifecycle states BOUND; mechanism OPEN |
+| OD-011 | Quality-gate execution mechanism | Gate semantics preserved; execution mechanism OPEN |
+| OD-012 | Human approval interface | Human Gate semantics BOUND; approval interface OPEN |
+| OD-013–OD-020 | Non-execution-control decisions | OPEN (outside DPT-RECON-003 scope) |
+
 ## Explicit non-goals until architecture is settled
 
 Do not prematurely freeze:

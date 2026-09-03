@@ -293,3 +293,18 @@ Resources may form a hierarchy so a claim on a parent, child, subtree, or logica
 Runtime discovery may propose claim expansion, but only the Execution Orchestrator may approve it after re-evaluating compatibility, Authority Policy, sensitivity, and any required approval gate. An executor must not silently widen claim scope. Resource sensitivity is governance input and must be evaluated through the Authority Model rather than treated only as scheduling metadata.
 
 The conceptual Resource and ResourceClaim fields and lifecycle states are defined in the Execution Control Model. The exact V1 type set, compatibility matrix, granularity, inference, conflict-domain generation, snapshot semantics, external adapters, and lock/lease mechanism remain open decisions.
+
+## ADR-027 — Durable task state is the canonical source of execution truth
+
+**Status:** Accepted — DPT-RECON-003
+
+Task definition and execution state belong in durable repository state (the canonical Task Record surface, `docs/TASKS.md`), not in runtime prompts or ephemeral sessions. Runtime prompts and Work Orders are projections of durable records; a Delta contains only state changes; reconstructing current state applies the ordered Delta chain to the base record.
+
+Canonical relationships (Task Record → Task Passport → Work Order → Attempt → Delta → Result/Handoff; evaluated under Context Receipt, Permission Envelope, Verification, and an explicit Decision; closed only with a Canonical Task Artifact and Closure Evidence) and the deterministic READY rule, mandatory materialize-before-execute authority pipeline, subagent delegation ceiling, retry/reroute/blocker semantics, and Human Gate model are defined in `docs/DPT_TASK_SYSTEM.md`.
+
+Consequences:
+
+- a task must be reconstructable from the repository without replaying a conversation or prompt;
+- no agent execution occurs before authority materialization into the DPT-controlled runtime/session;
+- the DPT-RECON-003 contract binds the framework at contract level only — runtime, scheduler, and persistence implementation remain open Foundation work pending real-project evidence;
+- this decision does not close the open implementation decisions referenced by the contract.
