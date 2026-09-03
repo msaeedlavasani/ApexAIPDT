@@ -1,4 +1,4 @@
-# APDT Roadmap
+# DPT Roadmap
 
 ## V0 — Operating model
 
@@ -14,12 +14,12 @@
 - [x] Human/AI boundary
 - [x] Workflow model
 - [x] Project templates
-- [x] Reference BaziGB validation profile
+- [x] Reference validation profile
 
 ## V0.1 — Real project validation
 
-- [ ] Install APDT artifacts into BaziGB
-- [ ] Generate BaziGB project constitution
+- [ ] Install DPT artifacts into reference project
+- [ ] Generate project constitution
 - [ ] Generate context map from actual repository
 - [ ] Build verified component registry
 - [ ] Build asset registry

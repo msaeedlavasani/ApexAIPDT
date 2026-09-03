@@ -1,0 +1,9 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# DPT ephemeral runtime state
+providers/opencode/.dpt-*/

@@ -1,0 +1,10 @@
+{
+  "name": "dpt-opencode-provider-adapter",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "DPT OpenCode Provider Adapter — minimal control spike",
+  "dependencies": {
+    "@opencode-ai/sdk": "^1.18.25"
+  }
+}

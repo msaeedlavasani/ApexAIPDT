@@ -1,6 +1,6 @@
 # Decision System
 
-APDT separates facts, inferences, recommendations, decisions, and approvals.
+DPT separates facts, inferences, recommendations, decisions, and approvals.
 
 ## Decision classes
 

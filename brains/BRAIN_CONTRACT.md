@@ -1,6 +1,6 @@
 # Brain Contract
 
-Every APDT brain must define the following sections.
+Every DPT brain must define the following sections.
 
 ## Identity
 

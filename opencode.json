@@ -1,0 +1,63 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "nara": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "NaraRouter",
+      "options": {
+        "baseURL": "https://router.bynara.id/v1",
+        "apiKey": "{env:NARAROUTER_API_KEY}"
+      },
+      "models": {
+        "kimi-k2.7-code-alibaba": {
+          "name": "Kimi K2.7 Code Alibaba"
+        },
+        "gpt-5.6-luna": {
+          "name": "GPT-5.6 Luna"
+        },
+        "deepseek-v4-flash": {
+          "name": "DeepSeek V4 Flash"
+        },
+        "glm-5.3-flash-free": {
+          "name": "GLM 5.3 Flash Free"
+        }
+      }
+    }
+  },
+  "permission": {
+    "external_directory": {
+      "/Users/msl/Apex-Orchestrator-Lab/**": "allow",
+      "/tmp/dpt-*/**": "allow",
+      "/Users/msl/.config/opencode/**": "allow"
+    },
+    "read": {
+      "/Users/msl/Documents/GitHub/ApexAIPDT/**": "allow",
+      "/Users/msl/.config/opencode/**": "allow",
+      "/Users/msl/Apex-Orchestrator-Lab/**": "allow",
+      "/tmp/dpt-*/**": "allow"
+    },
+    "edit": {
+      "/Users/msl/Documents/GitHub/ApexAIPDT/**": "allow",
+      "/tmp/dpt-*/**": "allow"
+    },
+    "bash": {
+      "*": "ask",
+      "node *": "allow",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git show*": "allow",
+      "git rev-parse*": "allow",
+      "git push --force*": "deny",
+      "git reset --hard*": "deny",
+      "rm -rf*": "deny"
+    },
+    "task": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "todowrite": "allow",
+    "webfetch": "ask",
+    "websearch": "ask"
+  }
+}
