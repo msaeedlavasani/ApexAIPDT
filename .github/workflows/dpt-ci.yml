@@ -308,3 +308,65 @@ jobs:
           echo "=== Main Branch Push Verification ==="
           echo "Direct push to main is restricted by branch protection rules."
           echo "Ensure PRs target main only after all checks PASS."
+
+  update-status:
+    name: Update Execution Status
+    needs: [repository-integrity, canonical-governance, schemas, deterministic-runtime, provider-contracts, orchestrator-smoke]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Update .dpt/status.json
+        run: |
+          echo "=== Updating Execution Status ==="
+          mkdir -p .dpt
+          CONCLUSION="${{ needs.schemas.conclusion }}"
+          for job in repository-integrity canonical-governance deterministic-runtime provider-contracts orchestrator-smoke; do
+            if [[ "${{ needs[$job].conclusion }}" == "failure" ]]; then
+              CONCLUSION="failure"
+              break
+            fi
+          done
+          cat > .dpt/status.json << JSONEOF
+          {
+            "version": 1,
+            "last_updated": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "execution": {
+              "current_task": null,
+              "current_step": null,
+              "completed_steps": [],
+              "attempts": 0,
+              "last_result": null,
+              "last_result_time": null
+            },
+            "queue": {
+              "next_tasks": []
+            },
+            "blocked": {
+              "items": []
+            },
+            "ci": {
+              "last_run_id": ${{ github.run_id }},
+              "last_conclusion": "$CONCLUSION",
+              "last_sha": "${{ github.sha }}",
+              "last_run_time": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            },
+            "state_revision": 19,
+            "summary": {
+              "total_tasks": 8,
+              "open_tasks": 6,
+              "closed_tasks": 2,
+              "progress_pct": 25
+            }
+          }
+          JSONEOF
+          echo "✓ .dpt/status.json updated (conclusion: $CONCLUSION)"
+      
+      - name: Commit status update
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "ci: update execution status (DPT-CI-001)"
+          file_pattern: ".dpt/status.json"
+          skip_fetch: true
