@@ -554,6 +554,29 @@ notes: |
   - Tests: providers/goose/test-pattern-matching.mjs (58/58 passing)
 [/DELTA]
 
+[DELTA]
+task_id: DPT-FOUNDATION-039
+base_state_revision: 23
+changes: status=RUNNING→CLOSED, implementation_status=IMPLEMENTATION_COMPLETE, state_revision=23→24
+applied_by: DPT-LIVERUN-003 batch merge
+artefacts: docs/adr/ADR-054-failure-pattern-detection.md, docs/schemas/failure-pattern.schema.json, providers/goose/pattern-matching.mjs, providers/goose/test-pattern-matching.mjs
+notes: |
+  DPT-FOUNDATION-039 implementation completed and merged via PR #9.
+  
+  Batch lifecycle satisfied:
+  - SYNCED MAIN ✓ (4750bd9a)
+  - CREATE BATCH BRANCH ✓ (feat/foundation-039-failure-pattern-detection)
+  - EXECUTE BATCH ✓
+  - VALIDATE BATCH ✓ (58/58 tests passing)
+  - PUSH BRANCH ✓
+  - REMOTE READBACK ✓
+  - OPEN PR TO MAIN ✓ (PR #9)
+  - PR CI / INTEGRATION VALIDATION ✓ (all checks pass)
+  - MERGE ✓ (f8269d2)
+  - SYNC LOCAL MAIN FROM ORIGIN ✓
+  - POST-MERGE READBACK ✓ (working tree clean)
+[/DELTA]
+
 ## Repository Durability Checkpoint
 
 [DELTA]
