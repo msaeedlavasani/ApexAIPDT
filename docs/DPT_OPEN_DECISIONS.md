@@ -466,3 +466,53 @@ Do not prematurely freeze:
 - credit pricing;
 - a runtime, database schema, queue, lock service, or agent-provider integration;
 - execution outside explicit Authority Policy.
+## V2 Learning System Open Decisions (Phase 5 Architecture)
+
+These decisions were identified during Phase 5 architecture review.
+Resolved decisions are recorded here; unresolved continue as OPEN.
+
+### OD-T5-002 — Token/Context Efficiency
+
+**Parent:** T5-002 Architecture (docs/validation/Retired/T5-002-TOKEN-CONTEXT-EFFICIENCY-ARCHITECTURE.md)  
+**Implementation Task:** DPT-FOUNDATION-038
+
+| ID | Decision | Selection | Status |
+|----|----------|-----------|--------|
+| OD-T5-002-A | Per-provider vs per-model efficiency measurement | Per-provider (abstract) — per-model granularity deferred to V3 evidence | ACCEPTED 2026-09-06 |
+| OD-T5-002-B | Overflow risk notification threshold | Static 80% utilization — conservative default; dynamic adaptive threshold deferrable pending real-project evidence | ACCEPTED 2026-09-06 |
+| OD-T5-002-C | Multi-turn vs single-shot attempt counting | Count each turn separately — preserves granular telemetry; aggregation for reporting is derived | ACCEPTED 2026-09-06 |
+
+**Resolution Rationale:**
+- OD-T5-002-A: Per-provider abstraction aligns with provider-neutral architecture; per-model requires vendor-specific integration deferred to Foundation work.
+- OD-T5-002-B: Static 80% threshold is conservative, safe default. Dynamic adaptation can be added later once overflow patterns are observed in production.
+- OD-T5-002-C: Per-turn counting provides maximum telemetry fidelity; derived aggregations are trivial from raw data.
+
+---
+
+### OD-T5-003 — Failure Pattern Detection
+
+**Parent:** T5-003 Architecture (docs/validation/Retired/T5-003-FAILURE-PATTERN-DETECTION-ARCHITECTURE.md)  
+**Implementation Task:** DPT-FOUNDATION-039
+
+| ID | Decision | Selection | Status |
+|----|----------|-----------|--------|
+| OD-T5-003-A | Real-time vs batch pattern detection | Batch — periodic analysis aligns with learning system cadence | DEFERRED to implementation |
+| OD-T5-003-B | Evidence threshold for pattern classification | Minimum 3 occurrences within 24h window — balances false positive/negative rates | ACCEPTED 2026-09-06 |
+| OD-T5-003-C | Cross-project pattern sharing scope | Anonymized aggregate only — no raw failure data shared between projects | ACCEPTED 2026-09-06 |
+
+---
+
+### OD-T5-005 — Cross-Project Pattern Extraction
+
+**Parent:** T5-005 Architecture (docs/validation/Retired/T5-005-CROSS-PROJECT-PATTERN-EXTRACTION.md)  
+**Implementation Task:** DPT-FOUNDATION-041
+
+| ID | Decision | Selection | Status |
+|----|----------|-----------|--------|
+| OD-T5-005-A | Minimum contribution threshold for cross-project patterns | 5+ projects with matching pattern — ensures statistical significance | ACCEPTED 2026-09-06 |
+| OD-T5-005-B | Handling conflicting patterns across projects | Weighted voting by project authority level — higher-authority projects weight more | DEFERRED to implementation |
+| OD-T5-005-C | Contributor credit assignment | Automatic attribution based on pattern source project — no manual credit needed | ACCEPTED 2026-09-06 |
+
+---
+
+*This appendix was added by DPT-LIVERUN-001 execution.*

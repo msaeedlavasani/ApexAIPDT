@@ -287,6 +287,26 @@ notes: |
   DPT-FOUNDATION-037 remains READY
 [/DELTA]
 
+[DELTA]
+task_id: DPT-FOUNDATION-038
+base_state_revision: 1
+changes: status=BACKLOG→READY, readiness=NOT_READY(OD-T5-002-B unresolved)→READY(OD-T5-002-B resolved: static 80% threshold), passport_revision=0→1, state_revision=1→2
+applied_by: DPT-LIVERUN-001 OD resolution
+artefacts: docs/DPT_OPEN_DECISIONS.md (V2 appendix), docs/adr/ADR-053-token-efficiency.md
+notes: |
+  Resolved OD-T5-002-B overflow threshold blocker for DPT-FOUNDATION-038.
+  
+  Resolution: Static 80% utilization threshold for overflow risk notification.
+  Rationale: Conservative safe default; dynamic adaptive threshold deferrable
+  pending real-project evidence. Per OD-T5-002-A: per-provider abstraction.
+  Per OD-T5-002-C: per-turn counting for telemetry fidelity.
+  
+  All TASK_LOCAL_BLOCKERs for Phase 6 now resolved:
+  - OD-T5-002-B → ACCEPTED (DPT-FOUNDATION-038 READY)
+  - OD-T5-003-B → ACCEPTED (DPT-FOUNDATION-039 blocked by sequential dependency)
+  - OD-T5-005-A → ACCEPTED (DPT-FOUNDATION-041 blocked by sequential dependency)
+[/DELTA]
+
 ---
 
 ## Phase 6 Tasks (V2 Learning System Implementation)
@@ -329,9 +349,9 @@ auto_continue: YES
 |---|---|
 | task_id | DPT-FOUNDATION-038 |
 | title | V2 Learning System: Token/Context Efficiency |
-| status | BACKLOG |
+| status | READY |
 | dependencies | DPT-FOUNDATION-037 |
-| readiness | NOT_READY — OD-T5-002-B unresolved (overflow threshold) |
+| readiness | READY — OD-T5-002-B resolved (static 80% threshold); all blockers cleared |
 | task_class | implementation |
 | auto_continue | YES |
 
@@ -339,16 +359,16 @@ auto_continue: YES
 [TASK]
 task_id: DPT-FOUNDATION-038
 title: V2 Learning System: Token/Context Efficiency
-objective: Implement token/context efficiency measurement and optimization for V2 learning system.
-status: BACKLOG
+objective: Implement token/context efficiency measurement and optimization for V2 learning system. Measures context utilization, overflow events, and routing efficiency via projection layer over audit trail.
+status: READY
 dependencies: DPT-FOUNDATION-037
-readiness: NOT_READY
+readiness: READY (OD-T5-002-B resolved: static 80% overflow threshold accepted)
 task_class: implementation
-required_capabilities: repository.read, docs.write
-denied_capabilities: git.push, git.merge, production.*
+required_capabilities: repository.read, docs.write, schema.definition
+denied_capabilities: git.push, git.merge, production.*, authority.self_expansion
 human_gate_state: NONE
-passport_revision: 0
-state_revision: 1
+passport_revision: 1
+state_revision: 2
 next_task: DPT-FOUNDATION-039
 auto_continue: YES
 [/TASK]
