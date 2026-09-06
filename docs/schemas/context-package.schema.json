@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Minimum-Sufficient Context Package Schema",
+  "description": "Schema for bounded context package extracted and validated against privacy boundaries",
+  "type": "object",
+  "required": ["package_id", "source_scout", "extraction_status"],
+  "properties": {
+    "package_id": {
+      "type": "string",
+      "description": "Unique identifier for this context package",
+      "pattern": "^CTX-[A-Z0-9]{8,}$"
+    },
+    "source_scout": {
+      "type": "string",
+      "description": "Scout ID that discovered the source project"
+    },
+    "extraction_status": {
+      "type": "string",
+      "enum": ["EXTRACTING", "EXTRACTED", "VALIDATED", "ERROR"]
+    },
+    "context": {
+      "type": "object",
+      "description": "Bounded context data",
+      "properties": {
+        "project_scope": { "type": "string" },
+        "relevant_artifacts": { "type": "array", "items": { "type": "string" } },
+        "privacy_classification": { "type": "string", "enum": ["PUBLIC", "INTERNAL", "CONFIDENTIAL"] },
+        "extracted_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "description": "Privacy boundary validation results",
+      "properties": {
+        "passed_privacy_check": { "type": "boolean" },
+        "boundaries_verified": { "type": "array", "items": { "type": "string" } },
+        "validated_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}
