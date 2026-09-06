@@ -1,0 +1,247 @@
+{
+  "schema_version": "v0.3",
+  "generated_at": "2026-09-05T17:07:40.627Z",
+  "components": [
+    {
+      "name": "contract",
+      "path": "providers/contract",
+      "files": [
+        "capability-descriptor.mjs",
+        "capability-gateway.mjs",
+        "conformance-suite.mjs",
+        "phase-admission-enforcer.mjs",
+        "provider-contract.mjs"
+      ],
+      "file_count": 5,
+      "category": "provider"
+    },
+    {
+      "name": "goose",
+      "path": "providers/goose",
+      "files": [
+        "approval-ui-runtime.mjs",
+        "dag-calculator.mjs",
+        "dpt-bootstrap.mjs",
+        "dpt-extension.mjs",
+        "dpt-orchestrator-harness.mjs",
+        "freeze-decisions-runtime.mjs",
+        "goose-adapter.mjs",
+        "memory-runtime.mjs",
+        "orchestrator-core.mjs",
+        "qualitygate-runtime.mjs",
+        "test-admission-001.mjs",
+        "test-admission-002.mjs",
+        "test-auto-continue-002.mjs",
+        "test-auto-continue-003.mjs",
+        "test-auto-continue-harness.mjs",
+        "test-auto-continue-invariant.mjs",
+        "test-foundation-001-cleanup.mjs",
+        "test-foundation-003.mjs",
+        "test-foundation-004.mjs",
+        "test-foundation-005.mjs",
+        "test-foundation-006.mjs",
+        "test-foundation-007.mjs",
+        "test-foundation-008.mjs",
+        "test-foundation-009.mjs",
+        "test-foundation-010.mjs",
+        "test-foundation-011.mjs",
+        "test-foundation-012.mjs",
+        "test-foundation-013.mjs",
+        "test-foundation-014.mjs",
+        "test-foundation-015.mjs",
+        "test-foundation-016.mjs",
+        "test-foundation-017.mjs",
+        "test-foundation-018.mjs",
+        "test-foundation-019.mjs",
+        "test-foundation-020.mjs",
+        "test-foundation-021.mjs",
+        "test-foundation-022.mjs",
+        "test-foundation-023.mjs",
+        "test-foundation-024.mjs",
+        "test-foundation-025.mjs",
+        "test-foundation-026.mjs",
+        "test-foundation-027.mjs",
+        "test-foundation-028.mjs",
+        "test-foundation-029.mjs",
+        "test-goose-acceptance.mjs",
+        "test-goose-concurrency.mjs",
+        "test-goose-e2e.mjs",
+        "test-goose-enforcement.mjs",
+        "test-lifecycle-closure-invariant.mjs",
+        "test-lifecycle-precedence.mjs",
+        "test-release-001.mjs",
+        "test-v1-runtime-023.mjs",
+        "test-v1-runtime-024.mjs",
+        "test-v1-runtime-025.mjs",
+        "test-v1-runtime-026.mjs",
+        "test-v1-runtime-027.mjs",
+        "test-v1-runtime-028.mjs",
+        "test-v1-runtime-029.mjs",
+        "test-v1-runtime-030.mjs",
+        "test-v1-runtime-031.mjs",
+        "workflow-runtime.mjs"
+      ],
+      "file_count": 61,
+      "category": "provider"
+    },
+    {
+      "name": "opencode",
+      "path": "providers/opencode",
+      "files": [
+        "adapter-spike.mjs",
+        "context-receipt.mjs",
+        "dpt-mcp-client.mjs",
+        "dpt-mcp-server.mjs",
+        "event-bridge.mjs",
+        "event-model.mjs",
+        "execute-foundation-001-schemas.mjs",
+        "launch-recon-003-diagnostic.mjs",
+        "opencode-adapter.mjs",
+        "permission-audit.mjs",
+        "permission-envelope.mjs",
+        "permission-materializer.mjs",
+        "rehydration-record.mjs",
+        "sdk-normalizer.mjs",
+        "test-e2e-integration.mjs",
+        "test-evidence-bridge.mjs",
+        "test-foundation-001-minimal-write.mjs",
+        "test-mcp-server.mjs",
+        "test-permissions.mjs",
+        "test-rehydration.mjs"
+      ],
+      "file_count": 20,
+      "category": "provider"
+    },
+    {
+      "name": "reference",
+      "path": "providers/reference",
+      "files": [
+        "reference-adapter.mjs"
+      ],
+      "file_count": 1,
+      "category": "provider"
+    },
+    {
+      "name": "APEX_AI_DPT_CONSTITUTION",
+      "path": "docs/docs",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "DPT_BRAIN_AND_UNIVERSAL_COGNITION",
+      "path": "docs/docs/architecture",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "agent-adapters-spec",
+      "path": "docs/docs/bootstrap/agent-adapters",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "context-map",
+      "path": "docs/docs/bootstrap/context-map-generator",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "freeze-decisions",
+      "path": "docs/docs/bootstrap/freeze-decisions",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "approval-interface-spec",
+      "path": "docs/docs/bootstrap/human-approval-interface",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "orchestrator-spec",
+      "path": "docs/docs/bootstrap/orchestrator-runtime",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "memory-spec",
+      "path": "docs/docs/bootstrap/persistent-memory",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "project-scaffold",
+      "path": "docs/docs/bootstrap/project-initializer",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "scan-results",
+      "path": "docs/docs/bootstrap/project-scanner",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "quality-gates-spec",
+      "path": "docs/docs/bootstrap/quality-gates",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "component-registry",
+      "path": "docs/docs/bootstrap/registry-generator",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "team-assembly-recommendations",
+      "path": "docs/docs/bootstrap/team-assembly-assistant",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "workflow-state-spec",
+      "path": "docs/docs/bootstrap/workflow-state",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "AUTHORITY_PERMISSION_MODEL",
+      "path": "docs/docs/governance",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "FAILURE_TAXONOMY_MAPPING",
+      "path": "docs/docs/reconciliation",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "README",
+      "path": "docs/docs/schemas",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT",
+      "path": "docs/docs/validation",
+      "category": "governance",
+      "file_count": 1
+    },
+    {
+      "name": "DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT",
+      "path": "docs/docs/validation/Retired",
+      "category": "governance",
+      "file_count": 1
+    }
+  ],
+  "categories": {
+    "provider": [
+      "contract",
+      "goose",
+      "opencode",
+      "reference"
+    ]
+  }
+}

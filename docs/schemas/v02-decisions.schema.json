@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "v02-decisions.schema.json",
+  "title": "DPT Decisions Schema",
+  "description": "Schema for DPT decision definitions (architecture decisions, ADRs)",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "title",
+    "status",
+    "date"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string",
+      "pattern": "^ADR-[0-9]+$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PROPOSED",
+        "ACCEPTED",
+        "SUPERSEDED",
+        "REJECTED"
+      ]
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "context": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "consequences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

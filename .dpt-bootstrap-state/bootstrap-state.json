@@ -1,0 +1,1102 @@
+{
+  "timestamp": "2026-09-05T17:20:47.623Z",
+  "repo_root": "/Users/msl/Documents/GitHub/ApexAIPDT",
+  "phases": {
+    "governance_rehydration": {
+      "timestamp": "2026-09-05T17:20:47.623Z",
+      "phase": "GOVERNANCE_REHYDRATED",
+      "checks": {
+        "APEX_AI_DPT_CONSTITUTION.md": true,
+        "APEX_AI_DPT_VISION.md": true,
+        "APEX_AI_DPT_TERMINOLOGY.md": true,
+        "DPT_REPORT_LIFECYCLE_GOVERNANCE.md": true,
+        "DPT_OPEN_DECISIONS.md": true,
+        "lifecycle_governance_acceptance": true
+      },
+      "goVERNANCE_OK": true
+    },
+    "authority_materialization": {
+      "timestamp": "2026-09-05T17:20:47.625Z",
+      "phase": "AUTHORIZED",
+      "checks": {
+        "constitution_exists": true,
+        "component_first_principle": true,
+        "no_self_expansion": true,
+        "workspace_bound": "/Users/msl/Documents/GitHub/ApexAIPDT"
+      },
+      "authorized": true
+    },
+    "inbox_reconciliation": {
+      "timestamp": "2026-09-05T17:20:47.626Z",
+      "phase": "INBOX_RECONCILED",
+      "reconciled": [],
+      "misplaced": [
+        {
+          "file": "DPT-BRAIN-UNIVERSAL_COGNITION_DOCS_REPORT.md",
+          "action": "relocated_to_active_inbox"
+        },
+        {
+          "file": "DPT-DECISION-CANONICALIZATION_REPORT.md",
+          "action": "relocated_to_active_inbox"
+        }
+      ],
+      "pending_review": [
+        "DPT-DISPOSITION-DAG-REPAIR_REPORT.md"
+      ],
+      "retired_eligible": []
+    },
+    "dag_recalculation": {
+      "timestamp": "2026-09-05T17:20:47.655Z",
+      "phase": "DAG_RECALCULATION",
+      "total_tasks": 44,
+      "reconstructed_from_delta": 3,
+      "closed_tasks": 39,
+      "backlog_tasks": 5,
+      "ready_tasks": 1,
+      "readiness_map": [
+        {
+          "id": "DPT-RECON-003",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-001",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-002",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-003",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-004",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-005",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-006",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-007",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-AUTO-CONTINUE-001",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-008",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-009",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-001-CLEANUP",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-010",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-011",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-012",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-013",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-014",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-015",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-016",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-017",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-AUTO-CONTINUE-002",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-RELEASE-001",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-018",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-019",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-020",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-021",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-022",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-ADMISSION-001",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-023",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-024",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-025",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-026",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-027",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-028",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-029",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-RECON-V1-DEPENDENCY",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-037",
+          "ready": true,
+          "reason": "All dependencies met"
+        },
+        {
+          "id": "DPT-FOUNDATION-038",
+          "ready": false,
+          "reason": "Dependencies not met"
+        },
+        {
+          "id": "DPT-FOUNDATION-039",
+          "ready": false,
+          "reason": "Dependencies not met"
+        },
+        {
+          "id": "DPT-FOUNDATION-040",
+          "ready": false,
+          "reason": "Dependencies not met"
+        },
+        {
+          "id": "DPT-FOUNDATION-041",
+          "ready": false,
+          "reason": "Dependencies not met"
+        },
+        {
+          "id": "DPT-AUTO-CONTINUE-003",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-030",
+          "ready": false,
+          "reason": "Already completed"
+        },
+        {
+          "id": "DPT-FOUNDATION-031",
+          "ready": false,
+          "reason": "Already completed"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "DPT-RECON-003",
+          "title": "Canonical Task System + Authority-Aware Execution Contract",
+          "objective": "Make durable repository task state the canonical source of execution truth; define Task Record / Passport / Work Order / Delta / Context Receipt / Permission Envelope / Result / Artifact relationships, lifecycle, READY rule, authority pipeline, delegation, retry/reroute, Human Gate, and autonomous-advancement semantics; canonicalize this file as the durable surface.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-RECON-002"
+          ],
+          "readiness": "READY",
+          "task_class": "framework_canonicalization",
+          "required_capabilities": "repository.read, repository.list, repository.search, docs.write, authority.derive, validation.repo_local",
+          "denied_capabilities": "git.push, git.merge, production.*, secrets.*, authority.self_expansion, permission.broadening",
+          "delegated_authority": "DPT-RECON-003 authority envelope (repo-local docs + validation + local checkpoint)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": false,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-001",
+          "title": "V0.2 machine-readable task-system and authority schema",
+          "objective": "Serialize the DPT-RECON-003 contract (records, lifecycle, READY, authority pipeline) into machine-readable schema artifacts and manifests, per ROADMAP V0.2, after Owner review of the DPT-RECON-003 baseline.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-RECON-003"
+          ],
+          "readiness": "READY (dependencies CLOSED, owner review complete, authority derived, preflight PASS)",
+          "task_class": "schema_serialization",
+          "required_capabilities": "repository.read, docs.write, schema.definition",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-001 authority envelope (repo-local docs + schema artifacts)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 6,
+          "auto_continue": false,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-002",
+          "title": "Provider-neutral orchestrator runtime (V1)",
+          "objective": "Implement the durable task-system projection and authority pipeline defined by DPT-RECON-003 as a replaceable runtime, per ROADMAP V1, only after the schema layer and real-project evidence exist.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-001"
+          ],
+          "readiness": "READY",
+          "task_class": "runtime_implementation",
+          "required_capabilities": "repository.read, docs.write, provider.integration",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-002 authority envelope (repo-local docs + validation + runtime tests)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 5,
+          "auto_continue": false,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-003",
+          "title": "Real-project validation (V0.1)",
+          "objective": "Validate that DPT artifacts (canonical task system, governance, schemas, runtime adapter) are coherent and functional when installed into an actual project context. This is the first V0.1 real-project validation step per ROADMAP.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-002",
+            "DPT-FOUNDATION-001-CLEANUP"
+          ],
+          "readiness": "READY",
+          "task_class": "validation",
+          "required_capabilities": "repository.read, repository.list, docs.write, validation.repo_local",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-003 authority envelope (repo-local validation + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 3,
+          "auto_continue": false,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-004",
+          "title": "Build verified component registry for the Apex AI DPT project",
+          "objective": "Catalog the project's structural components (providers, schemas, governance docs, adapters) into a verified component registry with dependency relationships, responsibilities, and conformance status. This validates DPT's component model on a real project per ROADMAP V0.1.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-003"
+          ],
+          "readiness": "READY",
+          "task_class": "validation",
+          "required_capabilities": "repository.read, repository.list, repository.search, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-004 authority envelope (repo-local read + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 3,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-005",
+          "title": "Generate and validate project constitution for Apex AI DPT",
+          "objective": "Validate the existing project constitution (APEX_AI_DPT_CONSTITUTION.md) against the DPT constitutional model, identify any gaps or inconsistencies, and produce a validated constitution report. This is the V0.1 \"generate project constitution\" step per ROADMAP.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-004"
+          ],
+          "readiness": "READY",
+          "task_class": "validation",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-005 authority envelope (repo-local read + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 3,
+          "auto_continue": false,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-006",
+          "title": "Generate context map from actual repository",
+          "objective": "Generate a structured context map of the Apex AI DPT repository that captures the project's architecture, component relationships, capability boundaries, and decision dependencies. This validates DPT's context system on a real project per ROADMAP V0.1.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-005"
+          ],
+          "readiness": "READY",
+          "task_class": "validation",
+          "required_capabilities": "repository.read, repository.list, repository.search, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-006 authority envelope (repo-local read + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 3,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-007",
+          "title": "Build verified asset registry for the Apex AI DPT project",
+          "objective": "Catalog the project's reusable assets (templates, workflows, contracts, schemas, governance docs) into a verified asset registry with usage relationships and conformance status. This validates DPT's asset model on a real project per ROADMAP V0.1.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-006"
+          ],
+          "readiness": "READY",
+          "task_class": "validation",
+          "required_capabilities": "repository.read, repository.list, repository.search, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-007 authority envelope (repo-local read + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 2,
+          "state_revision": 6,
+          "auto_continue": false,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-AUTO-CONTINUE-001",
+          "title": "Post-Task Auto-Continue Regression Test",
+          "objective": "Prove that after a task reaches VALID_TERMINAL_BOUNDARY, the orchestrator automatically transitions to the next READY task without Owner intervention. Invariant: VALID_TERMINAL_BOUNDARY → DURABLE_COMMIT → DAG_RECALCULATION → NEXT_ADMISSION → AUTO_EXECUTION.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-007"
+          ],
+          "readiness": "READY",
+          "task_class": "regression",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-AUTO-CONTINUE-001 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-008",
+          "title": "Run small feature autonomy test on Apex AI DPT",
+          "objective": "Execute a bounded, real feature task within the Apex AI DPT project using the DPT runtime (goose adapter with CapabilityGateway enforcement) to validate autonomous execution flow. This is the V0.1 \"run small feature autonomy test\" step per ROADMAP.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-007"
+          ],
+          "readiness": "READY",
+          "task_class": "validation",
+          "required_capabilities": "repository.read, repository.list, repository.search, docs.write, provider.integration",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-008 authority envelope (repo-local read/write + docs.write + provider.integration)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-009",
+          "title": "Run visual change test on Apex AI DPT",
+          "objective": "Validate that visual/structural changes to the DPT project are tracked, validated, and provably consistent. This proves the DPT context system can detect and validate project state changes.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-008"
+          ],
+          "readiness": "READY",
+          "task_class": "validation",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-009 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-001-CLEANUP",
+          "title": "Remove task-specific diagnostic artifacts from DPT-FOUNDATION-001",
+          "objective": "Remove three task-specific diagnostic files created during DPT-FOUNDATION-001's interrupted session: providers/opencode/materialize-dpt-foundation-001.mjs, providers/opencode/enforce-dpt-foundation-001.mjs, providers/opencode/test-foundation-001-enforcement.mjs. These are not required by the generic adapter architecture (ADR-028).",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-001"
+          ],
+          "readiness": "READY",
+          "task_class": "cleanup",
+          "required_capabilities": "repository.read, repository.list",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "bounded cleanup (repo-local file removal only)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": false,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-010",
+          "title": "Run new-game/Catan discovery test",
+          "objective": "Validate DPT's discovery and advisory capabilities by running a new-game/Catan discovery test. This exercises the project initialization workflow, capability assessment, and advisory output on a bounded greenfield scenario per ROADMAP V0.1.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-009"
+          ],
+          "readiness": "READY — DPT-FOUNDATION-009 CLOSED; discovery test bounded",
+          "task_class": "validation",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-010 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 3,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-011",
+          "title": "Measure token/context usage and human interventions",
+          "objective": "Measure and report token/context usage and human intervention counts across all V0.1 executed tasks. This provides empirical evidence for V0.1 success criteria per ROADMAP.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-009"
+          ],
+          "readiness": "READY — DPT-FOUNDATION-009 CLOSED; measurement bounded",
+          "task_class": "measurement",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-011 authority envelope (repo-local read + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 3,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-012",
+          "title": "Validate Execution Orchestrator Task/Work Order/Attempt/Verification flow",
+          "objective": "Validate the Execution Orchestrator Task/Work Order/Attempt/Verification flow on bounded real-project work completed during V0.1. This proves the flow works end-to-end per ROADMAP V0.1.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-009"
+          ],
+          "readiness": "READY — DPT-FOUNDATION-009 CLOSED; flow validation bounded",
+          "task_class": "validation",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-012 authority envelope (repo-local read + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 3,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-013",
+          "title": "Record runtime, transport, persistence, packaging, failure, and human-gate evidence",
+          "objective": "Record runtime, transport, persistence, packaging, failure, and human-gate evidence from all V0.1 executed tasks without freezing implementation choices. This is the final V0.1 evidence compilation step per ROADMAP.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-009"
+          ],
+          "readiness": "READY — DPT-FOUNDATION-009 CLOSED; evidence compilation bounded",
+          "task_class": "evidence",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-013 authority envelope (repo-local read + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 3,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-014",
+          "title": "Define V0.2 schemas for brains, roles, authority, artifacts, decisions, registries, and workflows",
+          "objective": "Define machine-readable JSON Schema artifacts for the V0.2 schema layer, per ROADMAP V0.2. These schemas formalize the contract-level definitions already accepted in ADRs and documentation.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-013"
+          ],
+          "readiness": "NOT_READY — not yet admitted",
+          "task_class": "schema_definition",
+          "required_capabilities": "repository.read, repository.list, docs.write, schema.definition",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-014 authority envelope (repo-local read/write + docs.write + schema.definition)",
+          "human_gate_state": "NONE",
+          "passport_revision": 0,
+          "state_revision": 1,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-015",
+          "title": "Generate manifests from V0.2 schemas",
+          "objective": "Generate machine-readable manifests from the V0.2 schemas defined by DPT-FOUNDATION-014. Manifests provide a consolidated view of the schema layer for tooling and validation.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-014"
+          ],
+          "readiness": "NOT_READY — not yet admitted",
+          "task_class": "schema_generation",
+          "required_capabilities": "repository.read, repository.list, docs.write, schema.definition",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-015 authority envelope (repo-local read/write + docs.write + schema.definition)",
+          "human_gate_state": "NONE",
+          "passport_revision": 0,
+          "state_revision": 1,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-016",
+          "title": "Add deterministic context routing",
+          "objective": "Define and document deterministic context routing rules for V0.2. Context routing determines which project knowledge is surfaced to which agent role based on task type, authority, and component boundaries.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-015"
+          ],
+          "readiness": "NOT_READY — not yet admitted",
+          "task_class": "context_routing",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-016 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 0,
+          "state_revision": 1,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-017",
+          "title": "Add validation/reporting schemas",
+          "objective": "Define validation and reporting schemas for V0.2. These schemas standardize how validation results and reports are structured, enabling automated verification and cross-project comparison.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-016"
+          ],
+          "readiness": "NOT_READY — not yet admitted",
+          "task_class": "schema_definition",
+          "required_capabilities": "repository.read, repository.list, docs.write, schema.definition",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-017 authority envelope (repo-local read/write + docs.write + schema.definition)",
+          "human_gate_state": "NONE",
+          "passport_revision": 0,
+          "state_revision": 1,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-AUTO-CONTINUE-002",
+          "title": "Roadmap Phase Transition Invariant",
+          "objective": "Prove that when a ROADMAP phase is validly complete and the next phase contains only repository-supported, policy-bounded tasks, admission must NOT require Owner intervention. Invariant: ROADMAP_HAS_AUTHORIZED_NEXT_PHASE + CURRENT_PHASE_VALIDLY_COMPLETE + NO_MATERIAL_HUMAN_DECISION_REQUIRED → NEXT_PHASE_ADMISSION_MUST_NOT_REQUIRE_OWNER.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-013"
+          ],
+          "readiness": "READY",
+          "task_class": "regression",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-AUTO-CONTINUE-002 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 3,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-RELEASE-001",
+          "title": "V0.1 Final Release Gate",
+          "objective": "Validate that V0.1 is complete and authorize transition to V0.2. This is a Release Gate, not a Human Gate.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-013"
+          ],
+          "readiness": "READY",
+          "task_class": "release_gate",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-RELEASE-001 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 3,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-018",
+          "title": "Project Initializer",
+          "objective": "Create a repository scaffold for new DPT-managed projects. This includes template configuration files, README scaffolding, and bootstrap metadata — all reversible repository artifacts.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-017"
+          ],
+          "readiness": "READY",
+          "task_class": "bootstrap_tooling",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-018 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-019",
+          "title": "Project Scanner",
+          "objective": "Discover DPT components in existing repositories. Read-only analysis classified as NG-01 (Reading authorized repositories). No mutation, no deployment, no secrets.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-018"
+          ],
+          "readiness": "READY",
+          "task_class": "bootstrap_tooling",
+          "required_capabilities": "repository.read, repository.list",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-019 authority envelope (repo-local read-only)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-020",
+          "title": "Context-Map Generator",
+          "objective": "Generate deterministic context-routing configuration from project analysis. Output is reversible repository documentation (NG-02).",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-019"
+          ],
+          "readiness": "READY",
+          "task_class": "bootstrap_tooling",
+          "required_capabilities": "repository.read, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-020 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-021",
+          "title": "Registry Generator",
+          "objective": "Assemble component registry from scanned project structure. Output is reversible repository artifact (NG-02).",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-020"
+          ],
+          "readiness": "READY",
+          "task_class": "bootstrap_tooling",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-021 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-022",
+          "title": "Team-Assembly Assistant",
+          "objective": "Provide role and authority assignment recommendations. Advisory output classified as NG-10 (Independent review). Recommendations ≠ permission grants (HG-05 applies to actual grants only).",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-021"
+          ],
+          "readiness": "READY",
+          "task_class": "bootstrap_tooling",
+          "required_capabilities": "repository.read, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.escalate",
+          "delegated_authority": "DPT-FOUNDATION-022 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-ADMISSION-001",
+          "title": "Phase Admission Path Repair",
+          "objective": "Repair the LIVE admission path to prevent PHASE_TRANSITION_GATE_RECURRENCE. Add PhaseAdmissionEnforcer that enforces AUTO-CONTINUE-002 invariant before any phase-boundary stop can be emitted.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-AUTO-CONTINUE-003"
+          ],
+          "readiness": "READY",
+          "task_class": "regression",
+          "required_capabilities": "repository.read, repository.list, docs.write, code.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-ADMISSION-001 authority envelope (repo-local read/write + docs.write + code.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 3,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-023",
+          "title": "Provider-Neutral Orchestrator Runtime",
+          "objective": "Define the provider-neutral orchestrator runtime specification. This is a spec artifact, not a production deployment.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-022"
+          ],
+          "readiness": "READY",
+          "task_class": "bootstrap_tooling",
+          "required_capabilities": "repository.read, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-023 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-024",
+          "title": "Agent Adapters",
+          "objective": "Define agent adapter specifications for the DPT framework. Spec artifact, not production deployment.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-023"
+          ],
+          "readiness": "READY",
+          "task_class": "bootstrap_tooling",
+          "required_capabilities": "repository.read, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-024 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-025",
+          "title": "Persistent Project Memory",
+          "objective": "Define persistent project memory specification. Spec artifact, not database mutation (HG-03).",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-024"
+          ],
+          "readiness": "READY",
+          "task_class": "bootstrap_tooling",
+          "required_capabilities": "repository.read, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-025 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-026",
+          "title": "Workflow State Management",
+          "objective": "Define workflow state management specification. Spec artifact, not destructive operation (HG-06).",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-025"
+          ],
+          "readiness": "READY",
+          "task_class": "bootstrap_tooling",
+          "required_capabilities": "repository.read, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-026 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-027",
+          "title": "Quality-Gate Execution",
+          "objective": "Define quality-gate execution specification. Spec artifact, not hard-to-reverse operation (HG-06).",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-026"
+          ],
+          "readiness": "READY",
+          "task_class": "bootstrap_tooling",
+          "required_capabilities": "repository.read, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-027 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-028",
+          "title": "Human Approval Interface",
+          "objective": "Define human approval interface specification. Building the interface is NOT an approval event (not HG-05).",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-027"
+          ],
+          "readiness": "READY",
+          "task_class": "bootstrap_tooling",
+          "required_capabilities": "repository.read, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.escalate",
+          "delegated_authority": "DPT-FOUNDATION-028 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-029",
+          "title": "Freeze Transport/Persistence/Deployment Decisions",
+          "objective": "Gather real-project evidence to inform transport, persistence, deployment topology, and packaging decisions. Evidence-gathering is NOT production deployment (not HG-02). Actual deployment requires Owner decision.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-028"
+          ],
+          "readiness": "READY",
+          "task_class": "bootstrap_tooling",
+          "required_capabilities": "repository.read, repository.list, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-FOUNDATION-029 authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 2,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-RECON-V1-DEPENDENCY",
+          "title": "Open Decision ↔ V1 Dependency Reconciliation",
+          "objective": "Reconcile the canonical open-decision backlog (DPT_OPEN_DECISIONS.md, OD-01..OD-26) with the V1 roadmap. Classify each decision as BLOCKING_V1, TASK_LOCAL_BLOCKER, NON_BLOCKING_V1, DEFER_TO_LATER_PHASE, or ALREADY_RESOLVED_ELSEWHERE. Derive V1 DAG dependencies. Verify no open decision materially constrains V1 spec work.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-029"
+          ],
+          "readiness": "READY",
+          "task_class": "reconciliation",
+          "required_capabilities": "repository.read, docs.write",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": "DPT-RECON-V1-DEPENDENCY authority envelope (repo-local read/write + docs.write)",
+          "human_gate_state": "NONE",
+          "passport_revision": 1,
+          "state_revision": 3,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-037",
+          "title": "V2 Learning System: Intervention Measurement",
+          "objective": "Implement runtime intervention measurement for V2 learning system. Measures human intervention frequency, type, and duration across DPT-managed projects.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-031"
+          ],
+          "readiness": "READY",
+          "task_class": "implementation",
+          "required_capabilities": "repository.read, docs.write, .dpt/audit.read",
+          "denied_capabilities": "git.push, git.merge, production.*",
+          "delegated_authority": null,
+          "human_gate_state": "NONE",
+          "passport_revision": 0,
+          "state_revision": 1,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-038",
+          "title": "V2 Learning System: Token/Context Efficiency",
+          "objective": "Implement token and context window efficiency measurement. Tracks LLM call patterns, context utilization, and optimization opportunities.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-037"
+          ],
+          "readiness": "READY",
+          "task_class": "implementation",
+          "required_capabilities": "repository.read, docs.write, .dpt/audit.read",
+          "denied_capabilities": "git.push, git.merge, production.*",
+          "delegated_authority": null,
+          "human_gate_state": "NONE",
+          "passport_revision": 0,
+          "state_revision": 1,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-039",
+          "title": "V2 Learning System: Failure Pattern Detection",
+          "objective": "Implement automated failure pattern detection across DPT-managed projects. Identifies recurring failures, root causes, and mitigation strategies.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-038"
+          ],
+          "readiness": "READY",
+          "task_class": "implementation",
+          "required_capabilities": "repository.read, docs.write, .dpt/audit.read",
+          "denied_capabilities": "git.push, git.merge, production.*",
+          "delegated_authority": null,
+          "human_gate_state": "NONE",
+          "passport_revision": 0,
+          "state_revision": 1,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-040",
+          "title": "V2 Learning System: Auto-Improvement Proposals",
+          "objective": "Implement automatic improvement proposal generation based on intervention, token, and failure data. Proposals require human review before application.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-039"
+          ],
+          "readiness": "READY",
+          "task_class": "implementation",
+          "required_capabilities": "repository.read, docs.write, .dpt/audit.read",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": null,
+          "human_gate_state": "NONE",
+          "passport_revision": 0,
+          "state_revision": 1,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-FOUNDATION-041",
+          "title": "V2 Learning System: Cross-Project Pattern Extraction",
+          "objective": "Implement cross-project pattern extraction for reusable DPT improvements. Extracts common failure modes, optimization opportunities, and best practices across managed projects.",
+          "status": "CLOSED",
+          "dependencies": [
+            "DPT-FOUNDATION-040"
+          ],
+          "readiness": "READY",
+          "task_class": "implementation",
+          "required_capabilities": "repository.read, docs.write, .dpt/audit.read",
+          "denied_capabilities": "git.push, git.merge, production.*, authority.self_expansion",
+          "delegated_authority": null,
+          "human_gate_state": "NONE",
+          "passport_revision": 0,
+          "state_revision": 1,
+          "auto_continue": true,
+          "blockedByDecisions": []
+        },
+        {
+          "id": "DPT-AUTO-CONTINUE-003",
+          "title": "Reconstructed: DPT-AUTO-CONTINUE-003",
+          "status": "CLOSED",
+          "dependencies": [],
+          "readiness": "CLOSED",
+          "task_class": "reconstructed",
+          "source": "delta_history_reconstruction"
+        },
+        {
+          "id": "DPT-FOUNDATION-030",
+          "title": "Reconstructed: DPT-FOUNDATION-030",
+          "status": "CLOSED",
+          "dependencies": [],
+          "readiness": "CLOSED",
+          "task_class": "reconstructed",
+          "source": "delta_history_reconstruction"
+        },
+        {
+          "id": "DPT-FOUNDATION-031",
+          "title": "Reconstructed: DPT-FOUNDATION-031",
+          "status": "CLOSED",
+          "dependencies": [],
+          "readiness": "CLOSED",
+          "task_class": "reconstructed",
+          "source": "delta_history_reconstruction"
+        }
+      ],
+      "readinessMap": {},
+      "deltaMap": {}
+    },
+    "execution_loop": {
+      "timestamp": "2026-09-05T17:20:48.281Z",
+      "phase": "EXECUTION_COMPLETE",
+      "cycles_completed": 6,
+      "total_tasks_before": 0,
+      "harness_state": {
+        "running": true,
+        "cycleCount": 6,
+        "lastAdmissibleWork": null
+      }
+    }
+  }
+}

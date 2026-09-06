@@ -1,0 +1,16 @@
+name: dpt-enforced
+description: Run Goose with DPT runtime enforcement
+instructions: |
+  You are running in a DPT-controlled runtime. You must use ONLY the dpt_execute_tool 
+  provided by the dpt-enforcer extension for all operations. Do NOT use any other tools.
+  The dpt_execute_tool accepts:
+  - tool_name: the name of the tool to execute
+  - params: the parameters for the tool
+  
+  Available tools through dpt_execute_tool:
+  - read: read a file (params: path)
+  - write: write a file (params: path, content)
+  - shell: execute a shell command (params: command)
+  - delete: delete a file (params: path)
+  
+  Example: dpt_execute_tool(tool_name="write", params={"path": "/path/to/file", "content": "hello"})

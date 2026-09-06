@@ -1,0 +1,225 @@
+{
+  "resolved_at": "2026-09-06T02:25:00.000Z",
+  "resolver": "DECISION_CANONICALIZATION",
+  "resolutions": [
+    {
+      "id": "OD-017",
+      "decision": "Open Decision lifecycle and resolution governance (Decision #17): Seven states. Reopening is always explicit; silent reopen prohibited. SUPERSEDED terminal with lineage. Decision records carry no authority fields. Single resolution. Concurrent proposals serialized. Irreversible/compliance \u2192 HUMAN_GATE mandatory.",
+      "rationale": "Stress test resolved 10 falsifications; explicit reopen; lineage preserved.",
+      "source": [
+        "ADR-043"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-016",
+      "decision": "Conformance and certification model (Decision #16): Conformance (continuous) \u2260 Certification (bounded, versioned). Neither grants authority. Cert bound to definition+version; time-bounded expiry; enumerated invalidation triggers. Transitive/blanket prohibited. Certifier INDEPENDENCE_CONTRACT per ADR-035.",
+      "rationale": "Stress test resolved 10 falsifications; cert \u2260 authority; no transitive cert.",
+      "source": [
+        "ADR-042"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-015",
+      "decision": "Audit chain and event ordering (Decision #15): Three ordering dimensions (CAUSAL primary, INGESTION secondary, OBSERVED advisory). Wall-clock never primary. Hash chain + signatures for tamper-evidence. Per-scope chains with cross-scope pointers. Audit is evidence, never authority.",
+      "rationale": "Stress test resolved 9 falsifications; clock-skew resistant; audit never grants authority.",
+      "source": [
+        "ADR-041"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-014",
+      "decision": "Idempotency and deduplication model (Decision #14): Idempotency \u2260 dedup. Explicit idempotency keys at effect boundaries. Same intent = same key; new intent = new key; identity conflict rejected. Dedup recognizes, never erases; ATTEMPT lineage and audit history preserved.",
+      "rationale": "Stress test resolved 9 falsifications; effect-boundary identity; append-only preserved.",
+      "source": [
+        "ADR-040"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-012",
+      "decision": "Merge ownership and integration authority (Decision #12): Three distinct roles (Proposer, Authorizer, Integrator). Producing artifact must never imply authority to integrate. Explicit INTEGRATION_AUTHORIZATION derived from LAYER 2/3. Workflow: PROPOSE\u2192PREFILIGHT\u2192VERIFY\u2192AUTHORIZE\u2192EXECUTE\u2192RECORD\u2192RE-EVALUATE. Cross-project DPT-mediated.",
+      "rationale": "Stress test resolved 8 falsifications; producer\u2260integrator; authority explicitly derived.",
+      "source": [
+        "ADR-038"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-007",
+      "decision": "Authority persistence and evaluation model (Decision #7): Five-layer authority stack. Evaluator is AUTHORITY_EVALUATOR_SERVICE_INSTANCE. Core invariant: authority persistence \u2260 persistent runtime permission. Per-attempt materialization; specific overrides general mode.",
+      "rationale": "Stress test separated 5 layers (policy, delegation, envelope, runtime effective, materialized permissions) with distinct lifetimes. Falsifications survived: 5 layers are distinct, LAYER 5 is never persistent, evaluator is deterministic SERVICE, durable policy authorizes materialization not runtime permission.",
+      "source": [
+        "ADR-033"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-005",
+      "decision": "Gateway and Trust Boundary (Decision #5): Gateway is a SERVICE + GATEWAY_SERVICE_INSTANCE; not an AGENT. Enforces boundary policy only (identity, authn mTLS, authz envelope, isolation, audit signed, direct-access rejection allowlist). Orchestrator enforces execution policy. Gateway never holds canonical state, never originates policy, never grants authority. Deprecated term: 'Gateway Agent'.",
+      "rationale": "Stress test resolved the 'Gateway Agent' misnomer (violates ADR-029 determinism routing), boundary vs execution policy conflation, audit non-repudiation, and allowlist-based direct-access rejection. Falsifications survived: semantic intent interpretation is Orchestrator's role; non-deterministic envelope input fails closed; multi-instance HA is a deployment concern not a model concern.",
+      "source": [
+        "ADR-031"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-004",
+      "decision": "Front Agent Lifecycle (Decision #4): lifecycle states PROVISIONING/INITIALIZING/ONLINE/DEGRADED/RECONNECTING/SUSPENDED-BLOCKED/UPDATING/REVOKING/RETIRED. Multi-instance only with non-overlapping authority scopes or active/standby lease. Fail-closed on queue/resource exhaustion. Scout is sibling ROLE. Recovery respects distributed state ownership.",
+      "rationale": "Stress test resolved contradictions in provisioning, identity, update control, persistence, offline behavior, isolation, and reconnect. Final corrections applied: Scout as sibling, fail-closed suspension, distributed ownership recovery, bounded multi-instance rule.",
+      "source": [
+        "ADR-030"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-003",
+      "decision": "Capability, Role, Agent, Service Ontology (Decision #3): AGENT_DEFINITION as design-time reusable/versioned contract; AGENT_INSTANCE as runtime instantiation; ROLE may be fulfilled by AGENT_INSTANCE/SERVICE_INSTANCE/HUMAN/WORKFLOW; Orchestrator is SERVICE + spawned COORDINATION_REASONING ROLE; Independent verification enforced via INDEPENDENCE_CONTRACT (REASONING_ISOLATION + EVIDENCE_INDEPENDENCE minimum).",
+      "rationale": "Stress tests exposed scoring-model arbitrariness, conflation of agent definition vs instance, and miscategorization of independent verification. Falsifications survived for determinism routing, role pluralism, orchestrator decomposition, and model/provider non-binding.",
+      "source": [
+        "ADR-029"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-006",
+      "decision": "Runtime intent intake format adopts DPT Work Order contract",
+      "rationale": "ADR-027 (Durable task state) + ADR-020 (six modes) define the canonical intake. Intent = WorkOrder with envelope, mode, and resource claims.",
+      "source": [
+        "ADR-020",
+        "ADR-027"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-008",
+      "decision": "Orchestrator transport: in-process RPC via CapabilityGateway, no network protocol freeze",
+      "rationale": "ADR-024/026 require conservative conflict handling. Transport is implementation detail; gateway is the single enforcement point.",
+      "source": [
+        "ADR-024",
+        "ADR-026"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-009",
+      "decision": "Persistent memory: bounded to TASKS.md durable store with JSON records, TTL support",
+      "rationale": "ADR-027 mandates durable task state as canonical store. Memory is a bounded projection, not a separate database.",
+      "source": [
+        "ADR-027"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-010",
+      "decision": "Workflow lifecycle: BACKLOG\u2192READY\u2192RUNNING\u2192REWORK\u2192CLOSED with deterministic transition guards",
+      "rationale": "Lifecycle states BOUND per DPT-RECON-003. Mechanism: state machine with explicit VALID_TRANSITIONS map.",
+      "source": [
+        "DPT-RECON-003"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-011",
+      "decision": "Quality gates: configurable predicate pipeline, gate definitions as first-class artifacts",
+      "rationale": "ADR-025 (Verification is first-class) mandates gates as auditable predicates, not hard-coded checks.",
+      "source": [
+        "ADR-025"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-013",
+      "decision": "Routing taxonomy: capability, risk, authority, environment, data sensitivity, cost",
+      "rationale": "Execution Control Model defines routing dimensions. Exact enum TBD per real-project evidence.",
+      "source": [
+        "DPT_EXECUTION_CONTROL_MODEL"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-018",
+      "decision": "Greenfield advisory flow (Decision #18): Bounded pipeline INTAKE_RECEIVED -> ACCEPTED_BY_OWNER -> TRANSFERRED_TO_PROJECT. Advisory Plane never executes, never grants authority, never instantiates capabilities. Mandatory Human Gate at BLUEPRINT_PROPOSED. ASSEMBLY_RECOMMENDATION (Advisory) distinct from ASSEMBLY_INSTANTIATION (Execution, Authority-gated). Scout has no role pre-project. Cross-project reuse only via CONTRIBUTION_CANDIDATE path.",
+      "rationale": "Stress test resolved 10 falsifications (silent execution, authority grant, pre-project Scout, single intake form, Human Gate bypass, advisory state lifecycle, cross-project leakage, assembly = instantiation, greenfield creates authority, advisory record leakage).",
+      "source": [
+        "ADR-044"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-019",
+      "decision": "Proactive DPT notification model (Decision #19): Subscription-gated, advisory-only, severity-prioritized, throttled, connection-state-bounded. NOTIFY_* kinds per ADR-032. SEVERITY_PRECLINICAL/NOTIFY/URGENT tiers. PROJECT_SUBSCRIPTION declares accepted_kinds, severity_floor, per-kind throttle/suppress, routing_target. PROACTIVE_NOTIFICATION advisory_only=true invariant. No notification may trigger Task/Agent/claim/lease/Authority. Front Agent state (ADR-030) gates fanout. Cross-project reuse only via CONTRIBUTION_CANDIDATE.",
+      "rationale": "Stress test resolved 10 falsifications (notification=execution, push without consent, implicit promise, auto-install, authority bypass, spam, security non-prioritized, silence=consent, contribution leakage, fanout after retirement).",
+      "source": [
+        "ADR-045"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-020",
+      "decision": "Project intelligence update triggers (Decision #20): 3 trigger classes (TRIGGER_SCHEDULED/EVENT/SIGNAL). 2 refresh modes (REFRESH_TARGETED default, REFRESH_BROAD on threshold breach). Project-tunable BROAD_RESCAN_THRESHOLD. Trigger budget 20/day. Dedup window 4h. Connection-state-gated per ADR-030. Broad rescan produces INTELLIGENCE_VERSION_N+1 with supersedes lineage (ADR-043). Scout: SERVICE_INSTANCE for targeted, ROLE_INSTANCE for broad/judgment (ADR-029).",
+      "rationale": "Stress test resolved 10 falsifications (time-only, every-change-full-rescan, Scout=AGENT, trigger=action, hard-coded, cross-project leak, triggers after RETIRED, authority bypass, trigger storm, broad destroys prior).",
+      "source": [
+        "ADR-046"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-021",
+      "decision": "DPT update propagation model (Decision #21): 8 UPDATE_* kinds (PATCH/MINOR/MAJOR/SECURITY/DEPRECATION/REMOVAL/INTELLIGENCE/PITFALL). PROPAGATION_RECORD with asset_version, compatibility_range, compatibility_break, deprecation_until, migration_guide_ref, requires_owner_review, severity_tier, audit_chain_ref. Mandatory COMPATIBILITY_BREAK + MIGRATION_GUIDE_REF + DEPRECATION_UNTIL triplet for breaking changes. DPT never modifies project code. Subscription-gated per ADR-045. Audit-chained per ADR-041. Deprecation != removal. Cross-project = asset-level metadata only per ADR-009.",
+      "rationale": "Stress test resolved 10 falsifications (propagation=execution, implicit acceptance, DPT modifies code, no version pinning, deprecation=removal, migration=command, no subscription, project state leak, no audit, silent compatibility break).",
+      "source": [
+        "ADR-047"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-022",
+      "decision": "DPT Network API contract (Decision #22): Transport-independent; canonical API_MESSAGE envelope. AUTHENTICATION != AUTHORIZATION (per ADR-033). Internal vs External surfaces. Codec-neutral schema registry. Transport = adapter (deferred). Per-caller rate limits with URGENT bypass. All mutations require idempotency_key (ADR-040). Offline sync: advisory=LAST_WRITER_WINS, authority=conflict-via-authority-chain, audit=append-only, PI=SUPERSEDED with lineage (ADR-043).",
+      "rationale": "Stress test resolved 10 falsifications (mandatory transport, API carries authority, single transport, auth=authz, URL versioning, no rate limits, retries duplicate, offline undefined, JSON-only, DPT-internal-only).",
+      "source": [
+        "ADR-048"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-023",
+      "decision": "DPT Pool architecture (Decision #23): 8 POOL_* types (COMPONENT/MODULE/SKILL/AGENT_DEFINITION/PITFALL/PATTERN/DECISION_EVIDENCE/DECISION). Pool stores design-time definitions, NOT runtime instances (ADR-029). 5-state lifecycle. 3 validation tiers (ADR-042). 6 mandatory compatibility dimensions. Capability-routed discovery (ADR-039). Audit-chained mutations (ADR-041). Pool public-by-design, Project Intelligence project-private (ADR-009). Re-publish from DEPRECATED creates new version (ADR-043).",
+      "rationale": "Stress test resolved 10 falsifications (flat bag, unidirectional lifecycle, no validation tier, semver-only, binary compat, unranked discovery, no audit, project-visible default, project-specific in pool, missing dimensions).",
+      "source": [
+        "ADR-049"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-024",
+      "decision": "DPT Credit Economy Architecture (Decision #24): Credits = internal governance abstraction, NOT real currency (no fiat conversion). Economy advisory-only, built on ADR-033 authority envelope. All unit costs/rewards CONFIGURABLE_WITH_DEFAULTS \u2014 TBD pending real-project evidence. Free period = temporary access, revert on expiry (no permanent entitlement). Subscription tiers = feature flags + request limits (no architecture change). Anti-abuse rules EMIT ABUSE_INDICATOR events (never silent). Validation \u00d7 economy independent (ADR-042). Cross-project transfer gated by CONTRIBUTION_CANDIDATE approval (ADR-042). Audit-chained via ECONOMY_MUTATION_RECORD (ADR-041). Explicitly UNRESOLVED: reward magnitudes, cost rates, request limits, abuse thresholds.",
+      "rationale": "Stress test resolved 10 falsifications (credits=money, economy=enforces execution, hard-coded prices, free period permanent, tier changes architecture, silent anti-abuse, validation=economic, free transfer, limits=throttle, economy drifts silently).",
+      "source": [
+        "ADR-050"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-025",
+      "decision": "DPT API Monetization Model (Decision #25): Monetization = policy-layer mapping between API methods and credit consumption rules (ADR-050). DPT API does NOT process payments; emits MONETIZED_OPERATION_RECORD (ADR-041). Rate limits \u2260 quotas (two independent mechanisms). Pricing visibility: OWNER_ONLY default. All monetization decisions versioned per ADR-043. External billing out of scope. Unresolved: credit_cost_per_operation values (CONFIGURABLE_WITH_DEFAULTS, TBD).",
+      "rationale": "Stress test resolved 10 falsifications (monetization=billing, bypass tiers, public pricing, API is payment processor, free tier needs payment info, unversioned decisions, internal=external pricing, silent monetized ops, rate limit=quota, monetization changes API surface).",
+      "source": [
+        "ADR-051"
+      ],
+      "resolved": true
+    },
+    {
+      "id": "OD-026",
+      "decision": "DPT Runtime/Packaging and Execution Persistence (Decision #26): DEFERRED. Implementation-tier choices explicitly listed as non-goals in DPT_OPEN_DECISIONS.md (runtime, database schema, queue, lock service, agent-provider integration). Architecture = intentional deferral per spec-first mode. No ADR created. Revisit when: Foundation work produces project-side agent artifacts, \u22651 real deployment provides persistence pattern data, governance review confirms stability.",
+      "rationale": "Stress test confirmed: decision describes concrete implementation details (packaging mechanism, persistence model, deployment target) that are explicitly prohibited from premature freezing by the document's own non-goals clause. Canonicalizing implementation would violate spec-first mode and the component-first principle (premature runtime introduction before core model validated).",
+      "source": [
+        "DPT_OPEN_DECISIONS.md#NonGoals"
+      ],
+      "resolved": true,
+      "resolution_type": "DEFERRED_WITH_EXPLICIT_RATIONALE"
+    }
+  ]
+}

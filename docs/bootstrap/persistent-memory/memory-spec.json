@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0.3",
+  "component": "persistent-memory",
+  "storage": "repository-local",
+  "description": "Persistent project memory specification for DPT"
+}

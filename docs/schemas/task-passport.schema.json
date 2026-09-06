@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apexaidpt.io/schemas/task-passport.schema.json",
+  "title": "Task Passport",
+  "description": "Defines the scope, capabilities, and policy constraints for a task executor.",
+  "type": "object",
+  "required": [
+    "task_id",
+    "task_passport_revision",
+    "role",
+    "scope"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "description": "Unique identifier for the task this passport belongs to."
+    },
+    "task_passport_revision": {
+      "type": "integer",
+      "description": "Revision number of this passport."
+    },
+    "role": {
+      "type": "string",
+      "description": "Role assigned to the executor."
+    },
+    "scope": {
+      "type": "string",
+      "description": "Scope of authority granted by this passport."
+    },
+    "required_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Capabilities required by the executor."
+    },
+    "denied_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Capabilities explicitly denied."
+    },
+    "policy_ceiling_ref": {
+      "type": "string",
+      "description": "Reference to the policy ceiling."
+    },
+    "human_gates_applicable": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of human gate identifiers that apply."
+    },
+    "valid_from": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Start of validity period."
+    },
+    "valid_until": {
+      "type": "string",
+      "format": "date-time",
+      "description": "End of validity period."
+    },
+    "revocation_state": {
+      "type": "string",
+      "enum": [
+        "active",
+        "revoked",
+        "expired"
+      ],
+      "description": "Current revocation state of the passport."
+    }
+  }
+}

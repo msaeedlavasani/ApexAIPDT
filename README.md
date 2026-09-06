@@ -119,7 +119,7 @@ Project team implements, or the Execution Orchestrator coordinates authorized ex
 - `brains/` — role/brain definitions and contracts.
 - `templates/` — artifacts generated into client projects.
 - `workflows/` — lifecycle and execution workflows.
-- `examples/` — reference project initialization.
+- `providers/` — provider-neutral contract, conformance suite, and provider adapters (OpenCode, reference).
 
 ## Current status
 
@@ -130,7 +130,3 @@ The current design phase is focused on finalizing Agent boundaries, Authority Po
 Current runtime/connector and Orchestrator R&D is a validation implementation for real-project learning, not the frozen production runtime. Exact transport, schema, locking, persistence, deployment topology, and packaging remain explicit open decisions until evidence supports standardization.
 
 The credit economy and business model are also intentionally conceptual until real usage and infrastructure data are available.
-
-## First real-world validation
-
-BaziGB is the reference case for validating whether Apex AI DPT can reduce implementation back-and-forth, improve reuse, and make adding new games and visually complex features more predictable.

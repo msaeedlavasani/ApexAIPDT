@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "v02-artifacts.schema.json",
+  "title": "DPT Artifacts Schema",
+  "description": "Schema for DPT artifact definitions (structured outputs)",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "type",
+    "schema_ref"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "requirement",
+        "design",
+        "decision",
+        "test",
+        "report"
+      ]
+    },
+    "schema_ref": {
+      "type": "string"
+    },
+    "created_by": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "REVIEW",
+        "APPROVED",
+        "SUPERSEDED"
+      ]
+    }
+  }
+}

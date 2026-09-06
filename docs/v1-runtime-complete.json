@@ -1,0 +1,14 @@
+{
+  "v1_runtime_complete": true,
+  "at": "2026-09-04T16:27:05.782Z",
+  "modules": [
+    "orchestrator",
+    "goose-adapter",
+    "opencode-adapter",
+    "memory",
+    "workflow",
+    "qualitygate",
+    "approval-ui",
+    "freeze-decisions"
+  ]
+}

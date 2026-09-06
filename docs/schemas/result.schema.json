@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apexaidpt.io/schemas/result.schema.json",
+  "title": "Result",
+  "description": "Handoff record capturing execution outcome and evidence.",
+  "type": "object",
+  "required": [
+    "result_id",
+    "outcome"
+  ],
+  "properties": {
+    "result_id": {
+      "type": "string",
+      "description": "Unique identifier for this result."
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "success",
+        "failure",
+        "partial",
+        "blocked",
+        "escalated"
+      ],
+      "description": "Outcome of the execution."
+    },
+    "structured_result": {
+      "type": "object",
+      "description": "Structured data returned by the executor."
+    },
+    "provider_session_id": {
+      "type": "string",
+      "description": "Session ID of the provider."
+    },
+    "attempt_id": {
+      "type": "string",
+      "description": "Identifier for this execution attempt."
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "References to evidence supporting this result."
+    }
+  }
+}

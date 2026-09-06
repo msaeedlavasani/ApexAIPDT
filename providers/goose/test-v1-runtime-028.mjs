@@ -1,0 +1,15 @@
+import { createApprovalUIRuntime } from './approval-ui-runtime.mjs';
+const assert = (c,n) => { if(c){console.log('  [PASS] '+n); return true;}else{console.log('  [FAIL] '+n); return false;} };
+let p=0,f=0; const a=(c,n)=>{if(assert(c,n))p++;else f++;};
+console.log('\n=== DPT-FOUNDATION-028: Approval UI Runtime ===');
+const ui = createApprovalUIRuntime();
+const hg1 = ui.evaluateHgMatch('T1', 'git merge main'); a(hg1.match === 'HG-01', 'Correctly matches HG-01');
+const hg2 = ui.evaluateHgMatch('T2', 'deploy to production'); a(hg2.match === 'HG-02', 'Correctly matches HG-02');
+const hg3 = ui.evaluateHgMatch('T3', 'DROP TABLE users'); a(hg3.match === 'HG-03', 'Correctly matches HG-03');
+const noHg = ui.evaluateHgMatch('T4', 'spec.definition'); a(noHg.match === null, 'Spec definition is not a Human Gate');
+const noHg2 = ui.evaluateHgMatch('T5', 'write docs'); a(noHg2.match === null, 'Writing docs is not a Human Gate');
+const decision = await ui.presentDecision({ hg_id: 'HG-01', task_id: 'T1', question: 'Merge to main?', choice_a: 'approve', choice_b: 'reject' });
+a(decision.response?.action === 'approve', 'Decision recorded');
+a(ui.isHumanGate('T1', 'git merge main') === true, 'isHumanGate returns true for HG-01');
+a(ui.isHumanGate('T2', 'write file') === false, 'isHumanGate returns false for non-gate');
+console.log('\nRESULTS: '+p+'/'+(p+f)+' PASS'); if(f>0){console.log('FAILURES'); process.exit(1);} else console.log('ALL PASS');

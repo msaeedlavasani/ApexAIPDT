@@ -1,6 +1,6 @@
 # AI Start Here
 
-This file is generated into every APDT-managed project and is the first navigation document for AI agents.
+This file is generated into every DPT-managed project and is the first navigation document for AI agents.
 
 ## Mandatory entry protocol
 

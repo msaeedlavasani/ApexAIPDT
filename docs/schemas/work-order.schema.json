@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apexaidpt.io/schemas/work-order.schema.json",
+  "title": "Work Order",
+  "description": "Concrete execution instruction with inputs, outputs, and acceptance criteria.",
+  "type": "object",
+  "required": [
+    "task_id",
+    "work_order_id",
+    "executor",
+    "acceptance_criteria"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "description": "Unique identifier for the task."
+    },
+    "task_passport_revision": {
+      "type": "integer",
+      "description": "Revision of the task passport used for this work order."
+    },
+    "work_order_id": {
+      "type": "string",
+      "description": "Unique identifier for this work order."
+    },
+    "work_order_revision": {
+      "type": "integer",
+      "description": "Revision number of this work order."
+    },
+    "executor": {
+      "type": "string",
+      "description": "Identity of the executor."
+    },
+    "inputs": {
+      "type": "object",
+      "description": "Inputs required for execution."
+    },
+    "expected_outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of expected output artifact references."
+    },
+    "envelope_id": {
+      "type": "string",
+      "description": "Reference to the permission envelope."
+    },
+    "resource_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Resources claimed for this work order."
+    },
+    "route_budget": {
+      "type": "object",
+      "description": "Budget constraints for the execution route."
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Criteria that must be met for acceptance."
+    },
+    "termination_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Conditions that terminate the work order."
+    }
+  }
+}

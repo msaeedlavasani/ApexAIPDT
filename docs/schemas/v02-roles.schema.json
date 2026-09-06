@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "v02-roles.schema.json",
+  "title": "DPT Roles Schema",
+  "description": "Schema for DPT role definitions (operational identities assigned to agents)",
+  "type": "object",
+  "required": [
+    "role_id",
+    "title",
+    "responsibilities",
+    "authority_scope"
+  ],
+  "properties": {
+    "role_id": {
+      "type": "string",
+      "pattern": "^DPT-ROLE-[A-Z0-9-]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "responsibilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authority_scope": {
+      "type": "object"
+    },
+    "required_brains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

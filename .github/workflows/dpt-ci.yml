@@ -138,7 +138,8 @@ jobs:
             echo "⚠ component-registry.json not found"
           fi
           if [ -f docs/asset-registry.json ]; then
-            python3 -c "import json; d=json.load(open('docs/asset-registry.json')); assert isinstance(d, list), 'Must be array'; print(f'✓ asset-registry.json: {len(d)} assets')"
+            # asset-registry.json is an object with 'assets' array, not a flat array
+            python3 -c "import json; d=json.load(open('docs/asset-registry.json')); assert isinstance(d, dict), 'Must be object'; assert 'assets' in d, 'Must have assets key'; print(f'✓ asset-registry.json: {len(d[\"assets\"])} assets')"
           else
             echo "⚠ asset-registry.json not found"
           fi

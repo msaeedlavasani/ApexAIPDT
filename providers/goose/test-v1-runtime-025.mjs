@@ -1,0 +1,17 @@
+import { createMemoryRuntime } from './memory-runtime.mjs';
+import { join, resolve } from 'path';
+const assert = (c,n) => { if(c){console.log('  [PASS] '+n); return true;}else{console.log('  [FAIL] '+n); return false;} };
+let p=0,f=0; const a=(c,n)=>{if(assert(c,n))p++;else f++;};
+console.log('\n=== DPT-FOUNDATION-025: Persistent Memory Runtime ===');
+const TEST_STORE = join(resolve(process.cwd()), 'providers/goose/.dpt-memory-test.json');
+const mem = createMemoryRuntime({ storePath: TEST_STORE });
+await mem.clear();
+const put1 = await mem.put('key1', { data: 'value1', ts: Date.now() }); a(put1.written, 'Put succeeds');
+const got = await mem.get('key1'); a(got?.data === 'value1', 'Get returns correct value');
+const exists = await mem.has('key1'); a(exists, 'Has returns true');
+const keys = await mem.keys(); a(keys.includes('key1'), 'Keys includes written key');
+const del = await mem.delete('key1'); a(del === true, 'Delete returns true');
+const afterDel = await mem.get('key1'); a(afterDel === null, 'Get after delete returns null');
+const delAgain = await mem.delete('key1'); a(delAgain === false, 'Delete missing key returns false');
+await mem.clear(); a(true, 'Clear succeeds');
+console.log('\nRESULTS: '+p+'/'+(p+f)+' PASS'); if(f>0){console.log('FAILURES'); process.exit(1);} else console.log('ALL PASS');

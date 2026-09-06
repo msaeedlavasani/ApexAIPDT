@@ -1,0 +1,2826 @@
+{
+  "schema_version": "1.0.0",
+  "project": "Apex AI DPT",
+  "generated_at": "2026-09-05T17:07:36.669Z",
+  "repo_root": "/Users/msl/Documents/GitHub/ApexAIPDT",
+  "components": [
+    {
+      "path": ".dpt",
+      "type": "directory",
+      "name": ".dpt",
+      "category": "other",
+      "responsibility": "Module directory: .dpt",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": ".dpt/memory.json",
+      "type": "file",
+      "name": "memory.json",
+      "category": "other",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": ".dpt-bootstrap-state",
+      "type": "directory",
+      "name": ".dpt-bootstrap-state",
+      "category": "other",
+      "responsibility": "Module directory: .dpt-bootstrap-state",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": ".dpt-bootstrap-state/bootstrap-state.json",
+      "type": "file",
+      "name": "bootstrap-state.json",
+      "category": "other",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": ".dpt-findings-tracker.json",
+      "type": "file",
+      "name": ".dpt-findings-tracker.json",
+      "category": "other",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "AGENTS.md",
+      "type": "file",
+      "name": "AGENTS.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "README.md",
+      "type": "file",
+      "name": "README.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "ROADMAP.md",
+      "type": "file",
+      "name": "ROADMAP.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "brains",
+      "type": "directory",
+      "name": "brains",
+      "category": "other",
+      "responsibility": "Module directory: brains",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "brains/ARCHITECTURE.md",
+      "type": "file",
+      "name": "ARCHITECTURE.md",
+      "category": "documentation",
+      "responsibility": "Architecture documentation — design decisions and patterns",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "brains/BRAIN_CONTRACT.md",
+      "type": "file",
+      "name": "BRAIN_CONTRACT.md",
+      "category": "documentation",
+      "responsibility": "Provider-neutral contract — defines semantics any adapter must implement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "brains/DATA.md",
+      "type": "file",
+      "name": "DATA.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "brains/DESIGN.md",
+      "type": "file",
+      "name": "DESIGN.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "brains/ENGINEERING.md",
+      "type": "file",
+      "name": "ENGINEERING.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "brains/OPERATIONS.md",
+      "type": "file",
+      "name": "OPERATIONS.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "brains/PRODUCT.md",
+      "type": "file",
+      "name": "PRODUCT.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "brains/QA.md",
+      "type": "file",
+      "name": "QA.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "brains/SECURITY.md",
+      "type": "file",
+      "name": "SECURITY.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "core",
+      "type": "directory",
+      "name": "core",
+      "category": "other",
+      "responsibility": "Module directory: core",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "core/COMPONENT_ARCHITECTURE.md",
+      "type": "file",
+      "name": "COMPONENT_ARCHITECTURE.md",
+      "category": "documentation",
+      "responsibility": "Architecture documentation — design decisions and patterns",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "core/CONTEXT_SYSTEM.md",
+      "type": "file",
+      "name": "CONTEXT_SYSTEM.md",
+      "category": "documentation",
+      "responsibility": "System model — structural relationships",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "core/DECISION_SYSTEM.md",
+      "type": "file",
+      "name": "DECISION_SYSTEM.md",
+      "category": "documentation",
+      "responsibility": "System model — structural relationships",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "core/HUMAN_AI_BOUNDARY.md",
+      "type": "file",
+      "name": "HUMAN_AI_BOUNDARY.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "core/MEMORY_SYSTEM.md",
+      "type": "file",
+      "name": "MEMORY_SYSTEM.md",
+      "category": "documentation",
+      "responsibility": "System model — structural relationships",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "core/ORCHESTRATOR.md",
+      "type": "file",
+      "name": "ORCHESTRATOR.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "core/TEAM_ASSEMBLY.md",
+      "type": "file",
+      "name": "TEAM_ASSEMBLY.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "core/WORKFLOW_ENGINE.md",
+      "type": "file",
+      "name": "WORKFLOW_ENGINE.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs",
+      "type": "directory",
+      "name": "docs",
+      "category": "other",
+      "responsibility": "Module directory: docs",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/APEX_AI_DPT_CONSTITUTION.md",
+      "type": "file",
+      "name": "APEX_AI_DPT_CONSTITUTION.md",
+      "category": "governance",
+      "responsibility": "Constitutional document — foundational principles and scope",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/APEX_AI_DPT_TERMINOLOGY.md",
+      "type": "file",
+      "name": "APEX_AI_DPT_TERMINOLOGY.md",
+      "category": "governance",
+      "responsibility": "Terminology definition — canonical vocabulary",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/APEX_AI_DPT_VISION.md",
+      "type": "file",
+      "name": "APEX_AI_DPT_VISION.md",
+      "category": "governance",
+      "responsibility": "Constitutional document — foundational principles and scope",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/CAPABILITY_ENGINE.md",
+      "type": "file",
+      "name": "CAPABILITY_ENGINE.md",
+      "category": "documentation",
+      "responsibility": "Capability gateway — single-point runtime enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/CONSTITUTION_VALIDATION.md",
+      "type": "file",
+      "name": "CONSTITUTION_VALIDATION.md",
+      "category": "documentation",
+      "responsibility": "Constitutional document — foundational principles and scope",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_AGENT_ARCHITECTURE.md",
+      "type": "file",
+      "name": "DPT_AGENT_ARCHITECTURE.md",
+      "category": "documentation",
+      "responsibility": "Architecture documentation — design decisions and patterns",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_ARCHITECTURE_DECISIONS.md",
+      "type": "file",
+      "name": "DPT_ARCHITECTURE_DECISIONS.md",
+      "category": "documentation",
+      "responsibility": "Architecture documentation — design decisions and patterns",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_AUTHORITY_MODEL.md",
+      "type": "file",
+      "name": "DPT_AUTHORITY_MODEL.md",
+      "category": "documentation",
+      "responsibility": "Authority model — delegation and permission semantics",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_BUSINESS_AND_NETWORK_MODEL.md",
+      "type": "file",
+      "name": "DPT_BUSINESS_AND_NETWORK_MODEL.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_CANONICAL_STATE_PRECEDENCE_GOVERNANCE.md",
+      "type": "file",
+      "name": "DPT_CANONICAL_STATE_PRECEDENCE_GOVERNANCE.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_CREDIT_ECONOMY.md",
+      "type": "file",
+      "name": "DPT_CREDIT_ECONOMY.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_EXECUTION_CONTROL_MODEL.md",
+      "type": "file",
+      "name": "DPT_EXECUTION_CONTROL_MODEL.md",
+      "category": "documentation",
+      "responsibility": "Execution control model — task/work order lifecycle",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_EXISTING_PROJECT_ONBOARDING.md",
+      "type": "file",
+      "name": "DPT_EXISTING_PROJECT_ONBOARDING.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_NETWORK_API.md",
+      "type": "file",
+      "name": "DPT_NETWORK_API.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_OPEN_DECISIONS.md",
+      "type": "file",
+      "name": "DPT_OPEN_DECISIONS.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_POOL_ARCHITECTURE.md",
+      "type": "file",
+      "name": "DPT_POOL_ARCHITECTURE.md",
+      "category": "documentation",
+      "responsibility": "Architecture documentation — design decisions and patterns",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_PROJECT_INTELLIGENCE.md",
+      "type": "file",
+      "name": "DPT_PROJECT_INTELLIGENCE.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_PROJECT_RUNTIME.md",
+      "type": "file",
+      "name": "DPT_PROJECT_RUNTIME.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_REPORT_LIFECYCLE_GOVERNANCE.md",
+      "type": "file",
+      "name": "DPT_REPORT_LIFECYCLE_GOVERNANCE.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_SYSTEM_MODEL.md",
+      "type": "file",
+      "name": "DPT_SYSTEM_MODEL.md",
+      "category": "documentation",
+      "responsibility": "System model — structural relationships",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/DPT_TASK_SYSTEM.md",
+      "type": "file",
+      "name": "DPT_TASK_SYSTEM.md",
+      "category": "documentation",
+      "responsibility": "System model — structural relationships",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/FAILURE_INTELLIGENCE.md",
+      "type": "file",
+      "name": "FAILURE_INTELLIGENCE.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/TASKS.md",
+      "type": "file",
+      "name": "TASKS.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/architecture",
+      "type": "directory",
+      "name": "architecture",
+      "category": "other",
+      "responsibility": "Architecture documentation — design decisions and patterns",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/architecture/DPT_BRAIN_AND_UNIVERSAL_COGNITION.md",
+      "type": "file",
+      "name": "DPT_BRAIN_AND_UNIVERSAL_COGNITION.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/architecture/OPENCODE_PROVIDER_ADAPTER_ARCHITECTURE.md",
+      "type": "file",
+      "name": "OPENCODE_PROVIDER_ADAPTER_ARCHITECTURE.md",
+      "category": "documentation",
+      "responsibility": "Provider adapter — routes tool calls through DPT enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/asset-registry.json",
+      "type": "file",
+      "name": "asset-registry.json",
+      "category": "other",
+      "responsibility": "Registry artifact — structured component inventory",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/capability-boundaries.json",
+      "type": "file",
+      "name": "capability-boundaries.json",
+      "category": "other",
+      "responsibility": "Capability gateway — single-point runtime enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/component-registry.json",
+      "type": "file",
+      "name": "component-registry.json",
+      "category": "other",
+      "responsibility": "Registry artifact — structured component inventory",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/context-map.json",
+      "type": "file",
+      "name": "context-map.json",
+      "category": "other",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/context-routing.md",
+      "type": "file",
+      "name": "context-routing.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/e2e_test_v1.json",
+      "type": "file",
+      "name": "e2e_test_v1.json",
+      "category": "other",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/governance",
+      "type": "directory",
+      "name": "governance",
+      "category": "other",
+      "responsibility": "Module directory: governance",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/governance/AUTHORITY_PERMISSION_MODEL.md",
+      "type": "file",
+      "name": "AUTHORITY_PERMISSION_MODEL.md",
+      "category": "governance",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/governance/DYNAMIC_PERMISSION_MATERIALIZATION.md",
+      "type": "file",
+      "name": "DYNAMIC_PERMISSION_MATERIALIZATION.md",
+      "category": "governance",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/governance/HUMAN_GATE_BOUNDARY.md",
+      "type": "file",
+      "name": "HUMAN_GATE_BOUNDARY.md",
+      "category": "governance",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/governance/PERMISSION_ENVELOPE.md",
+      "type": "file",
+      "name": "PERMISSION_ENVELOPE.md",
+      "category": "governance",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/reconciliation",
+      "type": "directory",
+      "name": "reconciliation",
+      "category": "other",
+      "responsibility": "Module directory: reconciliation",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/reconciliation/FAILURE_TAXONOMY_MAPPING.md",
+      "type": "file",
+      "name": "FAILURE_TAXONOMY_MAPPING.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/reconciliation/OPENCODE_PERMISSION_MAPPING.md",
+      "type": "file",
+      "name": "OPENCODE_PERMISSION_MAPPING.md",
+      "category": "documentation",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/reconciliation/OPENCODE_PROGRAMMATIC_CAPABILITY_MATRIX.md",
+      "type": "file",
+      "name": "OPENCODE_PROGRAMMATIC_CAPABILITY_MATRIX.md",
+      "category": "documentation",
+      "responsibility": "Capability gateway — single-point runtime enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/reconciliation/RESOURCE_MODEL_MAPPING.md",
+      "type": "file",
+      "name": "RESOURCE_MODEL_MAPPING.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/reconciliation/TASK_ENTITY_MAPPING.md",
+      "type": "file",
+      "name": "TASK_ENTITY_MAPPING.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas",
+      "type": "directory",
+      "name": "schemas",
+      "category": "other",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/README.md",
+      "type": "file",
+      "name": "README.md",
+      "category": "schemas",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/delta.schema.json",
+      "type": "file",
+      "name": "delta.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/lifecycle.schema.json",
+      "type": "file",
+      "name": "lifecycle.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/permission-envelope.schema.json",
+      "type": "file",
+      "name": "permission-envelope.schema.json",
+      "category": "schemas",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/result.schema.json",
+      "type": "file",
+      "name": "result.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/task-passport.schema.json",
+      "type": "file",
+      "name": "task-passport.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/task-record.schema.json",
+      "type": "file",
+      "name": "task-record.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/v02-artifacts.schema.json",
+      "type": "file",
+      "name": "v02-artifacts.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/v02-authority.schema.json",
+      "type": "file",
+      "name": "v02-authority.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/v02-brains.schema.json",
+      "type": "file",
+      "name": "v02-brains.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/v02-decisions.schema.json",
+      "type": "file",
+      "name": "v02-decisions.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/v02-manifest.json",
+      "type": "file",
+      "name": "v02-manifest.json",
+      "category": "schemas",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/v02-registries.schema.json",
+      "type": "file",
+      "name": "v02-registries.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/v02-reporting.schema.json",
+      "type": "file",
+      "name": "v02-reporting.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/v02-roles.schema.json",
+      "type": "file",
+      "name": "v02-roles.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/v02-validation.schema.json",
+      "type": "file",
+      "name": "v02-validation.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/v02-workflows.schema.json",
+      "type": "file",
+      "name": "v02-workflows.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas/work-order.schema.json",
+      "type": "file",
+      "name": "work-order.schema.json",
+      "category": "schemas",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/test_audit_v1.json",
+      "type": "file",
+      "name": "test_audit_v1.json",
+      "category": "other",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/v1-decision-resolutions.json",
+      "type": "file",
+      "name": "v1-decision-resolutions.json",
+      "category": "other",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/v1-e2e-integration-passed.json",
+      "type": "file",
+      "name": "v1-e2e-integration-passed.json",
+      "category": "other",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/v1-runtime-complete.json",
+      "type": "file",
+      "name": "v1-runtime-complete.json",
+      "category": "other",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation",
+      "type": "directory",
+      "name": "validation",
+      "category": "other",
+      "responsibility": "Module directory: validation",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT.md",
+      "type": "file",
+      "name": "DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/DPT-ADMISSION-002_MAJOR_VERSION_TRANSITION_REPORT.md",
+      "type": "file",
+      "name": "DPT-ADMISSION-002_MAJOR_VERSION_TRANSITION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/DPT-AUTO-CONTINUE-002_PHASE_TRANSITION_REPORT.md",
+      "type": "file",
+      "name": "DPT-AUTO-CONTINUE-002_PHASE_TRANSITION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/DPT-AUTO-CONTINUE-003_CONSECUTIVE_PHASE_TRANSITION_REPORT.md",
+      "type": "file",
+      "name": "DPT-AUTO-CONTINUE-003_CONSECUTIVE_PHASE_TRANSITION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/DPT-CANONICAL-STATE-PRECEDENCE_GOVERNANCE_REPORT.md",
+      "type": "file",
+      "name": "DPT-CANONICAL-STATE-PRECEDENCE_GOVERNANCE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired",
+      "type": "directory",
+      "name": "Retired",
+      "category": "validation",
+      "responsibility": "Module directory: Retired",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT.md",
+      "type": "file",
+      "name": "DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-ADMISSION-002_MAJOR_VERSION_TRANSITION_REPORT.md",
+      "type": "file",
+      "name": "DPT-ADMISSION-002_MAJOR_VERSION_TRANSITION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUDIT-001_TOKEN_TELEMETRY_GAP_REPORT.md",
+      "type": "file",
+      "name": "DPT-AUDIT-001_TOKEN_TELEMETRY_GAP_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUDIT-002_REPORT_LIFECYCLE_COMPLIANCE_REPORT.md",
+      "type": "file",
+      "name": "DPT-AUDIT-002_REPORT_LIFECYCLE_COMPLIANCE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUDIT-003_BRANCH_DIVERGENCE_REPORT.md",
+      "type": "file",
+      "name": "DPT-AUDIT-003_BRANCH_DIVERGENCE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTH-001_AUTHORITY_PERMISSION_REPORT.md",
+      "type": "file",
+      "name": "DPT-AUTH-001_AUTHORITY_PERMISSION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTO-BOOTSTRAP_AUTONOMOUS_BOOTSTRAP_REPORT.md",
+      "type": "file",
+      "name": "DPT-AUTO-BOOTSTRAP_AUTONOMOUS_BOOTSTRAP_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-001_REGRESSION_REPORT.md",
+      "type": "file",
+      "name": "DPT-AUTO-CONTINUE-001_REGRESSION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-002_PHASE_TRANSITION_REPORT.md",
+      "type": "file",
+      "name": "DPT-AUTO-CONTINUE-002_PHASE_TRANSITION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-003_CONSECUTIVE_PHASE_TRANSITION_REPORT.md",
+      "type": "file",
+      "name": "DPT-AUTO-CONTINUE-003_CONSECUTIVE_PHASE_TRANSITION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-FINAL-PROOF_REPORT.md",
+      "type": "file",
+      "name": "DPT-AUTO-CONTINUE-FINAL-PROOF_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-ORCHESTRATION_REPAIR_REPORT.md",
+      "type": "file",
+      "name": "DPT-AUTO-CONTINUE-ORCHESTRATION_REPAIR_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-BATCH-ANALYSIS_001.md",
+      "type": "file",
+      "name": "DPT-BATCH-ANALYSIS_001.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-BRAIN-UNIVERSAL_COGNITION_DOCS_REPORT.md",
+      "type": "file",
+      "name": "DPT-BRAIN-UNIVERSAL_COGNITION_DOCS_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-DECISION-CANONICALIZATION_REPORT.md",
+      "type": "file",
+      "name": "DPT-DECISION-CANONICALIZATION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-002_ACCEPTANCE_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-002_ACCEPTANCE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-002_E2E_ACCEPTANCE_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-002_E2E_ACCEPTANCE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-002_RUNTIME_ENFORCEMENT_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-002_RUNTIME_ENFORCEMENT_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-003_REAL_PROJECT_VALIDATION_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-003_REAL_PROJECT_VALIDATION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-004_COMPONENT_REGISTRY_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-004_COMPONENT_REGISTRY_REPORT.md",
+      "category": "validation",
+      "responsibility": "Registry artifact — structured component inventory",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-005_CONSTITUTION_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-005_CONSTITUTION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Constitutional document — foundational principles and scope",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-006_CONTEXT_MAP_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-006_CONTEXT_MAP_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-007_ASSET_REGISTRY_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-007_ASSET_REGISTRY_REPORT.md",
+      "category": "validation",
+      "responsibility": "Registry artifact — structured component inventory",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-008_AUTONOMY_TEST_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-008_AUTONOMY_TEST_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-009_VISUAL_CHANGE_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-009_VISUAL_CHANGE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-010_NEW_GAME_DISCOVERY_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-010_NEW_GAME_DISCOVERY_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-011_TOKEN_CONTEXT_MEASUREMENT_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-011_TOKEN_CONTEXT_MEASUREMENT_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-012_EXECUTION_ORCHESTRATOR_FLOW_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-012_EXECUTION_ORCHESTRATOR_FLOW_REPORT.md",
+      "category": "validation",
+      "responsibility": "Execution control model — task/work order lifecycle",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-013_RUNTIME_EVIDENCE_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-013_RUNTIME_EVIDENCE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-014_SCHEMA_DEFINITION_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-014_SCHEMA_DEFINITION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-015_MANIFEST_GENERATION_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-015_MANIFEST_GENERATION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-016_CONTEXT_ROUTING_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-016_CONTEXT_ROUTING_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-017_VALIDATION_REPORTING_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-017_VALIDATION_REPORTING_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-018_PROJECT_INITIALIZER_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-018_PROJECT_INITIALIZER_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-019_PROJECT_SCANNER_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-019_PROJECT_SCANNER_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-020_CONTEXT_MAP_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-020_CONTEXT_MAP_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-021_REGISTRY_GENERATOR_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-021_REGISTRY_GENERATOR_REPORT.md",
+      "category": "validation",
+      "responsibility": "Registry artifact — structured component inventory",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-022_TEAM_ASSEMBLY_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-022_TEAM_ASSEMBLY_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-023_ORCHESTRATOR_RUNTIME_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-023_ORCHESTRATOR_RUNTIME_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-024_AGENT_ADAPTERS_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-024_AGENT_ADAPTERS_REPORT.md",
+      "category": "validation",
+      "responsibility": "Provider adapter — routes tool calls through DPT enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-025_PERSISTENT_MEMORY_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-025_PERSISTENT_MEMORY_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-026_WORKFLOW_STATE_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-026_WORKFLOW_STATE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-027_QUALITY_GATE_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-027_QUALITY_GATE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-028_HUMAN_APPROVAL_INTERFACE_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-028_HUMAN_APPROVAL_INTERFACE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-029_FREEZE_DECISIONS_REPORT.md",
+      "type": "file",
+      "name": "DPT-FOUNDATION-029_FREEZE_DECISIONS_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-LIFECYCLE-001_CLOSURE_INVARIANT_REPORT.md",
+      "type": "file",
+      "name": "DPT-LIFECYCLE-001_CLOSURE_INVARIANT_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-LIFECYCLE-PRECEDENCE_ADMISSION_REPORT.md",
+      "type": "file",
+      "name": "DPT-LIFECYCLE-PRECEDENCE_ADMISSION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-MIG-001_RECONCILIATION_REPORT.md",
+      "type": "file",
+      "name": "DPT-MIG-001_RECONCILIATION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-003B_PERMISSION_ROOT_CAUSE_REPORT.md",
+      "type": "file",
+      "name": "DPT-PROVIDER-003B_PERMISSION_ROOT_CAUSE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-003C_PERMISSION_REMEDIATION_ACCEPTANCE_REPORT.md",
+      "type": "file",
+      "name": "DPT-PROVIDER-003C_PERMISSION_REMEDIATION_ACCEPTANCE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004A_ARCHITECTURE_CAPABILITY_REPORT.md",
+      "type": "file",
+      "name": "DPT-PROVIDER-004A_ARCHITECTURE_CAPABILITY_REPORT.md",
+      "category": "validation",
+      "responsibility": "Capability gateway — single-point runtime enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004B_ADAPTER_CONTROL_SPIKE_REPORT.md",
+      "type": "file",
+      "name": "DPT-PROVIDER-004B_ADAPTER_CONTROL_SPIKE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Provider adapter — routes tool calls through DPT enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004C_DYNAMIC_PERMISSION_MATERIALIZATION_REPORT.md",
+      "type": "file",
+      "name": "DPT-PROVIDER-004C_DYNAMIC_PERMISSION_MATERIALIZATION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004D_SESSION_RESTART_REHYDRATION_REPORT.md",
+      "type": "file",
+      "name": "DPT-PROVIDER-004D_SESSION_RESTART_REHYDRATION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004E_EVIDENCE_EVENT_BRIDGE_REPORT.md",
+      "type": "file",
+      "name": "DPT-PROVIDER-004E_EVIDENCE_EVENT_BRIDGE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004F_MCP_CAPABILITY_SERVER_REPORT.md",
+      "type": "file",
+      "name": "DPT-PROVIDER-004F_MCP_CAPABILITY_SERVER_REPORT.md",
+      "category": "validation",
+      "responsibility": "Capability gateway — single-point runtime enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004G_SDK_MCP_END_TO_END_INTEGRATION_REPORT.md",
+      "type": "file",
+      "name": "DPT-PROVIDER-004G_SDK_MCP_END_TO_END_INTEGRATION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-005_PROVIDER_CONFORMANCE_REPORT.md",
+      "type": "file",
+      "name": "DPT-PROVIDER-005_PROVIDER_CONFORMANCE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-REC-001_RECONCILIATION_REPORT.md",
+      "type": "file",
+      "name": "DPT-REC-001_RECONCILIATION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-RECON-001_REPOSITORY_RECONCILIATION_REPORT.md",
+      "type": "file",
+      "name": "DPT-RECON-001_REPOSITORY_RECONCILIATION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-RECON-002_REPOSITORY_CANONICALIZATION_REPORT.md",
+      "type": "file",
+      "name": "DPT-RECON-002_REPOSITORY_CANONICALIZATION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-RECON-003_PROVIDER_BOOTSTRAP_CHECKPOINT_REPORT.md",
+      "type": "file",
+      "name": "DPT-RECON-003_PROVIDER_BOOTSTRAP_CHECKPOINT_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-RECON-003_TASK_SYSTEM_AUTHORITY_CONTRACT_REPORT.md",
+      "type": "file",
+      "name": "DPT-RECON-003_TASK_SYSTEM_AUTHORITY_CONTRACT_REPORT.md",
+      "category": "validation",
+      "responsibility": "Provider-neutral contract — defines semantics any adapter must implement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-RECON-V1_DECISION_DEPENDENCY_MATRIX.md",
+      "type": "file",
+      "name": "DPT-RECON-V1_DECISION_DEPENDENCY_MATRIX.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-RELEASE-001_V01_RELEASE_GATE_REPORT.md",
+      "type": "file",
+      "name": "DPT-RELEASE-001_V01_RELEASE_GATE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-REPORT_LIFECYCLE_GOVERNANCE_IMPLEMENTATION_REPORT.md",
+      "type": "file",
+      "name": "DPT-REPORT_LIFECYCLE_GOVERNANCE_IMPLEMENTATION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-VAL-001_OPENCODE_CONFORMANCE_REPORT.md",
+      "type": "file",
+      "name": "DPT-VAL-001_OPENCODE_CONFORMANCE_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/FreeBuff Resault.md",
+      "type": "file",
+      "name": "FreeBuff Resault.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/V1_COMPLETION_AUDIT.md",
+      "type": "file",
+      "name": "V1_COMPLETION_AUDIT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/V1_RUNTIME_RECONCILIATION_REPORT.md",
+      "type": "file",
+      "name": "V1_RUNTIME_RECONCILIATION_REPORT.md",
+      "category": "validation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "opencode.json",
+      "type": "file",
+      "name": "opencode.json",
+      "category": "other",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers",
+      "type": "directory",
+      "name": "providers",
+      "category": "other",
+      "responsibility": "Module directory: providers",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/contract",
+      "type": "directory",
+      "name": "contract",
+      "category": "providers",
+      "responsibility": "Provider-neutral contract — defines semantics any adapter must implement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/contract/capability-descriptor.mjs",
+      "type": "file",
+      "name": "capability-descriptor.mjs",
+      "category": "contracts",
+      "responsibility": "Capability gateway — single-point runtime enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/contract/capability-gateway.mjs",
+      "type": "file",
+      "name": "capability-gateway.mjs",
+      "category": "contracts",
+      "responsibility": "Capability gateway — single-point runtime enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/contract/conformance-suite.mjs",
+      "type": "file",
+      "name": "conformance-suite.mjs",
+      "category": "contracts",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/contract/phase-admission-enforcer.mjs",
+      "type": "file",
+      "name": "phase-admission-enforcer.mjs",
+      "category": "contracts",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/contract/provider-contract.mjs",
+      "type": "file",
+      "name": "provider-contract.mjs",
+      "category": "contracts",
+      "responsibility": "Provider-neutral contract — defines semantics any adapter must implement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose",
+      "type": "directory",
+      "name": "goose",
+      "category": "providers",
+      "responsibility": "Provider adapter — routes tool calls through DPT enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/.dpt-memory-test.json",
+      "type": "file",
+      "name": ".dpt-memory-test.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/approval-ui-runtime.mjs",
+      "type": "file",
+      "name": "approval-ui-runtime.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/dag-calculator.mjs",
+      "type": "file",
+      "name": "dag-calculator.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/dpt-bootstrap.mjs",
+      "type": "file",
+      "name": "dpt-bootstrap.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/dpt-extension.mjs",
+      "type": "file",
+      "name": "dpt-extension.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/dpt-orchestrator-harness.mjs",
+      "type": "file",
+      "name": "dpt-orchestrator-harness.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/dpt-recipe.yaml",
+      "type": "file",
+      "name": "dpt-recipe.yaml",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": null
+    },
+    {
+      "path": "providers/goose/freeze-decisions-runtime.mjs",
+      "type": "file",
+      "name": "freeze-decisions-runtime.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/goose-adapter.mjs",
+      "type": "file",
+      "name": "goose-adapter.mjs",
+      "category": "adapters",
+      "responsibility": "Provider adapter — routes tool calls through DPT enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/memory-runtime.mjs",
+      "type": "file",
+      "name": "memory-runtime.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/orchestrator-core.mjs",
+      "type": "file",
+      "name": "orchestrator-core.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/qualitygate-runtime.mjs",
+      "type": "file",
+      "name": "qualitygate-runtime.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-admission-001.mjs",
+      "type": "file",
+      "name": "test-admission-001.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-admission-002.mjs",
+      "type": "file",
+      "name": "test-admission-002.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-auto-continue-002.mjs",
+      "type": "file",
+      "name": "test-auto-continue-002.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-auto-continue-003.mjs",
+      "type": "file",
+      "name": "test-auto-continue-003.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-auto-continue-harness.mjs",
+      "type": "file",
+      "name": "test-auto-continue-harness.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-auto-continue-invariant.mjs",
+      "type": "file",
+      "name": "test-auto-continue-invariant.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-001-cleanup.mjs",
+      "type": "file",
+      "name": "test-foundation-001-cleanup.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-003.mjs",
+      "type": "file",
+      "name": "test-foundation-003.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-004.mjs",
+      "type": "file",
+      "name": "test-foundation-004.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-005.mjs",
+      "type": "file",
+      "name": "test-foundation-005.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-006.mjs",
+      "type": "file",
+      "name": "test-foundation-006.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-007.mjs",
+      "type": "file",
+      "name": "test-foundation-007.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-008.mjs",
+      "type": "file",
+      "name": "test-foundation-008.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-009.mjs",
+      "type": "file",
+      "name": "test-foundation-009.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-010.mjs",
+      "type": "file",
+      "name": "test-foundation-010.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-011.mjs",
+      "type": "file",
+      "name": "test-foundation-011.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-012.mjs",
+      "type": "file",
+      "name": "test-foundation-012.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-013.mjs",
+      "type": "file",
+      "name": "test-foundation-013.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-014.mjs",
+      "type": "file",
+      "name": "test-foundation-014.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-015.mjs",
+      "type": "file",
+      "name": "test-foundation-015.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-016.mjs",
+      "type": "file",
+      "name": "test-foundation-016.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-017.mjs",
+      "type": "file",
+      "name": "test-foundation-017.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-018.mjs",
+      "type": "file",
+      "name": "test-foundation-018.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-019.mjs",
+      "type": "file",
+      "name": "test-foundation-019.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-020.mjs",
+      "type": "file",
+      "name": "test-foundation-020.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-021.mjs",
+      "type": "file",
+      "name": "test-foundation-021.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-022.mjs",
+      "type": "file",
+      "name": "test-foundation-022.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-023.mjs",
+      "type": "file",
+      "name": "test-foundation-023.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-024.mjs",
+      "type": "file",
+      "name": "test-foundation-024.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-025.mjs",
+      "type": "file",
+      "name": "test-foundation-025.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-026.mjs",
+      "type": "file",
+      "name": "test-foundation-026.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-027.mjs",
+      "type": "file",
+      "name": "test-foundation-027.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-028.mjs",
+      "type": "file",
+      "name": "test-foundation-028.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-foundation-029.mjs",
+      "type": "file",
+      "name": "test-foundation-029.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-goose-acceptance.mjs",
+      "type": "file",
+      "name": "test-goose-acceptance.mjs",
+      "category": "adapters",
+      "responsibility": "Provider adapter — routes tool calls through DPT enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-goose-concurrency.mjs",
+      "type": "file",
+      "name": "test-goose-concurrency.mjs",
+      "category": "adapters",
+      "responsibility": "Provider adapter — routes tool calls through DPT enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-goose-e2e.mjs",
+      "type": "file",
+      "name": "test-goose-e2e.mjs",
+      "category": "adapters",
+      "responsibility": "Provider adapter — routes tool calls through DPT enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-goose-enforcement.mjs",
+      "type": "file",
+      "name": "test-goose-enforcement.mjs",
+      "category": "adapters",
+      "responsibility": "Provider adapter — routes tool calls through DPT enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-lifecycle-closure-invariant.mjs",
+      "type": "file",
+      "name": "test-lifecycle-closure-invariant.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-lifecycle-precedence.mjs",
+      "type": "file",
+      "name": "test-lifecycle-precedence.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-release-001.mjs",
+      "type": "file",
+      "name": "test-release-001.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-v1-runtime-023.mjs",
+      "type": "file",
+      "name": "test-v1-runtime-023.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-v1-runtime-024.mjs",
+      "type": "file",
+      "name": "test-v1-runtime-024.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-v1-runtime-025.mjs",
+      "type": "file",
+      "name": "test-v1-runtime-025.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-v1-runtime-026.mjs",
+      "type": "file",
+      "name": "test-v1-runtime-026.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-v1-runtime-027.mjs",
+      "type": "file",
+      "name": "test-v1-runtime-027.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-v1-runtime-028.mjs",
+      "type": "file",
+      "name": "test-v1-runtime-028.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-v1-runtime-029.mjs",
+      "type": "file",
+      "name": "test-v1-runtime-029.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-v1-runtime-030.mjs",
+      "type": "file",
+      "name": "test-v1-runtime-030.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/test-v1-runtime-031.mjs",
+      "type": "file",
+      "name": "test-v1-runtime-031.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose/workflow-runtime.mjs",
+      "type": "file",
+      "name": "workflow-runtime.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode",
+      "type": "directory",
+      "name": "opencode",
+      "category": "providers",
+      "responsibility": "Module directory: opencode",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/.dpt-e2e-state",
+      "type": "directory",
+      "name": ".dpt-e2e-state",
+      "category": "adapters",
+      "responsibility": "Module directory: .dpt-e2e-state",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/.dpt-e2e-state/events-DPT-TASK-004G-DPT-WO-004G-PARENT.json",
+      "type": "file",
+      "name": "events-DPT-TASK-004G-DPT-WO-004G-PARENT.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/.dpt-e2e-state/rehydration-DPT-TASK-004G-DPT-WO-004G-PARENT.json",
+      "type": "file",
+      "name": "rehydration-DPT-TASK-004G-DPT-WO-004G-PARENT.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/.dpt-mcp-state",
+      "type": "directory",
+      "name": ".dpt-mcp-state",
+      "category": "adapters",
+      "responsibility": "Module directory: .dpt-mcp-state",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/.dpt-mcp-state/events-DPT-TASK-004F-DPT-WO-004F.json",
+      "type": "file",
+      "name": "events-DPT-TASK-004F-DPT-WO-004F.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/.dpt-mcp-state/rehydration-DPT-TASK-004F-DPT-WO-004F.json",
+      "type": "file",
+      "name": "rehydration-DPT-TASK-004F-DPT-WO-004F.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/adapter-spike.mjs",
+      "type": "file",
+      "name": "adapter-spike.mjs",
+      "category": "adapters",
+      "responsibility": "Provider adapter — routes tool calls through DPT enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/context-receipt.mjs",
+      "type": "file",
+      "name": "context-receipt.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/dpt-mcp-client.mjs",
+      "type": "file",
+      "name": "dpt-mcp-client.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/dpt-mcp-server.mjs",
+      "type": "file",
+      "name": "dpt-mcp-server.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/event-bridge.mjs",
+      "type": "file",
+      "name": "event-bridge.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/event-model.mjs",
+      "type": "file",
+      "name": "event-model.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/execute-foundation-001-schemas.mjs",
+      "type": "file",
+      "name": "execute-foundation-001-schemas.mjs",
+      "category": "adapters",
+      "responsibility": "Machine-readable schema — validates DPT record structure",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/launch-recon-003-diagnostic.mjs",
+      "type": "file",
+      "name": "launch-recon-003-diagnostic.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules",
+      "type": "directory",
+      "name": "node_modules",
+      "category": "adapters",
+      "responsibility": "Module directory: node_modules",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/.package-lock.json",
+      "type": "file",
+      "name": ".package-lock.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/cross-spawn",
+      "type": "directory",
+      "name": "cross-spawn",
+      "category": "adapters",
+      "responsibility": "Module directory: cross-spawn",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/cross-spawn/README.md",
+      "type": "file",
+      "name": "README.md",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/cross-spawn/package.json",
+      "type": "file",
+      "name": "package.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/isexe",
+      "type": "directory",
+      "name": "isexe",
+      "category": "adapters",
+      "responsibility": "Module directory: isexe",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/isexe/README.md",
+      "type": "file",
+      "name": "README.md",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/isexe/package.json",
+      "type": "file",
+      "name": "package.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/path-key",
+      "type": "directory",
+      "name": "path-key",
+      "category": "adapters",
+      "responsibility": "Module directory: path-key",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/path-key/package.json",
+      "type": "file",
+      "name": "package.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/path-key/readme.md",
+      "type": "file",
+      "name": "readme.md",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/shebang-command",
+      "type": "directory",
+      "name": "shebang-command",
+      "category": "adapters",
+      "responsibility": "Module directory: shebang-command",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/shebang-command/package.json",
+      "type": "file",
+      "name": "package.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/shebang-command/readme.md",
+      "type": "file",
+      "name": "readme.md",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/shebang-regex",
+      "type": "directory",
+      "name": "shebang-regex",
+      "category": "adapters",
+      "responsibility": "Module directory: shebang-regex",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/shebang-regex/package.json",
+      "type": "file",
+      "name": "package.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/shebang-regex/readme.md",
+      "type": "file",
+      "name": "readme.md",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/which",
+      "type": "directory",
+      "name": "which",
+      "category": "adapters",
+      "responsibility": "Module directory: which",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/which/CHANGELOG.md",
+      "type": "file",
+      "name": "CHANGELOG.md",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/which/README.md",
+      "type": "file",
+      "name": "README.md",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/node_modules/which/package.json",
+      "type": "file",
+      "name": "package.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/opencode-adapter.mjs",
+      "type": "file",
+      "name": "opencode-adapter.mjs",
+      "category": "adapters",
+      "responsibility": "Provider adapter — routes tool calls through DPT enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/package-lock.json",
+      "type": "file",
+      "name": "package-lock.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/package.json",
+      "type": "file",
+      "name": "package.json",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/permission-audit.mjs",
+      "type": "file",
+      "name": "permission-audit.mjs",
+      "category": "adapters",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/permission-envelope.mjs",
+      "type": "file",
+      "name": "permission-envelope.mjs",
+      "category": "adapters",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/permission-materializer.mjs",
+      "type": "file",
+      "name": "permission-materializer.mjs",
+      "category": "adapters",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/rehydration-record.mjs",
+      "type": "file",
+      "name": "rehydration-record.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/sdk-normalizer.mjs",
+      "type": "file",
+      "name": "sdk-normalizer.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/test-e2e-integration.mjs",
+      "type": "file",
+      "name": "test-e2e-integration.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/test-evidence-bridge.mjs",
+      "type": "file",
+      "name": "test-evidence-bridge.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/test-foundation-001-minimal-write.mjs",
+      "type": "file",
+      "name": "test-foundation-001-minimal-write.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/test-mcp-server.mjs",
+      "type": "file",
+      "name": "test-mcp-server.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/test-permissions.mjs",
+      "type": "file",
+      "name": "test-permissions.mjs",
+      "category": "adapters",
+      "responsibility": "Permission envelope — authority grant materialization",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode/test-rehydration.mjs",
+      "type": "file",
+      "name": "test-rehydration.mjs",
+      "category": "adapters",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/reference",
+      "type": "directory",
+      "name": "reference",
+      "category": "providers",
+      "responsibility": "Module directory: reference",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/reference/reference-adapter.mjs",
+      "type": "file",
+      "name": "reference-adapter.mjs",
+      "category": "adapters",
+      "responsibility": "Provider adapter — routes tool calls through DPT enforcement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/test-conformance.mjs",
+      "type": "file",
+      "name": "test-conformance.mjs",
+      "category": "providers",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates",
+      "type": "directory",
+      "name": "templates",
+      "category": "other",
+      "responsibility": "Module directory: templates",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates/AI_START_HERE.md",
+      "type": "file",
+      "name": "AI_START_HERE.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates/ASSET_REGISTRY.md",
+      "type": "file",
+      "name": "ASSET_REGISTRY.md",
+      "category": "documentation",
+      "responsibility": "Registry artifact — structured component inventory",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates/ASSET_REQUEST.md",
+      "type": "file",
+      "name": "ASSET_REQUEST.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates/COMPONENT_REGISTRY.md",
+      "type": "file",
+      "name": "COMPONENT_REGISTRY.md",
+      "category": "documentation",
+      "responsibility": "Registry artifact — structured component inventory",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates/DECISION_RECORD.md",
+      "type": "file",
+      "name": "DECISION_RECORD.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates/FEATURE_CONTRACT.md",
+      "type": "file",
+      "name": "FEATURE_CONTRACT.md",
+      "category": "documentation",
+      "responsibility": "Provider-neutral contract — defines semantics any adapter must implement",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates/PROJECT_CONSTITUTION.md",
+      "type": "file",
+      "name": "PROJECT_CONSTITUTION.md",
+      "category": "documentation",
+      "responsibility": "Constitutional document — foundational principles and scope",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates/PROJECT_CONTEXT_MAP.md",
+      "type": "file",
+      "name": "PROJECT_CONTEXT_MAP.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates/TEAM_MANIFEST.md",
+      "type": "file",
+      "name": "TEAM_MANIFEST.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows",
+      "type": "directory",
+      "name": "workflows",
+      "category": "other",
+      "responsibility": "Module directory: workflows",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows/BUG_FIX.md",
+      "type": "file",
+      "name": "BUG_FIX.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows/FEATURE_DEVELOPMENT.md",
+      "type": "file",
+      "name": "FEATURE_DEVELOPMENT.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows/NEW_GAME.md",
+      "type": "file",
+      "name": "NEW_GAME.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows/PROJECT_INITIALIZATION.md",
+      "type": "file",
+      "name": "PROJECT_INITIALIZATION.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows/RELEASE.md",
+      "type": "file",
+      "name": "RELEASE.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows/VALIDATION_GATES.md",
+      "type": "file",
+      "name": "VALIDATION_GATES.md",
+      "category": "documentation",
+      "responsibility": "Project artifact",
+      "dependencies": [],
+      "conformance": "PRESENT"
+    }
+  ],
+  "conformance": {}
+}

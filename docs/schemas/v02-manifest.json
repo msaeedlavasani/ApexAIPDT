@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "v02-manifest.json",
+  "title": "DPT V0.2 Schema Manifest",
+  "version": "0.2.0",
+  "generated": "2026-09-05T17:07:39.311Z",
+  "schemas": [
+    {
+      "id": "v02-brains.schema.json",
+      "title": "DPT Brains Schema",
+      "description": "Schema for DPT brain definitions (areas of responsibility and expertise)",
+      "file": "v02-brains.schema.json"
+    },
+    {
+      "id": "v02-roles.schema.json",
+      "title": "DPT Roles Schema",
+      "description": "Schema for DPT role definitions (operational identities assigned to agents)",
+      "file": "v02-roles.schema.json"
+    },
+    {
+      "id": "v02-authority.schema.json",
+      "title": "DPT Authority Schema",
+      "description": "Schema for DPT authority definitions (explicit boundaries on role decisions)",
+      "file": "v02-authority.schema.json"
+    },
+    {
+      "id": "v02-artifacts.schema.json",
+      "title": "DPT Artifacts Schema",
+      "description": "Schema for DPT artifact definitions (structured outputs)",
+      "file": "v02-artifacts.schema.json"
+    },
+    {
+      "id": "v02-decisions.schema.json",
+      "title": "DPT Decisions Schema",
+      "description": "Schema for DPT decision definitions (architecture decisions, ADRs)",
+      "file": "v02-decisions.schema.json"
+    },
+    {
+      "id": "v02-registries.schema.json",
+      "title": "DPT Registries Schema",
+      "description": "Schema for DPT registry definitions (component, asset, pitfall registries)",
+      "file": "v02-registries.schema.json"
+    },
+    {
+      "id": "v02-workflows.schema.json",
+      "title": "DPT Workflows Schema",
+      "description": "Schema for DPT workflow definitions (repeatable ways of moving work)",
+      "file": "v02-workflows.schema.json"
+    }
+  ],
+  "summary": {
+    "total_schemas": 7,
+    "categories": [
+      "brains",
+      "roles",
+      "authority",
+      "artifacts",
+      "decisions",
+      "registries",
+      "workflows"
+    ]
+  }
+}

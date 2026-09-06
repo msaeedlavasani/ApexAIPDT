@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "v02-validation.schema.json",
+  "title": "DPT Validation Report Schema",
+  "description": "Schema for DPT validation reports",
+  "type": "object",
+  "required": [
+    "task_id",
+    "status",
+    "test_date",
+    "tests_passed",
+    "tests_failed",
+    "owner_permission_popups"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "VALIDATED"
+      ]
+    },
+    "test_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tests_passed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "tests_failed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "owner_permission_popups": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "assertions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conclusions": {
+      "type": "string"
+    }
+  }
+}

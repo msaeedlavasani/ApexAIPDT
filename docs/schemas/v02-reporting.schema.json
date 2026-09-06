@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "v02-reporting.schema.json",
+  "title": "DPT Report Schema",
+  "description": "Schema for DPT reports (phase reports, release gates, evidence compilation)",
+  "type": "object",
+  "required": [
+    "report_id",
+    "type",
+    "phase",
+    "date",
+    "findings"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "phase",
+        "release_gate",
+        "evidence",
+        "audit"
+      ]
+    },
+    "phase": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_phase": {
+      "type": "string"
+    }
+  }
+}

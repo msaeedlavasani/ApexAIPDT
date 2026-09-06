@@ -1,0 +1,32 @@
+{
+  "schema_version": "v0.3",
+  "component": "freeze-decisions",
+  "evidence_gathered": true,
+  "decisions": [
+    {
+      "area": "transport",
+      "type": "spec",
+      "classification": "NG-02",
+      "requires_owner": false
+    },
+    {
+      "area": "persistence",
+      "type": "spec",
+      "classification": "NG-02",
+      "requires_owner": false
+    },
+    {
+      "area": "deployment-topology",
+      "type": "spec",
+      "classification": "NG-02",
+      "requires_owner": false
+    },
+    {
+      "area": "packaging",
+      "type": "spec",
+      "classification": "NG-02",
+      "requires_owner": false
+    }
+  ],
+  "description": "Evidence-based freeze decisions from V0 validation"
+}

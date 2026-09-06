@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "v02-brains.schema.json",
+  "title": "DPT Brains Schema",
+  "description": "Schema for DPT brain definitions (areas of responsibility and expertise)",
+  "type": "object",
+  "required": [
+    "brain_id",
+    "title",
+    "scope",
+    "responsibilities"
+  ],
+  "properties": {
+    "brain_id": {
+      "type": "string",
+      "pattern": "^DPT-BRAIN-[A-Z0-9-]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string"
+    },
+    "responsibilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

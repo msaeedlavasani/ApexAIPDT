@@ -1,0 +1,44 @@
+{
+  "task_system": {
+    "description": "Durable task state and lifecycle",
+    "components": [
+      "docs/DPT_TASK_SYSTEM.md",
+      "docs/TASKS.md",
+      "docs/schemas/"
+    ],
+    "enforcer": "goose-adapter.mjs"
+  },
+  "authority": {
+    "description": "Delegated authority and permission model",
+    "components": [
+      "docs/DPT_AUTHORITY_MODEL.md",
+      "providers/opencode/permission-envelope.mjs",
+      "providers/contract/capability-gateway.mjs"
+    ],
+    "enforcer": "capability-gateway.mjs"
+  },
+  "execution": {
+    "description": "Task execution and work order lifecycle",
+    "components": [
+      "docs/DPT_EXECUTION_CONTROL_MODEL.md",
+      "providers/goose/goose-adapter.mjs"
+    ],
+    "enforcer": "goose-adapter.mjs"
+  },
+  "governance": {
+    "description": "Policy enforcement and human gate boundaries",
+    "components": [
+      "docs/governance/",
+      "docs/APEX_AI_DPT_CONSTITUTION.md"
+    ],
+    "enforcer": "capability-gateway.mjs"
+  },
+  "validation": {
+    "description": "Test suites and verification evidence",
+    "components": [
+      "docs/validation/",
+      "providers/goose/test-*.mjs"
+    ],
+    "enforcer": "test harness"
+  }
+}

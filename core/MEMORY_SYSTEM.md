@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Memory prevents APDT from repeatedly rediscovering the same project facts, decisions, patterns, and corrections.
+Memory prevents DPT from repeatedly rediscovering the same project facts, decisions, patterns, and corrections.
 
 ## Memory layers
 

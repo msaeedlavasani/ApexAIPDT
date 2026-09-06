@@ -1,0 +1,66 @@
+{
+  "schema_version": "v0.3",
+  "generated_at": "2026-09-05T17:07:40.844Z",
+  "type": "recommendation",
+  "note": "These are recommendations only. Actual authority assignment requires Owner decision.",
+  "role_recommendations": [
+    {
+      "role": "DEVELOPER",
+      "description": "Primary executor of task work orders",
+      "authority_mode": "AUTHENTICATED",
+      "capabilities": [
+        "repository.read",
+        "repository.write",
+        "docs.write",
+        "shell.run"
+      ],
+      "denied_capabilities": [
+        "git.push",
+        "git.merge",
+        "production.deploy",
+        "authority.escalate"
+      ]
+    },
+    {
+      "role": "REVIEWER",
+      "description": "Independent verification and validation",
+      "authority_mode": "OBSERVER",
+      "capabilities": [
+        "repository.read",
+        "docs.read",
+        "validation.execute"
+      ],
+      "denied_capabilities": [
+        "repository.write",
+        "shell.run",
+        "authority.assign"
+      ]
+    },
+    {
+      "role": "ORCHESTRATOR",
+      "description": "Task lifecycle management and DAG advancement",
+      "authority_mode": "MANAGED",
+      "capabilities": [
+        "repository.read",
+        "repository.write",
+        "docs.write",
+        "tasks.manage",
+        "validation.execute"
+      ],
+      "denied_capabilities": [
+        "git.push",
+        "git.merge",
+        "production.deploy",
+        "authority.escalate"
+      ]
+    }
+  ],
+  "assembly_guidance": {
+    "min_roles": 2,
+    "separation_ofduties": [
+      "execution",
+      "review"
+    ],
+    "escalation_path": "Owner review required for HG-01 through HG-07"
+  }
+}
