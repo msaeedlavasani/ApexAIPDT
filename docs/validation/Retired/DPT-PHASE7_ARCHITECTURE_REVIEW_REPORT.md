@@ -1,3 +1,9 @@
+> **RETIRAL NOTE:** This report has been retired on 2026-09-06 per canonical REPORT_RETIRED lifecycle.
+> Consumed by: DPT-V3-VERTICAL-SLICE-ARCHITECTURE.md
+> Reason: V3 planning artifact created, no unresolved attention remains.
+
+---
+
 # DPT — Phase 7 Connected Project Architecture Review
 
 **Report Date:** 2026-09-06  
