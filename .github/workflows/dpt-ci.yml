@@ -366,8 +366,13 @@ jobs:
           echo "✓ .dpt/status.json updated (conclusion: $CONCLUSION)"
       
       - name: Commit status update
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "ci: update execution status (DPT-CI-001)"
-          file_pattern: ".dpt/status.json"
-          skip_fetch: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMIT_USER: github-actions[bot]
+          COMMIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git config --local user.name "$COMMIT_USER"
+          git config --local user.email "$COMMIT_EMAIL"
+          git add .dpt/status.json
+          git commit -m "ci: update execution status (DPT-CI-001) [skip ci]" || echo "No changes to commit"
+          git push origin HEAD 2>&1 || echo "Push skipped (PR head may be read-only)"
