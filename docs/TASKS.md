@@ -307,6 +307,30 @@ notes: |
   - OD-T5-005-A → ACCEPTED (DPT-FOUNDATION-041 blocked by sequential dependency)
 [/DELTA]
 
+[DELTA]
+task_id: DPT-FOUNDATION-038
+base_state_revision: 20
+changes: status=READY→RUNNING, implementation_status=ARTIFACTS_COMPLETE→IMPLEMENTATION_PROGRESS, completed_steps=od_resolution,task_status_update,adr_creation,schema_creation,spec_creation → od_resolution,task_status_update,adr_creation,schema_creation,spec_creation,audit_trail_extension,projection_implementation,test_validation, state_revision=20→21
+applied_by: DPT-LIVERUN-002 batch implementation
+artefacts: docs/schemas/audit-trail.schema.json, providers/goose/efficiency-projection.mjs, providers/goose/test-efficiency-projection.mjs, docs/BATCH_BRANCH_LIFECYCLE_INVARIANT.md
+notes: |
+  DPT-FOUNDATION-038 implementation progress (batch branch workflow).
+  
+  Completed:
+  - Extended AUDIT_TRAIL schema with optional token_usage fields (ADR-053 compliant)
+  - Implemented EFFICIENCY_PROJECTION() function with 31 test cases
+  - Added overflow alerting at 80% threshold (OD-T5-002-B resolved)
+  - Documented batch branch lifecycle invariant
+  
+  Implementation artifacts:
+  - docs/schemas/audit-trail.schema.json: Base audit event schema with token_usage extension
+  - providers/goose/efficiency-projection.mjs: Projection function implementation
+  - providers/goose/test-efficiency-projection.mjs: 31 passing tests
+  
+  Batch branch: feat/foundation-038-implementation
+  Workflow: SYNCED MAIN → CREATE BATCH BRANCH → EXECUTE → VALIDATE → PUSH → PR → MERGE
+[/DELTA]
+
 ---
 
 ## Phase 6 Tasks (V2 Learning System Implementation)
@@ -360,15 +384,15 @@ auto_continue: YES
 task_id: DPT-FOUNDATION-038
 title: V2 Learning System: Token/Context Efficiency
 objective: Implement token/context efficiency measurement and optimization for V2 learning system. Measures context utilization, overflow events, and routing efficiency via projection layer over audit trail.
-status: READY
+status: RUNNING
 dependencies: DPT-FOUNDATION-037
-readiness: READY (OD-T5-002-B resolved: static 80% overflow threshold accepted)
+readiness: RUNNING — Implementation in progress on feat/foundation-038-implementation
 task_class: implementation
-required_capabilities: repository.read, docs.write, schema.definition
+required_capabilities: repository.read, docs.write, schema.definition, javascript.runtime
 denied_capabilities: git.push, git.merge, production.*, authority.self_expansion
 human_gate_state: NONE
 passport_revision: 1
-state_revision: 2
+state_revision: 3
 next_task: DPT-FOUNDATION-039
 auto_continue: YES
 [/TASK]
