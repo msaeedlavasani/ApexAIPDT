@@ -658,6 +658,29 @@ notes: |
   - Tests: providers/goose/test-cross-project-extraction.mjs (40/40 passing)
 [/DELTA]
 
+[DELTA]
+task_id: DPT-FOUNDATION-041
+base_state_revision: 27
+changes: status=READY→CLOSED, implementation_status=IMPLEMENTATION_COMPLETE, state_revision=27→28
+applied_by: DPT-LIVERUN-005 batch merge
+artefacts: docs/adr/ADR-056-cross-project-pattern-extraction.md, docs/schemas/cross-project-pattern.schema.json, providers/goose/cross-project-extraction.mjs, providers/goose/test-cross-project-extraction.mjs
+notes: |
+  DPT-FOUNDATION-041 implementation completed and merged via PR #13.
+  
+  Batch lifecycle satisfied:
+  - SYNCED MAIN ✓ (7131082)
+  - CREATE BATCH BRANCH ✓ (feat/foundation-041-cross-project-pattern-extraction)
+  - EXECUTE BATCH ✓
+  - VALIDATE BATCH ✓ (40/40 tests passing)
+  - PUSH BRANCH ✓
+  - REMOTE READBACK ✓
+  - OPEN PR TO MAIN ✓ (PR #13)
+  - PR CI / INTEGRATION VALIDATION ✓ (all checks pass)
+  - MERGE ✓ (1bbfa15)
+  - SYNC LOCAL MAIN FROM ORIGIN ✓
+  - POST-MERGE READBACK ✓ (working tree clean)
+[/DELTA]
+
 ## Repository Durability Checkpoint
 
 [DELTA]
