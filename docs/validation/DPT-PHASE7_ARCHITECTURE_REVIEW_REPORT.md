@@ -431,7 +431,18 @@ V3: Prove external project connection vertical slice (NEXT)
 
 ---
 
-**Report Status:** PENDING_RECONCILIATION  
-**Recommendation:** RECONCILE_FOUNDATION_037 → THEN PROCEED_TO_V3_PLANNING  
+---
+
+## 9. Lifecycle Update — Reconciliation Complete
+
+**Foundation-037 Reconciliation:** COMPLETED  
+**Date:** 2026-09-06  
+**PR:** #26 (feat/foundation-037-intervention-measurement)  
+**Tests:** 66/66 PASS
+
+Foundation-037 has been reopened from premature CLOSED to REWORK, implemented, tested (66/66 PASS), and re-closed with full runtime evidence. The gap identified in F-005 is now closed.
+
+**Report Status:** REVIEW_COMPLETE  
+**Next Action:** V3 planning may proceed per corrected vertical-slice architecture  
 **Classification:** NG-02 + NG-10  
 **Owner Permission Popups:** 0
