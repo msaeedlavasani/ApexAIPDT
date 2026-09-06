@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apexai.dev/schemas/token-efficiency-projection.json",
+  "title": "Token/Context Efficiency Projection",
+  "description": "Schema for efficiency metrics derived from audit trail events. Represents a projection function output, not a persistent entity.",
+  "type": "object",
+  "required": ["projection_id", "time_window", "computed_at", "metrics"],
+  "properties": {
+    "projection_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Stable identifier for this projection run"
+    },
+    "time_window": {
+      "type": "object",
+      "required": ["start", "end"],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "computed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_event_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of audit events processed"
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "total_tokens": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Sum of input + output tokens"
+        },
+        "input_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "output_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "input_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "input_tokens / total_tokens"
+        },
+        "avg_utilization": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Average context utilization percentage"
+        },
+        "p95_utilization": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "overflow_count": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of attempts exceeding context limit"
+        },
+        "efficiency_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "1 - (overflow_count / total_attempts)"
+        },
+        "service_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "SERVICE_calls / total_calls (determinism routing efficiency)"
+        },
+        "cost_estimate": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Derived cost estimate (for planning, not billing)"
+        }
+      },
+      "additionalProperties": false
+    },
+    "overflow_threshold": {
+      "type": "number",
+      "default": 80,
+      "description": "Utilization percentage threshold for overflow risk notification (OD-T5-002-B)"
+    },
+    "granularity": {
+      "type": "string",
+      "enum": ["per_provider", "per_model"],
+      "default": "per_provider",
+      "description": "Measurement abstraction level (OD-T5-002-A)"
+    },
+    "counting_mode": {
+      "type": "string",
+      "enum": ["per_turn", "aggregated"],
+      "default": "per_turn",
+      "description": "How turns are counted (OD-T5-002-C)"
+    }
+  },
+  "additionalProperties": false
+}
