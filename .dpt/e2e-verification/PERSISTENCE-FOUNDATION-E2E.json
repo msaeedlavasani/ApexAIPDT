@@ -1,0 +1,67 @@
+{
+  "verification_id": "PERSISTENCE-FOUNDATION-E2E",
+  "phase": "PERSISTENCE_FOUNDATION",
+  "overall_status": "PASSED",
+  "canonical_evidence_posture": {
+    "V3_IMPLEMENTATION": "COMPLETE",
+    "V3_INTERNAL_RUNTIME": "PROVEN",
+    "REAL_EXTERNAL_READ_PATH": "PROVEN",
+    "REAL_EXTERNAL_WRITE_PATH": "NOT_PROVEN",
+    "FULL_EXTERNAL_CLOSED_LOOP": "NOT_PROVEN"
+  },
+  "dependency_graph": {
+    "graph": "DURABLE_STATE → {LEASES || RETRY_CANCEL_REVOKE} → RECOVERY",
+    "satisfied": true
+  },
+  "persistence_model_correction": {
+    "original": "All attempt state ephemeral",
+    "corrected": "Attempt runtime/process is EPHEMERAL. Attempt Record + Attempt Identity are DURABLE.",
+    "supported_features": [
+      "unknown-outcome reconciliation",
+      "late-result rejection",
+      "retry lineage preservation",
+      "idempotency/effect correlation"
+    ]
+  },
+  "artifacts": {
+    "durable_state": {
+      "file": "providers/goose/durable-state.mjs",
+      "tests": "providers/goose/test-durable-state.mjs",
+      "test_count": 16,
+      "test_result": "PASS"
+    },
+    "lease_enforcement": {
+      "file": "providers/goose/lease-enforcement.mjs",
+      "tests": "providers/goose/test-lease-enforcement.mjs",
+      "test_count": 15,
+      "test_result": "PASS"
+    },
+    "retry_cancel_revoke": {
+      "file": "providers/goose/retry-cancel-revoke.mjs",
+      "tests": "providers/goose/test-retry-cancel-revoke.mjs",
+      "test_count": 13,
+      "test_result": "PASS"
+    },
+    "recovery_orchestration": {
+      "file": "providers/goose/recovery-orchestration.mjs",
+      "tests": "providers/goose/test-recovery-orchestration.mjs",
+      "test_count": 9,
+      "test_result": "PASS"
+    }
+  },
+  "runtime_proof": {
+    "total_tests": 53,
+    "passed": 53,
+    "failed": 0,
+    "crash_restart_proven": true,
+    "unknown_outcome_injection_proven": true,
+    "late_result_rejection_proven": true,
+    "retry_lineage_preserved": true,
+    "idempotency_correlated": true
+  },
+  "scope_bounded": {
+    "in_scope": ["DURABLE_STATE", "LEASES", "RETRY_CANCEL_REVOKE", "RECOVERY"],
+    "out_of_scope": ["POOL_PERSISTENCE", "PACKAGING_RUNTIME", "external_transport_authentication", "learning_automation", "new_V_features"]
+  },
+  "timestamp": "2026-09-07T02:50:00.000Z"
+}
