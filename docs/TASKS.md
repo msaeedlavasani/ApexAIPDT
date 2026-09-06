@@ -1308,7 +1308,7 @@ title: Contribution Candidate → Independent Review → Pool Admission
 objective: Implement cross-project contribution pipeline with independent review gate.
 status: CLOSED
 dependencies: DPT-V3-006
-readiness: NOT_READY (dependency DPT-V3-006 not CLOSED)
+readiness: READY (V3-SPINE-E2E CLOSED)
 task_class: external_integration_contribution
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
@@ -1340,7 +1340,7 @@ title: Update Propagation via Reference Transport
 objective: Validate one reference transport for update propagation across projects.
 status: CLOSED
 dependencies: DPT-V3-007
-readiness: NOT_READY (dependency DPT-V3-007 not CLOSED)
+readiness: READY (V3-SPINE-E2E + V3-006 CLOSED)
 task_class: external_integration_propagation
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
