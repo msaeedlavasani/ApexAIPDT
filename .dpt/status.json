@@ -30,17 +30,13 @@
     "last_sha": "f83f5d1",
     "last_run_time": "2026-09-06T11:51:20Z"
   },
-  "state_revision": 48,
+  "state_revision": 49,
   "summary": {
     "total_tasks": 18,
-    "open_tasks": 4,
-    "closed_tasks": 14,
-    "progress_pct": 77,
-    "ready_tasks": [
-      "DPT-V3-006",
-      "DPT-V3-007",
-      "DPT-V3-008"
-    ],
+    "open_tasks": 1,
+    "closed_tasks": 17,
+    "progress_pct": 94,
+    "ready_tasks": [],
     "blocked_tasks": []
   }
 }
