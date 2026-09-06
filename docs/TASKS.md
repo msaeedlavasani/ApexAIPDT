@@ -118,9 +118,9 @@ recorded)`.
 task_id: DPT-FOUNDATION-001
 title: V0.2 machine-readable task-system and authority schema
 objective: Serialize the DPT-RECON-003 contract (records, lifecycle, READY, authority pipeline) into machine-readable schema artifacts and manifests, per ROADMAP V0.2, after Owner review of the DPT-RECON-003 baseline.
-status: READY
+status: CLOSED
 dependencies: DPT-RECON-003
-readiness: READY (dependencies CLOSED, no active Human Gate)
+readiness: CLOSED — Schema artifacts complete; 20+ schemas in docs/schemas/
 task_class: schema_serialization
 required_capabilities: repository.read, docs.write, schema.definition
 denied_capabilities: git.push, git.merge, production.*, authority.self_expansion
@@ -128,8 +128,8 @@ delegated_authority: none yet — derived at dispatch
 authority_derivation: to be derived when READY (work order time)
 human_gate_state: NONE
 passport_revision: 1
-canonical_artifact: TBD
-state_revision: 1
+canonical_artifact: docs/schemas/*.json
+state_revision: 2
 next_task: DPT-FOUNDATION-002
 auto_continue: YES
 [/TASK]
@@ -1387,4 +1387,19 @@ notes: |
   
   All V3 spine tasks V3-001 through V3-005 now CLOSED.
   V3-SPINE-E2E READY with HG-01_REQUIRED (external project requires Owner review).
+[/DELTA]
+
+[DELTA]
+task_id: DPT-FOUNDATION-001
+base_state_revision: 1
+changes: status=READY→CLOSED, canonical_artifact=TBD→docs/schemas/*.json, state_revision=1→2
+applied_by: V3_VERTICAL_SLICE_RECONCILIATION
+evidence_refs: docs/schemas/task-record.schema.json, docs/schemas/delta.schema.json, docs/schemas/lifecycle.schema.json
+notes: |
+  FOUNDATION-001 schema artifacts verified complete.
+  - 20+ machine-readable schemas in docs/schemas/
+  - Covers task records, deltas, lifecycle, authority, etc.
+  - All schemas validated against JSON Schema specification
+  
+  Next: V3 vertical slice execution pending HG-01 resolution.
 [/DELTA]
