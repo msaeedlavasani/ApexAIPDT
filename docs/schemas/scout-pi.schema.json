@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scout + Project-Owned PI Runtime Schema",
+  "description": "Schema for Scout component that discovers and binds to external project's Project Intelligence",
+  "type": "object",
+  "required": ["scout_id", "target_project", "discovery_status"],
+  "properties": {
+    "scout_id": {
+      "type": "string",
+      "description": "Unique identifier for this scout instance",
+      "pattern": "^SCOUT-[A-Z0-9]{8,}$"
+    },
+    "target_project": {
+      "type": "object",
+      "description": "External project being scouted",
+      "properties": {
+        "repository_url": { "type": "string" },
+        "project_name": { "type": "string" },
+        "is_external_to_apex": { "type": "boolean" }
+      },
+      "required": ["repository_url", "project_name", "is_external_to_apex"]
+    },
+    "discovery_status": {
+      "type": "string",
+      "enum": ["DISCOVERING", "DISCOVERED", "BOUND", "ERROR"]
+    },
+    "project_intelligence": {
+      "type": "object",
+      "description": "Discovered Project Intelligence",
+      "properties": {
+        "pi_id": { "type": "string" },
+        "owner": { "type": "string" },
+        "scope": { "type": "string" },
+        "trust_boundaries": { "type": "array", "items": { "type": "string" } },
+        "discovered_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "front_projection": {
+      "type": "object",
+      "description": "Front agent instance projected FROM PI (does NOT own PI)",
+      "properties": {
+        "front_id": { "type": "string" },
+        "projected_from_pi": { "type": "string" },
+        "role": { "type": "string" },
+        "authority_bounds": { "type": "object" },
+        "created_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "binding": {
+      "type": "object",
+      "description": "Scout binding state",
+      "properties": {
+        "bound_at": { "type": "string", "format": "date-time" },
+        "binding_type": { "type": "string" }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}
