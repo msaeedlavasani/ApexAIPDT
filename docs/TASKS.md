@@ -525,6 +525,35 @@ auto_continue: YES
 
 ---
 
+[DELTA]
+task_id: DPT-FOUNDATION-039
+base_state_revision: 22
+changes: status=BACKLOG→RUNNING, implementation_status=ARTIFACTS_COMPLETE→IMPLEMENTATION_PROGRESS, completed_steps=od_resolution,task_status_update,adr_creation,schema_creation,spec_creation,implementation,test_validation, state_revision=22→23
+applied_by: DPT-LIVERUN-003 batch implementation
+artefacts: docs/adr/ADR-054-failure-pattern-detection.md, docs/schemas/failure-pattern.schema.json, providers/goose/pattern-matching.mjs, providers/goose/test-pattern-matching.mjs
+notes: |
+  DPT-FOUNDATION-039 implementation progress (batch branch workflow).
+  
+  Completed:
+  - Created ADR-054 for failure pattern detection architecture (Design C: Projection Layer)
+  - Extended AUDIT_TRAIL schema with failure_pattern fields (failure-pattern.schema.json)
+  - Implemented PATTERN_MATCHING() function with 58 test cases
+  - Resolved OD-T6-001-A/B/C: per-task granularity, linear severity thresholds, 24h default window
+  
+  Open Decisions Resolved:
+  | OD-ID | Decision | Status |
+  |-------|----------|--------|
+  | OD-T6-001-A | Pattern classification granularity | Per-task with cross-task aggregation | ACCEPTED |
+  | OD-T6-001-B | Severity threshold | Linear: 1=LOW, 3=MEDIUM, 5=HIGH, 10=CRITICAL | ACCEPTED |
+  | OD-T6-001-C | Time window defaults | 24h for detection, 7d for trend analysis | ACCEPTED |
+  
+  Implementation artifacts:
+  - ADR-054: Architecture decision record for failure pattern detection
+  - Schema: docs/schemas/failure-pattern.schema.json
+  - Function: providers/goose/pattern-matching.mjs (PATTERN_MATCHING, PatternMatchingConfig, FailureAlert, etc.)
+  - Tests: providers/goose/test-pattern-matching.mjs (58/58 passing)
+[/DELTA]
+
 ## Repository Durability Checkpoint
 
 [DELTA]
