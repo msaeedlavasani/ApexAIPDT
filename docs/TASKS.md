@@ -213,3 +213,237 @@ records; it may not replace them.
   authorized by any record in this ledger without an explicit Owner gate.
 - Fail closed whenever required capability, authority, or materialization
   cannot be established deterministically.
+
+---
+
+## Phase 5 Tasks (V2 Learning System Architecture)
+
+### DPT-PHASE5-RECONCILIATION-COMPLETE
+
+[DELTA]
+task_id: DPT-PHASE5-RECONCILIATION-COMPLETE
+base_state_revision: 16
+changes: phase_boundary=RECONCILIATION_REQUIRED→PHASE_5_ADMITTED_CORRECTED, phase_authorization=ADMISSION_SUSPENDED_PENDING_RECONCILIATION→PHASE_6_AUTHORIZED, state_revision=16→17
+applied_by: PHASE5_RECONCILIATION_DELTA
+artefacts: docs/validation/DPT-PHASE5-RECONCILIATION-STATUS.md, docs/validation/DPT-PHASE5-ADMISSION-SUMMARY.md
+notes: |
+  Phase 5 canonical reconciliation completed.
+  
+  Actions taken:
+  - Invalidated premature boundary closure (PHASE_5_ADMITTED → RECONCILIATION_REQUIRED)
+  - Suspended Phase 6 authorization pending reconciliation
+  - Applied ADR corrections (052-056) per canonical requirements
+  - Rebuilt open-decision projection from canonical identities
+  - Ran 12 cross-ADR falsification checks (all PASS)
+  - Regenerated admission summary with corrected canon
+  - Updated Phase 6 task readiness based on TASK_LOCAL_BLOCKER status
+  
+  Reconciled counts:
+  - BLOCKING_V2: 0
+  - TASK_LOCAL_BLOCKER: 3 (OD-T5-002-B, OD-T5-003-B, OD-T5-005-A)
+  - NON_BLOCKING_V2: 9
+  - DEFER_TO_V3: 2
+  - ALREADY_RESOLVED: 12
+  - TOTAL: 26
+  
+  Phase 6 authorization recomputed from durable state:
+  - READY: DPT-FOUNDATION-037 (no blockers)
+  - WITHHELD: DPT-FOUNDATION-038 (OD-T5-002-B), DPT-FOUNDATION-039 (OD-T5-003-B), 
+              DPT-FOUNDATION-040 (sequential), DPT-FOUNDATION-041 (OD-T5-005-A)
+  
+  Human Gate: NONE. Autonomous execution continues.
+[/DELTA]
+
+### DPT-PHASE5-MICRO-RECONCILIATION
+
+[DELTA]
+task_id: DPT-PHASE5-MICRO-RECONCILIATION
+base_state_revision: 17
+changes: state_revision=17→18
+applied_by: PHASE5_MICRO_RECONCILIATION_DELTA
+artefacts: docs/validation/DPT-PHASE5-RECONCILIATION-STATUS.md, docs/validation/DPT-PHASE5-ADMISSION-SUMMARY.md, docs/validation/Retired/T5-003.md, docs/validation/Retired/T5-004.md, docs/validation/Retired/T5-005.md, docs/validation/Retired/T5-006.md, docs/TASKS.md
+notes: |
+  Phase 5 final micro-reconciliation completed. Corrected residual canonical/report contradictions.
+  
+  Actions taken:
+  - Replaced human_gate_valid: true with human_gate_required: false + human_gate_assessment_valid: true
+  - Fixed falsification count label from 11 to 12 (derived from enumerated checks)
+  - Reclassified ANONYMOUS_PROJECT_ID as PSEUDONYMOUS_PROJECT_ID across all projections
+  - Established ANONYMIZED_DATA ≠ PSEUDONYMIZED_DATA distinction
+  - Removed universal human-review language; replaced with INDEPENDENT_VERIFICATION ≠ HUMAN_VERIFICATION
+  - Clarified PROPOSAL ≠ HUMAN_GATE in ADR-054, ADR-055, ADR-056 projections
+  - Updated T5-003, T5-004, T5-005, T5-006 retired projections
+  
+  Readback verified:
+  - No stale universal-human-review language in current canon ✓
+  - No anonymous/pseudonymous terminology collision ✓
+  - Human Gate fields semantically unambiguous ✓
+  - Falsification count = 12 (matches enumerated checks) ✓
+  - READY state: DPT-FOUNDATION-037 only ✓
+  - No new Human Gate introduced ✓
+  
+  PHASE_5_CANONICAL_STATE remains PHASE_5_ADMITTED_CORRECTED
+  PHASE_6_AUTHORIZATION remains valid
+  DPT-FOUNDATION-037 remains READY
+[/DELTA]
+
+---
+
+## Phase 6 Tasks (V2 Learning System Implementation)
+
+### DPT-FOUNDATION-037 — V2 Learning System: Intervention Measurement
+
+| Field | Value |
+|---|---|
+| task_id | DPT-FOUNDATION-037 |
+| title | V2 Learning System: Intervention Measurement |
+| status | CLOSED |
+| dependencies | DPT-FOUNDATION-031 |
+| readiness | READY — V1 complete; V1→V2 admitted; no TASK_LOCAL_BLOCKER |
+| task_class | implementation |
+| canonical_artifact | docs/schemas/intervention-event.schema.json, docs/v2/intervention-measurement-spec.md |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-FOUNDATION-037
+title: V2 Learning System: Intervention Measurement
+objective: Implement runtime intervention measurement for V2 learning system. Measures human intervention frequency, type, and duration across DPT-managed projects.
+status: CLOSED
+dependencies: DPT-FOUNDATION-031
+readiness: READY
+task_class: implementation
+required_capabilities: repository.read, docs.write, .dpt/audit.read
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 0
+state_revision: 2
+next_task: DPT-FOUNDATION-038
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-FOUNDATION-038 — V2 Learning System: Token/Context Efficiency
+
+| Field | Value |
+|---|---|
+| task_id | DPT-FOUNDATION-038 |
+| title | V2 Learning System: Token/Context Efficiency |
+| status | BACKLOG |
+| dependencies | DPT-FOUNDATION-037 |
+| readiness | NOT_READY — OD-T5-002-B unresolved (overflow threshold) |
+| task_class | implementation |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-FOUNDATION-038
+title: V2 Learning System: Token/Context Efficiency
+objective: Implement token/context efficiency measurement and optimization for V2 learning system.
+status: BACKLOG
+dependencies: DPT-FOUNDATION-037
+readiness: NOT_READY
+task_class: implementation
+required_capabilities: repository.read, docs.write
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 0
+state_revision: 1
+next_task: DPT-FOUNDATION-039
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-FOUNDATION-039 — V2 Learning System: Failure Pattern Detection
+
+| Field | Value |
+|---|---|
+| task_id | DPT-FOUNDATION-039 |
+| title | V2 Learning System: Failure Pattern Detection |
+| status | BACKLOG |
+| dependencies | DPT-FOUNDATION-038 |
+| readiness | NOT_READY — OD-T5-003-B unresolved (evidence threshold) + sequential dependency |
+| task_class | implementation |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-FOUNDATION-039
+title: V2 Learning System: Failure Pattern Detection
+objective: Implement failure pattern detection architecture for V2 learning system.
+status: BACKLOG
+dependencies: DPT-FOUNDATION-038
+readiness: NOT_READY
+task_class: implementation
+required_capabilities: repository.read, docs.write
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 0
+state_revision: 1
+next_task: DPT-FOUNDATION-040
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-FOUNDATION-040 — V2 Learning System: Auto-Improvement Proposals
+
+| Field | Value |
+|---|---|
+| task_id | DPT-FOUNDATION-040 |
+| title | V2 Learning System: Auto-Improvement Proposals |
+| status | BACKLOG |
+| dependencies | DPT-FOUNDATION-039 |
+| readiness | NOT_READY — sequential dependency |
+| task_class | implementation |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-FOUNDATION-040
+title: V2 Learning System: Auto-Improvement Proposals
+objective: Implement auto-improvement proposal generation for V2 learning system.
+status: BACKLOG
+dependencies: DPT-FOUNDATION-039
+readiness: NOT_READY
+task_class: implementation
+required_capabilities: repository.read, docs.write
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 0
+state_revision: 1
+next_task: DPT-FOUNDATION-041
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-FOUNDATION-041 — V2 Learning System: Cross-Project Pattern Extraction
+
+| Field | Value |
+|---|---|
+| task_id | DPT-FOUNDATION-041 |
+| title | V2 Learning System: Cross-Project Pattern Extraction |
+| status | BACKLOG |
+| dependencies | DPT-FOUNDATION-040 |
+| readiness | NOT_READY — OD-T5-005-A unresolved (contribution threshold) + sequential dependency |
+| task_class | implementation |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-FOUNDATION-041
+title: V2 Learning System: Cross-Project Pattern Extraction
+objective: Implement cross-project pattern extraction for V2 learning system.
+status: BACKLOG
+dependencies: DPT-FOUNDATION-040
+readiness: NOT_READY
+task_class: implementation
+required_capabilities: repository.read, docs.write
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 0
+state_revision: 1
+next_task: (none)
+auto_continue: YES
+[/TASK]
+```
+

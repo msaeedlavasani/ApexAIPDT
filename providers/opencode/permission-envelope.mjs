@@ -90,13 +90,22 @@ export function createEnvelope({
 }
 
 function normalizePermission(p) {
+  // Support both canonical field names (operation, resource_pattern, decision)
+  // and shorthand names (action, resource, authority_mode) used by callers.
+  const operation = p.operation ?? p.action;
+  const resourcePattern = p.resource_pattern ?? p.resource;
+  const decision = p.decision ?? p.authority_mode ?? p.mode;
+
   return {
     domain: p.domain,
-    operation: p.operation,
-    resource_pattern: p.resource_pattern,
-    decision: p.decision,
+    operation,
+    resource_pattern: resourcePattern,
+    decision,
     source: p.source ?? "WORK_ORDER",
-    human_gate: p.human_gate ?? (p.decision === AUTHORITY_MODE.ASK),
+    human_gate: p.human_gate ?? (decision === AUTHORITY_MODE.ASK),
+    description: p.description,
+    mode: p.mode ?? decision,
+    authority_mode: p.authority_mode ?? decision,
   };
 }
 
