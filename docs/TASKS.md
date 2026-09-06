@@ -384,19 +384,50 @@ auto_continue: YES
 task_id: DPT-FOUNDATION-038
 title: V2 Learning System: Token/Context Efficiency
 objective: Implement token/context efficiency measurement and optimization for V2 learning system. Measures context utilization, overflow events, and routing efficiency via projection layer over audit trail.
-status: RUNNING
+status: CLOSED
 dependencies: DPT-FOUNDATION-037
-readiness: RUNNING — Implementation in progress on feat/foundation-038-implementation
+readiness: CLOSED — Implementation complete; AUDIT_TRAIL extended, EFFICIENCY_PROJECTION() implemented, 31 tests passing
 task_class: implementation
 required_capabilities: repository.read, docs.write, schema.definition, javascript.runtime
 denied_capabilities: git.push, git.merge, production.*, authority.self_expansion
 human_gate_state: NONE
 passport_revision: 1
-state_revision: 3
+state_revision: 4
 next_task: DPT-FOUNDATION-039
 auto_continue: YES
 [/TASK]
 ```
+
+[DELTA]
+task_id: DPT-FOUNDATION-038
+base_state_revision: 21
+changes: status=RUNNING→CLOSED, implementation_status=IMPLEMENTATION_COMPLETE, state_revision=21→22
+applied_by: DPT-LIVERUN-002 batch merge
+artefacts: docs/schemas/audit-trail.schema.json, providers/goose/efficiency-projection.mjs, providers/goose/test-efficiency-projection.mjs, docs/BATCH_BRANCH_LIFECYCLE_INVARIANT.md
+notes: |
+  DPT-FOUNDATION-038 implementation completed and merged via PR #6.
+  
+  Batch lifecycle satisfied:
+  - SYNCED MAIN ✓ (e556aa5)
+  - CREATE BATCH BRANCH ✓ (feat/foundation-038-implementation)
+  - EXECUTE BATCH ✓ (schema extension, projection implementation, tests)
+  - VALIDATE BATCH ✓ (31/31 tests passing)
+  - PUSH BRANCH ✓
+  - REMOTE READBACK ✓
+  - OPEN PR TO MAIN ✓ (PR #6)
+  - PR CI / INTEGRATION VALIDATION ✓ (all 6 checks pass)
+  - MERGE ✓ (102f2db)
+  - SYNC LOCAL MAIN FROM ORIGIN ✓
+  - POST-MERGE READBACK ✓ (working tree clean)
+  
+  ARTIFACTS:
+  - docs/schemas/audit-trail.schema.json: Base audit event schema with token_usage
+  - providers/goose/efficiency-projection.mjs: Projection function
+  - providers/goose/test-efficiency-projection.mjs: 31 passing tests
+  - docs/BATCH_BRANCH_LIFECYCLE_INVARIANT.md: Permanent execution rule
+  
+  DPT-FOUNDATION-039 unblocked.
+[/DELTA]
 
 ### DPT-FOUNDATION-039 — V2 Learning System: Failure Pattern Detection
 
