@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apexaidpt.io/schemas/cross-project-pattern.schema.json",
+  "title": "Cross-Project Pattern Report",
+  "description": "Schema for cross-project pattern extraction reports per ADR-056.",
+  "type": "object",
+  "required": ["report_id", "computed_at", "patterns", "threshold_config"],
+  "properties": {
+    "report_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "computed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "threshold_config": {
+      "type": "object",
+      "required": ["min_projects"],
+      "properties": {
+        "min_projects": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 5,
+          "description": "Minimum projects with matching pattern for statistical significance (OD-T5-005-A)."
+        }
+      }
+    },
+    "patterns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pattern_type", "project_count", "occurrence_count"],
+        "properties": {
+          "pattern_type": {
+            "type": "string"
+          },
+          "occurrence_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "project_count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "significance": {
+            "type": "string",
+            "enum": ["LOW", "MEDIUM", "HIGH"]
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["project_id", "count"],
+              "properties": {
+                "project_id": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "severity": {
+                  "type": "string"
+                },
+                "authority_level": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 3
+                }
+              }
+            }
+          },
+          "recommendation": {
+            "type": "object",
+            "properties": {
+              "action": {
+                "type": "string"
+              },
+              "priority": {
+                "type": "number"
+              },
+              "estimated_impact": {
+                "type": "object",
+                "properties": {
+                  "projects_improved": {
+                    "type": "integer"
+                  },
+                  "failures_prevented": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "total_patterns": {
+          "type": "integer"
+        },
+        "significant_patterns": {
+          "type": "integer"
+        },
+        "total_projects_analyzed": {
+          "type": "integer"
+        },
+        "total_occurrences": {
+          "type": "integer"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

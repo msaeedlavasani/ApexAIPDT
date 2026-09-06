@@ -499,7 +499,7 @@ auto_continue: YES
 | title | V2 Learning System: Cross-Project Pattern Extraction |
 | status | BACKLOG |
 | dependencies | DPT-FOUNDATION-040 |
-| readiness | NOT_READY — OD-T5-005-A unresolved (contribution threshold) + sequential dependency |
+| readiness | READY — OD-T5-005-A accepted, DPT-FOUNDATION-040 CLOSED |
 | task_class | implementation |
 | auto_continue | YES |
 
@@ -508,9 +508,9 @@ auto_continue: YES
 task_id: DPT-FOUNDATION-041
 title: V2 Learning System: Cross-Project Pattern Extraction
 objective: Implement cross-project pattern extraction for V2 learning system.
-status: BACKLOG
+status: READY
 dependencies: DPT-FOUNDATION-040
-readiness: NOT_READY
+readiness: READY
 task_class: implementation
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
@@ -627,6 +627,35 @@ notes: |
   - MERGE ✓ (52a5c5b)
   - SYNC LOCAL MAIN FROM ORIGIN ✓
   - POST-MERGE READBACK ✓ (working tree clean)
+[/DELTA]
+
+[DELTA]
+task_id: DPT-FOUNDATION-041
+base_state_revision: 26
+changes: status=BACKLOG→READY, readiness=NOT_READY→READY(OD-T5-005-A accepted, dependencies CLOSED), passport_revision=0→1, state_revision=26→27
+applied_by: DPT-LIVERUN-005 batch preparation
+artefacts: docs/adr/ADR-056-cross-project-pattern-extraction.md, docs/schemas/cross-project-pattern.schema.json, providers/goose/cross-project-extraction.mjs, providers/goose/test-cross-project-extraction.mjs
+notes: |
+  DPT-FOUNDATION-041 implementation progress (batch branch workflow).
+  
+  Completed:
+  - Created ADR-056 for cross-project pattern extraction architecture (Design B: Threshold-Based Aggregation)
+  - Extended schema with cross-project report structure (cross-project-pattern.schema.json)
+  - Implemented CROSS_PROJECT_EXTRACT() function with 40 test cases
+  - Resolved OD-T5-005-A: minimum 5 projects for statistical significance
+  
+  Open Decisions Resolved:
+  | OD-ID | Decision | Status |
+  |-------|----------|--------|
+  | OD-T5-005-A | Minimum contribution threshold | 5+ projects with matching pattern | ACCEPTED |
+  | OD-T5-005-B | Handling conflicting patterns | Deferred to implementation | DEFERRED |
+  | OD-T5-005-C | Contributor credit assignment | Automatic attribution based on source project | ACCEPTED |
+  
+  Implementation artifacts:
+  - ADR-056: Architecture decision record for cross-project pattern extraction
+  - Schema: docs/schemas/cross-project-pattern.schema.json
+  - Function: providers/goose/cross-project-extraction.mjs (CROSS_PROJECT_EXTRACT, etc.)
+  - Tests: providers/goose/test-cross-project-extraction.mjs (40/40 passing)
 [/DELTA]
 
 ## Repository Durability Checkpoint
