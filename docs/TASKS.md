@@ -1084,7 +1084,7 @@ title: External Project Fixture + Identity/Trust Binding
 objective: Implement mechanism-neutral enrollment progression (Identity Establishment -> Authentication -> Trust Binding -> Gateway Admission) with external project fixture for V3 vertical-slice testing. Establishes Foundation-001 schemas for cross-project trust binding.
 status: CLOSED
 dependencies: (none)
-readiness: READY (no dependencies, PRE_V3_READY passed)
+readiness: READY — CLOSED (implementation complete)
 task_class: external_integration_foundation
 required_capabilities: repository.read, docs.write, schema.definition, javascript.runtime
 denied_capabilities: git.push, git.merge, production.*
@@ -1120,7 +1120,7 @@ title: Scout + Project-Owned PI Runtime
 objective: Implement Scout component that discovers and binds to external project's Project Intelligence. Front agent instance projected FROM Scout-discovered PI; does not generate or own intelligence.
 status: READY
 dependencies: DPT-V3-001
-readiness: NOT_READY (dependency DPT-V3-001 not CLOSED)
+readiness: READY (V3-001 CLOSED)
 task_class: external_integration_scout
 required_capabilities: repository.read, docs.write, javascript.runtime
 denied_capabilities: git.push, git.merge, production.*
@@ -1149,7 +1149,7 @@ auto_continue: YES
 task_id: DPT-V3-003
 title: Minimum-Sufficient Context Package
 objective: Implement bounded context package extraction validated against privacy boundaries. Context package contains only what is necessary for analysis; no over-exposure of external project state.
-status: BACKLOG
+status: READY
 dependencies: DPT-V3-002
 readiness: NOT_READY (dependency DPT-V3-002 not CLOSED)
 task_class: external_integration_context
