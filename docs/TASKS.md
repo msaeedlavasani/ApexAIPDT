@@ -577,6 +577,35 @@ notes: |
   - POST-MERGE READBACK ✓ (working tree clean)
 [/DELTA]
 
+[DELTA]
+task_id: DPT-FOUNDATION-040
+base_state_revision: 24
+changes: status=BACKLOG→RUNNING, implementation_status=ARTIFACTS_COMPLETE→IMPLEMENTATION_PROGRESS, completed_steps=od_resolution,task_status_update,adr_creation,schema_creation,spec_creation,implementation,test_validation, state_revision=24→25
+applied_by: DPT-LIVERUN-004 batch implementation
+artefacts: docs/adr/ADR-055-auto-improvement-proposals.md, docs/schemas/auto-improvement-proposal.schema.json, providers/goose/auto-improvement.mjs, providers/goose/test-auto-improvement.mjs
+notes: |
+  DPT-FOUNDATION-040 implementation progress (batch branch workflow).
+  
+  Completed:
+  - Created ADR-055 for auto-improvement proposal architecture (Design A: Rule-Based Generator)
+  - Extended schema with proposal report structure (auto-improvement-proposal.schema.json)
+  - Implemented AUTO_IMPROVEMENT_PROPOSAL() function with 48 test cases
+  - Resolved OD-T6-002-A/B/C: auto-approve LOW/MEDIUM rules, priority scoring formula, lifecycle states
+  
+  Open Decisions Resolved:
+  | OD-ID | Decision | Status |
+  |-------|----------|--------|
+  | OD-T6-002-A | Proposal review workflow | Automated approval for LOW/MEDIUM | ACCEPTED |
+  | OD-T6-002-B | Priority scoring formula | severity_weight × count / effort_factor | ACCEPTED |
+  | OD-T6-002-C | Proposal lifecycle | DRAFT → REVIEW → APPROVED/DECLINED → IMPLEMENTED | ACCEPTED |
+  
+  Implementation artifacts:
+  - ADR-055: Architecture decision record for auto-improvement proposals
+  - Schema: docs/schemas/auto-improvement-proposal.schema.json
+  - Function: providers/goose/auto-improvement.mjs (AUTO_IMPROVEMENT_PROPOSAL, etc.)
+  - Tests: providers/goose/test-auto-improvement.mjs (48/48 passing)
+[/DELTA]
+
 ## Repository Durability Checkpoint
 
 [DELTA]

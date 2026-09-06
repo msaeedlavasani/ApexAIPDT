@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apexaidpt.io/schemas/auto-improvement-proposal.schema.json",
+  "title": "Auto-Improvement Proposal",
+  "description": "Schema for auto-generated improvement proposals derived from failure pattern analysis per ADR-055.",
+  "type": "object",
+  "required": ["proposal_id", "source_patterns", "severity", "title", "description", "recommended_action", "status"],
+  "properties": {
+    "proposal_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for this improvement proposal."
+    },
+    "source_patterns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "RETRY_EXHAUSTED",
+          "CONTEXT_OVERFLOW",
+          "AUTHORITY_DENIED",
+          "PROVIDER_ERROR",
+          "TIMEOUT",
+          "VALIDATION_FAIL",
+          "UNKNOWN"
+        ]
+      },
+      "minItems": 1,
+      "description": "Related failure pattern types that triggered this proposal."
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recommended_action": {
+      "type": "string",
+      "minLength": 1
+    },
+    "estimated_impact": {
+      "type": "object",
+      "properties": {
+        "failure_reduction_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Estimated percentage reduction in related failures."
+        },
+        "efficiency_gain_percent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Estimated percentage improvement in efficiency metrics."
+        }
+      }
+    },
+    "effort_estimate": {
+      "type": "string",
+      "enum": ["MINIMAL", "MODERATE", "SIGNIFICANT"]
+    },
+    "priority_score": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Calculated priority score based on severity × frequency / effort."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["DRAFT", "REVIEW", "APPROVED", "IMPLEMENTED", "DECLINED"],
+      "default": "DRAFT"
+    },
+    "reviewer_notes": {
+      "type": "string",
+      "description": "Optional notes from human reviewer."
+    },
+    "related_task_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Task IDs affected by or related to this proposal."
+    }
+  },
+  "additionalProperties": false
+}
