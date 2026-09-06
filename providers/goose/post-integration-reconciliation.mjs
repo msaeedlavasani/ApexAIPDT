@@ -13,8 +13,6 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = join(__dirname, '../..');
 
-// ========== CONSTANTS ==========
-
 export const INTEGRATION_GATE_VERSION = '1.0.0';
 
 export const HYGIENE_CHECKS = Object.freeze({
@@ -37,66 +35,54 @@ export const REPORT_LIFECYCLE_RULES = Object.freeze({
   RETIRED_NO_REOPEN_EVENT: 'REPORT_RETIRED_NO_VALID_REOPEN_EVENT'
 });
 
-// ========== CORE RECONCILIATION FUNCTIONS ==========
-
-/**
- * Check if local main SHA matches origin/main SHA
- */
 export function checkLocalMainEqualsOriginMain() {
   try {
     const localSha = execSync('git rev-parse HEAD', { cwd: REPO_ROOT, encoding: 'utf8' }).trim();
     const originSha = execSync('git rev-parse origin/main', { cwd: REPO_ROOT, encoding: 'utf8' }).trim();
+    const pass = localSha === originSha;
     return {
-      pass: localSha === originSha,
+      pass,
       localSha,
       originSha,
-      message: localSha === originSha 
-        ? \`Local main (\${localSha.slice(0, 7)}) equals origin/main\`
-        : \`SHA divergence: local=\${localSha.slice(0, 7)}, origin=\${originSha.slice(0, 7)}\`
+      message: pass 
+        ? 'Local main (' + localSha.slice(0, 7) + ') equals origin/main'
+        : 'SHA divergence: local=' + localSha.slice(0, 7) + ', origin=' + originSha.slice(0, 7)
     };
   } catch (e) {
     return { pass: false, error: e.message };
   }
 }
 
-/**
- * Check if working tree is clean
- */
 export function checkWorktreeClean() {
   try {
     const status = execSync('git status --short', { cwd: REPO_ROOT, encoding: 'utf8' }).trim();
+    const dirtyFiles = status ? status.split('\n').length : 0;
     return {
       pass: status === '',
-      dirtyFiles: status ? status.split('\n').length : 0,
-      message: status === '' ? 'Working tree clean' : \`\${status.split('\n').length} dirty files\`
+      dirtyFiles,
+      message: status === '' ? 'Working tree clean' : dirtyFiles + ' dirty files'
     };
   } catch (e) {
     return { pass: false, error: e.message };
   }
 }
 
-/**
- * Check unpushed commits count
- */
 export function checkUnpushedCommits() {
   try {
-    const count = execSync('git rev-list --left-right --count HEAD...origin/main', { 
+    const count = parseInt(execSync('git rev-list --left-right --count HEAD...origin/main', { 
       cwd: REPO_ROOT, 
       encoding: 'utf8' 
-    }).trim().split(/\s+/)[0];
+    }).trim().split(/\s+/)[0]);
     return {
-      pass: parseInt(count) === 0,
-      count: parseInt(count),
-      message: \`Unpushed commits: ${count}\`
+      pass: count === 0,
+      count,
+      message: 'Unpushed commits: ' + count
     };
   } catch (e) {
     return { pass: false, error: e.message };
   }
 }
 
-/**
- * Check no open batch PRs exist
- */
 export function checkOpenBatchPRs() {
   try {
     const prList = execSync('gh pr list --state open --limit 100', { 
@@ -109,16 +95,13 @@ export function checkOpenBatchPRs() {
       pass: batchPRs.length === 0,
       openPRs: prs.length,
       batchPRs: batchPRs.length,
-      message: \`Open PRs: ${prs.length}, Batch PRs: ${batchPRs.length}\`
+      message: 'Open PRs: ' + prs.length + ', Batch PRs: ' + batchPRs.length
     };
   } catch (e) {
     return { pass: true, skipped: true, message: 'gh CLI not available, skipping PR check' };
   }
 }
 
-/**
- * Check no merged batch branches remain active locally
- */
 export function checkMergedBatchBranches() {
   try {
     const branches = execSync('git branch', { cwd: REPO_ROOT, encoding: 'utf8' });
@@ -132,16 +115,13 @@ export function checkMergedBatchBranches() {
       problematic,
       message: problematic.length === 0 
         ? 'No merged batch branches remaining'
-        : \`Found ${problematic.length} non-main branches: ${problematic.join(', ')}\`
+        : 'Found ' + problematic.length + ' non-main branches: ' + problematic.join(', ')
     };
   } catch (e) {
     return { pass: false, error: e.message };
   }
 }
 
-/**
- * Check no unresolved stashes exist
- */
 export function checkUnresolvedStash() {
   try {
     const stashList = execSync('git stash list', { cwd: REPO_ROOT, encoding: 'utf8' });
@@ -149,16 +129,13 @@ export function checkUnresolvedStash() {
     return {
       pass: stashCount === 0,
       stashCount,
-      message: \`Unresolved stashes: ${stashCount}\`
+      message: 'Unresolved stashes: ' + stashCount
     };
   } catch (e) {
     return { pass: false, error: e.message };
   }
 }
 
-/**
- * Check CI main status (latest run)
- */
 export function checkCIMainPass() {
   try {
     const ciList = execSync('gh run list --branch main --limit 1 --json conclusion', { 
@@ -173,16 +150,13 @@ export function checkCIMainPass() {
     return {
       pass: latestConclusion === 'success',
       conclusion: latestConclusion,
-      message: \`Latest CI conclusion: ${latestConclusion}\`
+      message: 'Latest CI conclusion: ' + latestConclusion
     };
   } catch (e) {
     return { pass: true, skipped: true, message: 'gh CLI not available, skipping CI check' };
   }
 }
 
-/**
- * Perform remote readback verification
- */
 export function checkRemoteReadback() {
   try {
     execSync('git fetch origin', { cwd: REPO_ROOT, encoding: 'utf8' });
@@ -201,14 +175,12 @@ export function checkRemoteReadback() {
       pass: validationFiles.length > 0 && retiredDirExists,
       activeFiles: validationFiles.length,
       retiredCount: retiredDirExists ? 'present' : 'missing',
-      message: \`Remote validation inbox: ${validationFiles.length} files, Retired: ${retiredDirExists ? 'present' : 'MISSING'}\`
+      message: 'Remote validation inbox: ' + validationFiles.length + ' files, Retired: ' + (retiredDirExists ? 'present' : 'MISSING')
     };
   } catch (e) {
     return { pass: false, error: e.message };
   }
 }
-
-// ========== TASK LIFECYCLE RECONCILIATION ==========
 
 export function parseTaskRecords() {
   try {
@@ -246,10 +218,10 @@ export function checkClosedTaskResurrection(parsedTasks) {
     if (task.status !== 'READY') continue;
     
     const content = readFileSync(join(REPO_ROOT, 'docs/TASKS.md'), 'utf8');
-    const reopenPattern = new RegExp(\`task_id:\\\\s*\${task.task_id}.*?changes:.*?(REWORK|NOT_READY→READY|BACKLOG→READY)\`, 's');
+    const reopenPattern = new RegExp('task_id:\\\\s*' + task.task_id + '.*?changes:.*?(REWORK|NOT_READY→READY|BACKLOG→READY)', 's');
     const hasExplicitReopen = reopenPattern.test(content);
     
-    const closurePattern = new RegExp(\`task_id:\\\\s*\${task.task_id}.*?changes:.*?status=CLOSED\`, 's');
+    const closurePattern = new RegExp('task_id:\\\\s*' + task.task_id + '.*?changes:.*?status=CLOSED', 's');
     const wasPreviouslyClosed = closurePattern.test(content);
     
     if (wasPreviouslyClosed && !hasExplicitReopen) {
@@ -261,14 +233,15 @@ export function checkClosedTaskResurrection(parsedTasks) {
     }
   }
   
+  const readyTasks = parsedTasks.tasks.filter(t => t.status === 'READY').length;
   return {
     pass: violations.length === 0,
     violations,
     checkedTasks: parsedTasks.tasks.length,
-    readyTasks: parsedTasks.tasks.filter(t => t.status === 'READY').length,
+    readyTasks,
     message: violations.length === 0 
       ? 'No CLOSED task resurrection detected'
-      : \`Found ${violations.length} resurrection violation(s)\`
+      : 'Found ' + violations.length + ' resurrection violation(s)'
   };
 }
 
@@ -294,7 +267,7 @@ export function checkReadyDependencies(parsedTasks) {
           task_id: task.task_id,
           dependency: dep,
           depStatus,
-          issue: \`Dependency ${dep} is ${depStatus}, not CLOSED\`,
+          issue: 'Dependency ' + dep + ' is ' + depStatus + ', not CLOSED',
           rule: TASK_LIFECYCLE_RULES.READY_REQUIRES_DEPS_CLOSED
         });
       }
@@ -306,11 +279,9 @@ export function checkReadyDependencies(parsedTasks) {
     violations,
     message: violations.length === 0
       ? 'All READY tasks have CLOSED dependencies'
-      : \`Found ${violations.length} dependency violation(s)\`
+      : 'Found ' + violations.length + ' dependency violation(s)'
   };
 }
-
-// ========== REPORT LIFECYCLE RECONCILIATION ==========
 
 export function checkRetiredReportResurrection() {
   try {
@@ -338,15 +309,13 @@ export function checkRetiredReportResurrection() {
       activeCount: activeReports.length,
       retiredCount: retiredReports.length,
       message: overlaps.length === 0
-        ? \`No retired reports in active inbox (${activeReports.length} active, ${retiredReports.length} retired)\`
-        : \`Found ${overlaps.length} retired reports in active inbox: ${overlaps.join(', ')}\`
+        ? 'No retired reports in active inbox (' + activeReports.length + ' active, ' + retiredReports.length + ' retired)'
+        : 'Found ' + overlaps.length + ' retired reports in active inbox: ' + overlaps.join(', ')
     };
   } catch (e) {
     return { pass: false, error: e.message };
   }
 }
-
-// ========== CROSS-PROJECTION CONSISTENCY ==========
 
 export function checkCrossProjectionConsistency() {
   const errors = [];
@@ -365,7 +334,7 @@ export function checkCrossProjectionConsistency() {
         check: 'TASK_COUNT_CONSISTENCY',
         ledger: tasksInLedger,
         status: totalTasksInStatus,
-        message: \`Task count mismatch: ledger=${tasksInLedger}, status.json=${totalTasksInStatus}\`
+        message: 'Task count mismatch: ledger=' + tasksInLedger + ', status.json=' + totalTasksInStatus
       });
     }
     
@@ -378,7 +347,7 @@ export function checkCrossProjectionConsistency() {
       errors.push({
         check: 'BRANCH_STATE',
         unexpected: nonMainBranches,
-        message: \`Unexpected local branches: ${nonMainBranches.join(', ')}\`
+        message: 'Unexpected local branches: ' + nonMainBranches.join(', ')
       });
     }
     
@@ -391,11 +360,9 @@ export function checkCrossProjectionConsistency() {
     errors,
     message: errors.length === 0 
       ? 'All projections consistent'
-      : \`Found ${errors.length} inconsistency(ies)\`
+      : 'Found ' + errors.length + ' inconsistency(ies)'
   };
 }
-
-// ========== MAIN GATE FUNCTIONS ==========
 
 export function runPostIntegrationGate() {
   const results = {
@@ -438,20 +405,20 @@ export function preNextAdmissionGuard() {
   const gateResult = runPostIntegrationGate();
   
   console.log('=== INTEGRATION GATE RESULT ===');
-  console.log(\`Overall: ${gateResult.overall.pass ? 'PASS' : 'FAIL'}\`);
+  console.log('Overall: ' + (gateResult.overall.pass ? 'PASS' : 'FAIL'));
   if (!gateResult.overall.pass) {
     console.log('Blocked by:', gateResult.overall.blockedBy.join(', '));
     console.log('\nDetails:');
     for (const [check, result] of Object.entries(gateResult.checks)) {
       const symbol = !result.pass && !result.skipped ? '✗' : '✓';
-      console.log(\`  ${symbol} ${check}: ${result.message}\`);
+      console.log('  ' + symbol + ' ' + check + ': ' + result.message);
     }
   }
   
   return gateResult;
 }
 
-if (import.meta.url === \`file://${process.argv[1]}\`) {
+if (import.meta.url === 'file://' + process.argv[1]) {
   const result = runPostIntegrationGate();
   console.log(JSON.stringify(result, null, 2));
   process.exit(result.overall.pass ? 0 : 1);
