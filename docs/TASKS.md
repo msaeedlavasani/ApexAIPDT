@@ -1211,7 +1211,7 @@ auto_continue: YES
 task_id: DPT-V3-005
 title: DPT Analysis + Bounded Result + Project Readback
 objective: Implement DPT analysis completing within authority bounds with result readable by external project. Bounded result respects privacy boundaries and trust levels established in V3-001.
-status: READY
+status: CLOSED
 dependencies: DPT-V3-004
 readiness: READY (V3-004 CLOSED)
 task_class: external_integration_analysis
@@ -1242,9 +1242,9 @@ auto_continue: YES
 task_id: DPT-V3-SPINE-E2E
 title: End-to-End Verification
 objective: Verify full V3 spine chain using project/repository EXTERNAL to ApexAIPDT. Acceptance requires independent external project proving cross-project trust binding works end-to-end.
-status: BACKLOG
+status: READY
 dependencies: DPT-V3-005
-readiness: NOT_READY (dependency DPT-V3-005 not CLOSED)
+readiness: READY (V3-005 CLOSED)
 task_class: external_integration_e2e
 required_capabilities: repository.read, docs.write, git.push, git.merge
 denied_capabilities: production.*
