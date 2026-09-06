@@ -141,21 +141,21 @@ auto_continue: YES
 |---|---|
 | task_id | DPT-FOUNDATION-002 |
 | title | Provider-neutral orchestrator runtime for the canonical task system |
-| status | READY |
+| status | BACKLOG |
 | dependencies | DPT-FOUNDATION-001 |
-| readiness | READY — DPT-FOUNDATION-001 now READY; gate reconciliation resolved |
+| readiness | NOT_READY — DPT-FOUNDATION-001 not yet CLOSED |
 | task_class | runtime implementation |
 | canonical_artifact | (none yet) |
-| auto_continue | YES |
+| auto_continue | NO |
 
 ```text
 [TASK]
 task_id: DPT-FOUNDATION-002
 title: Provider-neutral orchestrator runtime (V1)
 objective: Implement the durable task-system projection and authority pipeline defined by DPT-RECON-003 as a replaceable runtime, per ROADMAP V1, only after the schema layer and real-project evidence exist.
-status: READY
+status: BACKLOG
 dependencies: DPT-FOUNDATION-001
-readiness: READY (DPT-FOUNDATION-001 READY, no active Human Gate)
+readiness: NOT_READY (dependency DPT-FOUNDATION-001 not yet CLOSED)
 task_class: runtime_implementation
 required_capabilities: repository.read, docs.write, provider.integration
 denied_capabilities: git.push, git.merge, production.*, authority.self_expansion
@@ -166,7 +166,7 @@ passport_revision: 1
 canonical_artifact: TBD
 state_revision: 1
 next_task: (see ROADMAP V1 remainder)
-auto_continue: YES
+auto_continue: NO
 [/TASK]
 ```
 
@@ -739,15 +739,14 @@ notes: |
   - Bumped passport_revision to 1
   
   Dependency cascade:
-  - DPT-FOUNDATION-002 depends on 001; now also READY
-  - Both tasks available for autonomous execution
+  - DPT-FOUNDATION-002 depends on 001; remains NOT_READY until 001 CLOSED
   
   READY/BLOCKED sets (post-reconciliation):
-  - READY: DPT-FOUNDATION-001, DPT-FOUNDATION-002
-  - BLOCKED: none
+  - READY: DPT-FOUNDATION-001
+  - BLOCKED: DPT-FOUNDATION-002 (waiting for 001 CLOSED)
   
-  Exhausted-graph status: All Phase 6 tasks (037-041) CLOSED. Foundational tasks (001, 002) now READY.
-  No GENUINE_HUMAN_GATE condition exists — both tasks eligible for autonomous advancement.
+  Exhausted-graph status: All Phase 6 tasks (037-041) CLOSED. Foundational task 001 READY.
+  No GENUINE_HUMAN_GATE condition exists — FOUNDATION-001 eligible for autonomous execution.
 [/DELTA]
 
 [DELTA]
@@ -762,4 +761,102 @@ notes: |
   DPT-FOUNDATION-001 now READY (gate removed, dependency satisfied).
   DPT-FOUNDATION-002 dependency satisfied; no active Human Gate.
   Status advanced to READY; auto_continue enabled.
+[/DELTA]
+
+[DELTA]
+task_id: DPT-FOUNDATION-002
+base_state_revision: 1
+changes: status=READY→BACKLOG, readiness=READY(DPT-FOUNDATION-001 READY)→NOT_READY(DPT-FOUNDATION-001 not yet CLOSED), passport_revision=1→1, auto_continue=YES→NO, state_revision=30→31
+applied_by: FOUNDATION_READY_ORDER_CORRECTION
+artefacts: docs/TASKS.md, .dpt/status.json
+notes: |
+  Corrected dependency projection per READY rule.
+  
+  Rule: DPT-FOUNDATION-002 depends on DPT-FOUNDATION-001 and MUST NOT become READY
+  merely because 001 is READY. Must wait until 001 reaches CLOSED.
+  
+  Actions:
+  - Reverted FOUNDATION-002 to BACKLOG
+  - Set readiness=NOT_READY(dependency DPT-FOUNDATION-001 not yet CLOSED)
+  - Set auto_continue=NO (will enable after 001 CLOSED)
+  
+  This ensures correct DAG semantics: READY ≠ CLOSED for dependency resolution.
+[/DELTA]
+
+## Foundation-001 Execution
+
+[DELTA]
+task_id: DPT-FOUNDATION-001
+base_state_revision: 1
+changes: status=READY→RUNNING, implementation_status=ARTIFACTS_COMPLETE→IMPLEMENTATION_PROGRESS, completed_steps=od_resolution,task_status_update,adr_creation,schema_creation,spec_creation, state_revision=31→32
+applied_by: DPT-LIVERUN-006 schema validation
+artefacts: docs/adr/ADR-057-task-system-schema-serialization.md, providers/goose/test-foundation-001-schemas.mjs, docs/validation/DPT-FOUNDATION-001_SCHEMA_SERIALIZATION_REPORT.md
+notes: |
+  DPT-FOUNDATION-001 execution progress (schema validation batch).
+  
+  Completed:
+  - Created ADR-057 documenting task-system schema serialization architecture
+  - Validated all 7 JSON Schema files (task-record, task-passport, work-order, delta, result, permission-envelope, lifecycle)
+  - Created test suite test-foundation-001-schemas.mjs (28/28 tests passing)
+  - Created validation report docs/validation/DPT-FOUNDATION-001_SCHEMA_SERIALIZATION_REPORT.md
+  
+  Schemas validated:
+  - All use JSON Schema draft 2020-12 ✓
+  - All have canonical $id namespace ✓
+  - Required fields match TASK record schema ✓
+  - Delta chain monotonicity enforced ✓
+  - Human Gate state explicitly tracked ✓
+  - Permission envelope scoping defined ✓
+  - Lifecycle states complete (13 states) ✓
+  
+  Batch branch: chore/foundation-001-schema-serialization
+  Workflow: SYNCED MAIN → CREATE BATCH BRANCH → EXECUTE → VALIDATE → PUSH → PR → MERGE
+[/DELTA]
+
+[DELTA]
+task_id: DPT-FOUNDATION-001
+base_state_revision: 1
+changes: status=RUNNING→CLOSED, implementation_status=IMPLEMENTATION_PROGRESS→IMPLEMENTATION_COMPLETE, completed_steps=od_resolution,task_status_update,adr_creation,schema_creation,spec_creation,implementation,test_validation, state_revision=32→33
+applied_by: DPT-LIVERUN-006 batch merge
+artefacts: docs/adr/ADR-057-task-system-schema-serialization.md, providers/goose/test-foundation-001-schemas.mjs, docs/validation/DPT-FOUNDATION-001_SCHEMA_SERIALIZATION_REPORT.md
+notes: |
+  DPT-FOUNDATION-001 implementation completed and merged via PR #24.
+  
+  Batch lifecycle satisfied:
+  - SYNCED MAIN ✓ (fc467c3)
+  - CREATE BATCH BRANCH ✓ (chore/foundation-001-schema-serialization)
+  - EXECUTE BATCH ✓
+  - VALIDATE BATCH ✓ (28/28 tests passing)
+  - PUSH BRANCH ✓
+  - REMOTE READBACK ✓
+  - OPEN PR TO MAIN ✓ (PR #24)
+  - PR CI / INTEGRATION VALIDATION ✓ (all checks pass)
+  - MERGE ✓
+  - SYNC LOCAL MAIN FROM ORIGIN ✓
+  - POST-MERGE READBACK ✓ (working tree clean)
+  
+  DELIVERABLES:
+  - ADR-057: Task-system schema serialization architecture
+  - test-foundation-001-schemas.mjs: 28/28 tests passing
+  - DPT-FOUNDATION-001_SCHEMA_SERIALIZATION_REPORT.md: Validation report
+  
+  FOUNDATION-002 dependency satisfied. Recomputing DAG...
+[/DELTA]
+
+[DELTA]
+task_id: DPT-FOUNDATION-002
+base_state_revision: 1
+changes: status=BACKLOG→READY, readiness=NOT_READY(DPT-FOUNDATION-001 not yet CLOSED)→READY(DPT-FOUNDATION-001 CLOSED), passport_revision=1→1, auto_continue=NO→YES, state_revision=33→34
+applied_by: DAG_RECOMPUTE_AFTER_FOUNDATION_001_CLOSE
+artefacts: docs/TASKS.md
+notes: |
+  Recomputed DPT-FOUNDATION-002 readiness following FOUNDATION-001 closure.
+  
+  DPT-FOUNDATION-001 is now CLOSED.
+  DPT-FOUNDATION-002 dependency satisfied; no active Human Gate.
+  Status advanced to READY; auto_continue enabled.
+  
+  READY/BLOCKED sets (post-recompute):
+  - READY: DPT-FOUNDATION-002
+  - BLOCKED: none
 [/DELTA]
