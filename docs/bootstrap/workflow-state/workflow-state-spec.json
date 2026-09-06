@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0.3",
+  "component": "workflow-state",
+  "states": [
+    "BACKLOG",
+    "READY",
+    "RUNNING",
+    "REWORK",
+    "CLOSED"
+  ],
+  "description": "Workflow state management specification"
+}

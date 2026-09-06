@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apexaidpt.io/schemas/permission-envelope.schema.json",
+  "title": "Permission Envelope",
+  "description": "Scoped authorization wrapper constraining executor permissions.",
+  "type": "object",
+  "required": [
+    "envelope_id",
+    "schema_version",
+    "task_id",
+    "work_order_id",
+    "role",
+    "actor_id",
+    "authority_mode",
+    "issued_at"
+  ],
+  "properties": {
+    "envelope_id": {
+      "type": "string",
+      "description": "Unique identifier for this permission envelope."
+    },
+    "schema_version": {
+      "type": "string",
+      "description": "Schema version of this envelope."
+    },
+    "task_id": {
+      "type": "string",
+      "description": "Task this envelope is associated with."
+    },
+    "task_passport_revision": {
+      "type": "integer",
+      "description": "Revision of the task passport."
+    },
+    "work_order_id": {
+      "type": "string",
+      "description": "Work order this envelope is associated with."
+    },
+    "work_order_revision": {
+      "type": "integer",
+      "description": "Revision of the work order."
+    },
+    "role": {
+      "type": "string",
+      "description": "Role granted by this envelope."
+    },
+    "actor_id": {
+      "type": "string",
+      "description": "Identity of the actor."
+    },
+    "authority_mode": {
+      "type": "string",
+      "enum": [
+        "delegated",
+        "autonomous",
+        "supervised"
+      ],
+      "description": "Mode of authority granted."
+    },
+    "issued_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this envelope was issued."
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this envelope expires."
+    },
+    "lifetime": {
+      "type": "string",
+      "description": "Duration of validity."
+    },
+    "workspace": {
+      "type": "string",
+      "description": "Workspace scope for this envelope."
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of granted permissions."
+    },
+    "human_gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of human gate identifiers."
+    },
+    "prohibitions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of prohibited actions."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata."
+    }
+  }
+}

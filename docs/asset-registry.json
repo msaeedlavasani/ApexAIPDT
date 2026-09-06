@@ -1,0 +1,3305 @@
+{
+  "schema_version": "1.0.0",
+  "project": "Apex AI DPT",
+  "generated_at": "2026-09-05T17:07:37.392Z",
+  "assets": [
+    {
+      "path": "templates//AI_START_HERE.md",
+      "name": "AI_START_HERE.md",
+      "type": "file",
+      "size": 1105,
+      "category": "templates",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates//ASSET_REGISTRY.md",
+      "name": "ASSET_REGISTRY.md",
+      "type": "file",
+      "size": 495,
+      "category": "templates",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates//ASSET_REQUEST.md",
+      "name": "ASSET_REQUEST.md",
+      "type": "file",
+      "size": 530,
+      "category": "templates",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates//COMPONENT_REGISTRY.md",
+      "name": "COMPONENT_REGISTRY.md",
+      "type": "file",
+      "size": 604,
+      "category": "templates",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates//DECISION_RECORD.md",
+      "name": "DECISION_RECORD.md",
+      "type": "file",
+      "size": 441,
+      "category": "templates",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates//FEATURE_CONTRACT.md",
+      "name": "FEATURE_CONTRACT.md",
+      "type": "file",
+      "size": 698,
+      "category": "templates",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates//PROJECT_CONSTITUTION.md",
+      "name": "PROJECT_CONSTITUTION.md",
+      "type": "file",
+      "size": 1661,
+      "category": "templates",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates//PROJECT_CONTEXT_MAP.md",
+      "name": "PROJECT_CONTEXT_MAP.md",
+      "type": "file",
+      "size": 1585,
+      "category": "templates",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "templates//TEAM_MANIFEST.md",
+      "name": "TEAM_MANIFEST.md",
+      "type": "file",
+      "size": 496,
+      "category": "templates",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows//BUG_FIX.md",
+      "name": "BUG_FIX.md",
+      "type": "file",
+      "size": 675,
+      "category": "workflows",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows//FEATURE_DEVELOPMENT.md",
+      "name": "FEATURE_DEVELOPMENT.md",
+      "type": "file",
+      "size": 1223,
+      "category": "workflows",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows//NEW_GAME.md",
+      "name": "NEW_GAME.md",
+      "type": "file",
+      "size": 1538,
+      "category": "workflows",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows//PROJECT_INITIALIZATION.md",
+      "name": "PROJECT_INITIALIZATION.md",
+      "type": "file",
+      "size": 1640,
+      "category": "workflows",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows//RELEASE.md",
+      "name": "RELEASE.md",
+      "type": "file",
+      "size": 717,
+      "category": "workflows",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "workflows//VALIDATION_GATES.md",
+      "name": "VALIDATION_GATES.md",
+      "type": "file",
+      "size": 967,
+      "category": "workflows",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//delta.schema.json",
+      "name": "delta.schema.json",
+      "type": "file",
+      "size": 1642,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//lifecycle.schema.json",
+      "name": "lifecycle.schema.json",
+      "type": "file",
+      "size": 6042,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//permission-envelope.schema.json",
+      "name": "permission-envelope.schema.json",
+      "type": "file",
+      "size": 2588,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//result.schema.json",
+      "name": "result.schema.json",
+      "type": "file",
+      "size": 1162,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//task-passport.schema.json",
+      "name": "task-passport.schema.json",
+      "type": "file",
+      "size": 1941,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//task-record.schema.json",
+      "name": "task-record.schema.json",
+      "type": "file",
+      "size": 2579,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//v02-artifacts.schema.json",
+      "name": "v02-artifacts.schema.json",
+      "type": "file",
+      "size": 785,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//v02-authority.schema.json",
+      "name": "v02-authority.schema.json",
+      "type": "file",
+      "size": 771,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//v02-brains.schema.json",
+      "name": "v02-brains.schema.json",
+      "type": "file",
+      "size": 861,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//v02-decisions.schema.json",
+      "name": "v02-decisions.schema.json",
+      "type": "file",
+      "size": 889,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//v02-manifest.json",
+      "name": "v02-manifest.json",
+      "type": "file",
+      "size": 2001,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//v02-registries.schema.json",
+      "name": "v02-registries.schema.json",
+      "type": "file",
+      "size": 714,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//v02-reporting.schema.json",
+      "name": "v02-reporting.schema.json",
+      "type": "file",
+      "size": 927,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//v02-roles.schema.json",
+      "name": "v02-roles.schema.json",
+      "type": "file",
+      "size": 783,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//v02-validation.schema.json",
+      "name": "v02-validation.schema.json",
+      "type": "file",
+      "size": 1106,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//v02-workflows.schema.json",
+      "name": "v02-workflows.schema.json",
+      "type": "file",
+      "size": 769,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/schemas//work-order.schema.json",
+      "name": "work-order.schema.json",
+      "type": "file",
+      "size": 2001,
+      "category": "schemas",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/contract//capability-descriptor.mjs",
+      "name": "capability-descriptor.mjs",
+      "type": "file",
+      "size": 3798,
+      "category": "contracts",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/contract//capability-gateway.mjs",
+      "name": "capability-gateway.mjs",
+      "type": "file",
+      "size": 6130,
+      "category": "contracts",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/contract//conformance-suite.mjs",
+      "name": "conformance-suite.mjs",
+      "type": "file",
+      "size": 13041,
+      "category": "contracts",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/contract//phase-admission-enforcer.mjs",
+      "name": "phase-admission-enforcer.mjs",
+      "type": "file",
+      "size": 7053,
+      "category": "contracts",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/contract//provider-contract.mjs",
+      "name": "provider-contract.mjs",
+      "type": "file",
+      "size": 8942,
+      "category": "contracts",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/governance//AUTHORITY_PERMISSION_MODEL.md",
+      "name": "AUTHORITY_PERMISSION_MODEL.md",
+      "type": "file",
+      "size": 19929,
+      "category": "governance",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/governance//DYNAMIC_PERMISSION_MATERIALIZATION.md",
+      "name": "DYNAMIC_PERMISSION_MATERIALIZATION.md",
+      "type": "file",
+      "size": 13792,
+      "category": "governance",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/governance//HUMAN_GATE_BOUNDARY.md",
+      "name": "HUMAN_GATE_BOUNDARY.md",
+      "type": "file",
+      "size": 11865,
+      "category": "governance",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/governance//PERMISSION_ENVELOPE.md",
+      "name": "PERMISSION_ENVELOPE.md",
+      "type": "file",
+      "size": 32852,
+      "category": "governance",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//approval-ui-runtime.mjs",
+      "name": "approval-ui-runtime.mjs",
+      "type": "file",
+      "size": 1473,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//dag-calculator.mjs",
+      "name": "dag-calculator.mjs",
+      "type": "file",
+      "size": 14052,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//dpt-bootstrap.mjs",
+      "name": "dpt-bootstrap.mjs",
+      "type": "file",
+      "size": 14161,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//dpt-extension.mjs",
+      "name": "dpt-extension.mjs",
+      "type": "file",
+      "size": 7688,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//dpt-orchestrator-harness.mjs",
+      "name": "dpt-orchestrator-harness.mjs",
+      "type": "file",
+      "size": 8706,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//freeze-decisions-runtime.mjs",
+      "name": "freeze-decisions-runtime.mjs",
+      "type": "file",
+      "size": 867,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//goose-adapter.mjs",
+      "name": "goose-adapter.mjs",
+      "type": "file",
+      "size": 12934,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//memory-runtime.mjs",
+      "name": "memory-runtime.mjs",
+      "type": "file",
+      "size": 1927,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//orchestrator-core.mjs",
+      "name": "orchestrator-core.mjs",
+      "type": "file",
+      "size": 2730,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//qualitygate-runtime.mjs",
+      "name": "qualitygate-runtime.mjs",
+      "type": "file",
+      "size": 932,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-admission-001.mjs",
+      "name": "test-admission-001.mjs",
+      "type": "file",
+      "size": 6222,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-admission-002.mjs",
+      "name": "test-admission-002.mjs",
+      "type": "file",
+      "size": 9559,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-auto-continue-002.mjs",
+      "name": "test-auto-continue-002.mjs",
+      "type": "file",
+      "size": 12479,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-auto-continue-003.mjs",
+      "name": "test-auto-continue-003.mjs",
+      "type": "file",
+      "size": 7375,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-auto-continue-harness.mjs",
+      "name": "test-auto-continue-harness.mjs",
+      "type": "file",
+      "size": 8384,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-auto-continue-invariant.mjs",
+      "name": "test-auto-continue-invariant.mjs",
+      "type": "file",
+      "size": 9984,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-001-cleanup.mjs",
+      "name": "test-foundation-001-cleanup.mjs",
+      "type": "file",
+      "size": 6299,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-003.mjs",
+      "name": "test-foundation-003.mjs",
+      "type": "file",
+      "size": 11897,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-004.mjs",
+      "name": "test-foundation-004.mjs",
+      "type": "file",
+      "size": 13116,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-005.mjs",
+      "name": "test-foundation-005.mjs",
+      "type": "file",
+      "size": 11982,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-006.mjs",
+      "name": "test-foundation-006.mjs",
+      "type": "file",
+      "size": 14622,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-007.mjs",
+      "name": "test-foundation-007.mjs",
+      "type": "file",
+      "size": 10308,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-008.mjs",
+      "name": "test-foundation-008.mjs",
+      "type": "file",
+      "size": 9991,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-009.mjs",
+      "name": "test-foundation-009.mjs",
+      "type": "file",
+      "size": 10926,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-010.mjs",
+      "name": "test-foundation-010.mjs",
+      "type": "file",
+      "size": 10168,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-011.mjs",
+      "name": "test-foundation-011.mjs",
+      "type": "file",
+      "size": 10030,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-012.mjs",
+      "name": "test-foundation-012.mjs",
+      "type": "file",
+      "size": 11987,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-013.mjs",
+      "name": "test-foundation-013.mjs",
+      "type": "file",
+      "size": 13227,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-014.mjs",
+      "name": "test-foundation-014.mjs",
+      "type": "file",
+      "size": 13433,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-015.mjs",
+      "name": "test-foundation-015.mjs",
+      "type": "file",
+      "size": 7046,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-016.mjs",
+      "name": "test-foundation-016.mjs",
+      "type": "file",
+      "size": 8424,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-017.mjs",
+      "name": "test-foundation-017.mjs",
+      "type": "file",
+      "size": 9630,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-018.mjs",
+      "name": "test-foundation-018.mjs",
+      "type": "file",
+      "size": 3471,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-019.mjs",
+      "name": "test-foundation-019.mjs",
+      "type": "file",
+      "size": 4672,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-020.mjs",
+      "name": "test-foundation-020.mjs",
+      "type": "file",
+      "size": 6945,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-021.mjs",
+      "name": "test-foundation-021.mjs",
+      "type": "file",
+      "size": 7095,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-022.mjs",
+      "name": "test-foundation-022.mjs",
+      "type": "file",
+      "size": 7208,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-023.mjs",
+      "name": "test-foundation-023.mjs",
+      "type": "file",
+      "size": 2115,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-024.mjs",
+      "name": "test-foundation-024.mjs",
+      "type": "file",
+      "size": 2038,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-025.mjs",
+      "name": "test-foundation-025.mjs",
+      "type": "file",
+      "size": 2056,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-026.mjs",
+      "name": "test-foundation-026.mjs",
+      "type": "file",
+      "size": 2082,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-027.mjs",
+      "name": "test-foundation-027.mjs",
+      "type": "file",
+      "size": 2065,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-028.mjs",
+      "name": "test-foundation-028.mjs",
+      "type": "file",
+      "size": 2315,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-foundation-029.mjs",
+      "name": "test-foundation-029.mjs",
+      "type": "file",
+      "size": 3086,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-goose-acceptance.mjs",
+      "name": "test-goose-acceptance.mjs",
+      "type": "file",
+      "size": 10998,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-goose-concurrency.mjs",
+      "name": "test-goose-concurrency.mjs",
+      "type": "file",
+      "size": 10203,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-goose-e2e.mjs",
+      "name": "test-goose-e2e.mjs",
+      "type": "file",
+      "size": 15091,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-goose-enforcement.mjs",
+      "name": "test-goose-enforcement.mjs",
+      "type": "file",
+      "size": 14606,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-lifecycle-closure-invariant.mjs",
+      "name": "test-lifecycle-closure-invariant.mjs",
+      "type": "file",
+      "size": 7243,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-lifecycle-precedence.mjs",
+      "name": "test-lifecycle-precedence.mjs",
+      "type": "file",
+      "size": 9503,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-release-001.mjs",
+      "name": "test-release-001.mjs",
+      "type": "file",
+      "size": 11263,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-v1-runtime-023.mjs",
+      "name": "test-v1-runtime-023.mjs",
+      "type": "file",
+      "size": 1927,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-v1-runtime-024.mjs",
+      "name": "test-v1-runtime-024.mjs",
+      "type": "file",
+      "size": 1485,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-v1-runtime-025.mjs",
+      "name": "test-v1-runtime-025.mjs",
+      "type": "file",
+      "size": 1324,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-v1-runtime-026.mjs",
+      "name": "test-v1-runtime-026.mjs",
+      "type": "file",
+      "size": 1311,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-v1-runtime-027.mjs",
+      "name": "test-v1-runtime-027.mjs",
+      "type": "file",
+      "size": 1277,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-v1-runtime-028.mjs",
+      "name": "test-v1-runtime-028.mjs",
+      "type": "file",
+      "size": 1450,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-v1-runtime-029.mjs",
+      "name": "test-v1-runtime-029.mjs",
+      "type": "file",
+      "size": 1273,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-v1-runtime-030.mjs",
+      "name": "test-v1-runtime-030.mjs",
+      "type": "file",
+      "size": 2908,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//test-v1-runtime-031.mjs",
+      "name": "test-v1-runtime-031.mjs",
+      "type": "file",
+      "size": 2391,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/goose//workflow-runtime.mjs",
+      "name": "workflow-runtime.mjs",
+      "type": "file",
+      "size": 1364,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//adapter-spike.mjs",
+      "name": "adapter-spike.mjs",
+      "type": "file",
+      "size": 5460,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//context-receipt.mjs",
+      "name": "context-receipt.mjs",
+      "type": "file",
+      "size": 2726,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//dpt-mcp-client.mjs",
+      "name": "dpt-mcp-client.mjs",
+      "type": "file",
+      "size": 4325,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//dpt-mcp-server.mjs",
+      "name": "dpt-mcp-server.mjs",
+      "type": "file",
+      "size": 24231,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//event-bridge.mjs",
+      "name": "event-bridge.mjs",
+      "type": "file",
+      "size": 5168,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//event-model.mjs",
+      "name": "event-model.mjs",
+      "type": "file",
+      "size": 3888,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//execute-foundation-001-schemas.mjs",
+      "name": "execute-foundation-001-schemas.mjs",
+      "type": "file",
+      "size": 9985,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//launch-recon-003-diagnostic.mjs",
+      "name": "launch-recon-003-diagnostic.mjs",
+      "type": "file",
+      "size": 29697,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//opencode-adapter.mjs",
+      "name": "opencode-adapter.mjs",
+      "type": "file",
+      "size": 10583,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//permission-audit.mjs",
+      "name": "permission-audit.mjs",
+      "type": "file",
+      "size": 3186,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//permission-envelope.mjs",
+      "name": "permission-envelope.mjs",
+      "type": "file",
+      "size": 9658,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//permission-materializer.mjs",
+      "name": "permission-materializer.mjs",
+      "type": "file",
+      "size": 9450,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//rehydration-record.mjs",
+      "name": "rehydration-record.mjs",
+      "type": "file",
+      "size": 3724,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//sdk-normalizer.mjs",
+      "name": "sdk-normalizer.mjs",
+      "type": "file",
+      "size": 7373,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//test-e2e-integration.mjs",
+      "name": "test-e2e-integration.mjs",
+      "type": "file",
+      "size": 31341,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//test-evidence-bridge.mjs",
+      "name": "test-evidence-bridge.mjs",
+      "type": "file",
+      "size": 19127,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//test-foundation-001-minimal-write.mjs",
+      "name": "test-foundation-001-minimal-write.mjs",
+      "type": "file",
+      "size": 7689,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//test-mcp-server.mjs",
+      "name": "test-mcp-server.mjs",
+      "type": "file",
+      "size": 29469,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//test-permissions.mjs",
+      "name": "test-permissions.mjs",
+      "type": "file",
+      "size": 21005,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/opencode//test-rehydration.mjs",
+      "name": "test-rehydration.mjs",
+      "type": "file",
+      "size": 17215,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "providers/reference//reference-adapter.mjs",
+      "name": "reference-adapter.mjs",
+      "type": "file",
+      "size": 10591,
+      "category": "adapters",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation//DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT.md",
+      "name": "DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT.md",
+      "type": "file",
+      "size": 1442,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation//DPT-ADMISSION-002_MAJOR_VERSION_TRANSITION_REPORT.md",
+      "name": "DPT-ADMISSION-002_MAJOR_VERSION_TRANSITION_REPORT.md",
+      "type": "file",
+      "size": 1693,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation//DPT-AUTO-CONTINUE-002_PHASE_TRANSITION_REPORT.md",
+      "name": "DPT-AUTO-CONTINUE-002_PHASE_TRANSITION_REPORT.md",
+      "type": "file",
+      "size": 1762,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation//DPT-AUTO-CONTINUE-003_CONSECUTIVE_PHASE_TRANSITION_REPORT.md",
+      "name": "DPT-AUTO-CONTINUE-003_CONSECUTIVE_PHASE_TRANSITION_REPORT.md",
+      "type": "file",
+      "size": 1305,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation//DPT-CANONICAL-STATE-PRECEDENCE_GOVERNANCE_REPORT.md",
+      "name": "DPT-CANONICAL-STATE-PRECEDENCE_GOVERNANCE_REPORT.md",
+      "type": "file",
+      "size": 7813,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation//DPT-FOUNDATION-005_CONSTITUTION_REPORT.md",
+      "name": "DPT-FOUNDATION-005_CONSTITUTION_REPORT.md",
+      "type": "file",
+      "size": 814,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation//DPT-FOUNDATION-006_CONTEXT_MAP_REPORT.md",
+      "name": "DPT-FOUNDATION-006_CONTEXT_MAP_REPORT.md",
+      "type": "file",
+      "size": 1584,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT.md",
+      "name": "DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT.md",
+      "type": "file",
+      "size": 1442,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-ADMISSION-002_MAJOR_VERSION_TRANSITION_REPORT.md",
+      "name": "DPT-ADMISSION-002_MAJOR_VERSION_TRANSITION_REPORT.md",
+      "type": "file",
+      "size": 1693,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUDIT-001_TOKEN_TELEMETRY_GAP_REPORT.md",
+      "name": "DPT-AUDIT-001_TOKEN_TELEMETRY_GAP_REPORT.md",
+      "type": "file",
+      "size": 3626,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUDIT-002_REPORT_LIFECYCLE_COMPLIANCE_REPORT.md",
+      "name": "DPT-AUDIT-002_REPORT_LIFECYCLE_COMPLIANCE_REPORT.md",
+      "type": "file",
+      "size": 4054,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUDIT-003_BRANCH_DIVERGENCE_REPORT.md",
+      "name": "DPT-AUDIT-003_BRANCH_DIVERGENCE_REPORT.md",
+      "type": "file",
+      "size": 3077,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTH-001_AUTHORITY_PERMISSION_REPORT.md",
+      "name": "DPT-AUTH-001_AUTHORITY_PERMISSION_REPORT.md",
+      "type": "file",
+      "size": 10599,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTO-BOOTSTRAP_AUTONOMOUS_BOOTSTRAP_REPORT.md",
+      "name": "DPT-AUTO-BOOTSTRAP_AUTONOMOUS_BOOTSTRAP_REPORT.md",
+      "type": "file",
+      "size": 8515,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-001_REGRESSION_REPORT.md",
+      "name": "DPT-AUTO-CONTINUE-001_REGRESSION_REPORT.md",
+      "type": "file",
+      "size": 2869,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-002_PHASE_TRANSITION_REPORT.md",
+      "name": "DPT-AUTO-CONTINUE-002_PHASE_TRANSITION_REPORT.md",
+      "type": "file",
+      "size": 1762,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-003_CONSECUTIVE_PHASE_TRANSITION_REPORT.md",
+      "name": "DPT-AUTO-CONTINUE-003_CONSECUTIVE_PHASE_TRANSITION_REPORT.md",
+      "type": "file",
+      "size": 1305,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-FINAL-PROOF_REPORT.md",
+      "name": "DPT-AUTO-CONTINUE-FINAL-PROOF_REPORT.md",
+      "type": "file",
+      "size": 3607,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-ORCHESTRATION_REPAIR_REPORT.md",
+      "name": "DPT-AUTO-CONTINUE-ORCHESTRATION_REPAIR_REPORT.md",
+      "type": "file",
+      "size": 9021,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-BATCH-ANALYSIS_001.md",
+      "name": "DPT-BATCH-ANALYSIS_001.md",
+      "type": "file",
+      "size": 1804,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-BRAIN-UNIVERSAL_COGNITION_DOCS_REPORT.md",
+      "name": "DPT-BRAIN-UNIVERSAL_COGNITION_DOCS_REPORT.md",
+      "type": "file",
+      "size": 7739,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-DECISION-CANONICALIZATION_REPORT.md",
+      "name": "DPT-DECISION-CANONICALIZATION_REPORT.md",
+      "type": "file",
+      "size": 4579,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-002_ACCEPTANCE_REPORT.md",
+      "name": "DPT-FOUNDATION-002_ACCEPTANCE_REPORT.md",
+      "type": "file",
+      "size": 5014,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-002_E2E_ACCEPTANCE_REPORT.md",
+      "name": "DPT-FOUNDATION-002_E2E_ACCEPTANCE_REPORT.md",
+      "type": "file",
+      "size": 5474,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-002_RUNTIME_ENFORCEMENT_REPORT.md",
+      "name": "DPT-FOUNDATION-002_RUNTIME_ENFORCEMENT_REPORT.md",
+      "type": "file",
+      "size": 6168,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-003_REAL_PROJECT_VALIDATION_REPORT.md",
+      "name": "DPT-FOUNDATION-003_REAL_PROJECT_VALIDATION_REPORT.md",
+      "type": "file",
+      "size": 4840,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-004_COMPONENT_REGISTRY_REPORT.md",
+      "name": "DPT-FOUNDATION-004_COMPONENT_REGISTRY_REPORT.md",
+      "type": "file",
+      "size": 3845,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-005_CONSTITUTION_REPORT.md",
+      "name": "DPT-FOUNDATION-005_CONSTITUTION_REPORT.md",
+      "type": "file",
+      "size": 814,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-006_CONTEXT_MAP_REPORT.md",
+      "name": "DPT-FOUNDATION-006_CONTEXT_MAP_REPORT.md",
+      "type": "file",
+      "size": 1584,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-007_ASSET_REGISTRY_REPORT.md",
+      "name": "DPT-FOUNDATION-007_ASSET_REGISTRY_REPORT.md",
+      "type": "file",
+      "size": 1659,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-008_AUTONOMY_TEST_REPORT.md",
+      "name": "DPT-FOUNDATION-008_AUTONOMY_TEST_REPORT.md",
+      "type": "file",
+      "size": 1910,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-009_VISUAL_CHANGE_REPORT.md",
+      "name": "DPT-FOUNDATION-009_VISUAL_CHANGE_REPORT.md",
+      "type": "file",
+      "size": 2257,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-010_NEW_GAME_DISCOVERY_REPORT.md",
+      "name": "DPT-FOUNDATION-010_NEW_GAME_DISCOVERY_REPORT.md",
+      "type": "file",
+      "size": 1750,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-011_TOKEN_CONTEXT_MEASUREMENT_REPORT.md",
+      "name": "DPT-FOUNDATION-011_TOKEN_CONTEXT_MEASUREMENT_REPORT.md",
+      "type": "file",
+      "size": 1584,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-012_EXECUTION_ORCHESTRATOR_FLOW_REPORT.md",
+      "name": "DPT-FOUNDATION-012_EXECUTION_ORCHESTRATOR_FLOW_REPORT.md",
+      "type": "file",
+      "size": 1595,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-013_RUNTIME_EVIDENCE_REPORT.md",
+      "name": "DPT-FOUNDATION-013_RUNTIME_EVIDENCE_REPORT.md",
+      "type": "file",
+      "size": 2359,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-014_SCHEMA_DEFINITION_REPORT.md",
+      "name": "DPT-FOUNDATION-014_SCHEMA_DEFINITION_REPORT.md",
+      "type": "file",
+      "size": 1225,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-015_MANIFEST_GENERATION_REPORT.md",
+      "name": "DPT-FOUNDATION-015_MANIFEST_GENERATION_REPORT.md",
+      "type": "file",
+      "size": 1221,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-016_CONTEXT_ROUTING_REPORT.md",
+      "name": "DPT-FOUNDATION-016_CONTEXT_ROUTING_REPORT.md",
+      "type": "file",
+      "size": 1250,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-017_VALIDATION_REPORTING_REPORT.md",
+      "name": "DPT-FOUNDATION-017_VALIDATION_REPORTING_REPORT.md",
+      "type": "file",
+      "size": 1426,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-018_PROJECT_INITIALIZER_REPORT.md",
+      "name": "DPT-FOUNDATION-018_PROJECT_INITIALIZER_REPORT.md",
+      "type": "file",
+      "size": 545,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-019_PROJECT_SCANNER_REPORT.md",
+      "name": "DPT-FOUNDATION-019_PROJECT_SCANNER_REPORT.md",
+      "type": "file",
+      "size": 482,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-020_CONTEXT_MAP_REPORT.md",
+      "name": "DPT-FOUNDATION-020_CONTEXT_MAP_REPORT.md",
+      "type": "file",
+      "size": 827,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-021_REGISTRY_GENERATOR_REPORT.md",
+      "name": "DPT-FOUNDATION-021_REGISTRY_GENERATOR_REPORT.md",
+      "type": "file",
+      "size": 851,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-022_TEAM_ASSEMBLY_REPORT.md",
+      "name": "DPT-FOUNDATION-022_TEAM_ASSEMBLY_REPORT.md",
+      "type": "file",
+      "size": 853,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-023_ORCHESTRATOR_RUNTIME_REPORT.md",
+      "name": "DPT-FOUNDATION-023_ORCHESTRATOR_RUNTIME_REPORT.md",
+      "type": "file",
+      "size": 154,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-024_AGENT_ADAPTERS_REPORT.md",
+      "name": "DPT-FOUNDATION-024_AGENT_ADAPTERS_REPORT.md",
+      "type": "file",
+      "size": 154,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-025_PERSISTENT_MEMORY_REPORT.md",
+      "name": "DPT-FOUNDATION-025_PERSISTENT_MEMORY_REPORT.md",
+      "type": "file",
+      "size": 154,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-026_WORKFLOW_STATE_REPORT.md",
+      "name": "DPT-FOUNDATION-026_WORKFLOW_STATE_REPORT.md",
+      "type": "file",
+      "size": 154,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-027_QUALITY_GATE_REPORT.md",
+      "name": "DPT-FOUNDATION-027_QUALITY_GATE_REPORT.md",
+      "type": "file",
+      "size": 154,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-028_HUMAN_APPROVAL_INTERFACE_REPORT.md",
+      "name": "DPT-FOUNDATION-028_HUMAN_APPROVAL_INTERFACE_REPORT.md",
+      "type": "file",
+      "size": 229,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-FOUNDATION-029_FREEZE_DECISIONS_REPORT.md",
+      "name": "DPT-FOUNDATION-029_FREEZE_DECISIONS_REPORT.md",
+      "type": "file",
+      "size": 315,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-LIFECYCLE-001_CLOSURE_INVARIANT_REPORT.md",
+      "name": "DPT-LIFECYCLE-001_CLOSURE_INVARIANT_REPORT.md",
+      "type": "file",
+      "size": 2267,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-LIFECYCLE-PRECEDENCE_ADMISSION_REPORT.md",
+      "name": "DPT-LIFECYCLE-PRECEDENCE_ADMISSION_REPORT.md",
+      "type": "file",
+      "size": 7599,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-MIG-001_RECONCILIATION_REPORT.md",
+      "name": "DPT-MIG-001_RECONCILIATION_REPORT.md",
+      "type": "file",
+      "size": 17127,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-003B_PERMISSION_ROOT_CAUSE_REPORT.md",
+      "name": "DPT-PROVIDER-003B_PERMISSION_ROOT_CAUSE_REPORT.md",
+      "type": "file",
+      "size": 31485,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-003C_PERMISSION_REMEDIATION_ACCEPTANCE_REPORT.md",
+      "name": "DPT-PROVIDER-003C_PERMISSION_REMEDIATION_ACCEPTANCE_REPORT.md",
+      "type": "file",
+      "size": 13392,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004A_ARCHITECTURE_CAPABILITY_REPORT.md",
+      "name": "DPT-PROVIDER-004A_ARCHITECTURE_CAPABILITY_REPORT.md",
+      "type": "file",
+      "size": 10755,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004B_ADAPTER_CONTROL_SPIKE_REPORT.md",
+      "name": "DPT-PROVIDER-004B_ADAPTER_CONTROL_SPIKE_REPORT.md",
+      "type": "file",
+      "size": 10625,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004C_DYNAMIC_PERMISSION_MATERIALIZATION_REPORT.md",
+      "name": "DPT-PROVIDER-004C_DYNAMIC_PERMISSION_MATERIALIZATION_REPORT.md",
+      "type": "file",
+      "size": 12755,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004D_SESSION_RESTART_REHYDRATION_REPORT.md",
+      "name": "DPT-PROVIDER-004D_SESSION_RESTART_REHYDRATION_REPORT.md",
+      "type": "file",
+      "size": 7761,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004E_EVIDENCE_EVENT_BRIDGE_REPORT.md",
+      "name": "DPT-PROVIDER-004E_EVIDENCE_EVENT_BRIDGE_REPORT.md",
+      "type": "file",
+      "size": 5867,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004F_MCP_CAPABILITY_SERVER_REPORT.md",
+      "name": "DPT-PROVIDER-004F_MCP_CAPABILITY_SERVER_REPORT.md",
+      "type": "file",
+      "size": 7143,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-004G_SDK_MCP_END_TO_END_INTEGRATION_REPORT.md",
+      "name": "DPT-PROVIDER-004G_SDK_MCP_END_TO_END_INTEGRATION_REPORT.md",
+      "type": "file",
+      "size": 6037,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-PROVIDER-005_PROVIDER_CONFORMANCE_REPORT.md",
+      "name": "DPT-PROVIDER-005_PROVIDER_CONFORMANCE_REPORT.md",
+      "type": "file",
+      "size": 4766,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-REC-001_RECONCILIATION_REPORT.md",
+      "name": "DPT-REC-001_RECONCILIATION_REPORT.md",
+      "type": "file",
+      "size": 57218,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-RECON-001_REPOSITORY_RECONCILIATION_REPORT.md",
+      "name": "DPT-RECON-001_REPOSITORY_RECONCILIATION_REPORT.md",
+      "type": "file",
+      "size": 36269,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-RECON-002_REPOSITORY_CANONICALIZATION_REPORT.md",
+      "name": "DPT-RECON-002_REPOSITORY_CANONICALIZATION_REPORT.md",
+      "type": "file",
+      "size": 9289,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-RECON-003_PROVIDER_BOOTSTRAP_CHECKPOINT_REPORT.md",
+      "name": "DPT-RECON-003_PROVIDER_BOOTSTRAP_CHECKPOINT_REPORT.md",
+      "type": "file",
+      "size": 5314,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-RECON-003_TASK_SYSTEM_AUTHORITY_CONTRACT_REPORT.md",
+      "name": "DPT-RECON-003_TASK_SYSTEM_AUTHORITY_CONTRACT_REPORT.md",
+      "type": "file",
+      "size": 7349,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-RECON-V1_DECISION_DEPENDENCY_MATRIX.md",
+      "name": "DPT-RECON-V1_DECISION_DEPENDENCY_MATRIX.md",
+      "type": "file",
+      "size": 12563,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-RELEASE-001_V01_RELEASE_GATE_REPORT.md",
+      "name": "DPT-RELEASE-001_V01_RELEASE_GATE_REPORT.md",
+      "type": "file",
+      "size": 967,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-REPORT_LIFECYCLE_GOVERNANCE_IMPLEMENTATION_REPORT.md",
+      "name": "DPT-REPORT_LIFECYCLE_GOVERNANCE_IMPLEMENTATION_REPORT.md",
+      "type": "file",
+      "size": 6084,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/DPT-VAL-001_OPENCODE_CONFORMANCE_REPORT.md",
+      "name": "DPT-VAL-001_OPENCODE_CONFORMANCE_REPORT.md",
+      "type": "file",
+      "size": 14335,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/FreeBuff Resault.md",
+      "name": "FreeBuff Resault.md",
+      "type": "file",
+      "size": 151151,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/V1_COMPLETION_AUDIT.md",
+      "name": "V1_COMPLETION_AUDIT.md",
+      "type": "file",
+      "size": 2248,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs/validation/Retired/V1_RUNTIME_RECONCILIATION_REPORT.md",
+      "name": "V1_RUNTIME_RECONCILIATION_REPORT.md",
+      "type": "file",
+      "size": 3048,
+      "category": "validation",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs//APEX_AI_DPT_CONSTITUTION.md",
+      "name": "APEX_AI_DPT_CONSTITUTION.md",
+      "type": "file",
+      "size": 12381,
+      "category": "constitution",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs//APEX_AI_DPT_TERMINOLOGY.md",
+      "name": "APEX_AI_DPT_TERMINOLOGY.md",
+      "type": "file",
+      "size": 8447,
+      "category": "constitution",
+      "conformance": "PRESENT"
+    },
+    {
+      "path": "docs//APEX_AI_DPT_VISION.md",
+      "name": "APEX_AI_DPT_VISION.md",
+      "type": "file",
+      "size": 6131,
+      "category": "constitution",
+      "conformance": "PRESENT"
+    }
+  ],
+  "categories": {
+    "templates": {
+      "description": "Project templates for DPT workflows",
+      "count": 9,
+      "assets": [
+        {
+          "path": "templates//AI_START_HERE.md",
+          "name": "AI_START_HERE.md",
+          "type": "file",
+          "size": 1105,
+          "category": "templates",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "templates//ASSET_REGISTRY.md",
+          "name": "ASSET_REGISTRY.md",
+          "type": "file",
+          "size": 495,
+          "category": "templates",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "templates//ASSET_REQUEST.md",
+          "name": "ASSET_REQUEST.md",
+          "type": "file",
+          "size": 530,
+          "category": "templates",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "templates//COMPONENT_REGISTRY.md",
+          "name": "COMPONENT_REGISTRY.md",
+          "type": "file",
+          "size": 604,
+          "category": "templates",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "templates//DECISION_RECORD.md",
+          "name": "DECISION_RECORD.md",
+          "type": "file",
+          "size": 441,
+          "category": "templates",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "templates//FEATURE_CONTRACT.md",
+          "name": "FEATURE_CONTRACT.md",
+          "type": "file",
+          "size": 698,
+          "category": "templates",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "templates//PROJECT_CONSTITUTION.md",
+          "name": "PROJECT_CONSTITUTION.md",
+          "type": "file",
+          "size": 1661,
+          "category": "templates",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "templates//PROJECT_CONTEXT_MAP.md",
+          "name": "PROJECT_CONTEXT_MAP.md",
+          "type": "file",
+          "size": 1585,
+          "category": "templates",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "templates//TEAM_MANIFEST.md",
+          "name": "TEAM_MANIFEST.md",
+          "type": "file",
+          "size": 496,
+          "category": "templates",
+          "conformance": "PRESENT"
+        }
+      ]
+    },
+    "workflows": {
+      "description": "DPT workflow definitions",
+      "count": 6,
+      "assets": [
+        {
+          "path": "workflows//BUG_FIX.md",
+          "name": "BUG_FIX.md",
+          "type": "file",
+          "size": 675,
+          "category": "workflows",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "workflows//FEATURE_DEVELOPMENT.md",
+          "name": "FEATURE_DEVELOPMENT.md",
+          "type": "file",
+          "size": 1223,
+          "category": "workflows",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "workflows//NEW_GAME.md",
+          "name": "NEW_GAME.md",
+          "type": "file",
+          "size": 1538,
+          "category": "workflows",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "workflows//PROJECT_INITIALIZATION.md",
+          "name": "PROJECT_INITIALIZATION.md",
+          "type": "file",
+          "size": 1640,
+          "category": "workflows",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "workflows//RELEASE.md",
+          "name": "RELEASE.md",
+          "type": "file",
+          "size": 717,
+          "category": "workflows",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "workflows//VALIDATION_GATES.md",
+          "name": "VALIDATION_GATES.md",
+          "type": "file",
+          "size": 967,
+          "category": "workflows",
+          "conformance": "PRESENT"
+        }
+      ]
+    },
+    "schemas": {
+      "description": "Machine-readable schema definitions",
+      "count": 17,
+      "assets": [
+        {
+          "path": "docs/schemas//delta.schema.json",
+          "name": "delta.schema.json",
+          "type": "file",
+          "size": 1642,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//lifecycle.schema.json",
+          "name": "lifecycle.schema.json",
+          "type": "file",
+          "size": 6042,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//permission-envelope.schema.json",
+          "name": "permission-envelope.schema.json",
+          "type": "file",
+          "size": 2588,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//result.schema.json",
+          "name": "result.schema.json",
+          "type": "file",
+          "size": 1162,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//task-passport.schema.json",
+          "name": "task-passport.schema.json",
+          "type": "file",
+          "size": 1941,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//task-record.schema.json",
+          "name": "task-record.schema.json",
+          "type": "file",
+          "size": 2579,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//v02-artifacts.schema.json",
+          "name": "v02-artifacts.schema.json",
+          "type": "file",
+          "size": 785,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//v02-authority.schema.json",
+          "name": "v02-authority.schema.json",
+          "type": "file",
+          "size": 771,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//v02-brains.schema.json",
+          "name": "v02-brains.schema.json",
+          "type": "file",
+          "size": 861,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//v02-decisions.schema.json",
+          "name": "v02-decisions.schema.json",
+          "type": "file",
+          "size": 889,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//v02-manifest.json",
+          "name": "v02-manifest.json",
+          "type": "file",
+          "size": 2001,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//v02-registries.schema.json",
+          "name": "v02-registries.schema.json",
+          "type": "file",
+          "size": 714,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//v02-reporting.schema.json",
+          "name": "v02-reporting.schema.json",
+          "type": "file",
+          "size": 927,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//v02-roles.schema.json",
+          "name": "v02-roles.schema.json",
+          "type": "file",
+          "size": 783,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//v02-validation.schema.json",
+          "name": "v02-validation.schema.json",
+          "type": "file",
+          "size": 1106,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//v02-workflows.schema.json",
+          "name": "v02-workflows.schema.json",
+          "type": "file",
+          "size": 769,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/schemas//work-order.schema.json",
+          "name": "work-order.schema.json",
+          "type": "file",
+          "size": 2001,
+          "category": "schemas",
+          "conformance": "PRESENT"
+        }
+      ]
+    },
+    "contracts": {
+      "description": "Provider-neutral interface contracts",
+      "count": 5,
+      "assets": [
+        {
+          "path": "providers/contract//capability-descriptor.mjs",
+          "name": "capability-descriptor.mjs",
+          "type": "file",
+          "size": 3798,
+          "category": "contracts",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/contract//capability-gateway.mjs",
+          "name": "capability-gateway.mjs",
+          "type": "file",
+          "size": 6130,
+          "category": "contracts",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/contract//conformance-suite.mjs",
+          "name": "conformance-suite.mjs",
+          "type": "file",
+          "size": 13041,
+          "category": "contracts",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/contract//phase-admission-enforcer.mjs",
+          "name": "phase-admission-enforcer.mjs",
+          "type": "file",
+          "size": 7053,
+          "category": "contracts",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/contract//provider-contract.mjs",
+          "name": "provider-contract.mjs",
+          "type": "file",
+          "size": 8942,
+          "category": "contracts",
+          "conformance": "PRESENT"
+        }
+      ]
+    },
+    "governance": {
+      "description": "Policy and governance documents",
+      "count": 4,
+      "assets": [
+        {
+          "path": "docs/governance//AUTHORITY_PERMISSION_MODEL.md",
+          "name": "AUTHORITY_PERMISSION_MODEL.md",
+          "type": "file",
+          "size": 19929,
+          "category": "governance",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/governance//DYNAMIC_PERMISSION_MATERIALIZATION.md",
+          "name": "DYNAMIC_PERMISSION_MATERIALIZATION.md",
+          "type": "file",
+          "size": 13792,
+          "category": "governance",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/governance//HUMAN_GATE_BOUNDARY.md",
+          "name": "HUMAN_GATE_BOUNDARY.md",
+          "type": "file",
+          "size": 11865,
+          "category": "governance",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/governance//PERMISSION_ENVELOPE.md",
+          "name": "PERMISSION_ENVELOPE.md",
+          "type": "file",
+          "size": 32852,
+          "category": "governance",
+          "conformance": "PRESENT"
+        }
+      ]
+    },
+    "adapters": {
+      "description": "Provider adapter implementations",
+      "count": 82,
+      "assets": [
+        {
+          "path": "providers/goose//approval-ui-runtime.mjs",
+          "name": "approval-ui-runtime.mjs",
+          "type": "file",
+          "size": 1473,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//dag-calculator.mjs",
+          "name": "dag-calculator.mjs",
+          "type": "file",
+          "size": 14052,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//dpt-bootstrap.mjs",
+          "name": "dpt-bootstrap.mjs",
+          "type": "file",
+          "size": 14161,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//dpt-extension.mjs",
+          "name": "dpt-extension.mjs",
+          "type": "file",
+          "size": 7688,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//dpt-orchestrator-harness.mjs",
+          "name": "dpt-orchestrator-harness.mjs",
+          "type": "file",
+          "size": 8706,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//freeze-decisions-runtime.mjs",
+          "name": "freeze-decisions-runtime.mjs",
+          "type": "file",
+          "size": 867,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//goose-adapter.mjs",
+          "name": "goose-adapter.mjs",
+          "type": "file",
+          "size": 12934,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//memory-runtime.mjs",
+          "name": "memory-runtime.mjs",
+          "type": "file",
+          "size": 1927,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//orchestrator-core.mjs",
+          "name": "orchestrator-core.mjs",
+          "type": "file",
+          "size": 2730,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//qualitygate-runtime.mjs",
+          "name": "qualitygate-runtime.mjs",
+          "type": "file",
+          "size": 932,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-admission-001.mjs",
+          "name": "test-admission-001.mjs",
+          "type": "file",
+          "size": 6222,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-admission-002.mjs",
+          "name": "test-admission-002.mjs",
+          "type": "file",
+          "size": 9559,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-auto-continue-002.mjs",
+          "name": "test-auto-continue-002.mjs",
+          "type": "file",
+          "size": 12479,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-auto-continue-003.mjs",
+          "name": "test-auto-continue-003.mjs",
+          "type": "file",
+          "size": 7375,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-auto-continue-harness.mjs",
+          "name": "test-auto-continue-harness.mjs",
+          "type": "file",
+          "size": 8384,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-auto-continue-invariant.mjs",
+          "name": "test-auto-continue-invariant.mjs",
+          "type": "file",
+          "size": 9984,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-001-cleanup.mjs",
+          "name": "test-foundation-001-cleanup.mjs",
+          "type": "file",
+          "size": 6299,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-003.mjs",
+          "name": "test-foundation-003.mjs",
+          "type": "file",
+          "size": 11897,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-004.mjs",
+          "name": "test-foundation-004.mjs",
+          "type": "file",
+          "size": 13116,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-005.mjs",
+          "name": "test-foundation-005.mjs",
+          "type": "file",
+          "size": 11982,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-006.mjs",
+          "name": "test-foundation-006.mjs",
+          "type": "file",
+          "size": 14622,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-007.mjs",
+          "name": "test-foundation-007.mjs",
+          "type": "file",
+          "size": 10308,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-008.mjs",
+          "name": "test-foundation-008.mjs",
+          "type": "file",
+          "size": 9991,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-009.mjs",
+          "name": "test-foundation-009.mjs",
+          "type": "file",
+          "size": 10926,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-010.mjs",
+          "name": "test-foundation-010.mjs",
+          "type": "file",
+          "size": 10168,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-011.mjs",
+          "name": "test-foundation-011.mjs",
+          "type": "file",
+          "size": 10030,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-012.mjs",
+          "name": "test-foundation-012.mjs",
+          "type": "file",
+          "size": 11987,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-013.mjs",
+          "name": "test-foundation-013.mjs",
+          "type": "file",
+          "size": 13227,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-014.mjs",
+          "name": "test-foundation-014.mjs",
+          "type": "file",
+          "size": 13433,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-015.mjs",
+          "name": "test-foundation-015.mjs",
+          "type": "file",
+          "size": 7046,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-016.mjs",
+          "name": "test-foundation-016.mjs",
+          "type": "file",
+          "size": 8424,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-017.mjs",
+          "name": "test-foundation-017.mjs",
+          "type": "file",
+          "size": 9630,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-018.mjs",
+          "name": "test-foundation-018.mjs",
+          "type": "file",
+          "size": 3471,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-019.mjs",
+          "name": "test-foundation-019.mjs",
+          "type": "file",
+          "size": 4672,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-020.mjs",
+          "name": "test-foundation-020.mjs",
+          "type": "file",
+          "size": 6945,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-021.mjs",
+          "name": "test-foundation-021.mjs",
+          "type": "file",
+          "size": 7095,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-022.mjs",
+          "name": "test-foundation-022.mjs",
+          "type": "file",
+          "size": 7208,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-023.mjs",
+          "name": "test-foundation-023.mjs",
+          "type": "file",
+          "size": 2115,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-024.mjs",
+          "name": "test-foundation-024.mjs",
+          "type": "file",
+          "size": 2038,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-025.mjs",
+          "name": "test-foundation-025.mjs",
+          "type": "file",
+          "size": 2056,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-026.mjs",
+          "name": "test-foundation-026.mjs",
+          "type": "file",
+          "size": 2082,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-027.mjs",
+          "name": "test-foundation-027.mjs",
+          "type": "file",
+          "size": 2065,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-028.mjs",
+          "name": "test-foundation-028.mjs",
+          "type": "file",
+          "size": 2315,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-foundation-029.mjs",
+          "name": "test-foundation-029.mjs",
+          "type": "file",
+          "size": 3086,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-goose-acceptance.mjs",
+          "name": "test-goose-acceptance.mjs",
+          "type": "file",
+          "size": 10998,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-goose-concurrency.mjs",
+          "name": "test-goose-concurrency.mjs",
+          "type": "file",
+          "size": 10203,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-goose-e2e.mjs",
+          "name": "test-goose-e2e.mjs",
+          "type": "file",
+          "size": 15091,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-goose-enforcement.mjs",
+          "name": "test-goose-enforcement.mjs",
+          "type": "file",
+          "size": 14606,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-lifecycle-closure-invariant.mjs",
+          "name": "test-lifecycle-closure-invariant.mjs",
+          "type": "file",
+          "size": 7243,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-lifecycle-precedence.mjs",
+          "name": "test-lifecycle-precedence.mjs",
+          "type": "file",
+          "size": 9503,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-release-001.mjs",
+          "name": "test-release-001.mjs",
+          "type": "file",
+          "size": 11263,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-v1-runtime-023.mjs",
+          "name": "test-v1-runtime-023.mjs",
+          "type": "file",
+          "size": 1927,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-v1-runtime-024.mjs",
+          "name": "test-v1-runtime-024.mjs",
+          "type": "file",
+          "size": 1485,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-v1-runtime-025.mjs",
+          "name": "test-v1-runtime-025.mjs",
+          "type": "file",
+          "size": 1324,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-v1-runtime-026.mjs",
+          "name": "test-v1-runtime-026.mjs",
+          "type": "file",
+          "size": 1311,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-v1-runtime-027.mjs",
+          "name": "test-v1-runtime-027.mjs",
+          "type": "file",
+          "size": 1277,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-v1-runtime-028.mjs",
+          "name": "test-v1-runtime-028.mjs",
+          "type": "file",
+          "size": 1450,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-v1-runtime-029.mjs",
+          "name": "test-v1-runtime-029.mjs",
+          "type": "file",
+          "size": 1273,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-v1-runtime-030.mjs",
+          "name": "test-v1-runtime-030.mjs",
+          "type": "file",
+          "size": 2908,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//test-v1-runtime-031.mjs",
+          "name": "test-v1-runtime-031.mjs",
+          "type": "file",
+          "size": 2391,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/goose//workflow-runtime.mjs",
+          "name": "workflow-runtime.mjs",
+          "type": "file",
+          "size": 1364,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//adapter-spike.mjs",
+          "name": "adapter-spike.mjs",
+          "type": "file",
+          "size": 5460,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//context-receipt.mjs",
+          "name": "context-receipt.mjs",
+          "type": "file",
+          "size": 2726,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//dpt-mcp-client.mjs",
+          "name": "dpt-mcp-client.mjs",
+          "type": "file",
+          "size": 4325,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//dpt-mcp-server.mjs",
+          "name": "dpt-mcp-server.mjs",
+          "type": "file",
+          "size": 24231,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//event-bridge.mjs",
+          "name": "event-bridge.mjs",
+          "type": "file",
+          "size": 5168,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//event-model.mjs",
+          "name": "event-model.mjs",
+          "type": "file",
+          "size": 3888,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//execute-foundation-001-schemas.mjs",
+          "name": "execute-foundation-001-schemas.mjs",
+          "type": "file",
+          "size": 9985,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//launch-recon-003-diagnostic.mjs",
+          "name": "launch-recon-003-diagnostic.mjs",
+          "type": "file",
+          "size": 29697,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//opencode-adapter.mjs",
+          "name": "opencode-adapter.mjs",
+          "type": "file",
+          "size": 10583,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//permission-audit.mjs",
+          "name": "permission-audit.mjs",
+          "type": "file",
+          "size": 3186,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//permission-envelope.mjs",
+          "name": "permission-envelope.mjs",
+          "type": "file",
+          "size": 9658,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//permission-materializer.mjs",
+          "name": "permission-materializer.mjs",
+          "type": "file",
+          "size": 9450,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//rehydration-record.mjs",
+          "name": "rehydration-record.mjs",
+          "type": "file",
+          "size": 3724,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//sdk-normalizer.mjs",
+          "name": "sdk-normalizer.mjs",
+          "type": "file",
+          "size": 7373,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//test-e2e-integration.mjs",
+          "name": "test-e2e-integration.mjs",
+          "type": "file",
+          "size": 31341,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//test-evidence-bridge.mjs",
+          "name": "test-evidence-bridge.mjs",
+          "type": "file",
+          "size": 19127,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//test-foundation-001-minimal-write.mjs",
+          "name": "test-foundation-001-minimal-write.mjs",
+          "type": "file",
+          "size": 7689,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//test-mcp-server.mjs",
+          "name": "test-mcp-server.mjs",
+          "type": "file",
+          "size": 29469,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//test-permissions.mjs",
+          "name": "test-permissions.mjs",
+          "type": "file",
+          "size": 21005,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/opencode//test-rehydration.mjs",
+          "name": "test-rehydration.mjs",
+          "type": "file",
+          "size": 17215,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "providers/reference//reference-adapter.mjs",
+          "name": "reference-adapter.mjs",
+          "type": "file",
+          "size": 10591,
+          "category": "adapters",
+          "conformance": "PRESENT"
+        }
+      ]
+    },
+    "validation": {
+      "description": "Test and verification artifacts",
+      "count": 77,
+      "assets": [
+        {
+          "path": "docs/validation//DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT.md",
+          "name": "DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT.md",
+          "type": "file",
+          "size": 1442,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation//DPT-ADMISSION-002_MAJOR_VERSION_TRANSITION_REPORT.md",
+          "name": "DPT-ADMISSION-002_MAJOR_VERSION_TRANSITION_REPORT.md",
+          "type": "file",
+          "size": 1693,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation//DPT-AUTO-CONTINUE-002_PHASE_TRANSITION_REPORT.md",
+          "name": "DPT-AUTO-CONTINUE-002_PHASE_TRANSITION_REPORT.md",
+          "type": "file",
+          "size": 1762,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation//DPT-AUTO-CONTINUE-003_CONSECUTIVE_PHASE_TRANSITION_REPORT.md",
+          "name": "DPT-AUTO-CONTINUE-003_CONSECUTIVE_PHASE_TRANSITION_REPORT.md",
+          "type": "file",
+          "size": 1305,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation//DPT-CANONICAL-STATE-PRECEDENCE_GOVERNANCE_REPORT.md",
+          "name": "DPT-CANONICAL-STATE-PRECEDENCE_GOVERNANCE_REPORT.md",
+          "type": "file",
+          "size": 7813,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation//DPT-FOUNDATION-005_CONSTITUTION_REPORT.md",
+          "name": "DPT-FOUNDATION-005_CONSTITUTION_REPORT.md",
+          "type": "file",
+          "size": 814,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation//DPT-FOUNDATION-006_CONTEXT_MAP_REPORT.md",
+          "name": "DPT-FOUNDATION-006_CONTEXT_MAP_REPORT.md",
+          "type": "file",
+          "size": 1584,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT.md",
+          "name": "DPT-ADMISSION-001_ADMISSION_PATH_REPAIR_REPORT.md",
+          "type": "file",
+          "size": 1442,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-ADMISSION-002_MAJOR_VERSION_TRANSITION_REPORT.md",
+          "name": "DPT-ADMISSION-002_MAJOR_VERSION_TRANSITION_REPORT.md",
+          "type": "file",
+          "size": 1693,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-AUDIT-001_TOKEN_TELEMETRY_GAP_REPORT.md",
+          "name": "DPT-AUDIT-001_TOKEN_TELEMETRY_GAP_REPORT.md",
+          "type": "file",
+          "size": 3626,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-AUDIT-002_REPORT_LIFECYCLE_COMPLIANCE_REPORT.md",
+          "name": "DPT-AUDIT-002_REPORT_LIFECYCLE_COMPLIANCE_REPORT.md",
+          "type": "file",
+          "size": 4054,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-AUDIT-003_BRANCH_DIVERGENCE_REPORT.md",
+          "name": "DPT-AUDIT-003_BRANCH_DIVERGENCE_REPORT.md",
+          "type": "file",
+          "size": 3077,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-AUTH-001_AUTHORITY_PERMISSION_REPORT.md",
+          "name": "DPT-AUTH-001_AUTHORITY_PERMISSION_REPORT.md",
+          "type": "file",
+          "size": 10599,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-AUTO-BOOTSTRAP_AUTONOMOUS_BOOTSTRAP_REPORT.md",
+          "name": "DPT-AUTO-BOOTSTRAP_AUTONOMOUS_BOOTSTRAP_REPORT.md",
+          "type": "file",
+          "size": 8515,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-001_REGRESSION_REPORT.md",
+          "name": "DPT-AUTO-CONTINUE-001_REGRESSION_REPORT.md",
+          "type": "file",
+          "size": 2869,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-002_PHASE_TRANSITION_REPORT.md",
+          "name": "DPT-AUTO-CONTINUE-002_PHASE_TRANSITION_REPORT.md",
+          "type": "file",
+          "size": 1762,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-003_CONSECUTIVE_PHASE_TRANSITION_REPORT.md",
+          "name": "DPT-AUTO-CONTINUE-003_CONSECUTIVE_PHASE_TRANSITION_REPORT.md",
+          "type": "file",
+          "size": 1305,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-FINAL-PROOF_REPORT.md",
+          "name": "DPT-AUTO-CONTINUE-FINAL-PROOF_REPORT.md",
+          "type": "file",
+          "size": 3607,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-AUTO-CONTINUE-ORCHESTRATION_REPAIR_REPORT.md",
+          "name": "DPT-AUTO-CONTINUE-ORCHESTRATION_REPAIR_REPORT.md",
+          "type": "file",
+          "size": 9021,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-BATCH-ANALYSIS_001.md",
+          "name": "DPT-BATCH-ANALYSIS_001.md",
+          "type": "file",
+          "size": 1804,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-BRAIN-UNIVERSAL_COGNITION_DOCS_REPORT.md",
+          "name": "DPT-BRAIN-UNIVERSAL_COGNITION_DOCS_REPORT.md",
+          "type": "file",
+          "size": 7739,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-DECISION-CANONICALIZATION_REPORT.md",
+          "name": "DPT-DECISION-CANONICALIZATION_REPORT.md",
+          "type": "file",
+          "size": 4579,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-002_ACCEPTANCE_REPORT.md",
+          "name": "DPT-FOUNDATION-002_ACCEPTANCE_REPORT.md",
+          "type": "file",
+          "size": 5014,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-002_E2E_ACCEPTANCE_REPORT.md",
+          "name": "DPT-FOUNDATION-002_E2E_ACCEPTANCE_REPORT.md",
+          "type": "file",
+          "size": 5474,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-002_RUNTIME_ENFORCEMENT_REPORT.md",
+          "name": "DPT-FOUNDATION-002_RUNTIME_ENFORCEMENT_REPORT.md",
+          "type": "file",
+          "size": 6168,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-003_REAL_PROJECT_VALIDATION_REPORT.md",
+          "name": "DPT-FOUNDATION-003_REAL_PROJECT_VALIDATION_REPORT.md",
+          "type": "file",
+          "size": 4840,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-004_COMPONENT_REGISTRY_REPORT.md",
+          "name": "DPT-FOUNDATION-004_COMPONENT_REGISTRY_REPORT.md",
+          "type": "file",
+          "size": 3845,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-005_CONSTITUTION_REPORT.md",
+          "name": "DPT-FOUNDATION-005_CONSTITUTION_REPORT.md",
+          "type": "file",
+          "size": 814,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-006_CONTEXT_MAP_REPORT.md",
+          "name": "DPT-FOUNDATION-006_CONTEXT_MAP_REPORT.md",
+          "type": "file",
+          "size": 1584,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-007_ASSET_REGISTRY_REPORT.md",
+          "name": "DPT-FOUNDATION-007_ASSET_REGISTRY_REPORT.md",
+          "type": "file",
+          "size": 1659,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-008_AUTONOMY_TEST_REPORT.md",
+          "name": "DPT-FOUNDATION-008_AUTONOMY_TEST_REPORT.md",
+          "type": "file",
+          "size": 1910,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-009_VISUAL_CHANGE_REPORT.md",
+          "name": "DPT-FOUNDATION-009_VISUAL_CHANGE_REPORT.md",
+          "type": "file",
+          "size": 2257,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-010_NEW_GAME_DISCOVERY_REPORT.md",
+          "name": "DPT-FOUNDATION-010_NEW_GAME_DISCOVERY_REPORT.md",
+          "type": "file",
+          "size": 1750,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-011_TOKEN_CONTEXT_MEASUREMENT_REPORT.md",
+          "name": "DPT-FOUNDATION-011_TOKEN_CONTEXT_MEASUREMENT_REPORT.md",
+          "type": "file",
+          "size": 1584,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-012_EXECUTION_ORCHESTRATOR_FLOW_REPORT.md",
+          "name": "DPT-FOUNDATION-012_EXECUTION_ORCHESTRATOR_FLOW_REPORT.md",
+          "type": "file",
+          "size": 1595,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-013_RUNTIME_EVIDENCE_REPORT.md",
+          "name": "DPT-FOUNDATION-013_RUNTIME_EVIDENCE_REPORT.md",
+          "type": "file",
+          "size": 2359,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-014_SCHEMA_DEFINITION_REPORT.md",
+          "name": "DPT-FOUNDATION-014_SCHEMA_DEFINITION_REPORT.md",
+          "type": "file",
+          "size": 1225,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-015_MANIFEST_GENERATION_REPORT.md",
+          "name": "DPT-FOUNDATION-015_MANIFEST_GENERATION_REPORT.md",
+          "type": "file",
+          "size": 1221,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-016_CONTEXT_ROUTING_REPORT.md",
+          "name": "DPT-FOUNDATION-016_CONTEXT_ROUTING_REPORT.md",
+          "type": "file",
+          "size": 1250,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-017_VALIDATION_REPORTING_REPORT.md",
+          "name": "DPT-FOUNDATION-017_VALIDATION_REPORTING_REPORT.md",
+          "type": "file",
+          "size": 1426,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-018_PROJECT_INITIALIZER_REPORT.md",
+          "name": "DPT-FOUNDATION-018_PROJECT_INITIALIZER_REPORT.md",
+          "type": "file",
+          "size": 545,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-019_PROJECT_SCANNER_REPORT.md",
+          "name": "DPT-FOUNDATION-019_PROJECT_SCANNER_REPORT.md",
+          "type": "file",
+          "size": 482,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-020_CONTEXT_MAP_REPORT.md",
+          "name": "DPT-FOUNDATION-020_CONTEXT_MAP_REPORT.md",
+          "type": "file",
+          "size": 827,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-021_REGISTRY_GENERATOR_REPORT.md",
+          "name": "DPT-FOUNDATION-021_REGISTRY_GENERATOR_REPORT.md",
+          "type": "file",
+          "size": 851,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-022_TEAM_ASSEMBLY_REPORT.md",
+          "name": "DPT-FOUNDATION-022_TEAM_ASSEMBLY_REPORT.md",
+          "type": "file",
+          "size": 853,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-023_ORCHESTRATOR_RUNTIME_REPORT.md",
+          "name": "DPT-FOUNDATION-023_ORCHESTRATOR_RUNTIME_REPORT.md",
+          "type": "file",
+          "size": 154,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-024_AGENT_ADAPTERS_REPORT.md",
+          "name": "DPT-FOUNDATION-024_AGENT_ADAPTERS_REPORT.md",
+          "type": "file",
+          "size": 154,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-025_PERSISTENT_MEMORY_REPORT.md",
+          "name": "DPT-FOUNDATION-025_PERSISTENT_MEMORY_REPORT.md",
+          "type": "file",
+          "size": 154,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-026_WORKFLOW_STATE_REPORT.md",
+          "name": "DPT-FOUNDATION-026_WORKFLOW_STATE_REPORT.md",
+          "type": "file",
+          "size": 154,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-027_QUALITY_GATE_REPORT.md",
+          "name": "DPT-FOUNDATION-027_QUALITY_GATE_REPORT.md",
+          "type": "file",
+          "size": 154,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-028_HUMAN_APPROVAL_INTERFACE_REPORT.md",
+          "name": "DPT-FOUNDATION-028_HUMAN_APPROVAL_INTERFACE_REPORT.md",
+          "type": "file",
+          "size": 229,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-FOUNDATION-029_FREEZE_DECISIONS_REPORT.md",
+          "name": "DPT-FOUNDATION-029_FREEZE_DECISIONS_REPORT.md",
+          "type": "file",
+          "size": 315,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-LIFECYCLE-001_CLOSURE_INVARIANT_REPORT.md",
+          "name": "DPT-LIFECYCLE-001_CLOSURE_INVARIANT_REPORT.md",
+          "type": "file",
+          "size": 2267,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-LIFECYCLE-PRECEDENCE_ADMISSION_REPORT.md",
+          "name": "DPT-LIFECYCLE-PRECEDENCE_ADMISSION_REPORT.md",
+          "type": "file",
+          "size": 7599,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-MIG-001_RECONCILIATION_REPORT.md",
+          "name": "DPT-MIG-001_RECONCILIATION_REPORT.md",
+          "type": "file",
+          "size": 17127,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-PROVIDER-003B_PERMISSION_ROOT_CAUSE_REPORT.md",
+          "name": "DPT-PROVIDER-003B_PERMISSION_ROOT_CAUSE_REPORT.md",
+          "type": "file",
+          "size": 31485,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-PROVIDER-003C_PERMISSION_REMEDIATION_ACCEPTANCE_REPORT.md",
+          "name": "DPT-PROVIDER-003C_PERMISSION_REMEDIATION_ACCEPTANCE_REPORT.md",
+          "type": "file",
+          "size": 13392,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-PROVIDER-004A_ARCHITECTURE_CAPABILITY_REPORT.md",
+          "name": "DPT-PROVIDER-004A_ARCHITECTURE_CAPABILITY_REPORT.md",
+          "type": "file",
+          "size": 10755,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-PROVIDER-004B_ADAPTER_CONTROL_SPIKE_REPORT.md",
+          "name": "DPT-PROVIDER-004B_ADAPTER_CONTROL_SPIKE_REPORT.md",
+          "type": "file",
+          "size": 10625,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-PROVIDER-004C_DYNAMIC_PERMISSION_MATERIALIZATION_REPORT.md",
+          "name": "DPT-PROVIDER-004C_DYNAMIC_PERMISSION_MATERIALIZATION_REPORT.md",
+          "type": "file",
+          "size": 12755,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-PROVIDER-004D_SESSION_RESTART_REHYDRATION_REPORT.md",
+          "name": "DPT-PROVIDER-004D_SESSION_RESTART_REHYDRATION_REPORT.md",
+          "type": "file",
+          "size": 7761,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-PROVIDER-004E_EVIDENCE_EVENT_BRIDGE_REPORT.md",
+          "name": "DPT-PROVIDER-004E_EVIDENCE_EVENT_BRIDGE_REPORT.md",
+          "type": "file",
+          "size": 5867,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-PROVIDER-004F_MCP_CAPABILITY_SERVER_REPORT.md",
+          "name": "DPT-PROVIDER-004F_MCP_CAPABILITY_SERVER_REPORT.md",
+          "type": "file",
+          "size": 7143,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-PROVIDER-004G_SDK_MCP_END_TO_END_INTEGRATION_REPORT.md",
+          "name": "DPT-PROVIDER-004G_SDK_MCP_END_TO_END_INTEGRATION_REPORT.md",
+          "type": "file",
+          "size": 6037,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-PROVIDER-005_PROVIDER_CONFORMANCE_REPORT.md",
+          "name": "DPT-PROVIDER-005_PROVIDER_CONFORMANCE_REPORT.md",
+          "type": "file",
+          "size": 4766,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-REC-001_RECONCILIATION_REPORT.md",
+          "name": "DPT-REC-001_RECONCILIATION_REPORT.md",
+          "type": "file",
+          "size": 57218,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-RECON-001_REPOSITORY_RECONCILIATION_REPORT.md",
+          "name": "DPT-RECON-001_REPOSITORY_RECONCILIATION_REPORT.md",
+          "type": "file",
+          "size": 36269,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-RECON-002_REPOSITORY_CANONICALIZATION_REPORT.md",
+          "name": "DPT-RECON-002_REPOSITORY_CANONICALIZATION_REPORT.md",
+          "type": "file",
+          "size": 9289,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-RECON-003_PROVIDER_BOOTSTRAP_CHECKPOINT_REPORT.md",
+          "name": "DPT-RECON-003_PROVIDER_BOOTSTRAP_CHECKPOINT_REPORT.md",
+          "type": "file",
+          "size": 5314,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-RECON-003_TASK_SYSTEM_AUTHORITY_CONTRACT_REPORT.md",
+          "name": "DPT-RECON-003_TASK_SYSTEM_AUTHORITY_CONTRACT_REPORT.md",
+          "type": "file",
+          "size": 7349,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-RECON-V1_DECISION_DEPENDENCY_MATRIX.md",
+          "name": "DPT-RECON-V1_DECISION_DEPENDENCY_MATRIX.md",
+          "type": "file",
+          "size": 12563,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-RELEASE-001_V01_RELEASE_GATE_REPORT.md",
+          "name": "DPT-RELEASE-001_V01_RELEASE_GATE_REPORT.md",
+          "type": "file",
+          "size": 967,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-REPORT_LIFECYCLE_GOVERNANCE_IMPLEMENTATION_REPORT.md",
+          "name": "DPT-REPORT_LIFECYCLE_GOVERNANCE_IMPLEMENTATION_REPORT.md",
+          "type": "file",
+          "size": 6084,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/DPT-VAL-001_OPENCODE_CONFORMANCE_REPORT.md",
+          "name": "DPT-VAL-001_OPENCODE_CONFORMANCE_REPORT.md",
+          "type": "file",
+          "size": 14335,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/FreeBuff Resault.md",
+          "name": "FreeBuff Resault.md",
+          "type": "file",
+          "size": 151151,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/V1_COMPLETION_AUDIT.md",
+          "name": "V1_COMPLETION_AUDIT.md",
+          "type": "file",
+          "size": 2248,
+          "category": "validation",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs/validation/Retired/V1_RUNTIME_RECONCILIATION_REPORT.md",
+          "name": "V1_RUNTIME_RECONCILIATION_REPORT.md",
+          "type": "file",
+          "size": 3048,
+          "category": "validation",
+          "conformance": "PRESENT"
+        }
+      ]
+    },
+    "constitution": {
+      "description": "Constitutional and foundational documents",
+      "count": 3,
+      "assets": [
+        {
+          "path": "docs//APEX_AI_DPT_CONSTITUTION.md",
+          "name": "APEX_AI_DPT_CONSTITUTION.md",
+          "type": "file",
+          "size": 12381,
+          "category": "constitution",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs//APEX_AI_DPT_TERMINOLOGY.md",
+          "name": "APEX_AI_DPT_TERMINOLOGY.md",
+          "type": "file",
+          "size": 8447,
+          "category": "constitution",
+          "conformance": "PRESENT"
+        },
+        {
+          "path": "docs//APEX_AI_DPT_VISION.md",
+          "name": "APEX_AI_DPT_VISION.md",
+          "type": "file",
+          "size": 6131,
+          "category": "constitution",
+          "conformance": "PRESENT"
+        }
+      ]
+    }
+  }
+}

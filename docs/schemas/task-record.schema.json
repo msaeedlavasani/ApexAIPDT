@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apexaidpt.io/schemas/task-record.schema.json",
+  "title": "Durable Task Record",
+  "description": "Represents a durable task record in the Apex AI DPT framework.",
+  "type": "object",
+  "required": [
+    "task_id",
+    "title",
+    "objective",
+    "status",
+    "readiness"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "description": "Unique identifier for the task."
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable title of the task."
+    },
+    "objective": {
+      "type": "string",
+      "description": "Description of the task objective."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current lifecycle state of the task."
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of task IDs this task depends on."
+    },
+    "readiness": {
+      "type": "string",
+      "enum": [
+        "unready",
+        "ready",
+        "blocked"
+      ],
+      "description": "Current readiness state."
+    },
+    "task_class": {
+      "type": "string",
+      "description": "Classification of the task."
+    },
+    "required_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Capabilities required to execute this task."
+    },
+    "denied_capabilities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Capabilities explicitly denied for this task."
+    },
+    "delegated_authority": {
+      "type": "string",
+      "description": "Authority delegated to the executor."
+    },
+    "authority_derivation": {
+      "type": "string",
+      "description": "Source of the delegated authority."
+    },
+    "human_gate_state": {
+      "type": "string",
+      "description": "Current state of human approval gates."
+    },
+    "passport_revision": {
+      "type": "integer",
+      "description": "Revision of the associated task passport."
+    },
+    "canonical_artifact": {
+      "type": "string",
+      "description": "Reference to the canonical artifact for this task."
+    },
+    "state_revision": {
+      "type": "integer",
+      "description": "Revision number of the task state."
+    },
+    "next_task": {
+      "type": "string",
+      "description": "ID of the next task in the workflow."
+    },
+    "auto_continue": {
+      "type": "boolean",
+      "description": "Whether the task should auto-continue to the next task."
+    }
+  }
+}

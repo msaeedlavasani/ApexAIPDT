@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "v02-registries.schema.json",
+  "title": "DPT Registries Schema",
+  "description": "Schema for DPT registry definitions (component, asset, pitfall registries)",
+  "type": "object",
+  "required": [
+    "registry_id",
+    "type",
+    "entries"
+  ],
+  "properties": {
+    "registry_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "component",
+        "asset",
+        "pitfall",
+        "pattern"
+      ]
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

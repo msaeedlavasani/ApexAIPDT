@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apexaidpt.io/schemas/intervention-event.schema.json",
+  "title": "Intervention Event",
+  "description": "Schema for human intervention events projected from the audit trail. Interventions are observable effects requiring human adjudication, measured via event_type + metadata + resolution_path + duration. No new persistence beyond existing audit trail.",
+  "type": "object",
+  "required": [
+    "event_type",
+    "intervention_id",
+    "timestamp",
+    "trigger_source",
+    "severity",
+    "domain",
+    "context",
+    "description",
+    "evidence_refs",
+    "resolution"
+  ],
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "const": "INTERVENTION",
+      "description": "Event type constant identifying this as an intervention projection."
+    },
+    "intervention_id": {
+      "type": "string",
+      "format": "uuid",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+      "description": "UUIDv7 providing temporal ordering and stable identity for lineage."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of the intervention occurrence."
+    },
+    "trigger_source": {
+      "type": "string",
+      "enum": [
+        "HUMAN_GATE",
+        "AUTHORITY_ESCALATION",
+        "VERIFICATION_REJECTION",
+        "POLICY_AMBIGUITY",
+        "CROSS_DOMAIN_CONFLICT",
+        "FAILURE_RECOVERY"
+      ],
+      "description": "Source that triggered the intervention per ADR-052."
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"],
+      "description": "Severity classification for measurement aggregation."
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "GRAPH_MUTATION",
+        "AUTHORITY",
+        "DECISION",
+        "POOL",
+        "ENTITLEMENT",
+        "CREDIT"
+      ],
+      "description": "Domain where the intervention occurred."
+    },
+    "context": {
+      "type": "object",
+      "required": [],
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "description": "Associated task identifier."
+        },
+        "work_order_id": {
+          "type": "string",
+          "description": "Associated work order identifier."
+        },
+        "attempt_id": {
+          "type": "string",
+          "description": "Associated attempt identifier."
+        },
+        "human_gate_class": {
+          "type": ["string", "null"],
+          "pattern": "^HG-0[1-7]$",
+          "description": "Human Gate class (HG-01 through HG-07) if applicable; null if not HG-triggered."
+        }
+      },
+      "description": "Context linking the intervention to its parent audit trail entries."
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000,
+      "description": "Human-readable description of the intervention."
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Hash-linked references to supporting audit trail entries."
+      },
+      "minItems": 1,
+      "description": "Evidence references enabling full lineage back to audit trail."
+    },
+    "resolution": {
+      "type": "object",
+      "required": ["method", "actor", "duration_seconds", "outcome"],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": [
+            "OWNER_APPROVAL",
+            "POLICY_CLARIFICATION",
+            "AUTHORITY_ADJUSTMENT",
+            "CANCELLATION",
+            "ESCALATION"
+          ],
+          "description": "Resolution method applied."
+        },
+        "actor": {
+          "type": "string",
+          "enum": ["owner", "DPT", "evaluator"],
+          "description": "Actor who resolved the intervention."
+        },
+        "duration_seconds": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Duration of resolution in seconds."
+        },
+        "outcome": {
+          "type": "string",
+          "enum": ["ALLOW", "DENY", "MODIFIED", "DEFERRED"],
+          "description": "Final outcome of the intervention resolution."
+        }
+      },
+      "description": "Resolution details for measurement and learning."
+    },
+    "learning": {
+      "type": "object",
+      "properties": {
+        "pattern_match": {
+          "type": ["string", "null"],
+          "description": "Matching failure pattern ID if applicable; null if no match."
+        },
+        "improvement_proposal": {
+          "type": "boolean",
+          "description": "Whether this intervention generated an improvement proposal signal."
+        }
+      },
+      "description": "Learning data for V2 learning system integration. Optional fields populated when relevant."
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apexaidpt.io/schemas/delta.schema.json",
+  "title": "Delta",
+  "description": "Atomic state change record with evidence.",
+  "type": "object",
+  "required": [
+    "delta_id",
+    "task_id",
+    "base_state_revision",
+    "changes",
+    "applied_by",
+    "applied_at"
+  ],
+  "properties": {
+    "delta_id": {
+      "type": "string",
+      "description": "Unique identifier for this delta."
+    },
+    "task_id": {
+      "type": "string",
+      "description": "Task this delta applies to."
+    },
+    "base_state_revision": {
+      "type": "integer",
+      "description": "State revision this delta is based on."
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "op": {
+            "type": "string",
+            "enum": [
+              "add",
+              "remove",
+              "replace"
+            ]
+          },
+          "value": {}
+        },
+        "required": [
+          "path",
+          "op"
+        ]
+      },
+      "description": "List of changes in this delta."
+    },
+    "applied_by": {
+      "type": "string",
+      "description": "Identity of the actor that applied this delta."
+    },
+    "applied_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when this delta was applied."
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "References to evidence supporting this delta."
+    }
+  }
+}

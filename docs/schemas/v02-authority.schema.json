@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "v02-authority.schema.json",
+  "title": "DPT Authority Schema",
+  "description": "Schema for DPT authority definitions (explicit boundaries on role decisions)",
+  "type": "object",
+  "required": [
+    "authority_id",
+    "role_id",
+    "permissions",
+    "denied_actions"
+  ],
+  "properties": {
+    "authority_id": {
+      "type": "string",
+      "pattern": "^DPT-AUTH-[A-Z0-9-]+$"
+    },
+    "role_id": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "denied_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "policy_ceiling": {
+      "type": "string"
+    }
+  }
+}

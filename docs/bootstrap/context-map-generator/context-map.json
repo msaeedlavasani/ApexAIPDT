@@ -1,0 +1,42 @@
+{
+  "schema_version": "v0.3",
+  "generated_at": "2026-09-05T17:07:40.412Z",
+  "routes": [
+    {
+      "name": "brain-router",
+      "path": "docs/brains/",
+      "pattern": "*.brain.json",
+      "description": "Brain contract routing"
+    },
+    {
+      "name": "role-router",
+      "path": "docs/roles/",
+      "pattern": "*.role.json",
+      "description": "Role assignment routing"
+    },
+    {
+      "name": "task-router",
+      "path": "docs/tasks/",
+      "pattern": "*.task.json",
+      "description": "Task system routing"
+    },
+    {
+      "name": "authority-router",
+      "path": "docs/authority/",
+      "pattern": "*.authority.json",
+      "description": "Authority model routing"
+    },
+    {
+      "name": "component-router",
+      "path": "docs/components/",
+      "pattern": "*.component.json",
+      "description": "Component registry routing"
+    }
+  ],
+  "sources": {
+    "roadmap": "ROADMAP.md",
+    "constitution": "docs/APEX_AI_DPT_CONSTITUTION.md",
+    "task_system": "docs/DPT_TASK_SYSTEM.md",
+    "human_gate": "docs/governance/HUMAN_GATE_BOUNDARY.md"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "v0.3",
+  "component": "quality-gates",
+  "gates": [
+    "test",
+    "validation",
+    "human-gate",
+    "release"
+  ],
+  "description": "Quality-gate execution specification"
+}

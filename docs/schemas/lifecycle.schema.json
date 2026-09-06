@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apexaidpt.io/schemas/lifecycle.schema.json",
+  "title": "Lifecycle States",
+  "description": "Defines all valid lifecycle states for a DPT task.",
+  "type": "object",
+  "required": [
+    "states"
+  ],
+  "properties": {
+    "states": {
+      "type": "object",
+      "description": "Map of lifecycle state names to their definitions.",
+      "properties": {
+        "BACKLOG": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "BACKLOG"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "READY": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "READY"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "ASSIGNED": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "ASSIGNED"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "DISPATCHED": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "DISPATCHED"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "RUNNING": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "RUNNING"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "REVIEW_REQUIRED": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "REVIEW_REQUIRED"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "VERIFYING": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "VERIFYING"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "REWORK": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "REWORK"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "WAITING_FOR_HUMAN_GATE": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "WAITING_FOR_HUMAN_GATE"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "BLOCKED": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "BLOCKED"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "ESCALATION_REQUIRED": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "ESCALATION_REQUIRED"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "REPORT_PENDING": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "REPORT_PENDING"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "CLOSED": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "const": "CLOSED"
+            },
+            "description": {
+              "type": "string"
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
