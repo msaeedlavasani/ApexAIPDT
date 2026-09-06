@@ -289,10 +289,10 @@ notes: |
 
 [DELTA]
 task_id: DPT-FOUNDATION-038
-base_state_revision: 1
-changes: status=BACKLOG→READY, readiness=NOT_READY(OD-T5-002-B unresolved)→READY(OD-T5-002-B resolved: static 80% threshold), passport_revision=0→1, state_revision=1→2
+base_state_revision: 19
+changes: status=BACKLOG→READY, readiness=NOT_READY(OD-T5-002-B unresolved)→READY(OD-T5-002-B resolved: static 80% threshold), passport_revision=0→1, state_revision=19→20
 applied_by: DPT-LIVERUN-001 OD resolution
-artefacts: docs/DPT_OPEN_DECISIONS.md (V2 appendix), docs/adr/ADR-053-token-efficiency.md
+artefacts: docs/DPT_OPEN_DECISIONS.md (V2 appendix), docs/adr/ADR-053-token-efficiency.md, docs/schemas/token-efficiency-projection.schema.json, docs/v2/token-efficiency-spec.md
 notes: |
   Resolved OD-T5-002-B overflow threshold blocker for DPT-FOUNDATION-038.
   
