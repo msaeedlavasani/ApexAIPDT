@@ -1,0 +1,43 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# DPT ephemeral runtime state (large/binary)
+.dpt/memory.json
+.dpt-goose-test/
+.dpt-findings-tracker.json
+.dpt-*/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*~
+.gitignore
+
+# Test artifacts that are not part of canonical state
+providers/opencode/.dpt-*/
+.providers/test-results/
