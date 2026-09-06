@@ -1489,3 +1489,32 @@ notes: |
   - Supports GIT_REFERENCE, API_CALLBACK, EVENT_STREAM, MANUAL_REVIEW types
   - Integrity verification via SHA-256 hashing
   - 14/14 tests PASS
+
+[DELTA]
+task_id: DPT-V3-SPINE-E2E
+base_state_revision: 1
+changes: evidence_classification=RUNTIME_PROVEN_EXTERNAL_PROJECT→RUNTIME_PROVEN_INTERNAL, external_proof_status=SYNTHETIC→CORRECTIVE_VALIDATION_PARTIAL, state_revision=1→2
+applied_by: V3_REAL_EXTERNAL_ACCEPTANCE
+evidence_refs: providers/goose/v3-real-e2e.mjs, providers/goose/test-v3-real-e2e.mjs, .dpt/e2e-verification/E2E-REAL-72EB87D5.json
+notes: |
+  CORRECTIVE ACCEPTANCE VALIDATION EXECUTED
+  
+  Original V3-SPINE-E2E used synthetic JSON generation with randomUUID() —
+  zero HTTP calls to external repositories. The referenced evidence file
+  .dpt/e2e-verification/E2E-9EEE8D03.json does not exist on disk.
+  
+  Corrective real E2E (E2E-REAL-72EB87D5) executed with actual GitHub API:
+  - 11 real HTTP calls made
+  - 386 real files discovered from fixture repository
+  - 11,712 bytes of real content processed
+  - Stages 1-5: PASSED (real read-side cross-boundary execution)
+  - Stage 6: PARTIAL (write delivery attempted, rejected by GitHub API)
+  - Stage 7: PARTIAL (no delivery to readback)
+  
+  V3 status corrected:
+  - IMPLEMENTATION_COMPLETE = YES
+  - RUNTIME_PROVEN_INTERNAL = YES
+  - EXTERNAL_PROJECT_RUNTIME_PROOF = NOT_PROVEN (read-side proven, write-side requires auth)
+  
+  Original Task Record preserved; this Delta appends correction.
+[/DELTA]
