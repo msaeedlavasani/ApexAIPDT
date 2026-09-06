@@ -1430,7 +1430,7 @@ notes: |
 task_id: DPT-V3-006
 base_state_revision: 0
 changes: status=BACKLOG→READY, state_revision=0→1
-applied_by: V3_FANOUT_ADMISSION
+applied_by: V3_SEQUENTIAL_ADMISSION
 notes: |
   Admitted after V3-SPINE-E2E closure.
   Dependencies satisfied: V3-SPINE-E2E CLOSED.
@@ -1439,25 +1439,25 @@ notes: |
 task_id: DPT-V3-007
 base_state_revision: 0
 changes: status=BACKLOG→READY, state_revision=0→1
-applied_by: V3_FANOUT_ADMISSION
+applied_by: V3_SEQUENTIAL_ADMISSION
 notes: |
   Admitted after V3-SPINE-E2E closure.
-  Note: V3-006 dependency soft (parallel-safe admission per DELTA policy).
+  Sequential topology confirmed: SPINE → 006 → 007 → 008
   
 [DELTA]
 task_id: DPT-V3-008
 base_state_revision: 0
 changes: status=BACKLOG→READY, state_revision=0→1
-applied_by: V3_FANOUT_ADMISSION
+applied_by: V3_SEQUENTIAL_ADMISSION
 notes: |
   Admitted after V3-SPINE-E2E closure.
-  Note: V3-007 dependency soft (parallel-safe admission per DELTA policy).
+  Sequential topology confirmed: SPINE → 006 → 007 → 008
 
 [DELTA]
 task_id: DPT-V3-006
 base_state_revision: 1
 changes: status=READY→CLOSED, state_revision=1→2
-applied_by: V3_FANOUT_EXECUTION
+applied_by: V3_SEQUENTIAL_EXECUTION
 evidence_refs: providers/goose/governed-execution.mjs, providers/goose/test-governed-execution.mjs, docs/schemas/governed-execution.schema.json
 notes: |
   V3-006 implementation complete.
@@ -1469,7 +1469,7 @@ notes: |
 task_id: DPT-V3-007
 base_state_revision: 1
 changes: status=READY→CLOSED, state_revision=1→2
-applied_by: V3_FANOUT_EXECUTION
+applied_by: V3_SEQUENTIAL_EXECUTION
 evidence_refs: providers/goose/contribution-pipeline.mjs, providers/goose/test-contribution-pipeline.mjs, docs/schemas/contribution-pipeline.schema.json
 notes: |
   V3-007 implementation complete.
@@ -1481,7 +1481,7 @@ notes: |
 task_id: DPT-V3-008
 base_state_revision: 1
 changes: status=READY→CLOSED, state_revision=1→2
-applied_by: V3_FANOUT_EXECUTION
+applied_by: V3_SEQUENTIAL_EXECUTION
 evidence_refs: providers/goose/reference-transport.mjs, providers/goose/test-reference-transport.mjs, docs/schemas/reference-transport.schema.json
 notes: |
   V3-008 implementation complete.
