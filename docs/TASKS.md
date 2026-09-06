@@ -1059,3 +1059,312 @@ notes: |
   No GENUINE_HUMAN_GATE condition remains.
   V3 planning deferred per instruction — not admitted as tasks.
 [/DELTA]
+
+---
+
+## Phase 7 Tasks (V3 Vertical-Slice Architecture)
+
+### DPT-V3-001 — External Project Fixture + Identity/Trust Binding
+
+| Field | Value |
+|---|---|
+| task_id | DPT-V3-001 |
+| title | External Project Fixture + Identity/Trust Binding |
+| status | RUNNING |
+| dependencies | (none) |
+| readiness | READY — No dependencies, PRE_V3_READY passed, gate reconciliation complete |
+| task_class | external_integration_foundation |
+| canonical_artifact | TBD |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-V3-001
+title: External Project Fixture + Identity/Trust Binding
+objective: Implement mechanism-neutral enrollment progression (Identity Establishment -> Authentication -> Trust Binding -> Gateway Admission) with external project fixture for V3 vertical-slice testing. Establishes Foundation-001 schemas for cross-project trust binding.
+status: RUNNING
+dependencies: (none)
+readiness: READY (no dependencies, PRE_V3_READY passed)
+task_class: external_integration_foundation
+required_capabilities: repository.read, docs.write, schema.definition, javascript.runtime
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 1
+canonical_artifact: docs/schemas/identity-trust.schema.json, providers/goose/identity-trust-binding.mjs, providers/goose/test-identity-trust-binding.mjs
+state_revision: 1
+next_task: DPT-V3-002
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-V3-002 — Scout + Project-Owned PI Runtime
+
+| Field | Value |
+|---|---|
+| task_id | DPT-V3-002 |
+| title | Scout + Project-Owned PI Runtime |
+| status | BACKLOG |
+| dependencies | DPT-V3-001 |
+| readiness | NOT_READY (depends on V3-001) |
+| task_class | external_integration_scout |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-V3-002
+title: Scout + Project-Owned PI Runtime
+objective: Implement Scout component that discovers and binds to external project's Project Intelligence. Front agent instance projected FROM Scout-discovered PI; does not generate or own intelligence.
+status: BACKLOG
+dependencies: DPT-V3-001
+readiness: NOT_READY (dependency DPT-V3-001 not CLOSED)
+task_class: external_integration_scout
+required_capabilities: repository.read, docs.write, javascript.runtime
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 0
+state_revision: 0
+next_task: DPT-V3-003
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-V3-003 — Minimum-Sufficient Context Package
+
+| Field | Value |
+|---|---|
+| task_id | DPT-V3-003 |
+| title | Minimum-Sufficient Context Package |
+| status | BACKLOG |
+| dependencies | DPT-V3-002 |
+| readiness | NOT_READY (depends on V3-002) |
+| task_class | external_integration_context |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-V3-003
+title: Minimum-Sufficient Context Package
+objective: Implement bounded context package extraction validated against privacy boundaries. Context package contains only what is necessary for analysis; no over-exposure of external project state.
+status: BACKLOG
+dependencies: DPT-V3-002
+readiness: NOT_READY (dependency DPT-V3-002 not CLOSED)
+task_class: external_integration_context
+required_capabilities: repository.read, docs.write
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 0
+state_revision: 0
+next_task: DPT-V3-004
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-V3-004 — Front Runtime + Gateway Boundary Service
+
+| Field | Value |
+|---|---|
+| task_id | DPT-V3-004 |
+| title | Front Runtime + Gateway Boundary Service |
+| status | BACKLOG |
+| dependencies | DPT-V3-003 |
+| readiness | NOT_READY (depends on V3-003) |
+| task_class: | external_integration_gateway |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-V3-004
+title: Front Runtime + Gateway Boundary Service
+objective: Implement Front runtime operating within gateway-enforced protocol boundary. Gateway is deterministic SERVICE enforcing protocol; Front is project-bound ROLE/AGENT_INSTANCE.
+status: BACKLOG
+dependencies: DPT-V3-003
+readiness: NOT_READY (dependency DPT-V3-003 not CLOSED)
+task_class: external_integration_gateway
+required_capabilities: repository.read, docs.write, javascript.runtime
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 0
+state_revision: 0
+next_task: DPT-V3-005
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-V3-005 — DPT Analysis + Bounded Result + Project Readback
+
+| Field | Value |
+|---|---|
+| task_id | DPT-V3-005 |
+| title | DPT Analysis + Bounded Result + Project Readback |
+| status | BACKLOG |
+| dependencies | DPT-V3-004 |
+| readiness | NOT_READY (depends on V3-004) |
+| task_class | external_integration_analysis |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-V3-005
+title: DPT Analysis + Bounded Result + Project Readback
+objective: Implement DPT analysis completing within authority bounds with result readable by external project. Bounded result respects privacy boundaries and trust levels established in V3-001.
+status: BACKLOG
+dependencies: DPT-V3-004
+readiness: NOT_READY (dependency DPT-V3-004 not CLOSED)
+task_class: external_integration_analysis
+required_capabilities: repository.read, docs.write
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 0
+state_revision: 0
+next_task: DPT-V3-SPINE-E2E
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-V3-SPINE-E2E — End-to-End Verification
+
+| Field | Value |
+|---|---|
+| task_id | DPT-V3-SPINE-E2E |
+| title | End-to-End Verification |
+| status | BACKLOG |
+| dependencies | DPT-V3-005 |
+| readiness | NOT_READY (depends on V3-005) |
+| task_class | external_integration_e2e |
+| auto_continue | NO |
+
+```text
+[TASK]
+task_id: DPT-V3-SPINE-E2E
+title: End-to-End Verification
+objective: Verify full V3 spine chain using project/repository EXTERNAL to ApexAIPDT. Acceptance requires independent external project proving cross-project trust binding works end-to-end.
+status: BACKLOG
+dependencies: DPT-V3-005
+readiness: NOT_READY (dependency DPT-V3-005 not CLOSED)
+task_class: external_integration_e2e
+required_capabilities: repository.read, docs.write, git.push, git.merge
+denied_capabilities: production.*
+human_gate_state: HG-01_REQUIRED (external project requires Owner review)
+passport_revision: 0
+state_revision: 0
+next_task: (none)
+auto_continue: NO
+[/TASK]
+```
+
+### DPT-V3-006 — Governed Project Execution
+
+| Field | Value |
+|---|---|
+| task_id | DPT-V3-006 |
+| title | Governed Project Execution |
+| status | BACKLOG |
+| dependencies | DPT-V3-SPINE-E2E |
+| readiness | NOT_READY (depends on V3-SPINE-E2E) |
+| task_class | external_integration_governance |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-V3-006
+title: Governed Project Execution
+objective: Implement authority modes 0-5 operational with Human Gate enforcement for external project interactions.
+status: BACKLOG
+dependencies: DPT-V3-SPINE-E2E
+readiness: NOT_READY (dependency DPT-V3-SPINE-E2E not CLOSED)
+task_class: external_integration_governance
+required_capabilities: repository.read, docs.write
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 0
+state_revision: 0
+next_task: DPT-V3-007
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-V3-007 — Contribution Candidate → Independent Review → Pool Admission
+
+| Field | Value |
+|---|---|
+| task_id | DPT-V3-007 |
+| title | Contribution Candidate → Independent Review → Pool Admission |
+| status | BACKLOG |
+| dependencies | DPT-V3-006 |
+| readiness | NOT_READY (depends on V3-006) |
+| task_class | external_integration_contribution |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-V3-007
+title: Contribution Candidate → Independent Review → Pool Admission
+objective: Implement cross-project contribution pipeline with independent review gate.
+status: BACKLOG
+dependencies: DPT-V3-006
+readiness: NOT_READY (dependency DPT-V3-006 not CLOSED)
+task_class: external_integration_contribution
+required_capabilities: repository.read, docs.write
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 0
+state_revision: 0
+next_task: DPT-V3-008
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-V3-008 — Update Propagation via Reference Transport
+
+| Field | Value |
+|---|---|
+| task_id | DPT-V3-008 |
+| title | Update Propagation via Reference Transport |
+| status | BACKLOG |
+| dependencies | DPT-V3-007 |
+| readiness | NOT_READY (depends on V3-007) |
+| task_class | external_integration_propagation |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-V3-008
+title: Update Propagation via Reference Transport
+objective: Validate one reference transport for update propagation across projects.
+status: BACKLOG
+dependencies: DPT-V3-007
+readiness: NOT_READY (dependency DPT-V3-007 not CLOSED)
+task_class: external_integration_propagation
+required_capabilities: repository.read, docs.write
+denied_capabilities: git.push, git.merge, production.*
+human_gate_state: NONE
+passport_revision: 0
+state_revision: 0
+next_task: (none)
+auto_continue: YES
+[/TASK]
+```
+
+[DELTA]
+task_id: DPT-V3-001
+base_state_revision: 43
+changes: status=BACKLOG→RUNNING, implementation_status=ARTIFACTS_PENDING→IMPLEMENTATION_PROGRESS, completed_steps=task_creation,schema_definition, implementation_start, state_revision=43→44
+applied_by: V3_ADMISSION_DELTA
+artefacts: docs/schemas/identity-trust.schema.json, providers/goose/identity-trust-binding.mjs, providers/goose/test-identity-trust-binding.mjs
+notes: |
+  V3 vertical slice admitted. Starting with V3-001: External Project Fixture + Identity/Trust Binding.
+  
+  Completed:
+  - Added V3 task records to TASKS.md (V3-001 through V3-008)
+  - Created identity-trust.schema.json for mechanism-neutral enrollment
+  - Implemented identity-trust-binding.mjs with full 4-stage progression
+  - Created test-identity-trust-binding.mjs with 23 passing tests
+  
+  Implementation covers:
+  - Identity Establishment
+  - Authentication (mechanism-neutral proof hashing)
+  - Trust Binding (NONE/LOW/MEDIUM/HIGH levels)
+  - Gateway Admission
+  
+  Next: V3-002 Scout + Project-Owned PI Runtime
+[/DELTA]

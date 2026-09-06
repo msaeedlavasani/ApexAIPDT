@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Identity and Trust Binding Schema",
+  "description": "Schema for mechanism-neutral enrollment progression: Identity Establishment -> Authentication -> Trust Binding -> Gateway Admission",
+  "type": "object",
+  "required": ["enrollment_id", "stage", "entity_type", "entity_id"],
+  "properties": {
+    "enrollment_id": {
+      "type": "string",
+      "description": "Unique identifier for this enrollment session",
+      "pattern": "^ENT-[A-Z0-9]{8,}$"
+    },
+    "stage": {
+      "type": "string",
+      "enum": ["IDENTITY_ESTABLISHMENT", "AUTHENTICATION", "TRUST_BINDING", "GATEWAY_ADMISSION"],
+      "description": "Current stage in the enrollment progression"
+    },
+    "entity_type": {
+      "type": "string",
+      "enum": ["PROJECT", "AGENT", "SERVICE", "ROLE"],
+      "description": "Type of entity being enrolled"
+    },
+    "entity_id": {
+      "type": "string",
+      "description": "Identifier of the entity being enrolled"
+    },
+    "external_project": {
+      "type": "object",
+      "description": "External project fixture reference",
+      "properties": {
+        "repository_url": { "type": "string" },
+        "project_name": { "type": "string" },
+        "is_external_to_apex": { "type": "boolean" }
+      },
+      "required": ["repository_url", "project_name", "is_external_to_apex"]
+    },
+    "identity": {
+      "type": "object",
+      "description": "Established identity state",
+      "properties": {
+        "subject": { "type": "string" },
+        "claims": { "type": "array", "items": { "type": "string" } },
+        "established_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "authentication": {
+      "type": "object",
+      "description": "Authentication proof state",
+      "properties": {
+        "method": { "type": "string" },
+        "proof_hash": { "type": "string" },
+        "authenticated_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "trust_binding": {
+      "type": "object",
+      "description": "Trust binding state",
+      "properties": {
+        "binding_type": { "type": "string" },
+        "trust_level": { "type": "string", "enum": ["NONE", "LOW", "MEDIUM", "HIGH"] },
+        "bound_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "gateway_admission": {
+      "type": "object",
+      "description": "Gateway admission state",
+      "properties": {
+        "admitted": { "type": "boolean" },
+        "admission_reason": { "type": "string" },
+        "admitted_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}
