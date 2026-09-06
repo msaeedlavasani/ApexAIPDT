@@ -1118,7 +1118,7 @@ auto_continue: YES
 task_id: DPT-V3-002
 title: Scout + Project-Owned PI Runtime
 objective: Implement Scout component that discovers and binds to external project's Project Intelligence. Front agent instance projected FROM Scout-discovered PI; does not generate or own intelligence.
-status: READY
+status: CLOSED
 dependencies: DPT-V3-001
 readiness: READY (V3-001 CLOSED)
 task_class: external_integration_scout
@@ -1126,7 +1126,7 @@ required_capabilities: repository.read, docs.write, javascript.runtime
 denied_capabilities: git.push, git.merge, production.*
 human_gate_state: NONE
 passport_revision: 0
-state_revision: 0
+state_revision: 1
 next_task: DPT-V3-003
 auto_continue: YES
 [/TASK]
@@ -1371,4 +1371,20 @@ notes: |
   - Gateway Admission
   
   Next: V3-002 Scout + Project-Owned PI Runtime
+[/DELTA]
+
+[DELTA]
+task_id: DPT-V3-002
+base_state_revision: 0
+changes: status=READY→CLOSED, state_revision=0→1
+applied_by: V3_VERTICAL_SLICE_RECONCILIATION
+evidence_refs: providers/goose/scout-pi-runtime.mjs, providers/goose/test-scout-pi-runtime.mjs
+notes: |
+  V3-002 implementation complete and verified.
+  - scout-pi-runtime.mjs implements createScout, discoverPI, projectFront, bindScout
+  - test-scout-pi-runtime.mjs has 16 passing tests
+  - Schema: docs/schemas/scout-pi.schema.json
+  
+  All V3 spine tasks V3-001 through V3-005 now CLOSED.
+  V3-SPINE-E2E READY with HG-01_REQUIRED (external project requires Owner review).
 [/DELTA]
