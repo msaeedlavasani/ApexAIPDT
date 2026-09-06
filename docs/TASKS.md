@@ -710,34 +710,3 @@ notes: |
   Invariant satisfied: Current canonical state has durable remote checkpoint.
   Phase 6 implementation may resume autonomously.
 [/DELTA]
-
-
-## Post-Overnight Canonical Readback
-
-[DELTA]
-task_id: DPT-CANONICAL-READBACK
-base_state_revision: 28
-changes: reconciliation=DPT-FOUNDATION-001-002-verified-backlog, persian-language-pin=REQUIRED, state_revision=28→29
-applied_by: POST_OVERNIGHT_READBACK
-notes: |
-  Reconciled DPT-FOUNDATION-001 and DPT-FOUNDATION-002 against full git history.
-  
-  Finding: Both tasks have NEVER exited BACKLOG state in the complete canonical record.
-  - DPT-FOUNDATION-001: state_revision=1, zero lifecycle deltas, status=BACKLOG since creation
-  - DPT-FOUNDATION-002: state_revision=1, zero lifecycle deltas, status=BACKLOG since creation
-  - DPT-RECON-003 (dependency): CLOSED via valid delta chain (BACKLOG→RUNNING→CLOSED)
-  
-  Claim evaluation: The assertion that "historical/stale BACKLOG projections must not override
-  valid CLOSED state" has no basis in the canonical record — no valid CLOSED lifecycle event
-  exists for either task. Both remain correctly projected as BACKLOG.
-  
-  READY/BLOCKED sets:
-  - READY: none
-  - BLOCKED: DPT-FOUNDATION-001 (owner review gate), DPT-FOUNDATION-002 (dependency on 001)
-  
-  Exhausted-graph status: All Phase 6 tasks (037-041) CLOSED. Remaining tasks (001, 002)
-  have Owner review gates outside autonomous scope. GENUINE_HUMAN_GATE condition met.
-  
-  Language pin: Owner-visible presentation must use Persian locale across all model switches,
-  provider fallbacks, retries, and new Attempts regardless of provider/locale changes.
-[/DELTA]
