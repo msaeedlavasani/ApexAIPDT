@@ -1276,7 +1276,7 @@ title: Governed Project Execution
 objective: Implement authority modes 0-5 operational with Human Gate enforcement for external project interactions.
 status: CLOSED
 dependencies: DPT-V3-SPINE-E2E
-readiness: NOT_READY (dependency DPT-V3-SPINE-E2E not CLOSED)
+readiness: READY (V3-SPINE-E2E CLOSED)
 task_class: external_integration_governance
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
