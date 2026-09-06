@@ -435,9 +435,9 @@ notes: |
 |---|---|
 | task_id | DPT-FOUNDATION-039 |
 | title | V2 Learning System: Failure Pattern Detection |
-| status | BACKLOG |
+| status | CLOSED |
 | dependencies | DPT-FOUNDATION-038 |
-| readiness | NOT_READY — OD-T5-003-B unresolved (evidence threshold) + sequential dependency |
+| readiness | CLOSED — Implementation complete; PATTERN_MATCHING() implemented, 58 tests passing |
 | task_class | implementation |
 | auto_continue | YES |
 
@@ -446,9 +446,9 @@ notes: |
 task_id: DPT-FOUNDATION-039
 title: V2 Learning System: Failure Pattern Detection
 objective: Implement failure pattern detection architecture for V2 learning system.
-status: BACKLOG
+status: CLOSED
 dependencies: DPT-FOUNDATION-038
-readiness: NOT_READY
+readiness: READY
 task_class: implementation
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
@@ -466,9 +466,9 @@ auto_continue: YES
 |---|---|
 | task_id | DPT-FOUNDATION-040 |
 | title | V2 Learning System: Auto-Improvement Proposals |
-| status | BACKLOG |
+| status | CLOSED |
 | dependencies | DPT-FOUNDATION-039 |
-| readiness | NOT_READY — sequential dependency |
+| readiness | CLOSED — Implementation complete; AUTO_IMPROVEMENT_PROPOSAL() implemented, 48 tests passing |
 | task_class | implementation |
 | auto_continue | YES |
 
@@ -477,9 +477,9 @@ auto_continue: YES
 task_id: DPT-FOUNDATION-040
 title: V2 Learning System: Auto-Improvement Proposals
 objective: Implement auto-improvement proposal generation for V2 learning system.
-status: BACKLOG
+status: CLOSED
 dependencies: DPT-FOUNDATION-039
-readiness: NOT_READY
+readiness: READY
 task_class: implementation
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
@@ -508,7 +508,7 @@ auto_continue: YES
 task_id: DPT-FOUNDATION-041
 title: V2 Learning System: Cross-Project Pattern Extraction
 objective: Implement cross-project pattern extraction for V2 learning system.
-status: READY
+status: CLOSED
 dependencies: DPT-FOUNDATION-040
 readiness: READY
 task_class: implementation
