@@ -41,3 +41,6 @@ venv/
 # Test artifacts that are not part of canonical state
 providers/opencode/.dpt-*/
 .providers/test-results/
+
+# E2E verification artifacts
+.dpt/e2e-verification/

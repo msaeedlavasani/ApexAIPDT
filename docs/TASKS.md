@@ -1276,7 +1276,7 @@ title: Governed Project Execution
 objective: Implement authority modes 0-5 operational with Human Gate enforcement for external project interactions.
 status: CLOSED
 dependencies: DPT-V3-SPINE-E2E
-readiness: NOT_READY (dependency DPT-V3-SPINE-E2E not CLOSED)
+readiness: READY (sequential: V3-SPINE-E2E → V3-006 CLOSED)
 task_class: external_integration_governance
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
@@ -1308,7 +1308,7 @@ title: Contribution Candidate → Independent Review → Pool Admission
 objective: Implement cross-project contribution pipeline with independent review gate.
 status: CLOSED
 dependencies: DPT-V3-006
-readiness: NOT_READY (dependency DPT-V3-006 not CLOSED)
+readiness: READY (sequential: V3-SPINE-E2E → V3-006 CLOSED)
 task_class: external_integration_contribution
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
@@ -1340,7 +1340,7 @@ title: Update Propagation via Reference Transport
 objective: Validate one reference transport for update propagation across projects.
 status: CLOSED
 dependencies: DPT-V3-007
-readiness: NOT_READY (dependency DPT-V3-007 not CLOSED)
+readiness: READY (sequential: V3-SPINE-E2E → V3-006 → V3-007 → V3-008 CLOSED)
 task_class: external_integration_propagation
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
@@ -1430,7 +1430,7 @@ notes: |
 task_id: DPT-V3-006
 base_state_revision: 0
 changes: status=BACKLOG→READY, state_revision=0→1
-applied_by: V3_FANOUT_ADMISSION
+applied_by: V3_SEQUENTIAL_ADMISSION
 notes: |
   Admitted after V3-SPINE-E2E closure.
   Dependencies satisfied: V3-SPINE-E2E CLOSED.
@@ -1439,25 +1439,25 @@ notes: |
 task_id: DPT-V3-007
 base_state_revision: 0
 changes: status=BACKLOG→READY, state_revision=0→1
-applied_by: V3_FANOUT_ADMISSION
+applied_by: V3_SEQUENTIAL_ADMISSION
 notes: |
   Admitted after V3-SPINE-E2E closure.
-  Note: V3-006 dependency soft (parallel-safe admission per DELTA policy).
+  Sequential topology confirmed: SPINE → 006 → 007 → 008
   
 [DELTA]
 task_id: DPT-V3-008
 base_state_revision: 0
 changes: status=BACKLOG→READY, state_revision=0→1
-applied_by: V3_FANOUT_ADMISSION
+applied_by: V3_SEQUENTIAL_ADMISSION
 notes: |
   Admitted after V3-SPINE-E2E closure.
-  Note: V3-007 dependency soft (parallel-safe admission per DELTA policy).
+  Sequential topology confirmed: SPINE → 006 → 007 → 008
 
 [DELTA]
 task_id: DPT-V3-006
 base_state_revision: 1
 changes: status=READY→CLOSED, state_revision=1→2
-applied_by: V3_FANOUT_EXECUTION
+applied_by: V3_SEQUENTIAL_EXECUTION
 evidence_refs: providers/goose/governed-execution.mjs, providers/goose/test-governed-execution.mjs, docs/schemas/governed-execution.schema.json
 notes: |
   V3-006 implementation complete.
@@ -1469,7 +1469,7 @@ notes: |
 task_id: DPT-V3-007
 base_state_revision: 1
 changes: status=READY→CLOSED, state_revision=1→2
-applied_by: V3_FANOUT_EXECUTION
+applied_by: V3_SEQUENTIAL_EXECUTION
 evidence_refs: providers/goose/contribution-pipeline.mjs, providers/goose/test-contribution-pipeline.mjs, docs/schemas/contribution-pipeline.schema.json
 notes: |
   V3-007 implementation complete.
@@ -1481,7 +1481,7 @@ notes: |
 task_id: DPT-V3-008
 base_state_revision: 1
 changes: status=READY→CLOSED, state_revision=1→2
-applied_by: V3_FANOUT_EXECUTION
+applied_by: V3_SEQUENTIAL_EXECUTION
 evidence_refs: providers/goose/reference-transport.mjs, providers/goose/test-reference-transport.mjs, docs/schemas/reference-transport.schema.json
 notes: |
   V3-008 implementation complete.
