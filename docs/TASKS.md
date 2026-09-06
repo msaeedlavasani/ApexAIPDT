@@ -1518,3 +1518,297 @@ notes: |
   
   Original Task Record preserved; this Delta appends correction.
 [/DELTA]
+
+---
+
+## Phase: PERSISTENCE_FOUNDATION
+
+**Canonical Evidence Posture:**
+| Component | Status |
+|-----------|--------|
+| V3_IMPLEMENTATION | COMPLETE |
+| V3_INTERNAL_RUNTIME | PROVEN |
+| REAL_EXTERNAL_READ_PATH | PROVEN |
+| REAL_EXTERNAL_WRITE_PATH | NOT_PROVEN |
+| FULL_EXTERNAL_CLOSED_LOOP | NOT_PROVEN |
+
+**Dependency Graph:**
+```
+DURABLE_STATE (F-DURABLE-001)
+    ↓
+{ LEASES (F-LEASES-001) || RETRY_CANCEL_REVOKE (F-RETRY-001) }
+    ↓
+RECOVERY (F-RECOVERY-001)
+```
+
+**Architecture:** Snapshot + append-only event log hybrid persistence.
+
+**Correction Applied:** Attempt runtime/process is ephemeral. Attempt Record + Attempt Identity are DURABLE. Durable execution identity must support unknown-outcome reconciliation, late-result rejection, retry lineage, and idempotency/effect correlation.
+
+**Out of Scope:** POOL_PERSISTENCE, PACKAGING_RUNTIME, external transport/authentication, learning automation, new V-features.
+
+### DPT-PERSISTENCE-001 — Durable State Persistence Layer
+
+| Field | Value |
+|---|---|
+| task_id | DPT-PERSISTENCE-001 |
+| title | Durable State Persistence Layer |
+| objective | Implement snapshot + append-only event log for Task/Attempt/WorkOrder identity records. Support unknown-outcome reconciliation, late-result rejection, retry lineage, and idempotency/effect correlation. |
+| status | BACKLOG |
+| dependencies | (none) |
+| readiness | READY — Phase entry; no blocking dependencies |
+| task_class | runtime_persistence_implementation |
+| required_capabilities | repository.read, docs.write, fs.write, test.execution |
+| denied_capabilities | git.push, git.merge, production.*, secrets.* |
+| human_gate_state | NONE |
+| passport_revision | 1 |
+| canonical_artifact | providers/goose/durable-state.mjs, providers/goose/test-durable-state.mjs |
+| state_revision | 0 |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-PERSISTENCE-001
+title: Durable State Persistence Layer
+objective: Implement snapshot + append-only event log for Task/Attempt/WorkOrder identity records. Support unknown-outcome reconciliation, late-result rejection, retry lineage, and idempotency/effect correlation.
+status: BACKLOG
+dependencies: (none)
+readiness: READY
+task_class: runtime_persistence_implementation
+required_capabilities: repository.read, docs.write, fs.write, test.execution
+denied_capabilities: git.push, git.merge, production.*, secrets.*
+human_gate_state: NONE
+passport_revision: 1
+canonical_artifact: providers/goose/durable-state.mjs, providers/goose/test-durable-state.mjs
+state_revision: 0
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-PERSISTENCE-002 — Lease Enforcement with Fencing Tokens
+
+| Field | Value |
+|---|---|
+| task_id | DPT-PERSISTENCE-002 |
+| title | Lease Enforcement with Fencing Tokens |
+| objective | Implement lease state machine per ADR-034 with fencing tokens. Leases are projections of LAYER 4 authority, not authority sources. State transitions: REQUESTED → GRANTED → ACTIVE ↔ SUSPECTED → EXPIRED → RELEASED/REVOKED. |
+| status | BACKLOG |
+| dependencies | DPT-PERSISTENCE-001 |
+| readiness | NOT_READY (depends on F-DURABLE-001) |
+| task_class | runtime_lease_implementation |
+| required_capabilities | repository.read, docs.write, fs.write, test.execution |
+| denied_capabilities | git.push, git.merge, production.*, secrets.* |
+| human_gate_state | NONE |
+| passport_revision | 1 |
+| canonical_artifact | providers/goose/lease-enforcement.mjs, providers/goose/test-lease-enforcement.mjs |
+| state_revision | 0 |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-PERSISTENCE-002
+title: Lease Enforcement with Fencing Tokens
+objective: Implement lease state machine per ADR-034 with fencing tokens. Leases are projections of LAYER 4 authority, not authority sources. State transitions: REQUESTED → GRANTED → ACTIVE ↔ SUSPECTED → EXPIRED → RELEASED/REVOKED.
+status: BACKLOG
+dependencies: DPT-PERSISTENCE-001
+readiness: NOT_READY
+task_class: runtime_lease_implementation
+required_capabilities: repository.read, docs.write, fs.write, test.execution
+denied_capabilities: git.push, git.merge, production.*, secrets.*
+human_gate_state: NONE
+passport_revision: 1
+canonical_artifact: providers/goose/lease-enforcement.mjs, providers/goose/test-lease-enforcement.mjs
+state_revision: 0
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-PERSISTENCE-003 — Retry/Cancel/Revocation Runtime
+
+| Field | Value |
+|---|---|
+| task_id | DPT-PERSISTENCE-003 |
+| title | Retry/Cancel/Revocation Runtime |
+| objective | Implement precedence REVOCATION > CANCELLATION > RETRY at all times per ADR-036. Support effect recovery contract (idempotent/replay-safe/reversible/compensatable/irreversible taxonomy per F-302). |
+| status | BACKLOG |
+| dependencies | DPT-PERSISTENCE-001 |
+| readiness | NOT_READY (depends on F-DURABLE-001) |
+| task_class | runtime_retry_cancel_implementation |
+| required_capabilities | repository.read, docs.write, fs.write, test.execution |
+| denied_capabilities | git.push, git.merge, production.*, secrets.* |
+| human_gate_state | NONE |
+| passport_revision | 1 |
+| canonical_artifact | providers/goose/retry-cancel-revoke.mjs, providers/goose/test-retry-cancel-revoke.mjs |
+| state_revision | 0 |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-PERSISTENCE-003
+title: Retry/Cancel/Revocation Runtime
+objective: Implement precedence REVOCATION > CANCELLATION > RETRY at all times per ADR-036. Support effect recovery contract (idempotent/replay-safe/reversible/compensatable/irreversible taxonomy per F-302).
+status: BACKLOG
+dependencies: DPT-PERSISTENCE-001
+readiness: NOT_READY
+task_class: runtime_retry_cancel_implementation
+required_capabilities: repository.read, docs.write, fs.write, test.execution
+denied_capabilities: git.push, git.merge, production.*, secrets.*
+human_gate_state: NONE
+passport_revision: 1
+canonical_artifact: providers/goose/retry-cancel-revoke.mjs, providers/goose/test-retry-cancel-revoke.mjs
+state_revision: 0
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-PERSISTENCE-004 — Crash/Restart Recovery Orchestration
+
+| Field | Value |
+|---|---|
+| task_id | DPT-PERSISTENCE-004 |
+| title | Crash/Restart Recovery Orchestration |
+| objective | Implement crash/restart recovery with unknown-outcome policy. Must support: (1) Reconciliation of unknown-outcome attempts, (2) Late-result rejection, (3) Retry lineage preservation, (4) Idempotency/effect correlation. Runtime proof requires crash/restart injection and unknown-outcome failure injection tests. |
+| status | BACKLOG |
+| dependencies | DPT-PERSISTENCE-002, DPT-PERSISTENCE-003 |
+| readiness | NOT_READY (depends on F-LEASES-001 and F-RETRY-001) |
+| task_class | runtime_recovery_implementation |
+| required_capabilities | repository.read, docs.write, fs.write, test.execution |
+| denied_capabilities | git.push, git.merge, production.*, secrets.* |
+| human_gate_state | NONE |
+| passport_revision | 1 |
+| canonical_artifact | providers/goose/recovery-orchestration.mjs, providers/goose/test-recovery-orchestration.mjs |
+| state_revision | 0 |
+| auto_continue | YES |
+
+```text
+[TASK]
+task_id: DPT-PERSISTENCE-004
+title: Crash/Restart Recovery Orchestration
+objective: Implement crash/restart recovery with unknown-outcome policy. Must support: (1) Reconciliation of unknown-outcome attempts, (2) Late-result rejection, (3) Retry lineage preservation, (4) Idempotency/effect correlation. Runtime proof requires crash/restart injection and unknown-outcome failure injection tests.
+status: BACKLOG
+dependencies: DPT-PERSISTENCE-002, DPT-PERSISTENCE-003
+readiness: NOT_READY
+task_class: runtime_recovery_implementation
+required_capabilities: repository.read, docs.write, fs.write, test.execution
+denied_capabilities: git.push, git.merge, production.*, secrets.*
+human_gate_state: NONE
+passport_revision: 1
+canonical_artifact: providers/goose/recovery-orchestration.mjs, providers/goose/test-recovery-orchestration.mjs
+state_revision: 0
+auto_continue: YES
+[/TASK]
+```
+
+[DELTA]
+task_id: DPT-PERSISTENCE-001
+base_state_revision: 0
+changes: status=BACKLOG→READY, state_revision=50→51
+applied_by: PERSISTENCE_FOUNDATION_ADMISSION
+notes: |
+  Admitted as phase entry for PERSISTENCE_FOUNDATION.
+  Evidence posture canonicalized:
+  - V3_IMPLEMENTATION = COMPLETE
+  - V3_INTERNAL_RUNTIME = PROVEN
+  - REAL_EXTERNAL_READ_PATH = PROVEN
+  - REAL_EXTERNAL_WRITE_PATH = NOT_PROVEN
+  - FULL_EXTERNAL_CLOSED_LOOP = NOT_PROVEN
+  
+  Correction applied: Attempt runtime/process is ephemeral.
+  Attempt Record + Attempt Identity are DURABLE.
+  
+  Dependency graph:
+  DURABLE_STATE → {LEASES || RETRY_CANCEL_REVOKE} → RECOVERY
+  
+  No Human Gate required — genuine Runtime Durability foundation.
+[/DELTA]
+
+[DELTA]
+task_id: DPT-PERSISTENCE-002
+base_state_revision: 0
+changes: status=BACKLOG→READY, state_revision=51→52
+applied_by: PERSISTENCE_FOUNDATION_ADMISSION
+notes: |
+  Admitted in parallel — depends on F-DURABLE-001 (will be READY after closure).
+[/DELTA]
+
+[DELTA]
+task_id: DPT-PERSISTENCE-003
+base_state_revision: 0
+changes: status=BACKLOG→READY, state_revision=52→53
+applied_by: PERSISTENCE_FOUNDATION_ADMISSION
+notes: |
+  Admitted in parallel — depends on F-DURABLE-001 (will be READY after closure).
+[/DELTA]
+
+[DELTA]
+task_id: DPT-PERSISTENCE-004
+base_state_revision: 0
+changes: status=BACKLOG→READY, state_revision=53→54
+applied_by: PERSISTENCE_FOUNDATION_ADMISSION
+notes: |
+  Admitted with dependencies noted — will advance when F-LEASES-001 and F-RETRY-001 close.
+[/DELTA]
+
+[DELTA]
+task_id: DPT-PERSISTENCE-001
+base_state_revision: 54
+changes: status=READY→CLOSED, state_revision=54→55
+applied_by: PERSISTENCE_FOUNDATION_EXECUTION
+evidence_refs: providers/goose/durable-state.mjs, providers/goose/test-durable-state.mjs
+notes: |
+  F-DURABLE-001 implementation complete.
+  - Snapshot + append-only event log hybrid persistence
+  - Attempt runtime is ephemeral; Attempt Record + Identity are DURABLE
+  - Supports: unknown-outcome reconciliation, late-result rejection, retry lineage, idempotency/effect correlation
+  - 16/16 tests PASS
+  
+  Correction applied per DELTA:
+  "Attempt runtime/process is ephemeral. Attempt Record + Attempt Identity are DURABLE."
+[/DELTA]
+
+[DELTA]
+task_id: DPT-PERSISTENCE-002
+base_state_revision: 55
+changes: status=READY→CLOSED, state_revision=55→56
+applied_by: PERSISTENCE_FOUNDATION_EXECUTION
+evidence_refs: providers/goose/lease-enforcement.mjs, providers/goose/test-lease-enforcement.mjs
+notes: |
+  F-LEASES-001 implementation complete.
+  - Lease state machine per ADR-034: REQUESTED → GRANTED → ACTIVE ↔ SUSPECTED → EXPIRED → RELEASED/REVOKED
+  - Fencing tokens for crash recovery safety
+  - Leases are projections of LAYER 4 authority, not authority sources
+  - 15/15 tests PASS
+[/DELTA]
+
+[DELTA]
+task_id: DPT-PERSISTENCE-003
+base_state_revision: 56
+changes: status=READY→CLOSED, state_revision=56→57
+applied_by: PERSISTENCE_FOUNDATION_EXECUTION
+evidence_refs: providers/goose/retry-cancel-revoke.mjs, providers/goose/test-retry-cancel-revoke.mjs
+notes: |
+  F-RETRY-001 implementation complete.
+  - Precedence REVOCATION > CANCELLATION > RETRY enforced at all times
+  - Effect Recovery Contract (F-302): idempotent/replay-safe/reversible/compensatable/irreversible taxonomy
+  - Lease-integrated revocation execution
+  - 13/13 tests PASS
+[/DELTA]
+
+[DELTA]
+task_id: DPT-PERSISTENCE-004
+base_state_revision: 57
+changes: status=READY→CLOSED, state_revision=57→58
+applied_by: PERSISTENCE_FOUNDATION_EXECUTION
+evidence_refs: providers/goose/recovery-orchestration.mjs, providers/goose/test-recovery-orchestration.mjs, .dpt/e2e-verification/PERSISTENCE-FOUNDATION-E2E.json
+notes: |
+  F-RECOVERY-001 implementation complete.
+  - Crash/restart recovery orchestration
+  - Unknown-outcome failure injection proof
+  - Late-result rejection verified
+  - Retry lineage preservation verified
+  - Idempotency/effect correlation verified
+  - 9/9 tests PASS
+  
+  PHASE COMPLETE: Persistence Foundation phase complete.
+  Dependency graph satisfied: DURABLE_STATE → {LEASES || RETRY_CANCEL_REVOKE} → RECOVERY
+[/DELTA]
