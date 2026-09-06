@@ -1180,7 +1180,7 @@ auto_continue: YES
 task_id: DPT-V3-004
 title: Front Runtime + Gateway Boundary Service
 objective: Implement Front runtime operating within gateway-enforced protocol boundary. Gateway is deterministic SERVICE enforcing protocol; Front is project-bound ROLE/AGENT_INSTANCE.
-status: READY
+status: CLOSED
 dependencies: DPT-V3-003
 readiness: READY (V3-003 CLOSED)
 task_class: external_integration_gateway
@@ -1211,9 +1211,9 @@ auto_continue: YES
 task_id: DPT-V3-005
 title: DPT Analysis + Bounded Result + Project Readback
 objective: Implement DPT analysis completing within authority bounds with result readable by external project. Bounded result respects privacy boundaries and trust levels established in V3-001.
-status: BACKLOG
+status: READY
 dependencies: DPT-V3-004
-readiness: NOT_READY (dependency DPT-V3-004 not CLOSED)
+readiness: READY (V3-004 CLOSED)
 task_class: external_integration_analysis
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
