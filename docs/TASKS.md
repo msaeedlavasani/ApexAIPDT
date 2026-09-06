@@ -920,3 +920,81 @@ notes: |
   Exhausted-graph status: All foundational tasks (001, 002) CLOSED.
   No GENUINE_HUMAN_GATE condition remains.
 [/DELTA]
+
+## FOUNDATION-037 Reconciliation
+
+[DELTA]
+task_id: DPT-FOUNDATION-037
+base_state_revision: 2
+changes: status=CLOSED→REWORK, implementation_status=IMPLEMENTATION_COMPLETE→IMPLEMENTATION_INCOMPLETE, passport_revision=0→1, state_revision=37→38
+applied_by: PHASE7_RECONCILIATION_DELTA
+artefacts: docs/v2/intervention-measurement-spec.md (spec complete, runtime missing), docs/validation/DPT-PHASE7_ARCHITECTURE_REVIEW_REPORT.md (F-005 finding)
+notes: |
+  FOUNDATION-037 reconciliation: premature closure detected.
+  
+  Objective: "Implement runtime intervention measurement for V2 learning system."
+  Deliverables received:
+  - docs/schemas/intervention-event.schema.json ✅
+  - docs/v2/intervention-measurement-spec.md ✅
+  - providers/goose/intervention-measurement.mjs ❌ NOT EXISTS
+  - providers/goose/test-intervention-measurement.mjs ❌ NOT EXISTS
+  
+  Spec self-assessment: "Specification complete. Ready for implementation."
+  Next steps 5-7 marked incomplete (⏳).
+  
+  Verdict: PREMATURELY_CLOSED. Design artifacts delivered but runtime function missing.
+  Task reopened to REWORK for implementation completion.
+  
+  This is NOT converted to a V3 feature. The work belongs to FOUNDATION-037's original scope.
+[/DELTA]
+
+[DELTA]
+task_id: DPT-FOUNDATION-038
+base_state_revision: 4
+changes: readiness=CLOSED(deps satisfied)→READY(F-037 now REWORK, dependency NOT_YET_CLOSED), state_revision=38→38
+applied_by: PHASE7_RECONCILIATION_DELTA
+artefacts: docs/TASKS.md
+notes: |
+  DAG recomputed following FOUNDATION-037 → REWORK.
+  
+  FOUNDATION-038 depends on FOUNDATION-037.
+  Since 037 is now REWORK (not CLOSED), 038 readiness recomputed:
+  - Previous: READY (037 was CLOSED)
+  - Current: NOT_READY (037 is REWORK, dependency not satisfied)
+  
+  This is a cascading correction, not a new execution.
+[/DELTA]
+
+## Phase 7 Architecture Review
+
+[DELTA]
+task_id: DPT-PHASE7-ARCHITECTURE-REVIEW
+base_state_revision: 1
+changes: status=CLOSED, report_artifact=docs/validation/DPT-PHASE7_ARCHITECTURE_REVIEW_REPORT.md, state_revision=36→37
+applied_by: PHASE7_REPORT_LIFECYCLE_AND_ARCH_REVIEW
+artefacts: docs/validation/DPT-PHASE7_ARCHITECTURE_REVIEW_REPORT.md, docs/validation/Retired/DPT-FOUNDATION-001_SCHEMA_SERIALIZATION_REPORT.md, docs/validation/Retired/DPT-FOUNDATION-002_ACCEPTANCE_REPORT.md, docs/validation/Retired/DPT-FOUNDATION-002_E2E_ACCEPTANCE_REPORT.md, docs/validation/Retired/DPT-FOUNDATION-002_RUNTIME_ENFORCEMENT_REPORT.md
+notes: |
+  Phase 7 pre-review report hygiene + connected project architecture review completed.
+  
+  Report Hygiene:
+  - 4 active validation reports reviewed and retired to docs/validation/Retired/
+  - All associated tasks (FOUNDATION-001, FOUNDATION-002) CLOSED
+  - No unresolved contradictions, no pending review, no ACTION_REQUIRED
+  - Active validation inbox now empty
+  
+  Architecture Review — Runtime vs Product Promise Gap:
+  - Internal plane (orchestration, enforcement, learning): RUNTIME_PROVEN
+  - External boundary (enrollment, gateway, scout, contribution, propagation): SPEC_ONLY
+  - 8 falsification findings identified
+  - 3 CRITICAL gaps: self-contained execution, missing Front Agent/Gateway runtime, no contribution pipeline
+  - 7 candidate V3 architectural objectives defined
+  - 8 items explicitly excluded from V3 scope
+  
+  READY/BLOCKED sets (post-PHASE7):
+  - READY: none
+  - BLOCKED: none
+  
+  Exhausted-graph status: All admissible V1/V2 work complete.
+  No GENUINE_HUMAN_GATE condition remains.
+  V3 planning deferred per instruction — not admitted as tasks.
+[/DELTA]
