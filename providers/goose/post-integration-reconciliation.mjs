@@ -322,8 +322,9 @@ export function checkCrossProjectionConsistency() {
   
   try {
     const tasksContent = readFileSync(join(REPO_ROOT, 'docs/TASKS.md'), 'utf8');
-    const taskMatches = tasksContent.match(/^task_id:/gm) || [];
-    const tasksInLedger = taskMatches.length;
+    // Count only [TASK] blocks as durable ledger records
+    const taskBlocks = tasksContent.match(/\[TASK\]/g) || [];
+    const tasksInLedger = taskBlocks.length;
     
     const statusContent = readFileSync(join(REPO_ROOT, '.dpt/status.json'), 'utf8');
     const status = JSON.parse(statusContent);
