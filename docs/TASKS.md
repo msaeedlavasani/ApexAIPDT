@@ -606,6 +606,29 @@ notes: |
   - Tests: providers/goose/test-auto-improvement.mjs (48/48 passing)
 [/DELTA]
 
+[DELTA]
+task_id: DPT-FOUNDATION-040
+base_state_revision: 25
+changes: status=RUNNING→CLOSED, implementation_status=IMPLEMENTATION_COMPLETE, state_revision=25→26
+applied_by: DPT-LIVERUN-004 batch merge
+artefacts: docs/adr/ADR-055-auto-improvement-proposals.md, docs/schemas/auto-improvement-proposal.schema.json, providers/goose/auto-improvement.mjs, providers/goose/test-auto-improvement.mjs
+notes: |
+  DPT-FOUNDATION-040 implementation completed and merged via PR #11.
+  
+  Batch lifecycle satisfied:
+  - SYNCED MAIN ✓ (84fd271)
+  - CREATE BATCH BRANCH ✓ (feat/foundation-040-auto-improvement-proposals)
+  - EXECUTE BATCH ✓
+  - VALIDATE BATCH ✓ (48/48 tests passing)
+  - PUSH BRANCH ✓
+  - REMOTE READBACK ✓
+  - OPEN PR TO MAIN ✓ (PR #11)
+  - PR CI / INTEGRATION VALIDATION ✓ (all checks pass)
+  - MERGE ✓ (52a5c5b)
+  - SYNC LOCAL MAIN FROM ORIGIN ✓
+  - POST-MERGE READBACK ✓ (working tree clean)
+[/DELTA]
+
 ## Repository Durability Checkpoint
 
 [DELTA]
