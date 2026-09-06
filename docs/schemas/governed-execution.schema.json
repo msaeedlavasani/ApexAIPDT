@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Governed Project Execution Schema",
+  "description": "Authority modes 0-5 operational with Human Gate enforcement for external project interactions.",
+  "type": "object",
+  "required": ["execution_id", "authority_mode", "project_id"],
+  "properties": {
+    "execution_id": {
+      "type": "string",
+      "pattern": "^EXEC-[A-Z0-9]+$",
+      "description": "Unique execution identifier."
+    },
+    "authority_mode": {
+      "type": "integer",
+      "enum": [0, 1, 2, 3, 4, 5],
+      "description": "Authority mode: 0=Observe, 1=Advise, 2=Assisted Execution, 3=Managed Execution, 4=Autonomous Within Policy, 5=Delegated Autonomy."
+    },
+    "project_id": {
+      "type": "string",
+      "description": "External project identifier."
+    },
+    "human_gate_state": {
+      "type": "string",
+      "enum": ["NONE", "HG-01_REQUIRED", "HG-02_REQUIRED", "PENDING_REVIEW"],
+      "description": "Current human gate state."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["INITIALIZED", "RUNNING", "COMPLETED", "ESCALATED", "REVOKED"],
+      "description": "Execution status."
+    },
+    "delegation_chain": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "mode": { "type": "integer" },
+          "scope": { "type": "string" }
+        }
+      }
+    }
+  }
+}
