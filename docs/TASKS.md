@@ -949,6 +949,66 @@ notes: |
 [/DELTA]
 
 [DELTA]
+task_id: DPT-FOUNDATION-037
+base_state_revision: 38
+changes: status=REWORK→RUNNING, implementation_status=IMPLEMENTATION_INCOMPLETE→IMPLEMENTATION_PROGRESS, passport_revision=1→2, state_revision=38→39
+applied_by: PHASE7_IMPLEMENTATION_DELTA
+artefacts: providers/goose/intervention-measurement.mjs, providers/goose/test-intervention-measurement.mjs, docs/validation/DPT-FOUNDATION-037_INTERVENTION_MEASUREMENT_REPORT.md
+notes: |
+  FOUNDATION-037 implementation completed.
+  
+  Artifacts delivered:
+  - providers/goose/intervention-measurement.mjs (533 lines)
+  - providers/goose/test-intervention-measurement.mjs (66 tests)
+  - docs/validation/DPT-FOUNDATION-037_INTERVENTION_MEASUREMENT_REPORT.md
+  
+  Test results: 66/66 PASS
+  ADR-052 compliance: 10/10 checks PASS
+  
+  Batch branch: feat/foundation-037-intervention-measurement
+  Workflow: SYNCED MAIN → CREATE BATCH BRANCH → EXECUTE → VALIDATE → PUSH → PR → MERGE
+[/DELTA]
+
+[DELTA]
+task_id: DPT-FOUNDATION-037
+base_state_revision: 39
+changes: status=RUNNING→CLOSED, implementation_status=IMPLEMENTATION_COMPLETE, state_revision=39→40
+applied_by: PHASE7_IMPLEMENTATION_CLOSE_DELTA
+artefacts: providers/goose/intervention-measurement.mjs, providers/goose/test-intervention-measurement.mjs
+notes: |
+  FOUNDATION-037 implementation validated and closed.
+  
+  Evidence:
+  - 66/66 tests PASS
+  - ADR-052 compliance verified (10/10 checks)
+  - Privacy boundaries enforced
+  - All integration points defined
+  
+  This closes the premature closure gap identified in Phase 7 reconciliation.
+  
+  DOWNSTREAM IMPACT:
+  - FOUNDATION-038 was NOT_READY due to 037 REWORK state
+  - Now 037 is CLOSED, 038 can proceed to RUNNING
+[/DELTA]
+
+[DELTA]
+task_id: DPT-FOUNDATION-038
+base_state_revision: 4
+changes: status=NOT_READY→READY, readiness=NOT_READY(037 REWORK)→READY(037 CLOSED), state_revision=40→40
+applied_by: PHASE7_DAG_RECOMPUTE
+artefacts: docs/TASKS.md
+notes: |
+  DAG recomputed following FOUNDATION-037 closure.
+  
+  FOUNDATION-038 depends on FOUNDATION-037.
+  Since 037 is now CLOSED, 038 readiness restored to READY.
+  
+  READY/BLOCKED sets (post-recompute):
+  - READY: DPT-FOUNDATION-038, DPT-FOUNDATION-039, DPT-FOUNDATION-040, DPT-FOUNDATION-041
+  - BLOCKED: none (sequential dependency resolved)
+[/DELTA]
+
+[DELTA]
 task_id: DPT-FOUNDATION-038
 base_state_revision: 4
 changes: readiness=CLOSED(deps satisfied)→READY(F-037 now REWORK, dependency NOT_YET_CLOSED), state_revision=38→38
