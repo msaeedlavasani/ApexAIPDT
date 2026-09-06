@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://apexaidpt.io/schemas/failure-pattern.schema.json",
+  "title": "Failure Pattern Report",
+  "description": "Schema for failure pattern detection reports derived from AUDIT_TRAIL events per ADR-054.",
+  "type": "object",
+  "required": ["report_id", "time_window", "computed_at", "pattern_summary"],
+  "properties": {
+    "report_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for this pattern report."
+    },
+    "time_window": {
+      "type": "object",
+      "required": ["start", "end"],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "computed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_event_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "pattern_summary": {
+      "type": "object",
+      "properties": {
+        "total_failures": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unique_patterns": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "critical_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "high_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "medium_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "low_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "patterns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["pattern_type", "count", "severity"],
+        "properties": {
+          "pattern_type": {
+            "type": "string",
+            "enum": [
+              "RETRY_EXHAUSTED",
+              "CONTEXT_OVERFLOW",
+              "AUTHORITY_DENIED",
+              "PROVIDER_ERROR",
+              "TIMEOUT",
+              "VALIDATION_FAIL",
+              "UNKNOWN"
+            ]
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
+          },
+          "task_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "first_occurrence": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "last_occurrence": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "trend": {
+            "type": "string",
+            "enum": ["INCREASING", "STABLE", "DECREASING", "SPIKE"]
+          }
+        }
+      }
+    },
+    "config": {
+      "type": "object",
+      "properties": {
+        "severityThresholds": {
+          "type": "object",
+          "properties": {
+            "low": { "type": "integer", "default": 1 },
+            "medium": { "type": "integer", "default": 3 },
+            "high": { "type": "integer", "default": 5 },
+            "critical": { "type": "integer", "default": 10 }
+          }
+        },
+        "windowDefaultHours": {
+          "type": "integer",
+          "default": 24
+        }
+      }
+    },
+    "alerts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "message"],
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
+          },
+          "message": {
+            "type": "string"
+          },
+          "pattern_type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
