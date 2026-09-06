@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Reference Transport Schema",
+  "description": "Update propagation via reference transport across projects.",
+  "type": "object",
+  "required": ["transport_id", "source", "destination"],
+  "properties": {
+    "transport_id": {
+      "type": "string",
+      "pattern": "^TRNS-[A-Z0-9]+$",
+      "description": "Unique transport identifier."
+    },
+    "source": {
+      "type": "string",
+      "description": "Source project identifier."
+    },
+    "destination": {
+      "type": "string",
+      "description": "Destination project identifier."
+    },
+    "transport_type": {
+      "type": "string",
+      "enum": ["GIT_REFERENCE", "API_CALLBACK", "EVENT_STREAM", "MANUAL_REVIEW"],
+      "description": "Type of reference transport."
+    },
+    "propagation_status": {
+      "type": "string",
+      "enum": ["PENDING", "IN_TRANSIT", "DELIVERED", "ACKNOWLEDGED", "FAILED"],
+      "description": "Current propagation status."
+    },
+    "update_hash": {
+      "type": "string",
+      "description": "Hash of the propagated update for integrity verification."
+    },
+    "acknowledged_by": {
+      "type": "string",
+      "description": "Project that acknowledged receipt."
+    }
+  }
+}
