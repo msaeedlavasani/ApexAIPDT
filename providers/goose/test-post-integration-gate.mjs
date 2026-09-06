@@ -13,7 +13,7 @@
  * - Local/remote SHA divergence
  */
 
-import { describe, it, expect, beforeAll, afterAll } from 'node:test';
+import { describe, it, expect, before, after } from 'node:test';
 import assert from 'node:assert';
 import { writeFileSync, mkdirSync, rmSync, copyFileSync } from 'fs';
 import { join } from 'path';
@@ -42,11 +42,11 @@ describe('Post-Integration Reconciliation Gate', () => {
   let originalCwd;
   let originalRepoRoot;
   
-  beforeAll(() => {
+  before(() => {
     originalCwd = process.cwd();
   });
   
-  afterAll(() => {
+  after(() => {
     process.chdir(originalCwd);
   });
   
