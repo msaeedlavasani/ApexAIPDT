@@ -1,0 +1,33 @@
+{
+  "delta_id": "DPT-DISPOSITION-DAG-REPAIR-001",
+  "date": "2026-09-05",
+  "tracks": ["A", "B"],
+  "findings_tracker": {
+    "FINDING-001": {
+      "source": "DPT-AUDIT-001",
+      "description": "Token/context telemetry gap: FOUNDATION-011 measured proxy metrics, not actual LLM token usage",
+      "resolution": "TRANSFER_TO_TRACKED_ACTION",
+      "tracked_by": "FOUNDATION-038 scope adjustment",
+      "status": "TRACKED"
+    },
+    "FINDING-002": {
+      "source": "DPT-AUDIT-003", 
+      "description": "Atomic commit hygiene recommended for uncommitted changes",
+      "resolution": "ACCEPT_RISK",
+      "risk_level": "LOW",
+      "note": "Normal development state; atomic commits recommended but not blocking",
+      "status": "ACCEPTED"
+    }
+  },
+  "report_dispositions": {
+    "DPT-AUDIT-001": {"action": "RETIRED", "reason": "Findings documented, transferred to TRACKED"},
+    "DPT-AUDIT-002": {"action": "RETIRED", "reason": "Compliance audit complete, no action required"},
+    "DPT-AUDIT-003": {"action": "RETIRED", "reason": "Findings documented, risk accepted"},
+    "DPT-AUTO-BOOTSTRAP": {"action": "RETIRED", "reason": "Repair verified, parser gap documented as KNOWN_LIMITATION"},
+    "DPT-AUTO-CONTINUE-002": {"action": "RETIRED", "reason": "Invariant validated, HUMAN_GATE_VALID=NO"},
+    "DPT-AUTO-CONTINUE-FINAL": {"action": "RETIRED", "reason": "Repair verified, no further attention"},
+    "DPT-AUTO-CONTINUE-ORCHESTRATION": {"action": "RETIRED", "reason": "Repair complete, harness available"},
+    "DPT-CANONICAL-STATE-PRECEDENCE": {"action": "PENDING_REVIEW", "reason": "Current Delta report, requires independent review"},
+    "DPT-LIFECYCLE-PRECEDENCE": {"action": "RETIRED", "reason": "Previous Delta, findings incorporated"}
+  }
+}

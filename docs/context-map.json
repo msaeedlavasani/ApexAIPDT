@@ -1,0 +1,354 @@
+{
+  "schema_version": "1.0.0",
+  "project": "Apex AI DPT",
+  "generated_at": "2026-09-05T17:07:37.159Z",
+  "repo_root": "/Users/msl/Documents/GitHub/ApexAIPDT",
+  "nodes": [
+    {
+      "id": "node-1",
+      "name": "constitutional",
+      "type": "layer",
+      "description": "Foundational principles and governance",
+      "paths": [
+        "docs/APEX_AI_DPT_CONSTITUTION.md",
+        "docs/APEX_AI_DPT_VISION.md",
+        "docs/APEX_AI_DPT_TERMINOLOGY.md"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    {
+      "id": "node-2",
+      "name": "model",
+      "type": "layer",
+      "description": "System models and architecture",
+      "paths": [
+        "docs/DPT_SYSTEM_MODEL.md",
+        "docs/DPT_EXECUTION_CONTROL_MODEL.md",
+        "docs/DPT_AUTHORITY_MODEL.md",
+        "docs/DPT_TASK_SYSTEM.md",
+        "docs/DPT_AGENT_ARCHITECTURE.md",
+        "docs/DPT_POOL_ARCHITECTURE.md"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    {
+      "id": "node-3",
+      "name": "governance",
+      "type": "layer",
+      "description": "Policy and enforcement rules",
+      "paths": [
+        "docs/governance/"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    {
+      "id": "node-4",
+      "name": "schemas",
+      "type": "layer",
+      "description": "Machine-readable contracts",
+      "paths": [
+        "docs/schemas/"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    {
+      "id": "node-5",
+      "name": "contracts",
+      "type": "layer",
+      "description": "Provider-neutral interface contracts",
+      "paths": [
+        "providers/contract/"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    {
+      "id": "node-6",
+      "name": "adapters",
+      "type": "layer",
+      "description": "Provider implementations",
+      "paths": [
+        "providers/goose/",
+        "providers/opencode/",
+        "providers/reference/"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    {
+      "id": "node-7",
+      "name": "validation",
+      "type": "layer",
+      "description": "Test and verification evidence",
+      "paths": [
+        "docs/validation/"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    {
+      "id": "node-8",
+      "name": "task_state",
+      "type": "layer",
+      "description": "Durable task ledger",
+      "paths": [
+        "docs/TASKS.md"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    {
+      "id": "node-9",
+      "name": "APEX_AI_DPT_CONSTITUTION.md",
+      "type": "file",
+      "path": "docs/APEX_AI_DPT_CONSTITUTION.md",
+      "layer": "constitutional",
+      "dependencies": []
+    },
+    {
+      "id": "node-10",
+      "name": "DPT_TASK_SYSTEM.md",
+      "type": "file",
+      "path": "docs/DPT_TASK_SYSTEM.md",
+      "layer": "model",
+      "dependencies": [
+        "docs/APEX_AI_DPT_CONSTITUTION.md"
+      ]
+    },
+    {
+      "id": "node-11",
+      "name": "DPT_AUTHORITY_MODEL.md",
+      "type": "file",
+      "path": "docs/DPT_AUTHORITY_MODEL.md",
+      "layer": "model",
+      "dependencies": [
+        "docs/APEX_AI_DPT_CONSTITUTION.md"
+      ]
+    },
+    {
+      "id": "node-12",
+      "name": "DPT_EXECUTION_CONTROL_MODEL.md",
+      "type": "file",
+      "path": "docs/DPT_EXECUTION_CONTROL_MODEL.md",
+      "layer": "model",
+      "dependencies": [
+        "docs/DPT_TASK_SYSTEM.md",
+        "docs/DPT_AUTHORITY_MODEL.md"
+      ]
+    },
+    {
+      "id": "node-13",
+      "name": "provider-contract.mjs",
+      "type": "file",
+      "path": "providers/contract/provider-contract.mjs",
+      "layer": "contracts",
+      "dependencies": []
+    },
+    {
+      "id": "node-14",
+      "name": "capability-gateway.mjs",
+      "type": "file",
+      "path": "providers/contract/capability-gateway.mjs",
+      "layer": "contracts",
+      "dependencies": [
+        "providers/contract/provider-contract.mjs"
+      ]
+    },
+    {
+      "id": "node-15",
+      "name": "permission-envelope.mjs",
+      "type": "file",
+      "path": "providers/opencode/permission-envelope.mjs",
+      "layer": "contracts",
+      "dependencies": [
+        "providers/contract/provider-contract.mjs"
+      ]
+    },
+    {
+      "id": "node-16",
+      "name": "goose-adapter.mjs",
+      "type": "file",
+      "path": "providers/goose/goose-adapter.mjs",
+      "layer": "adapters",
+      "dependencies": [
+        "providers/contract/capability-gateway.mjs",
+        "providers/opencode/permission-envelope.mjs"
+      ]
+    },
+    {
+      "id": "node-17",
+      "name": "dpt-extension.mjs",
+      "type": "file",
+      "path": "providers/goose/dpt-extension.mjs",
+      "layer": "adapters",
+      "dependencies": [
+        "providers/goose/goose-adapter.mjs"
+      ]
+    },
+    {
+      "id": "node-18",
+      "name": "TASKS.md",
+      "type": "file",
+      "path": "docs/TASKS.md",
+      "layer": "task_state",
+      "dependencies": [
+        "docs/DPT_TASK_SYSTEM.md"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "node-9",
+      "to": "node-10",
+      "type": "depends_on"
+    },
+    {
+      "from": "node-9",
+      "to": "node-11",
+      "type": "depends_on"
+    },
+    {
+      "from": "node-10",
+      "to": "node-12",
+      "type": "depends_on"
+    },
+    {
+      "from": "node-11",
+      "to": "node-12",
+      "type": "depends_on"
+    },
+    {
+      "from": "node-13",
+      "to": "node-14",
+      "type": "depends_on"
+    },
+    {
+      "from": "node-13",
+      "to": "node-15",
+      "type": "depends_on"
+    },
+    {
+      "from": "node-14",
+      "to": "node-16",
+      "type": "depends_on"
+    },
+    {
+      "from": "node-15",
+      "to": "node-16",
+      "type": "depends_on"
+    },
+    {
+      "from": "node-16",
+      "to": "node-17",
+      "type": "depends_on"
+    },
+    {
+      "from": "node-10",
+      "to": "node-18",
+      "type": "depends_on"
+    }
+  ],
+  "layers": {
+    "constitutional": {
+      "id": "node-1",
+      "name": "constitutional",
+      "type": "layer",
+      "description": "Foundational principles and governance",
+      "paths": [
+        "docs/APEX_AI_DPT_CONSTITUTION.md",
+        "docs/APEX_AI_DPT_VISION.md",
+        "docs/APEX_AI_DPT_TERMINOLOGY.md"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    "model": {
+      "id": "node-2",
+      "name": "model",
+      "type": "layer",
+      "description": "System models and architecture",
+      "paths": [
+        "docs/DPT_SYSTEM_MODEL.md",
+        "docs/DPT_EXECUTION_CONTROL_MODEL.md",
+        "docs/DPT_AUTHORITY_MODEL.md",
+        "docs/DPT_TASK_SYSTEM.md",
+        "docs/DPT_AGENT_ARCHITECTURE.md",
+        "docs/DPT_POOL_ARCHITECTURE.md"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    "governance": {
+      "id": "node-3",
+      "name": "governance",
+      "type": "layer",
+      "description": "Policy and enforcement rules",
+      "paths": [
+        "docs/governance/"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    "schemas": {
+      "id": "node-4",
+      "name": "schemas",
+      "type": "layer",
+      "description": "Machine-readable contracts",
+      "paths": [
+        "docs/schemas/"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    "contracts": {
+      "id": "node-5",
+      "name": "contracts",
+      "type": "layer",
+      "description": "Provider-neutral interface contracts",
+      "paths": [
+        "providers/contract/"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    "adapters": {
+      "id": "node-6",
+      "name": "adapters",
+      "type": "layer",
+      "description": "Provider implementations",
+      "paths": [
+        "providers/goose/",
+        "providers/opencode/",
+        "providers/reference/"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    "validation": {
+      "id": "node-7",
+      "name": "validation",
+      "type": "layer",
+      "description": "Test and verification evidence",
+      "paths": [
+        "docs/validation/"
+      ],
+      "dependencies": [],
+      "dependents": []
+    },
+    "task_state": {
+      "id": "node-8",
+      "name": "task_state",
+      "type": "layer",
+      "description": "Durable task ledger",
+      "paths": [
+        "docs/TASKS.md"
+      ],
+      "dependencies": [],
+      "dependents": []
+    }
+  }
+}

@@ -1,0 +1,16 @@
+import { createFreezeDecisionsRuntime } from './freeze-decisions-runtime.mjs';
+const assert = (c,n) => { if(c){console.log('  [PASS] '+n); return true;}else{console.log('  [FAIL] '+n); return false;} };
+let p=0,f=0; const a=(c,n)=>{if(assert(c,n))p++;else f++;};
+console.log('\n=== DPT-FOUNDATION-029: Freeze Decisions Runtime ===');
+const freeze = createFreezeDecisionsRuntime();
+freeze.recordEvidence({ area: 'transport', value: 'stdio', confidence: 0.85, source: 'v0-evidence' });
+freeze.recordEvidence({ area: 'persistence', value: 'json-file', confidence: 0.90, source: 'v0-evidence' });
+freeze.recordEvidence({ area: 'deployment', value: 'local-only', confidence: 0.75, source: 'v0-evidence' });
+const decisions = freeze.computeDecisions();
+a(decisions.transport?.value === 'stdio', 'Transport decision recorded');
+a(decisions.persistence?.value === 'json-file', 'Persistence decision recorded');
+a(decisions.deployment?.value === 'local-only', 'Deployment decision recorded');
+const state = freeze.freezeState();
+a(state.frozen === true, 'Freeze state computed');
+a(Object.keys(state.decisions).length === 3, 'All 3 decisions present');
+console.log('\nRESULTS: '+p+'/'+(p+f)+' PASS'); if(f>0){console.log('FAILURES'); process.exit(1);} else console.log('ALL PASS');

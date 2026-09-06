@@ -1,0 +1,18 @@
+import { GooseAdapter } from './goose-adapter.mjs';
+import { DOMAIN, AUTHORITY_MODE } from '../contract/provider-contract.mjs';
+import { join, resolve } from 'path';
+const assert = (c,n) => { if(c){console.log('  [PASS] '+n); return true;}else{console.log('  [FAIL] '+n); return false;} };
+let p=0,f=0; const a=(c,n)=>{if(assert(c,n))p++;else f++;};
+console.log('\n=== DPT-FOUNDATION-024: Agent Adapters Runtime ===');
+const REPO = resolve(process.cwd());
+const adapter = new GooseAdapter({ root_dir: REPO });
+const envelope = { envelope_id: 'E1', permissions: [{ domain: DOMAIN.FILESYSTEM, action: ['read','write'], resource: join(REPO,'docs/**'), authority_mode: AUTHORITY_MODE.AUTO_ALLOW }], status: 'ACTIVE' };
+adapter.registerEnvelope('T1', 'WO-1', envelope);
+const session_id = await adapter.createSession({ task_id: 'T1', work_order_id: 'WO-1' });
+a(session_id !== null, 'Session created');
+const result = await adapter.executeTool(session_id, { tool_name: 'write', params: { path: join(REPO, 'docs/test_audit_v1.json'), content: '{"test":true}' } });
+a(result.executed === true, 'Tool executed through gateway');
+a(result.status === 'EXECUTED', 'Status is EXECUTED');
+const audit = adapter.getAuditRecords(); a(audit.length > 0, 'Audit record created');
+const health = await adapter.health(); a(health.healthy === false, 'Adapter health checked');
+console.log('\nRESULTS: '+p+'/'+(p+f)+' PASS'); if(f>0){console.log('FAILURES'); process.exit(1);} else console.log('ALL PASS');
