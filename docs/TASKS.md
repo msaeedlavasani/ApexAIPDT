@@ -1276,7 +1276,7 @@ title: Governed Project Execution
 objective: Implement authority modes 0-5 operational with Human Gate enforcement for external project interactions.
 status: CLOSED
 dependencies: DPT-V3-SPINE-E2E
-readiness: READY (V3-SPINE-E2E CLOSED)
+readiness: READY (sequential: V3-SPINE-E2E → V3-006 CLOSED)
 task_class: external_integration_governance
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
@@ -1308,7 +1308,7 @@ title: Contribution Candidate → Independent Review → Pool Admission
 objective: Implement cross-project contribution pipeline with independent review gate.
 status: CLOSED
 dependencies: DPT-V3-006
-readiness: READY (V3-SPINE-E2E CLOSED)
+readiness: READY (sequential: V3-SPINE-E2E → V3-006 CLOSED)
 task_class: external_integration_contribution
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
@@ -1340,7 +1340,7 @@ title: Update Propagation via Reference Transport
 objective: Validate one reference transport for update propagation across projects.
 status: CLOSED
 dependencies: DPT-V3-007
-readiness: READY (V3-SPINE-E2E + V3-006 CLOSED)
+readiness: READY (sequential: V3-SPINE-E2E → V3-006 → V3-007 → V3-008 CLOSED)
 task_class: external_integration_propagation
 required_capabilities: repository.read, docs.write
 denied_capabilities: git.push, git.merge, production.*
