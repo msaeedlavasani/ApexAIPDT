@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Front Runtime + Gateway Boundary Schema",
+  "description": "Schema for Front agent instance and Gateway boundary service",
+  "type": "object",
+  "required": ["front_id", "gateway_id", "protocol_version"],
+  "properties": {
+    "front_id": {
+      "type": "string",
+      "description": "Front agent instance identifier",
+      "pattern": "^FRONT-[A-Z0-9]{8,}$"
+    },
+    "gateway_id": {
+      "type": "string",
+      "description": "Gateway service identifier",
+      "pattern": "^GW-[A-Z0-9]{8,}$"
+    },
+    "protocol_version": {
+      "type": "string",
+      "description": "DPT protocol version"
+    },
+    "front": {
+      "type": "object",
+      "description": "Front agent instance state",
+      "properties": {
+        "role": { "type": "string" },
+        "authority_bounds": { "type": "object" },
+        "project_bound_to": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "gateway": {
+      "type": "object",
+      "description": "Gateway boundary service state",
+      "properties": {
+        "enforcement_mode": { "type": "string", "enum": ["STRICT", "PERMISSIVE", "OBSERVE"] },
+        "allowed_operations": { "type": "array", "items": { "type": "string" } },
+        "blocked_operations": { "type": "array", "items": { "type": "string" } },
+        "active_since": { "type": "string", "format": "date-time" }
+      }
+    },
+    "boundaries": {
+      "type": "object",
+      "description": "Protocol boundaries enforced by gateway",
+      "properties": {
+        "max_context_size": { "type": "integer" },
+        "allowed_data_types": { "type": "array", "items": { "type": "string" } },
+        "privacy_threshold": { "type": "string" }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}

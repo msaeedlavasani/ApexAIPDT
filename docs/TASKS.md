@@ -1149,7 +1149,7 @@ auto_continue: YES
 task_id: DPT-V3-003
 title: Minimum-Sufficient Context Package
 objective: Implement bounded context package extraction validated against privacy boundaries. Context package contains only what is necessary for analysis; no over-exposure of external project state.
-status: READY
+status: CLOSED
 dependencies: DPT-V3-002
 readiness: NOT_READY (dependency DPT-V3-002 not CLOSED)
 task_class: external_integration_context
@@ -1180,9 +1180,9 @@ auto_continue: YES
 task_id: DPT-V3-004
 title: Front Runtime + Gateway Boundary Service
 objective: Implement Front runtime operating within gateway-enforced protocol boundary. Gateway is deterministic SERVICE enforcing protocol; Front is project-bound ROLE/AGENT_INSTANCE.
-status: BACKLOG
+status: READY
 dependencies: DPT-V3-003
-readiness: NOT_READY (dependency DPT-V3-003 not CLOSED)
+readiness: READY (V3-003 CLOSED)
 task_class: external_integration_gateway
 required_capabilities: repository.read, docs.write, javascript.runtime
 denied_capabilities: git.push, git.merge, production.*
