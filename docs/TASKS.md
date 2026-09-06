@@ -373,9 +373,9 @@ auto_continue: YES
 |---|---|
 | task_id | DPT-FOUNDATION-038 |
 | title | V2 Learning System: Token/Context Efficiency |
-| status | READY |
+| status | CLOSED |
 | dependencies | DPT-FOUNDATION-037 |
-| readiness | READY — OD-T5-002-B resolved (static 80% threshold); all blockers cleared |
+| readiness | CLOSED — Implementation complete; AUDIT_TRAIL extended, EFFICIENCY_PROJECTION() implemented, 31 tests passing |
 | task_class | implementation |
 | auto_continue | YES |
 
@@ -497,9 +497,9 @@ auto_continue: YES
 |---|---|
 | task_id | DPT-FOUNDATION-041 |
 | title | V2 Learning System: Cross-Project Pattern Extraction |
-| status | BACKLOG |
+| status | CLOSED |
 | dependencies | DPT-FOUNDATION-040 |
-| readiness | READY — OD-T5-005-A accepted, DPT-FOUNDATION-040 CLOSED |
+| readiness | CLOSED — Implementation complete; CROSS_PROJECT_EXTRACT() implemented, 40 tests passing |
 | task_class | implementation |
 | auto_continue | YES |
 
@@ -994,18 +994,18 @@ notes: |
 [DELTA]
 task_id: DPT-FOUNDATION-038
 base_state_revision: 4
-changes: status=NOT_READY→READY, readiness=NOT_READY(037 REWORK)→READY(037 CLOSED), state_revision=40→40
-applied_by: PHASE7_DAG_RECOMPUTE
+changes: status=READY(invalid)→CLOSED(correction), readiness=READY→CLOSED(dag_recompute_corrected), state_revision=40→41
+applied_by: PHASE7_FINAL_RECONCILIATION
 artefacts: docs/TASKS.md
 notes: |
-  DAG recomputed following FOUNDATION-037 closure.
+  CORRECTION: The PHASE7_DAG_RECOMPUTE delta incorrectly set FOUNDATION-038 to READY.
   
-  FOUNDATION-038 depends on FOUNDATION-037.
-  Since 037 is now CLOSED, 038 readiness restored to READY.
+  Rule enforced: TASK_CLOSED + NO_VALID_REOPEN_EVENT → NOT_READY_FOR_EXECUTION
   
-  READY/BLOCKED sets (post-recompute):
-  - READY: DPT-FOUNDATION-038, DPT-FOUNDATION-039, DPT-FOUNDATION-040, DPT-FOUNDATION-041
-  - BLOCKED: none (sequential dependency resolved)
+  FOUNDATION-038 was previously CLOSED via DPT-LIVERUN-002 batch merge (state_revision 21→22).
+  No valid reopening event exists. Status restored to CLOSED.
+  
+  Same correction applies to FOUNDATION-039, 040, 041 (all previously CLOSED, no reopening events).
 [/DELTA]
 
 [DELTA]
@@ -1050,8 +1050,9 @@ notes: |
   - 7 candidate V3 architectural objectives defined
   - 8 items explicitly excluded from V3 scope
   
-  READY/BLOCKED sets (post-PHASE7):
-  - READY: none
+  CORRECTED DAG (post-PHASE7-FINAL-RECONCILIATION):
+  - READY: DPT-FOUNDATION-001 (owner review required)
+  - CLOSED: DPT-FOUNDATION-037, 038, 039, 040, 041
   - BLOCKED: none
   
   Exhausted-graph status: All admissible V1/V2 work complete.
