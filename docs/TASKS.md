@@ -1082,7 +1082,7 @@ notes: |
 task_id: DPT-V3-001
 title: External Project Fixture + Identity/Trust Binding
 objective: Implement mechanism-neutral enrollment progression (Identity Establishment -> Authentication -> Trust Binding -> Gateway Admission) with external project fixture for V3 vertical-slice testing. Establishes Foundation-001 schemas for cross-project trust binding.
-status: RUNNING
+status: CLOSED
 dependencies: (none)
 readiness: READY (no dependencies, PRE_V3_READY passed)
 task_class: external_integration_foundation
@@ -1092,7 +1092,11 @@ human_gate_state: NONE
 passport_revision: 1
 canonical_artifact: docs/schemas/identity-trust.schema.json, providers/goose/identity-trust-binding.mjs, providers/goose/test-identity-trust-binding.mjs
 state_revision: 1
-next_task: DPT-V3-002
+next_task:
+| status: CLOSED | dependencies: (none) |
+| readiness: CLOSED — Implementation complete; identity-trust-binding.mjs + schema + 23 tests passing | task_class: external_integration_foundation |
+| canonical_artifact: docs/schemas/identity-trust.schema.json, providers/goose/identity-trust-binding.mjs, providers/goose/test-identity-trust-binding.mjs |
+| auto_continue: YES |
 auto_continue: YES
 [/TASK]
 ```
@@ -1114,7 +1118,7 @@ auto_continue: YES
 task_id: DPT-V3-002
 title: Scout + Project-Owned PI Runtime
 objective: Implement Scout component that discovers and binds to external project's Project Intelligence. Front agent instance projected FROM Scout-discovered PI; does not generate or own intelligence.
-status: BACKLOG
+status: READY
 dependencies: DPT-V3-001
 readiness: NOT_READY (dependency DPT-V3-001 not CLOSED)
 task_class: external_integration_scout
