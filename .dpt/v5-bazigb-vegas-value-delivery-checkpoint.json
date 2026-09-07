@@ -43,7 +43,8 @@
   },
   "value_measurement": {
     "project_value": "NOT_PROVEN",
-    "reason": "real server/UI gameplay path has not been executed end-to-end; implementation and contract proof are insufficient"
+    "gameplay_path": "NOT_EXECUTED",
+    "reason": "web build defect prevents full project runtime proof; Vegas package/server compile passed"
   },
   "supply_memory": {
     "state": "SUPPLY_MEMORY_ENTRY",
@@ -56,5 +57,29 @@
   },
   "mutation_status": "bounded source mutation performed only in legacy testbed; excluded repository untouched",
   "next_action": "complete dependency-available testbed integration build and bounded gameplay simulation, then independent value measurement; requires no new authority if within existing envelope but environment must permit validation",
-  "completed_at": "2026-09-07T11:58:02.200234Z"
+  "completed_at": "2026-09-07T11:58:02.200234Z",
+  "environment_reclassification": "RECOVERABLE_ENVIRONMENT_GAP",
+  "testbed_dependency_materialization": {
+    "package_manager": "npm",
+    "lockfile": "package-lock.json",
+    "command": "npm ci --ignore-scripts --no-audit --no-fund",
+    "metadata_unchanged": true,
+    "packages_materialized": 414,
+    "manifest_mutation": false,
+    "lockfile_mutation": false
+  },
+  "build": {
+    "engine": "PASS",
+    "game_packages": [
+      "tic-tac-toe PASS",
+      "chess PASS",
+      "backgammon PASS",
+      "vegas PASS"
+    ],
+    "server": "PASS",
+    "web": "FAIL",
+    "failure": "TypeError: (0 , a.unstable_createUseMediaQuery) is not a function during Next.js page data collection",
+    "classification": "PRE_EXISTING_TESTBED_DEPENDENCY_OR_BUILD_DEFECT; not a V5 Vegas regression"
+  },
+  "last_checkpoint": "2026-09-07T12:09:13.955756Z"
 }
