@@ -1,0 +1,53 @@
+{
+  "migration_id": "V5-CATAN-TRANSACTIONAL-AUTHORITY",
+  "state": "MIGRATION_IN_PROGRESS",
+  "target_repository": "msaeedlavasani/catan-online",
+  "authority": "AUTHORIZED_COORDINATED_MIGRATION_REQUIRED",
+  "stages": [
+    {
+      "id": "INVENTORY",
+      "status": "CLOSED",
+      "evidence": "authority paths inventoried"
+    },
+    {
+      "id": "STORE_CONTRACT",
+      "status": "CLOSED",
+      "evidence": "RoomStateStore contract and revision/conflict test added"
+    },
+    {
+      "id": "LIFECYCLE",
+      "status": "READY",
+      "depends_on": [
+        "STORE_CONTRACT"
+      ]
+    },
+    {
+      "id": "GAME_ACTIONS",
+      "status": "BLOCKED",
+      "depends_on": [
+        "LIFECYCLE"
+      ]
+    },
+    {
+      "id": "TEST_MIGRATION",
+      "status": "BLOCKED",
+      "depends_on": [
+        "GAME_ACTIONS"
+      ]
+    },
+    {
+      "id": "INDEPENDENT_PROOF",
+      "status": "BLOCKED",
+      "depends_on": [
+        "TEST_MIGRATION"
+      ]
+    }
+  ],
+  "invariants": [
+    "no final authority claim",
+    "ISS-005 remains OPEN",
+    "PROJECT_VALUE remains NOT_PROVEN",
+    "obsolete Map authority explicitly transitional"
+  ],
+  "last_checkpoint": "2026-09-07T19:02:27.299340Z"
+}
