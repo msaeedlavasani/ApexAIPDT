@@ -16,16 +16,14 @@
       "phase_closure"
     ],
     "attempts": 1,
-    "last_result": "Post-foundation reconciliation complete: internal foundation exit and bounded autonomous work generation proven; no canonical V4 scope or material internal gap. External write/full closed-loop remain blocked by unavailable authenticated boundary.",
+    "last_result": "Post-foundation reconciliation complete: internal foundation exit and bounded autonomous work generation proven; no canonical V4 scope or material internal gap. EXHAUSTED_GRAPH_WITH_NO_MATERIAL_GAP; external write/full closed-loop remain unproven.",
     "last_result_time": "2026-09-07T00:00:34.737563Z"
   },
   "queue": {
     "next_tasks": []
   },
   "blocked": {
-    "items": [
-      "REAL_EXTERNAL_WRITE_PATH requires authenticated external mutation authority; FULL_EXTERNAL_CLOSED_LOOP depends on it"
-    ]
+    "items": []
   },
   "state_revision": 59,
   "summary": {
