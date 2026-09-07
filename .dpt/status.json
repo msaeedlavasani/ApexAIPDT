@@ -1,10 +1,10 @@
 {
   "version": 1,
   "created_at": "2026-09-06T05:47:00Z",
-  "last_updated": "2026-09-07T22:24:56.635086Z",
+  "last_updated": "2026-09-07T22:28:27.240530Z",
   "execution": {
     "current_task": null,
-    "current_step": "rev93_incident_runtime_regression_proven",
+    "current_step": "rev95_admission_idle_deferred_gaps",
     "completed_steps": [
       "od_resolution",
       "task_status_update",
@@ -16,18 +16,19 @@
       "phase_closure"
     ],
     "attempts": 1,
-    "last_result": "Rev93 exhaustion incident repaired: task graph state is now separate from scope-qualified capability posture; 3/3 regression tests pass. No NO_MATERIAL_GAP claim permitted without full inventory reconciliation.",
-    "last_result_time": "2026-09-07T22:24:56.635086Z"
+    "last_result": "ADR-052 admission check complete across all non-satisfied inventory capabilities. No independent admissible material work survives; Catan and operational gaps depend on deferred decisions, UNPROVEN alone is not a gap.",
+    "last_result_time": "2026-09-07T22:28:27.240530Z"
   },
   "queue": {
     "next_tasks": []
   },
   "blocked": {
     "items": [
-      "Material gaps remain: Catan ISS-005 and broader unproven capabilities; coding substrate is deferred"
+      "Catan ISS-005 depends on deferred coding substrate selection",
+      "Operational deployment depends on Decision 26/deployment boundary"
     ]
   },
-  "state_revision": 95,
+  "state_revision": 96,
   "summary": {
     "total_tasks": 25,
     "open_tasks": 0,
