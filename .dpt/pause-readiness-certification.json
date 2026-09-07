@@ -1,39 +1,27 @@
 {
-  "certification_id": "DPT-PAUSE-READINESS-20260908",
-  "timestamp": "2026-09-07T22:43:59.965299Z",
-  "task_graph_state": "IDLE",
-  "capability_posture": "MATERIAL_GAPS_DEFERRED_OR_BLOCKED",
+  "certification_id": "DPT-PAUSE-READINESS-20260908-FINAL",
+  "timestamp": "2026-09-07T23:10:18.515222Z",
+  "development_completeness": "PASS",
+  "repository_integrity": "PASS",
+  "ci_fitness": "PASS",
   "safe_to_pause": true,
+  "dpt_state": "SAFE_IDLE_AWAITING_DEFERRED_DEPENDENCY",
   "checks": {
-    "no_ready_admitted_executable_work": true,
-    "no_independent_material_untasked_work": true,
-    "no_unresolved_executable_incident": true,
-    "no_independently_executable_project_checkpoint": true,
-    "remaining_material_gaps_deferred_or_blocked": true,
-    "v4_bounded_proof_preserved": true,
-    "catan_deferred_substrate_not_executed": true
-  },
-  "remaining_work_dependency_matrix": [
-    {
-      "item": "Catan ISS-005 authority migration",
-      "status": "DEFERRED",
-      "dependency": "coding substrate selection"
-    },
-    {
-      "item": "operational deployment evidence",
-      "status": "DEFERRED",
-      "dependency": "Decision 26/deployment boundary"
-    },
-    {
-      "item": "general external closed loop",
-      "status": "UNPROVEN_NON_MATERIAL",
-      "dependency": "new authorized objective/consumer"
-    },
-    {
-      "item": "V4 bounded external closed loop",
-      "status": "SATISFIED",
-      "dependency": null
-    }
-  ],
-  "dpt_state": "SAFE_IDLE_AWAITING_DEFERRED_DEPENDENCY"
+    "local_main_equals_origin_main": true,
+    "worktree_clean": true,
+    "ahead_behind_zero_zero": true,
+    "no_unpushed_canonical_work": true,
+    "no_uncommitted_work": true,
+    "no_unmerged_required_work": true,
+    "no_orphaned_interrupted_run_artifacts": true,
+    "no_stale_retirable_local_branches": true,
+    "no_stale_retirable_remote_branches": true,
+    "no_purposeless_preservation_branches": true,
+    "all_remaining_branches_intentional": true,
+    "no_stale_open_prs": true,
+    "current_ci_fitness": "PASS",
+    "current_required_ci": "PASS",
+    "ci_cannot_regress_canonical_state": true,
+    "durable_dpt_state_present_on_origin_main": true
+  }
 }
