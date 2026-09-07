@@ -5,6 +5,8 @@ export class ChildProcessExecutor {
   constructor({ cwd, command = process.execPath, args = [], timeoutMs = 120000 } = {}) { this.cwd = cwd; this.command = command; this.args = args; this.timeoutMs = timeoutMs; }
   prepare(workOrder, envelope) {
     if (!workOrder?.work_order_id || !envelope?.envelope_id) return { allowed: false, error: 'WORK_ORDER_OR_ENVELOPE_MISSING' };
+    if (envelope.allowed_paths && !Array.isArray(envelope.allowed_paths)) return { allowed: false, error: 'INVALID_ALLOWED_PATHS' };
+    if (envelope.denied_paths?.some(p => envelope.allowed_paths?.includes(p))) return { allowed: false, error: 'CONFLICTING_PATH_POLICY' };
     return { allowed: true, runtime_id: `child:${process.pid}:${randomUUID()}` };
   }
   execute(workOrder, envelope) {
