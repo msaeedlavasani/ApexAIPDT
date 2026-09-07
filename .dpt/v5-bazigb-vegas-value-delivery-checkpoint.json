@@ -81,7 +81,7 @@
     "failure": "TypeError: (0 , a.unstable_createUseMediaQuery) is not a function during Next.js page data collection",
     "classification": "PRE_EXISTING_TESTBED_DEPENDENCY_OR_BUILD_DEFECT; not a V5 Vegas regression"
   },
-  "last_checkpoint": "2026-09-07T12:42:16.197437Z",
+  "last_checkpoint": "2026-09-07T13:04:32.992815Z",
   "testbed_recovery": {
     "classification": "PRE_EXISTING_TESTBED_DEPENDENCY_OR_BUILD_DEFECT",
     "diagnosis": "package manifest declares @mui/material and @mui/icons-material ^5.15.0, but tracked package-lock apps/web workspace resolves both to 9.3.0; installed node_modules materializes MUI 9.3.0. MUI 9 runtime expects React 19-era exports and fails Next page collection with unstable_createUseMediaQuery mismatch under React 18/Emotion 11. This is a package-version/lockfile incompatibility, not a Vegas source defect.",
@@ -113,5 +113,16 @@
     "actual_repository_lock_repaired": false,
     "reason": "npm workspace lock regeneration continues to retain stale apps/web nested MUI 9 resolution; accepting generated diff would not yield a verified MUI5 lock and would include unrelated metadata churn",
     "required_next_boundary": "A lockfile-aware repair method that writes the complete MUI5 workspace resolution (or explicit authorization to use a clean lockfile regeneration tool/version) is required."
+  },
+  "lockfile_reconstruction": {
+    "status": "FAILED_ACCEPTANCE",
+    "isolated_candidate_mui_versions": {
+      "material": "5.18.0",
+      "icons": "5.18.0"
+    },
+    "candidate_complete_tree": false,
+    "candidate_ci_test": "not executed correctly because npm wrapper lost cwd; no acceptance claim",
+    "repository_lock_restored": true,
+    "reason": "An isolated candidate can identify MUI5 versions, but producing a valid workspace lockfile requires correct npm cwd/workspace metadata handling; the attempted candidate was not accepted or persisted."
   }
 }
