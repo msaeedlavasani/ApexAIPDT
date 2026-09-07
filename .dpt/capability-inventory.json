@@ -1,0 +1,14 @@
+{
+  "schema": "scope-qualified-capability-inventory-v1",
+  "capabilities": [
+    {"capability_id":"PERSISTENCE_FOUNDATION_INTERNAL_RUNTIME","scope":"internal","posture":"SATISFIED","evidence":"PERSISTENCE-FOUNDATION-E2E.json"},
+    {"capability_id":"AUTONOMOUS_ADMISSION_CONTINUATION","scope":"DPT runtime","posture":"SATISFIED","evidence":"test-live-admission-runtime.mjs"},
+    {"capability_id":"ADR052_BOUNDED_WORK_GENERATION","scope":"internal","posture":"SATISFIED","evidence":"test-autonomous-work-generation.mjs"},
+    {"capability_id":"ADR058_DETERMINISTIC_TRANSPORT","scope":"internal","posture":"SATISFIED","evidence":"test-adapter-conformance.mjs"},
+    {"capability_id":"V4_BOUNDED_EXTERNAL_CLOSED_LOOP","scope":"fixture repository","posture":"SATISFIED","evidence":"V4-COMPLETION.json"},
+    {"capability_id":"CATAN_ISS_005_TRANSACTIONAL_AUTHORITY","scope":"catan-online","posture":"MATERIAL_GAP_NOT_YET_TASKED","evidence":"catan-authority-migration-checkpoint.json"},
+    {"capability_id":"GENERAL_EXTERNAL_CLOSED_LOOP","scope":"ecosystem","posture":"UNPROVEN","evidence":"post-foundation-reconciliation.json"},
+    {"capability_id":"OPERATIONAL_DEPLOYMENT","scope":"external projects","posture":"UNPROVEN","evidence":"post-foundation-reconciliation.json"},
+    {"capability_id":"CODING_SUBSTRATE_SELECTION","scope":"provider/substrate","posture":"DEFERRED_DEPENDENCY","evidence":"ADR-058 substrate decoupling review"}
+  ]
+}
