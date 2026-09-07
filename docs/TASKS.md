@@ -1812,3 +1812,101 @@ notes: |
   PHASE COMPLETE: Persistence Foundation phase complete.
   Dependency graph satisfied: DURABLE_STATE → {LEASES || RETRY_CANCEL_REVOKE} → RECOVERY
 [/DELTA]
+
+## Phase: V4_PROVEN_REAL_PROJECT_VALUE_DELIVERY
+
+**Admission:** ADR-053; OWNER bounded admission 2026-09-07  
+**Fixture:** `msaeedlavasani/dpt-v3-e2e-fixture`  
+**Scope ceiling:** fixture repository; test artifacts/effects; reversible operations; no production; no unrelated repositories.  
+**V5 transition:** preserved; requires independently verified V4 completion.
+
+### DPT-V4-001 — Real Project Read and Compatibility Evidence
+
+```text
+[TASK]
+task_id: DPT-V4-001
+title: Real Project Read and Compatibility Evidence
+objective: Execute provenance-checked real-project read, bounded context transfer, and compatibility assessment against the admitted fixture.
+status: READY
+dependencies: (none)
+readiness: READY
+task_class: v4_external_value_delivery_read
+required_capabilities: repository.read, network.read, evidence.write, test.execution
+denied_capabilities: production.*, unrelated_repositories.*, external_write_without_envelope
+human_gate_state: NONE
+passport_revision: 1
+canonical_artifact: .dpt/e2e-verification/V4-001-real-project-read.json
+state_revision: 59
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-V4-002 — Authorized External Test Write and Readback
+
+```text
+[TASK]
+task_id: DPT-V4-002
+title: Authorized External Test Write and Readback
+objective: Perform one reversible test-artifact mutation in the admitted fixture and verify durable external readback.
+status: BACKLOG
+dependencies: DPT-V4-001
+readiness: NOT_READY
+task_class: v4_external_value_delivery_write
+required_capabilities: repository.read, repository.write, network.read, network.write, evidence.write, test.execution
+denied_capabilities: production.*, unrelated_repositories.*, irreversible_effects
+human_gate_state: EXTERNAL_WRITE_AUTHORITY_PROVISIONING_REQUIRED
+passport_revision: 1
+canonical_artifact: .dpt/e2e-verification/V4-002-external-write-readback.json
+state_revision: 59
+auto_continue: YES
+[/TASK]
+```
+
+### DPT-V4-003 — Independent V4 Verification and Capability Update
+
+```text
+[TASK]
+task_id: DPT-V4-003
+title: Independent V4 Verification and Capability Update
+objective: Independently verify the complete V4 read/write/readback slice and update evidence without promotion beyond observed boundary proof.
+status: BACKLOG
+dependencies: DPT-V4-002
+readiness: NOT_READY
+task_class: v4_independent_verification
+required_capabilities: repository.read, evidence.read, evidence.write, test.execution
+denied_capabilities: authority.expand, evidence.self_promote, production.*
+human_gate_state: NONE
+passport_revision: 1
+canonical_artifact: .dpt/e2e-verification/V4-COMPLETION.json
+state_revision: 59
+auto_continue: YES
+[/TASK]
+```
+
+[DELTA]
+task_id: DPT-V4-001
+base_state_revision: 59
+changes: status=BACKLOG→READY, state_revision=59→60
+applied_by: V4_ADMISSION_ADR053
+notes: OWNER admitted bounded V4 real-project value delivery. Read-only first step is authorized; external write remains separately gated.
+[/DELTA]
+
+[DELTA]
+task_id: DPT-V4-002
+base_state_revision: 59
+changes: status=BACKLOG→BLOCKED, state_revision=59→60
+applied_by: V4_ADMISSION_ADR053
+notes: Blocked pending EXTERNAL_WRITE_AUTHORITY_PROVISIONING_REQUIRED. No credentials were found in the current execution boundary.
+[/DELTA]
+
+
+[DELTA]
+task_id: DPT-V4-001
+base_state_revision: 60
+changes: status=READY→CLOSED, state_revision=60→61
+applied_by: V4-001_EXECUTION
+evidence_refs: .dpt/e2e-verification/V4-001-real-project-read.json
+notes: |
+  Real external read and compatibility assessment completed against the admitted fixture.
+  External read evidence proven; external write not attempted because no credentials are available.
+[/DELTA]

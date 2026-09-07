@@ -1,0 +1,36 @@
+{
+  "verification_id": "V4-001-REAL-PROJECT-READ",
+  "task_id": "DPT-V4-001",
+  "external_project": {
+    "full_name": "msaeedlavasani/dpt-v3-e2e-fixture",
+    "html_url": "https://github.com/msaeedlavasani/dpt-v3-e2e-fixture",
+    "external_to_apex": true
+  },
+  "boundary": {
+    "read": true,
+    "write": false
+  },
+  "observed_http": {
+    "calls": 6,
+    "endpoints": [
+      "/repos/msaeedlavasani/dpt-v3-e2e-fixture",
+      "/repos/msaeedlavasani/dpt-v3-e2e-fixture/git/trees/main?recursive=1",
+      "/repos/msaeedlavasani/dpt-v3-e2e-fixture/contents/README.md",
+      "/repos/msaeedlavasani/dpt-v3-e2e-fixture/contents/AGENTS.md",
+      "/repos/msaeedlavasani/dpt-v3-e2e-fixture/contents/ROADMAP.md"
+    ]
+  },
+  "observation": {
+    "file_count": 386,
+    "documentation_count": 220,
+    "content_bytes": 11808
+  },
+  "compatibility": {
+    "bounded_context_read": true,
+    "fixture_identity_verified": true,
+    "write_not_attempted": true
+  },
+  "evidence_classification": "EXTERNAL_READ",
+  "independent_verification_required": true,
+  "completed_at": "2026-09-07T00:14:13.628Z"
+}
