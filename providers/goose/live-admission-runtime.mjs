@@ -2,6 +2,8 @@
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { continueAutonomously, LoopOutcome } from './autonomous-admission-loop.mjs';
+import { projectCatanStages } from './catan-task-projection.mjs';
+import { createCatanExecutor } from './catan-work-order-executor.mjs';
 
 export function loadMigrationCheckpoint(path) { return JSON.parse(readFileSync(path, 'utf8')); }
 
@@ -9,21 +11,20 @@ export async function runLiveAdmission({ checkpointPath, storageDir = '.dpt/live
   mkdirSync(storageDir, { recursive: true });
   const checkpoint = loadMigrationCheckpoint(checkpointPath);
   if (checkpoint.state !== 'MIGRATION_IN_PROGRESS') return { outcome: checkpoint.state, checkpoint };
-  const tasks = checkpoint.stages.map((stage) => ({
-    task_id: `CATAN-${stage.id}`,
-    status: stage.status === 'CLOSED' ? 'CLOSED' : stage.status === 'READY' || stage.status === 'IN_PROGRESS' ? 'READY' : 'BACKLOG',
-    dependencies: (stage.depends_on || []).map((id) => `CATAN-${id}`),
-    human_gate: false,
-  }));
+  const tasks = projectCatanStages(checkpointPath);
+  const catanExecutor = createCatanExecutor({ repoRoot: '/Users/msl/Documents/GitHub/catan-online' });
   const result = await continueAutonomously({
     tasks, storageDir, failureInjection,
     execute: async (task) => {
       const stage = checkpoint.stages.find((s) => `CATAN-${s.id}` === task.task_id);
+      const result = await catanExecutor.executeStage(stage);
+      if (!result.success) return result;
+      if (!result.effects_verified) return { success: false, error: 'EFFECT_VERIFICATION_REQUIRED', attempt_id: result.attempt_id, runtime_id: result.runtime_id };
       stage.status = 'CLOSED';
-      stage.evidence = `live runtime executor completed ${task.task_id}`;
+      stage.evidence = `Work Order ${result.attempt_id} executed and independently verified`;
       checkpoint.last_checkpoint = new Date().toISOString();
       writeFileSync(checkpointPath, JSON.stringify(checkpoint, null, 2) + '\n');
-      return { success: true };
+      return result;
     },
   }, { maxAttempts });
   const remaining = checkpoint.stages.some((s) => s.status === 'READY' || s.status === 'IN_PROGRESS');
