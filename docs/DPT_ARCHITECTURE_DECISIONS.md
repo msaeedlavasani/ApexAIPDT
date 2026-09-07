@@ -3851,3 +3851,23 @@ Each parameter: configurable, not canonical constant. Future revision tracked vi
 ### Closes
 
 - Section 25 (API monetization) — replaced with this decision
+
+## ADR-053 — V4 Proven Real-Project Value Delivery Admission
+
+**Status:** ADMITTED — 2026-09-07  
+**Authority:** OWNER bounded admission for `msaeedlavasani/dpt-v3-e2e-fixture` only.  
+**Scope:** Test artifacts/effects only; reversible operations only; no production; no unrelated repositories.  
+**V5 transition:** Preserved but exercisable only after independently verified V4 completion.
+
+V4 is admitted as a bounded real-project value-delivery slice, not as a general V4 implementation mandate. The slice is:
+
+```text
+PROVENANCE_CHECK
+→ REAL_PROJECT_READ / COMPATIBILITY
+→ AUTHORIZED_EXTERNAL_WRITE
+→ EXTERNAL_READBACK
+→ INDEPENDENT_VERIFICATION
+→ CAPABILITY / EVIDENCE UPDATE
+```
+
+External write requires an explicit derived permission envelope and credentials. Missing credentials produce `GENUINE_HUMAN_GATE = EXTERNAL_WRITE_AUTHORITY_PROVISIONING_REQUIRED`; they do not justify synthetic evidence or V4 closure. No phase, architecture, public-contract, packaging, or V6+ work may be created under this admission.
