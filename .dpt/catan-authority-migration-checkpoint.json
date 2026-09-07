@@ -16,11 +16,11 @@
     },
     {
       "id": "LIFECYCLE",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "depends_on": [
         "STORE_CONTRACT"
       ],
-      "evidence": "NOT_CLOSED: prior live callback only mutated checkpoint; no target-repository effect/readback"
+      "evidence": "Work Order/Permission Envelope executor binding implemented and contract-tested; repository-effect migration still pending"
     },
     {
       "id": "GAME_ACTIONS",
@@ -53,7 +53,7 @@
     "PROJECT_VALUE remains NOT_PROVEN",
     "obsolete Map authority explicitly transitional"
   ],
-  "last_checkpoint": "2026-09-07T20:45:51.939270Z",
+  "last_checkpoint": "2026-09-07T20:56:13.313308Z",
   "observed": {
     "authoritative_bypasses": [
       "server/src/index.js broadcast reads rooms Map",
@@ -84,10 +84,12 @@
     "iss_005": "OPEN"
   },
   "executor_contract": {
-    "status": "PROVEN_BLOCKER",
-    "required": "real target-repository Work Order executor with Permission Envelope, effect capture, readback, independent validation",
-    "actual": "checkpoint-only callback",
-    "false_closure_rejected": true
+    "status": "IMPLEMENTED",
+    "work_order_executor": "providers/goose/catan-work-order-executor.mjs",
+    "transport": "bounded child process",
+    "contract_tests": 3,
+    "repository_effect_verification": "PENDING",
+    "stage_closure_allowed": false
   },
   "executor_binding": {
     "adr": "ADR-058",
