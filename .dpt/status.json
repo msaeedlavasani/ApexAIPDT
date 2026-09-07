@@ -1,10 +1,10 @@
 {
   "version": 1,
   "created_at": "2026-09-06T05:47:00Z",
-  "last_updated": "2026-09-07T20:56:13.313308Z",
+  "last_updated": "2026-09-07T21:01:52.817172Z",
   "execution": {
     "current_task": null,
-    "current_step": "catan_executor_binding_implemented_repository_effect_pending",
+    "current_step": "catan_live_admission_wiring_defect_diagnosed",
     "completed_steps": [
       "od_resolution",
       "task_status_update",
@@ -16,18 +16,18 @@
       "phase_closure"
     ],
     "attempts": 1,
-    "last_result": "Catan Work Order executor binding implemented and 3 tests pass. It now creates bounded Work Orders and Permission Envelopes through the child transport; no stage closure claimed until actual Catan repository effects/readback/independent verification occur.",
-    "last_result_time": "2026-09-07T20:56:13.313308Z"
+    "last_result": "Revision 89 stall diagnosed: canonical backlog runtime reads TASKS.md/status queue, while Catan migration checkpoint is not registered as a task source. live-admission-runtime has no canonical caller; no manual Catan resume performed.",
+    "last_result_time": "2026-09-07T21:01:52.817172Z"
   },
   "queue": {
     "next_tasks": []
   },
   "blocked": {
     "items": [
-      "Execute actual authorized Catan lifecycle migration through bound Work Order and capture repository effects/readback"
+      "Wire Catan migration checkpoint into canonical backlog DAG and bind real Work Order executor/effect verifier; checkpoint-only closure prohibited"
     ]
   },
-  "state_revision": 89,
+  "state_revision": 90,
   "summary": {
     "total_tasks": 25,
     "open_tasks": 0,

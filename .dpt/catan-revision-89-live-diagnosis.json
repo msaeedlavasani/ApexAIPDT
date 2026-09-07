@@ -1,0 +1,32 @@
+{
+  "diagnosis_id": "V5-CATAN-REVISION-89-STALL",
+  "classification": "AUTONOMOUS_ADMISSION_FAILURE",
+  "root_cause": "The canonical backlog-driven runtime has no registration/adapter from catan-authority-migration-checkpoint.json into its DAG/task source. status.json queue is empty and dpt-bootstrap loads docs/TASKS.md, not the migration checkpoint. The live-admission-runtime is only an independently invokable helper; it is not a caller of the canonical backlog runtime. Additionally its executor callback only writes the checkpoint, so it cannot be used as real work execution.",
+  "observed_chain": {
+    "canonical_entrypoint": "providers/goose/dpt-bootstrap.mjs",
+    "task_source": "docs/TASKS.md",
+    "queue": "status.json execution.queue.next_tasks = []",
+    "migration_checkpoint": ".dpt/catan-authority-migration-checkpoint.json",
+    "migration_state": "MIGRATION_IN_PROGRESS / LIFECYCLE READY",
+    "live_runtime": "providers/goose/live-admission-runtime.mjs",
+    "live_callers": [
+      "providers/goose/test-live-admission-runtime.mjs",
+      "direct CLI only"
+    ],
+    "catan_executor": "providers/goose/catan-work-order-executor.mjs",
+    "canonical_bootstrap_imports_live_runtime": false
+  },
+  "divergence_point": "After Revision 89 checkpoint, control returned to the canonical backlog runtime, whose task graph had no Catan migration task. No DAG READY selection occurred, so no Work Order admission or executor dispatch occurred. The live runtime helper was never invoked by the canonical entrypoint.",
+  "falsification": {
+    "A_wrapper_only": true,
+    "B_return_before_trigger": true,
+    "C_external_invocation_required": true,
+    "D_checkpoint_not_wired": true,
+    "E_ready_executor_absent": true,
+    "F_other_boundary": "canonical bootstrap has no migration-stage source"
+  },
+  "required_repair": "Register the migration checkpoint as a canonical durable task source and add a single live entrypoint adapter that reconstructs stages into Work Orders. The adapter must dispatch catan-work-order-executor, collect repository effects, independently verify them, and only then close the stage. It must not use checkpoint mutation as execution evidence.",
+  "manual_resume_performed": false,
+  "catan_mutated": false,
+  "completed_at": "2026-09-07T21:01:52.817172Z"
+}
