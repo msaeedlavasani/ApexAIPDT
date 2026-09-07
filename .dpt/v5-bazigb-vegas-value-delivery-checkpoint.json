@@ -81,5 +81,23 @@
     "failure": "TypeError: (0 , a.unstable_createUseMediaQuery) is not a function during Next.js page data collection",
     "classification": "PRE_EXISTING_TESTBED_DEPENDENCY_OR_BUILD_DEFECT; not a V5 Vegas regression"
   },
-  "last_checkpoint": "2026-09-07T12:09:13.955756Z"
+  "last_checkpoint": "2026-09-07T12:31:34.857446Z",
+  "testbed_recovery": {
+    "classification": "PRE_EXISTING_TESTBED_DEPENDENCY_OR_BUILD_DEFECT",
+    "diagnosis": "package manifest declares @mui/material and @mui/icons-material ^5.15.0, but tracked package-lock apps/web workspace resolves both to 9.3.0; installed node_modules materializes MUI 9.3.0. MUI 9 runtime expects React 19-era exports and fails Next page collection with unstable_createUseMediaQuery mismatch under React 18/Emotion 11. This is a package-version/lockfile incompatibility, not a Vegas source defect.",
+    "declared_versions": {
+      "@mui/material": "^5.15.0",
+      "@mui/icons-material": "^5.15.0",
+      "react": "^18.0.0",
+      "next": "14.2.33"
+    },
+    "locked_versions": {
+      "@mui/material": "9.3.0",
+      "@mui/icons-material": "9.3.0",
+      "react": "18.3.1"
+    },
+    "attempted_recovery": "npm ci preserved tracked metadata; compile passed through server; web failed. npm lock regeneration showed stale workspace resolution and would require package-lock correction.",
+    "metadata_restored": true,
+    "required_additional_boundary": "Authorize correction of the tracked package-lock.json to resolve MUI 5 versions matching apps/web/package.json, then npm ci and full build. No package.json change is required; exact lockfile correction must be reviewed before mutation."
+  }
 }
