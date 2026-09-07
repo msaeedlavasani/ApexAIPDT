@@ -1,0 +1,16 @@
+{
+  "request_id": "REQ-V5-BAZIGB-20260907",
+  "project": "BaziGB",
+  "needs": [
+    "chess-ai",
+    "vegas-ai-difficulty",
+    "gateway-error-contract",
+    "redis-global-scaling"
+  ],
+  "source_policy": "public-sources-reference-first",
+  "project_mutation_authorized": false,
+  "pool_lookup": "MISS",
+  "supply_memory_lookup": "MISS",
+  "status": "TARGETED_EXTERNAL_SOURCING",
+  "created_at": "2026-09-07T11:30:18.560630Z"
+}
