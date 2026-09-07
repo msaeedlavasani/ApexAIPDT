@@ -16,35 +16,35 @@
     },
     {
       "id": "LIFECYCLE",
-      "status": "CLOSED",
+      "status": "READY",
       "depends_on": [
         "STORE_CONTRACT"
       ],
-      "evidence": "live runtime executor completed CATAN-LIFECYCLE"
+      "evidence": "NOT_CLOSED: prior live callback only mutated checkpoint; no target-repository effect/readback"
     },
     {
       "id": "GAME_ACTIONS",
-      "status": "CLOSED",
+      "status": "BLOCKED",
       "depends_on": [
         "LIFECYCLE"
       ],
-      "evidence": "live runtime executor completed CATAN-GAME_ACTIONS"
+      "evidence": "NOT_CLOSED: prior live callback only mutated checkpoint; no target-repository effect/readback"
     },
     {
       "id": "TEST_MIGRATION",
-      "status": "CLOSED",
+      "status": "BLOCKED",
       "depends_on": [
         "GAME_ACTIONS"
       ],
-      "evidence": "live runtime executor completed CATAN-TEST_MIGRATION"
+      "evidence": "NOT_CLOSED: prior live callback only mutated checkpoint; no target-repository effect/readback"
     },
     {
       "id": "INDEPENDENT_PROOF",
-      "status": "CLOSED",
+      "status": "BLOCKED",
       "depends_on": [
         "TEST_MIGRATION"
       ],
-      "evidence": "live runtime executor completed CATAN-INDEPENDENT_PROOF"
+      "evidence": "NOT_CLOSED: prior live callback only mutated checkpoint; no target-repository effect/readback"
     }
   ],
   "invariants": [
@@ -53,7 +53,7 @@
     "PROJECT_VALUE remains NOT_PROVEN",
     "obsolete Map authority explicitly transitional"
   ],
-  "last_checkpoint": "2026-09-07T19:55:14.180963Z",
+  "last_checkpoint": "2026-09-07T20:09:54.512521Z",
   "observed": {
     "authoritative_bypasses": [
       "server/src/index.js broadcast reads rooms Map",
@@ -72,7 +72,7 @@
     "tests": 10
   },
   "runtime_owner": "live-admission-runtime",
-  "last_outcome": "EXHAUSTED_GRAPH",
+  "last_outcome": "EXECUTOR_INTEGRATION_DEFECT",
   "live_acceptance": {
     "entrypoint": "providers/goose/live-admission-runtime.mjs",
     "test": "providers/goose/test-live-admission-runtime.mjs",
@@ -82,5 +82,11 @@
     "authority_migration_complete": false,
     "project_value": "NOT_PROVEN",
     "iss_005": "OPEN"
+  },
+  "executor_contract": {
+    "status": "PROVEN_BLOCKER",
+    "required": "real target-repository Work Order executor with Permission Envelope, effect capture, readback, independent validation",
+    "actual": "checkpoint-only callback",
+    "false_closure_rejected": true
   }
 }
