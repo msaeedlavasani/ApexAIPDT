@@ -1,10 +1,10 @@
 {
   "version": 1,
   "created_at": "2026-09-06T05:47:00Z",
-  "last_updated": "2026-09-07T22:13:52.932010Z",
+  "last_updated": "2026-09-07T22:24:56.635086Z",
   "execution": {
     "current_task": null,
-    "current_step": "capability_reconciliation_idle_deferred_dependencies",
+    "current_step": "rev93_incident_runtime_regression_proven",
     "completed_steps": [
       "od_resolution",
       "task_status_update",
@@ -16,19 +16,18 @@
       "phase_closure"
     ],
     "attempts": 1,
-    "last_result": "Revision 93 capability reconciliation complete: no READY tasks; material gaps remain (Catan ISS-005 and full external closed loop), but current executable paths are deferred by substrate/project-boundary dependencies. No work invented or admitted.",
-    "last_result_time": "2026-09-07T22:13:52.932010Z"
+    "last_result": "Rev93 exhaustion incident repaired: task graph state is now separate from scope-qualified capability posture; 3/3 regression tests pass. No NO_MATERIAL_GAP claim permitted without full inventory reconciliation.",
+    "last_result_time": "2026-09-07T22:24:56.635086Z"
   },
   "queue": {
     "next_tasks": []
   },
   "blocked": {
     "items": [
-      "Catan ISS-005 depends on deferred coding-substrate selection",
-      "full external closed-loop proof lacks a uniquely authorized consumer/candidate"
+      "Material gaps remain: Catan ISS-005 and broader unproven capabilities; coding substrate is deferred"
     ]
   },
-  "state_revision": 94,
+  "state_revision": 95,
   "summary": {
     "total_tasks": 25,
     "open_tasks": 0,
