@@ -1,0 +1,23 @@
+{
+  "incident_id": "REV104-PRE-PAUSE-REPOSITORY-INTEGRITY",
+  "timestamp": "2026-09-07T22:51:42.200346Z",
+  "root_cause": "Pause certification inspected DPT capability/task evidence but did not verify Git remote ancestry, worktree cleanliness, unpushed commits, branch/PR state, or required CI. Local durable completion was mistaken for remote durable completion.",
+  "local_main": "80673a1e12fab48f1ef433c57dc564312ee323c2",
+  "origin_main_before": "9dead1bb33c63a849fd0256c081dd6179dd7622a",
+  "ahead_commits": 56,
+  "uncommitted": [
+    "providers/goose/autonomous-handoff.mjs",
+    "providers/goose/test-autonomous-handoff.mjs"
+  ],
+  "remote_branch_count": 20,
+  "required_ci": [
+    "Repository Integrity",
+    "Canonical Governance",
+    "Schema Validation",
+    "Deterministic Runtime",
+    "Provider Contracts",
+    "Orchestrator Smoke Test"
+  ],
+  "classification": "OPEN_RECONCILIATION",
+  "required_outcome": "LOCAL_MAIN == ORIGIN_MAIN; clean worktree; no unpushed canonical work; all remaining branches intentional; required CI pass"
+}

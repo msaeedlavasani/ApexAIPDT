@@ -1,0 +1,77 @@
+{
+  "review_id": "V5-POOL-PROJECT-CANDIDATE-RECONCILIATION-2026-09-07",
+  "timestamp": "2026-09-07T00:23:06.306821Z",
+  "objective": "POOL_TO_PROJECT_REUSABLE_VALUE",
+  "status": "PROVEN_BLOCKER",
+  "owner_objective_selection": "V5 \u2014 POOL \u2192 PROJECT REUSABLE VALUE",
+  "candidate_derivation": {
+    "pool_source": "docs/asset-registry.json",
+    "asset_count": 203,
+    "project_source": "msaeedlavasani/dpt-v3-e2e-fixture",
+    "project_read_evidence": ".dpt/e2e-verification/V4-COMPLETION.json",
+    "method": "read-only durable registry and real-project evidence reconciliation"
+  },
+  "candidate_pairs": [
+    {
+      "pair_id": "PAIR-001",
+      "asset": "workflows/VALIDATION_GATES.md",
+      "asset_class": "POOL_TEMPLATE_OR_WORKFLOW_CANDIDATE",
+      "project": "msaeedlavasani/dpt-v3-e2e-fixture",
+      "status": "REJECTED",
+      "reasons": [
+        "fixture-only adoption cannot establish reusable value",
+        "fixture already presents DPT workflow/validation capability; duplication risk",
+        "no independent project need/value baseline",
+        "no non-fixture reuse evidence"
+      ]
+    },
+    {
+      "pair_id": "PAIR-002",
+      "asset": "workflows/FEATURE_DEVELOPMENT.md",
+      "asset_class": "POOL_TEMPLATE_OR_WORKFLOW_CANDIDATE",
+      "project": "msaeedlavasani/dpt-v3-e2e-fixture",
+      "status": "REJECTED",
+      "reasons": [
+        "fixture-only adoption",
+        "project already documents mature DPT workflow capability",
+        "artificial fit not falsified in favor of adoption",
+        "value measurement would be confounded"
+      ]
+    },
+    {
+      "pair_id": "PAIR-003",
+      "asset": "docs/schemas/task-record.schema.json",
+      "asset_class": "POOL_SCHEMA_CANDIDATE",
+      "project": "msaeedlavasani/dpt-v3-e2e-fixture",
+      "status": "REJECTED",
+      "reasons": [
+        "fixture is itself DPT architecture validation context",
+        "likely duplication of existing project contract",
+        "no distinct project need established",
+        "adoption would test mechanics rather than reusable value"
+      ]
+    }
+  ],
+  "falsification_summary": {
+    "artificial_fit": "all derived pairs fail or remain unproven",
+    "fixture_only_value": "all available pairs fail this condition",
+    "duplication": "likely for all candidates; project documents equivalent DPT capabilities",
+    "project_specific_behavior": "not enough independent project evidence",
+    "verifiable_value": "no uncontaminated baseline/value metric available",
+    "integration_scope": "bounded technically, but value claim remains invalid"
+  },
+  "surviving_candidates": [],
+  "tasks_created": [],
+  "tasks_rejected_by_falsification": [],
+  "gap_exists": true,
+  "gap_statement": "POOL_TO_PROJECT_REUSABLE_VALUE remains unproven.",
+  "implementation_currently_authorized": false,
+  "blocker": "No qualifying non-fixture real project and no durable project-need/value baseline are available. The V3 fixture is authorized for mechanics/preflight only.",
+  "human_gate": {
+    "required": true,
+    "reason": "A real non-fixture project/asset pair or an explicit Owner-approved exception to the fixture-only prohibition is required. Existing authority does not select a project or create a value baseline."
+  },
+  "v6_or_later_created": false,
+  "canonical_v5_scope_created": false,
+  "next_action": "GENUINE_HUMAN_GATE: provide or authorize a qualifying non-fixture project and bounded adoption target; do not mutate the fixture for value adoption."
+}

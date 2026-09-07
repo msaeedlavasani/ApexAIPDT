@@ -1,0 +1,31 @@
+{
+  "verification_id": "V4-002-EXTERNAL-WRITE-READBACK",
+  "task_id": "DPT-V4-002",
+  "external_project": "msaeedlavasani/dpt-v3-e2e-fixture",
+  "permission_envelope_ref": ".dpt/v4-permission-envelope.json",
+  "credential_material_persisted": false,
+  "observed_boundary": "EXTERNAL_WRITE",
+  "operation": {
+    "type": "create_then_close_test_issue",
+    "issue_number": 1,
+    "title": "[DPT-V4-002 TEST] bounded reversible fixture write 20260907T001726Z",
+    "url": "https://github.com/msaeedlavasani/dpt-v3-e2e-fixture/issues/1",
+    "reversible": true
+  },
+  "preflight": {
+    "authenticated_identity_verified": true,
+    "repository_scope_verified": true,
+    "push_permission_verified": true,
+    "production_scope": false,
+    "unrelated_repository_scope": false
+  },
+  "durable_acknowledgement": {
+    "create_response_observed": true,
+    "open_readback_observed": true,
+    "close_response_observed": true,
+    "final_readback_state": "closed"
+  },
+  "evidence_classification": "EXTERNAL_WRITE",
+  "independent_readback_required": true,
+  "completed_at": "2026-09-07T00:18:00.166728Z"
+}

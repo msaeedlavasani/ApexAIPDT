@@ -3851,3 +3851,108 @@ Each parameter: configurable, not canonical constant. Future revision tracked vi
 ### Closes
 
 - Section 25 (API monetization) — replaced with this decision
+
+## ADR-053 — V4 Proven Real-Project Value Delivery Admission
+
+**Status:** ADMITTED — 2026-09-07  
+**Authority:** OWNER bounded admission for `msaeedlavasani/dpt-v3-e2e-fixture` only.  
+**Scope:** Test artifacts/effects only; reversible operations only; no production; no unrelated repositories.  
+**V5 transition:** Preserved but exercisable only after independently verified V4 completion.
+
+V4 is admitted as a bounded real-project value-delivery slice, not as a general V4 implementation mandate. The slice is:
+
+```text
+PROVENANCE_CHECK
+→ REAL_PROJECT_READ / COMPATIBILITY
+→ AUTHORIZED_EXTERNAL_WRITE
+→ EXTERNAL_READBACK
+→ INDEPENDENT_VERIFICATION
+→ CAPABILITY / EVIDENCE UPDATE
+```
+
+External write requires an explicit derived permission envelope and credentials. Missing credentials produce `GENUINE_HUMAN_GATE = EXTERNAL_WRITE_AUTHORITY_PROVISIONING_REQUIRED`; they do not justify synthetic evidence or V4 closure. No phase, architecture, public-contract, packaging, or V6+ work may be created under this admission.
+
+## ADR-055 — Pool Supply Governance Evolution (Prerequisite to V5)
+
+**Status:** ACCEPTED — 2026-09-07  
+**Relationship:** Prerequisite to V5 `POOL → PROJECT REUSABLE VALUE`; not a new Foundation or version.  
+**Evolution:** Append-only reconciliation of ADR-049. ADR-049's typed Pools, lifecycle, validation tiers, compatibility dimensions, and Pool ≠ Project Intelligence invariant remain valid. This decision adds the supply-side entity and qualification distinctions.
+
+### Canonical entities
+
+```text
+CANDIDATE / INVENTORY ≠ QUALIFIED_REUSABLE_ASSET ≠ CONSUMABLE_POOL_ENTRY
+```
+
+A Candidate records an observed or proposed source. A Qualified Reusable Asset has passed the common qualification contract. A Consumable Pool Entry is an admitted, versioned, policy-scoped projection of a qualified asset. No lower layer is consumable by implication.
+
+### Origins and architecture
+
+Supply origins are `DPT_PRODUCED`, `PROJECT_CONTRIBUTION`, and `EXTERNAL_ECOSYSTEM`. The architecture is federated Source Adapters → deterministic Supply Service → cognitive Scout/Curator → independent Falsifier/Reviewer → deterministic Admission Controller. No monolithic authority-bearing Source Agent exists. Discovery and curation cannot finalize qualification; qualification cannot grant project adoption authority.
+
+### Acquisition outcomes
+
+`REFERENCE`, `DEPENDENCY`, `ADAPTER_WRAPPER`, `EXTRACTED_PATTERN`, `REUSABLE_COMPONENT_MODULE`, `SKILL_WORKFLOW`, `KNOWLEDGE_EVIDENCE`, and `REJECT` are distinct outcomes. External discovery defaults to `REFERENCE`. License or provenance ambiguity is `NO_COPY → REFERENCE_ONLY`.
+
+### Common qualification contract
+
+Every qualified asset records stable identity, origin, provenance, license, security/supply-chain status, maintenance health, compatibility, reusability rationale, qualification evidence, maintainer responsibility, version/update lineage, and deprecation semantics. Consumer demand may prioritize investigation but cannot prove reusability. `POOL_PUBLICATION ≠ PROJECT_VALUE_PROVEN`; value requires baseline → bounded consumption → independent project validation → measurable outcome.
+
+### Typed semantics and maintenance
+
+Typed Pools are preserved. Consumable capability Pools are distinct from Reference, Dependency, Evidence/Knowledge, and Source catalogs. Upstream changes create a new qualification revision; published entries never silently mutate. Deprecation preserves lineage, reason, impact, migration guidance, and authority-impact evaluation. Pool publication does not inherit or grant project execution authority.
+
+### Durable control
+
+Candidate, qualification, publication, and version identities are durable idempotency keys. Recovery and repeated discovery reconcile by identity and evidence digest; equivalent records cannot create duplicate consumable entries.
+
+## ADR-056 — Request-Driven Capability Supply and Supply Resolution Memory
+
+**Status:** ACCEPTED — 2026-09-07  
+**Relationship:** Append-only evolution of ADR-049 and ADR-055; prerequisite to V5.  
+**V5 objective:** `REQUEST → BEST AVAILABLE SUPPLY → PROJECT VALUE`.
+
+### Pool role
+
+The Pool is a curated qualified reusable capability cache/catalog, not the complete universe of capabilities DPT can supply. It remains typed, versioned, audit-chained, capability-routed, and distinct from Project Intelligence.
+
+### Canonical resolution order
+
+```text
+PROJECT_NEED → CAPABILITY_REQUEST → REQUIREMENT_NORMALIZATION
+→ POOL_LOOKUP → SUPPLY_MEMORY_LOOKUP → TARGETED_EXTERNAL_SOURCING
+→ QUALIFIED_PROJECT_SUPPLY → BOUNDED_ADOPTION → INDEPENDENT_VALUE_MEASUREMENT
+```
+
+A Pool hit uses the qualified Pool path. A Pool miss with a fresh Supply Memory hit does not automatically repeat discovery; it verifies freshness, re-evaluates current compatibility, and requalifies if license, security, or source state changed. Only a Pool and Memory miss permits targeted external sourcing.
+
+### Supply Resolution Memory
+
+Supply Resolution Memory is a distinct durable evidence store, not a Pool, Project Intelligence, consumable catalog, or reusability proof. It stores the minimum generalized non-sensitive evidence needed to avoid unnecessary discovery: normalized request signature, source/candidate identity, acquisition outcome, provenance, immutable source/version reference, license/security assessment, compatibility observations, qualification history, project-consumption outcome classification, freshness/expiry, supersession lineage, and accumulated reuse evidence. Raw project context remains project-owned by default.
+
+`SUPPLY_MEMORY_ENTRY ≠ POOL_CANDIDATE`. Repeated requests and successful consumption accumulate reuse evidence but do not alone prove reusability.
+
+### Qualification levels
+
+```text
+PROJECT_COMPATIBLE
+→ QUALIFIED_FOR_BOUNDED_CONSUMPTION
+→ CROSS_PROJECT_REUSABLE
+→ POOL_ADMISSIBLE
+```
+
+These are distinct claims. Project compatibility and bounded-consumption qualification do not establish cross-project reuse. Pool admission requires intrinsic value and reusability proof, independent qualification, complete provenance, license/security/maintenance checks, and ADR-055 admission controls.
+
+### Project-only supply and promotion
+
+A qualified external or DPT-produced capability may be supplied to one project without Pool publication. A successful project-only consumption normally creates or updates Supply Memory, but consumer success is evidence rather than self-certification. Promotion is:
+
+```text
+SUPPLY_MEMORY → POOL_PROMOTION_CANDIDATE → INDEPENDENT_QUALIFICATION → ADR-055 ADMISSION → CONSUMABLE_POOL_ENTRY
+```
+
+only when `INTRINSIC_VALUE = PROVEN` and `REUSABILITY = PROVEN`.
+
+### Proactive supply and Supply Scout
+
+Request-driven supply is primary. Proactive sourcing is permitted for security intelligence, Pitfalls/failure intelligence, standards changes, and strongly evidenced cross-project opportunities. Supply Scout is a bounded cognitive discovery role; it cannot qualify, publish, grant authority, or certify its own result. Deterministic services enforce adapters, provenance, policy, deduplication, freshness, and auditability.

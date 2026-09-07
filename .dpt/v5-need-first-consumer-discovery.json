@@ -1,0 +1,64 @@
+{
+  "review_id": "V5-NEED-FIRST-CONSUMER-DISCOVERY-20260907",
+  "status": "SELECTED_PENDING_ADOPTION_AUTHORITY",
+  "excluded_repositories": [
+    "msaeedlavasani/BaziGB-modular-architecture",
+    "msaeedlavasani/Apex-Home-Fitness"
+  ],
+  "candidates": [
+    {
+      "project": "msaeedlavasani/Apex-AHF-Orchestrator-Testbed",
+      "result": "REJECTED",
+      "reason": "NO_MATERIAL_GAP: AI generation/fallback already implemented, documented, and tested."
+    },
+    {
+      "project": "msaeedlavasani/Apex-code",
+      "result": "REJECTED",
+      "reason": "Execution environment not established; open architecture gaps are broad and value acceptance not bounded from read-only evidence."
+    },
+    {
+      "project": "msaeedlavasani/catan-online",
+      "result": "SURVIVES",
+      "need": "ISS-005: persistence is file JSON and explicitly not sufficient for database/shared-store/multi-process production scale; ISS-017/018 also identify reconnect/account/persistence lifecycle gaps.",
+      "baseline": {
+        "server_tests": 249,
+        "client_tests": 7,
+        "client_build": "PASS",
+        "storage": "versioned atomic JSON file",
+        "open_acceptance": "database/shared store for production scale remains unchecked"
+      },
+      "material_gap": "multi-process/shared persistence and reliable room lifecycle remain explicitly open and material to the product.",
+      "measurable_acceptance": [
+        "storage abstraction supports shared/database backend without breaking current room state contract",
+        "existing 249 server tests and 7 client tests remain passing",
+        "restart/recovery and concurrent mutation behavior measured under bounded local simulation",
+        "no regression in room/game state invariants"
+      ],
+      "environment": {
+        "server_lockfile": true,
+        "client_lockfile": true,
+        "server_tests": "PASS 249",
+        "client_tests": "PASS 7",
+        "client_build": "PASS",
+        "repository_clean_after_readonly_validation": true
+      },
+      "artificial_fit": false,
+      "validation_only": false,
+      "adoption_supply": {
+        "pool": "MISS",
+        "supply_memory": "MISS",
+        "targeted_external_supply": "NOT_JUSTIFIED",
+        "route": "PROJECT_LOCAL_BUILD",
+        "reason": "gap is project architecture/storage-specific; external package adoption would be artificial until requirements are bounded"
+      },
+      "request_signature": "REQ-CATAN-SHARED-PERSISTENCE-20260907"
+    }
+  ],
+  "selection": {
+    "project": "msaeedlavasani/catan-online",
+    "reason": "Only candidate with explicit material open gap, clean runnable dependency environment, bounded acceptance criteria, and independent value measurement. Other viable-looking candidates fail gap or environment criteria."
+  },
+  "mutation_performed": false,
+  "next_action": "Human Gate for exact bounded project-local persistence mutation authority; no implementation or Pool action started.",
+  "completed_at": "2026-09-07T13:43:00.844299Z"
+}

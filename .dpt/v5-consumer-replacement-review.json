@@ -1,0 +1,43 @@
+{
+  "review_id": "V5-CONSUMER-REPLACEMENT-20260907",
+  "status": "SELECTED_PENDING_ADOPTION_AUTHORITY",
+  "retired_path": {
+    "project": "msaeedlavasani/bazigb",
+    "classification": "CONSUMER_TESTBED_ENVIRONMENT_BLOCKED",
+    "blocker": "LEGACY_WORKSPACE_DEPENDENCY_ENVIRONMENT_UNRELIABLE",
+    "vegas_value": "NOT_PROVEN"
+  },
+  "excluded_repository": "msaeedlavasani/BaziGB-modular-architecture",
+  "candidates": [
+    {
+      "project": "msaeedlavasani/Apex-AHF-Orchestrator-Testbed",
+      "local_path": "/Users/msl/Documents/GitHub/Apex-AHF-Orchestrator-Testbed",
+      "need": "AI-assisted personalized workout program generation with deterministic rules fallback; documented API and acceptance/test flows",
+      "baseline": "README/docs define AI provider and rules fallback; tests and build scripts exist",
+      "environment": "package.json + package-lock.json; deterministic npm ci dry-run available; no node_modules currently materialized",
+      "authority": "not granted by this Delta; mutation envelope required"
+    },
+    {
+      "project": "msaeedlavasani/Apex-Home-Fitness",
+      "local_path": "/Users/msl/Documents/GitHub/Apex-Home-Fitness",
+      "need": "same apparent product and dependency identity as AHF testbed",
+      "baseline": "same package metadata hash as testbed; node_modules present locally",
+      "environment": "runnable-looking but operational identity is not independently separated from testbed; candidate is materially ambiguous"
+    }
+  ],
+  "selection": {
+    "project": "msaeedlavasani/Apex-AHF-Orchestrator-Testbed",
+    "reason": "Only explicitly named non-production testbed with documented AI capability, lockfile, tests, deterministic fallback, and bounded measurable baseline. Apex-Home-Fitness appears the same product lineage and is not selected to avoid active/testbed ambiguity."
+  },
+  "scope_proposal": "one bounded project-local AI program generation or deterministic fallback value proof; no production, no deployment, no Pool promotion",
+  "requirements_met": {
+    "real_need": true,
+    "runnable_declarations": true,
+    "baseline": true,
+    "measurable_value": true,
+    "artificial_fit": false
+  },
+  "mutation_performed": false,
+  "next_action": "Owner must separately admit exact bounded mutation/adoption authority for Apex-AHF-Orchestrator-Testbed; no implementation started.",
+  "completed_at": "2026-09-07T13:12:34.767168Z"
+}

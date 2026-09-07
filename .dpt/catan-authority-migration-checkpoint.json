@@ -1,0 +1,110 @@
+{
+  "migration_id": "V5-CATAN-TRANSACTIONAL-AUTHORITY",
+  "state": "MIGRATION_IN_PROGRESS",
+  "target_repository": "msaeedlavasani/catan-online",
+  "authority": "AUTHORIZED_COORDINATED_MIGRATION_REQUIRED",
+  "stages": [
+    {
+      "id": "INVENTORY",
+      "status": "CLOSED",
+      "evidence": "authority paths inventoried"
+    },
+    {
+      "id": "STORE_CONTRACT",
+      "status": "CLOSED",
+      "evidence": "RoomStateStore contract, revision commit, stale conflict test"
+    },
+    {
+      "id": "LIFECYCLE",
+      "status": "READY",
+      "depends_on": [
+        "STORE_CONTRACT"
+      ],
+      "evidence": "Work Order projected; execution failed closed because no repository effect/readback verifier"
+    },
+    {
+      "id": "GAME_ACTIONS",
+      "status": "BLOCKED",
+      "depends_on": [
+        "LIFECYCLE"
+      ],
+      "evidence": "NOT_CLOSED: prior live callback only mutated checkpoint; no target-repository effect/readback"
+    },
+    {
+      "id": "TEST_MIGRATION",
+      "status": "BLOCKED",
+      "depends_on": [
+        "GAME_ACTIONS"
+      ],
+      "evidence": "NOT_CLOSED: prior live callback only mutated checkpoint; no target-repository effect/readback"
+    },
+    {
+      "id": "INDEPENDENT_PROOF",
+      "status": "BLOCKED",
+      "depends_on": [
+        "TEST_MIGRATION"
+      ],
+      "evidence": "NOT_CLOSED: prior live callback only mutated checkpoint; no target-repository effect/readback"
+    }
+  ],
+  "invariants": [
+    "no final authority claim",
+    "ISS-005 remains OPEN",
+    "PROJECT_VALUE remains NOT_PROVEN",
+    "obsolete Map authority explicitly transitional"
+  ],
+  "last_checkpoint": "2026-09-07T22:04:07.114654Z",
+  "observed": {
+    "authoritative_bypasses": [
+      "server/src/index.js broadcast reads rooms Map",
+      "server/src/index.js handleAction mutates rooms Map",
+      "server/src/rooms.js lifecycle remains Map-authoritative"
+    ],
+    "current_failures": [
+      "integration tests timeout because transactional create requires ready authoritative backend while legacy socket tests do not initialize storage",
+      "direct game-action handleAction still reads and mutates local Map",
+      "disconnect remains legacy synchronous path"
+    ]
+  },
+  "control_plane_repair": {
+    "status": "PROVEN",
+    "regression": "durable nonterminal checkpoint rehydrates and auto-admits next attempt",
+    "tests": 10
+  },
+  "runtime_owner": "live-admission-runtime",
+  "last_outcome": "PROVEN_BLOCKER",
+  "live_acceptance": {
+    "entrypoint": "providers/goose/live-admission-runtime.mjs",
+    "test": "providers/goose/test-live-admission-runtime.mjs",
+    "passed": true,
+    "ready_stage_executor_invoked": true,
+    "automatic_rehydration": true,
+    "authority_migration_complete": false,
+    "project_value": "NOT_PROVEN",
+    "iss_005": "OPEN"
+  },
+  "executor_contract": {
+    "status": "BLOCKED_ON_REAL_CODE_EXECUTOR",
+    "work_order_executor": "providers/goose/catan-work-order-executor.mjs",
+    "transport": "bounded child process",
+    "contract_tests": 3,
+    "repository_effect_verification": "PENDING",
+    "stage_closure_allowed": false,
+    "actual": "bounded instructions now exist and are passed in Work Order, but child transport only runs node command and no repository-editing substrate is bound",
+    "missing_boundary": "provider/substrate adapter capable of executing declared repository mutation instructions and returning effect/readback evidence"
+  },
+  "executor_binding": {
+    "adr": "ADR-058",
+    "core_contract": "provider-neutral",
+    "transport": "bounded child process",
+    "adapter": "separate provider/substrate adapter",
+    "contract_tests": 3,
+    "binding_to_live_catan_executor": "NOT_COMPLETE"
+  },
+  "adapter_conformance": {
+    "status": "PROVEN",
+    "tests": 5,
+    "provider_probe": "DEFERRED",
+    "catan_execution": "DEFERRED"
+  }
+}

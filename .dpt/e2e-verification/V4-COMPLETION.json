@@ -1,0 +1,29 @@
+{
+  "verification_id": "V4-COMPLETION-INDEPENDENT-READBACK",
+  "phase": "V4",
+  "tasks": [
+    "DPT-V4-001",
+    "DPT-V4-002",
+    "DPT-V4-003"
+  ],
+  "independence": {
+    "verifier_identity": "fresh-independent-readback-process",
+    "producer_identity": "V4-002-execution",
+    "identities_distinct": true,
+    "credential_material_exposed": false
+  },
+  "checks": {
+    "real_fixture_identity": true,
+    "bounded_scope": true,
+    "reversible_test_effect": true,
+    "external_write_acknowledged": true,
+    "external_effect_read_back": true,
+    "reversible_cleanup_read_back": true,
+    "issue_number": 1,
+    "final_external_state": "closed",
+    "title": "[DPT-V4-002 TEST] bounded reversible fixture write 20260907T001726Z"
+  },
+  "evidence_classification": "EXTERNAL_CLOSED_LOOP",
+  "verdict": "PASSED",
+  "completed_at": "2026-09-07T00:18:37.952038Z"
+}

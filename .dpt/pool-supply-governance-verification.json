@@ -1,0 +1,40 @@
+{
+  "verification_id": "POOL-SUPPLY-GOVERNANCE-INTERNAL-SLICE",
+  "decision": "ADR-055",
+  "status": "PASSED",
+  "prerequisite": "V5_POOL_TO_PROJECT_REUSABLE_VALUE",
+  "scope": "internal DPT-origin qualification only",
+  "tests": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0
+  },
+  "positive": {
+    "candidate": "workflows/VALIDATION_GATES.md",
+    "result": "CONSUMABLE_POOL_ENTRY",
+    "project_adoption_authority": false
+  },
+  "negative": {
+    "candidate": "speculative-workflow.md",
+    "result": "REJECTED",
+    "consumable": false
+  },
+  "checks": [
+    "inventory_pool_conflation",
+    "license_laundering",
+    "source_code_ingestion_default",
+    "circular_qualification",
+    "consumer_demand_contamination",
+    "self_publication",
+    "authority_inheritance",
+    "maintenance_orphaning",
+    "silent_upstream_mutation",
+    "evidence_value_inflation"
+  ],
+  "baziGB_mutated": false,
+  "v5_rematch": {
+    "result": "NO_SURVIVING_PAIR",
+    "reason": "Qualified internal candidate is a generic validation workflow and BaziGB evidence shows existing equivalent workflow capability; no independent project value baseline. V5 asset gap remains proven."
+  },
+  "completed_at": "2026-09-07T11:09:57.921200Z"
+}

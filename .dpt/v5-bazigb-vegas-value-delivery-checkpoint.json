@@ -1,0 +1,128 @@
+{
+  "verification_id": "V5-BAZIGB-VEGAS-VALUE-DELIVERY-CHECKPOINT",
+  "status": "PROVEN_BLOCKER",
+  "project": "msaeedlavasani/bazigb",
+  "excluded_repository": "msaeedlavasani/BaziGB-modular-architecture",
+  "branch": "dpt-v5-vegas-ai-experiment",
+  "commits": [
+    "7be7439",
+    "ed8a0a7"
+  ],
+  "scope": [
+    "packages/games/vegas/src/ai.ts",
+    "packages/games/vegas/src/ai.test.ts",
+    "packages/games/vegas/src/index.ts",
+    "apps/server/src/game/game.gateway.ts",
+    "apps/server/src/socket-validation.ts",
+    "apps/web/src/app/components/VegasBoard.tsx",
+    "apps/web/src/app/game/[roomId]/page.tsx"
+  ],
+  "implementation": "COMPLETE_ON_EXPERIMENT_BRANCH",
+  "package_runtime_proof": {
+    "isolated_typescript_compile": "PASS",
+    "ai_contract_trials": 300,
+    "legal_actions": "PASS",
+    "state_immutable": "PASS",
+    "seed_reproducible": "PASS"
+  },
+  "integration_proof": {
+    "server_route_added": "vegasAIMove",
+    "difficulty_selection_added": [
+      "easy",
+      "medium",
+      "hard"
+    ],
+    "full_project_compile": "NOT_COMPLETED",
+    "reason": "legacy testbed has no node_modules; available compile aid exposes pre-existing dependency/type resolution errors; no dependencies installed or changed",
+    "end_to_end_gameplay": "NOT_PROVEN"
+  },
+  "baseline": {
+    "vegas_ai": "ABSENT",
+    "difficulty_selection": "ABSENT",
+    "manual_vegas": "PRESENT"
+  },
+  "value_measurement": {
+    "project_value": "NOT_PROVEN",
+    "gameplay_path": "NOT_EXECUTED",
+    "reason": "web build defect prevents full project runtime proof; Vegas package/server compile passed"
+  },
+  "supply_memory": {
+    "state": "SUPPLY_MEMORY_ENTRY",
+    "memory_id": "MEM-V5-BAZIGB-VEGAS-AI-VALUE-PENDING",
+    "acquisition_outcome": "PROJECT_LOCAL_BUILD",
+    "pool_candidate": false,
+    "cross_project_reusable": false,
+    "evidence_class": "INTERNAL_RUNTIME",
+    "raw_project_context_persisted": false
+  },
+  "mutation_status": "bounded source mutation performed only in legacy testbed; excluded repository untouched",
+  "next_action": "complete dependency-available testbed integration build and bounded gameplay simulation, then independent value measurement; requires no new authority if within existing envelope but environment must permit validation",
+  "completed_at": "2026-09-07T11:58:02.200234Z",
+  "environment_reclassification": "RECOVERABLE_ENVIRONMENT_GAP",
+  "testbed_dependency_materialization": {
+    "package_manager": "npm",
+    "lockfile": "package-lock.json",
+    "command": "npm ci --ignore-scripts --no-audit --no-fund",
+    "metadata_unchanged": true,
+    "packages_materialized": 414,
+    "manifest_mutation": false,
+    "lockfile_mutation": false
+  },
+  "build": {
+    "engine": "PASS",
+    "game_packages": [
+      "tic-tac-toe PASS",
+      "chess PASS",
+      "backgammon PASS",
+      "vegas PASS"
+    ],
+    "server": "PASS",
+    "web": "FAIL",
+    "failure": "TypeError: (0 , a.unstable_createUseMediaQuery) is not a function during Next.js page data collection",
+    "classification": "PRE_EXISTING_TESTBED_DEPENDENCY_OR_BUILD_DEFECT; not a V5 Vegas regression"
+  },
+  "last_checkpoint": "2026-09-07T13:04:32.992815Z",
+  "testbed_recovery": {
+    "classification": "PRE_EXISTING_TESTBED_DEPENDENCY_OR_BUILD_DEFECT",
+    "diagnosis": "package manifest declares @mui/material and @mui/icons-material ^5.15.0, but tracked package-lock apps/web workspace resolves both to 9.3.0; installed node_modules materializes MUI 9.3.0. MUI 9 runtime expects React 19-era exports and fails Next page collection with unstable_createUseMediaQuery mismatch under React 18/Emotion 11. This is a package-version/lockfile incompatibility, not a Vegas source defect.",
+    "declared_versions": {
+      "@mui/material": "^5.15.0",
+      "@mui/icons-material": "^5.15.0",
+      "react": "^18.0.0",
+      "next": "14.2.33"
+    },
+    "locked_versions": {
+      "@mui/material": "9.3.0",
+      "@mui/icons-material": "9.3.0",
+      "react": "18.3.1"
+    },
+    "attempted_recovery": "npm ci preserved tracked metadata; compile passed through server; web failed. npm lock regeneration showed stale workspace resolution and would require package-lock correction.",
+    "metadata_restored": true,
+    "required_additional_boundary": "Authorize correction of the tracked package-lock.json to resolve MUI 5 versions matching apps/web/package.json, then npm ci and full build. No package.json change is required; exact lockfile correction must be reviewed before mutation."
+  },
+  "testbed_recovery_attempt": {
+    "classification": "TESTBED_RECOVERY",
+    "owner_authorized": true,
+    "lockfile_diff_inspected": true,
+    "diff_scope": "workspace MUI ranges plus npm metadata cleanup (fsevents/yaml); rejected as not minimal enough without regenerated valid MUI5 tree",
+    "package_json_modified": false,
+    "package_lock_finally_restored": true,
+    "declared_metadata_sha256": "f7ee1c88448792b768b90359bc0916ccfef36b41b7c48bd495ff897391de7044",
+    "lockfile_restored_sha256": "981adf6a70bcf54e15a17634a6b6837c3f6db10195faba2f0a5ded4b67f497c2",
+    "mui5_isolated_resolution": "5.18.0 in isolated npm project",
+    "actual_repository_lock_repaired": false,
+    "reason": "npm workspace lock regeneration continues to retain stale apps/web nested MUI 9 resolution; accepting generated diff would not yield a verified MUI5 lock and would include unrelated metadata churn",
+    "required_next_boundary": "A lockfile-aware repair method that writes the complete MUI5 workspace resolution (or explicit authorization to use a clean lockfile regeneration tool/version) is required."
+  },
+  "lockfile_reconstruction": {
+    "status": "FAILED_ACCEPTANCE",
+    "isolated_candidate_mui_versions": {
+      "material": "5.18.0",
+      "icons": "5.18.0"
+    },
+    "candidate_complete_tree": false,
+    "candidate_ci_test": "not executed correctly because npm wrapper lost cwd; no acceptance claim",
+    "repository_lock_restored": true,
+    "reason": "An isolated candidate can identify MUI5 versions, but producing a valid workspace lockfile requires correct npm cwd/workspace metadata handling; the attempted candidate was not accepted or persisted."
+  }
+}

@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { normalizeRequest, resolveSupply, createSupplyMemoryRecord, ResolutionPath } from './request-driven-supply.mjs';
+const req={capability:'chess-ai',constraints:['typescript'],acceptance:['tests']};
+test('Pool hit precedes memory and sourcing',()=>{const r=resolveSupply(req,{pool:[{capability:'chess-ai',state:'CONSUMABLE_POOL_ENTRY',fresh_until:9999999999999}],memory:[{request_signature:normalizeRequest(req).signature,state:'SUPPLY_MEMORY_ENTRY',fresh_until:9999999999999}]});assert.equal(r.path,ResolutionPath.POOL_HIT);});
+test('fresh memory hit avoids automatic rediscovery',()=>{const r=resolveSupply(req,{memory:[{request_signature:normalizeRequest(req).signature,state:'SUPPLY_MEMORY_ENTRY',fresh_until:9999999999999}],sourceCandidates:[{capability:'chess-ai'}]});assert.equal(r.path,ResolutionPath.MEMORY_HIT);assert.equal(r.rediscovery,false);});
+test('Pool and memory miss enables targeted sourcing',()=>{const r=resolveSupply(req,{sourceCandidates:[{capability:'chess-ai',identity:'src-1'}]});assert.equal(r.path,ResolutionPath.TARGETED_EXTERNAL_SOURCING);assert.equal(r.qualification_required,true);});
+test('memory record is not Pool or project intelligence',()=>{const m=createSupplyMemoryRecord(req,{identity:'src-1',version:'1',provenance:'source',license_security:'PASS'},'REFERENCE',{compatibility:'PASS',qualification:'BOUNDED',outcome:'SUCCESS',fresh_until:99});assert.equal(m.state,'SUPPLY_MEMORY_ENTRY');assert.equal(m.pool_candidate,false);assert.equal(m.raw_project_context,false);});
+test('expired memory does not suppress targeted sourcing',()=>{const r=resolveSupply(req,{memory:[{request_signature:normalizeRequest(req).signature,state:'SUPPLY_MEMORY_ENTRY',fresh_until:0}],sourceCandidates:[{capability:'chess-ai'}],now:1});assert.equal(r.path,ResolutionPath.TARGETED_EXTERNAL_SOURCING);});
+test('resolver identity is deterministic',()=>{assert.equal(normalizeRequest(req).signature,normalizeRequest({...req,constraints:['typescript']}).signature);});

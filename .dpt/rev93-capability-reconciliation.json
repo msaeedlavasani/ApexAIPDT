@@ -1,0 +1,55 @@
+{
+  "reconciliation_id": "REV93-CAPABILITY-RECONCILIATION",
+  "timestamp": "2026-09-07T22:13:52.932010Z",
+  "final_state": "EXHAUSTED_GRAPH_WITH_MATERIAL_GAPS_DEFERRED",
+  "categories": {
+    "NO_READY_TASK": {
+      "status": "CONFIRMED",
+      "evidence": "canonical status queue has no READY task"
+    },
+    "DEFERRED_DEPENDENCY": {
+      "items": [
+        "real coding substrate selection",
+        "OD-002 Work Order transport",
+        "OD-008 provider-neutral runtime transport",
+        "OD-026 runtime/packaging"
+      ],
+      "treatment": "excluded from new work per Delta"
+    },
+    "MATERIAL_GAP_NOT_YET_TASKED": {
+      "items": [
+        {
+          "id": "CATAN-ISS-005",
+          "gap": "transactional RoomStateStore authority migration incomplete",
+          "evidence": "Catan checkpoint: LIFECYCLE READY; downstream stages blocked",
+          "adr052": "bounded task admissible in principle",
+          "current_admissibility": "deferred because actual coding execution depends on substrate selection"
+        },
+        {
+          "id": "EXTERNAL-CLOSED-LOOP",
+          "gap": "full external write/closed-loop evidence not proven beyond bounded fixture",
+          "evidence": "canonical evidence posture remains not proven",
+          "adr052": "requires real authorized consumer/candidate"
+        }
+      ]
+    },
+    "GENUINELY_SATISFIED_CAPABILITY": {
+      "items": [
+        "persistence foundation internal runtime",
+        "autonomous admission continuation",
+        "ADR-052 bounded work generation",
+        "ADR-058 deterministic child transport conformance",
+        "V4 bounded fixture external closed loop"
+      ]
+    }
+  },
+  "excluded_only_because_deferred_substrate": [
+    "Catan coding migration execution",
+    "OpenCode probe",
+    "Apex Code probe"
+  ],
+  "new_tasks_admitted": [],
+  "no_work_invented": true,
+  "human_gate_required": false,
+  "next_action": "Remain IDLE with durable material gaps recorded; resume when substrate selection is resolved or an independent admissible gap appears."
+}

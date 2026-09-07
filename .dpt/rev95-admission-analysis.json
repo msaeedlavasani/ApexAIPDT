@@ -1,0 +1,47 @@
+{
+  "analysis_id": "REV95-ADR052-ADMISSION-CHECK",
+  "timestamp": "2026-09-07T22:28:27.240530Z",
+  "incident": "REV93_EXHAUSTION_INCIDENT_CLOSED",
+  "evaluations": [
+    {
+      "capability_id": "CATAN_ISS_005_TRANSACTIONAL_AUTHORITY",
+      "required_material": true,
+      "status": "MATERIAL_GAP",
+      "depends_on_deferred_decision": true,
+      "deferred_dependency": "coding substrate selection",
+      "adr052_admissible_now": false,
+      "reason": "actual source execution cannot proceed until substrate choice is resolved"
+    },
+    {
+      "capability_id": "GENERAL_EXTERNAL_CLOSED_LOOP",
+      "required_material": false,
+      "status": "UNPROVEN_NOT_MATERIAL_BY_ITSELF",
+      "depends_on_deferred_decision": false,
+      "adr052_admissible_now": false,
+      "reason": "unproven evidence is not itself a material gap; bounded V4 closed loop is already proven"
+    },
+    {
+      "capability_id": "OPERATIONAL_DEPLOYMENT",
+      "required_material": true,
+      "status": "MATERIAL_GAP",
+      "depends_on_deferred_decision": true,
+      "deferred_dependency": "runtime/packaging Decision 26 and real deployment boundary",
+      "adr052_admissible_now": false,
+      "reason": "requires deferred operational boundary and deployment evidence"
+    },
+    {
+      "capability_id": "CODING_SUBSTRATE_SELECTION",
+      "required_material": true,
+      "status": "DEFERRED_DEPENDENCY",
+      "depends_on_deferred_decision": false,
+      "adr052_admissible_now": false,
+      "reason": "explicitly deferred architecture decision; not eligible for autonomous invention"
+    }
+  ],
+  "ready_tasks": [],
+  "admitted_tasks": [],
+  "material_independent_admissible_work": false,
+  "final_state": "IDLE_WITH_DEFERRED_MATERIAL_GAPS",
+  "human_gate_required": false,
+  "next_action": "remain IDLE; do not invent substrate/deployment work"
+}

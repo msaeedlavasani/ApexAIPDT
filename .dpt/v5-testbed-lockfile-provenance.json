@@ -1,0 +1,41 @@
+{
+  "review_id": "V5-TESTBED-LOCKFILE-PROVENANCE-20260907",
+  "status": "GENUINE_HUMAN_GATE",
+  "repository": "msaeedlavasani/bazigb",
+  "excluded_repository": "msaeedlavasani/BaziGB-modular-architecture",
+  "divergence_origin": "Present at repository genesis commit e92face; commit message claims Stable dependencies (MUI v5), but the newly added package-lock.json workspace metadata records MUI 9.3.0 while apps/web/package.json records ^5.15.0. No later commit in the available repository history changes either dependency metadata.",
+  "introducing_commit": {
+    "sha": "e92face412fb7718e67ec193e64ab6ab277548ab",
+    "subject": "Fresh Elite Start: Stable dependencies (MUI v5), Clean Docs, and Zero Build Artifacts",
+    "date": "2026-08-19T14:09:26+03:30",
+    "manifest_mui5": true,
+    "lockfile_mui9": true
+  },
+  "historical_mui_state": {
+    "package_json_history": "Only genesis commit available; it declares MUI ^5.15.0. No historical MUI 9 manifest declaration found.",
+    "lockfile_history": "Only genesis lockfile available; it records MUI 9.3.0 and MUI 9 transitive tree.",
+    "known_good_mui5_lockfile": false,
+    "reason": "No earlier tracked lockfile revision exists in available history."
+  },
+  "lockfile_version_history": [
+    {
+      "commit": "e92face",
+      "lockfileVersion": 3
+    }
+  ],
+  "package_manager_evidence": {
+    "package_manager": "npm inferred from package-lock.json lockfileVersion 3 and npm scripts",
+    "npm_version_observed": "11.18.0",
+    "repository_pin": null,
+    "node_version_observed": "v24.18.0",
+    "packageManager_field": null,
+    "ci_install_evidence": "not found in available history"
+  },
+  "current_npm_causal": "NO",
+  "current_npm_explanation": "Current npm exposes the pre-existing divergence; it did not create it. npm workspace lock regeneration preserves the stale nested resolution because the tracked lock graph is internally authoritative/stale. Clean npm ci faithfully materializes MUI 9.3.0.",
+  "safest_recovery_method": "No known-good historical lockfile is available. Safest repair is a deliberate lockfile-only reconstruction from current package.json declarations, with an isolated generated diff review. It must produce a complete MUI 5 tree (isolated resolver confirms 5.18.0 is available), preserve unrelated entries where possible, and be accepted only if no stale MUI 9 entries or unrelated churn remain.",
+  "exact_required_mutation": "package-lock.json only: replace the apps/web MUI 9 workspace resolution and all its MUI 9 dependency subtree with a complete npm lockfile resolution satisfying @mui/material^5.15.0 and @mui/icons-material^5.15.0; package.json unchanged.",
+  "human_gate_required": true,
+  "human_gate_reason": "Prior authorization covers lockfile correction, but no safe complete mutation has yet been produced. Additional lockfile-aware repair execution/review boundary is required; do not accept partial or manually guessed lockfile edits.",
+  "completed_at": "2026-09-07T12:59:53.829932Z"
+}

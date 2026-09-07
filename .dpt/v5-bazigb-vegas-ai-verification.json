@@ -1,0 +1,61 @@
+{
+  "verification_id": "V5-BAZIGB-VEGAS-AI-INDEPENDENT-20260907",
+  "project": "msaeedlavasani/bazigb",
+  "project_class": "legacy_non_active_testbed",
+  "forbidden_repository": "msaeedlavasani/BaziGB-modular-architecture",
+  "forbidden_repository_touched": false,
+  "branch": "dpt-v5-vegas-ai-experiment",
+  "commit": "7be7439",
+  "scope": "packages/games/vegas/src/ai.ts, index export, package-local tests",
+  "checks": {
+    "typescript_isolated_compile": "PASS",
+    "legal_actions_300_trials": "PASS",
+    "difficulties": [
+      "easy",
+      "medium",
+      "hard"
+    ],
+    "state_immutable": "PASS",
+    "seed_reproducible": "PASS",
+    "no_external_dependencies_added": "PASS",
+    "no_production_deployment": "PASS",
+    "no_pool_publication": "PASS"
+  },
+  "baseline": {
+    "vegas_ai_module": "ABSENT",
+    "vegas_ai_interface": "ABSENT",
+    "documented_gap": "AI Vegas incomplete; difficulty levels incomplete"
+  },
+  "outcome": {
+    "project_local_capability": "IMPLEMENTED_AND_INDEPENDENTLY_RUNTIME_VALIDATED",
+    "project_value": "NOT_YET_PROVEN",
+    "reason": "AI module is not wired into server/UI user-facing adoption path; no baseline-to-outcome gameplay measurement exists"
+  },
+  "evidence_classification": "INTERNAL_RUNTIME",
+  "external_project_value_classification": "NOT_PROVEN",
+  "supply_memory": {
+    "memory_id": "MEM-V5-BAZIGB-VEGAS-AI-7BE7439",
+    "state": "SUPPLY_MEMORY_ENTRY",
+    "source_identity": "PROJECT_LOCAL_BUILD:msaeedlavasani/bazigb",
+    "acquisition_outcome": "PROJECT_LOCAL_BUILD",
+    "immutable_version_reference": "git:7be7439",
+    "provenance": "legacy BaziGB testbed package-local implementation",
+    "license_security": "PROJECT_OWNED; no external source ingested",
+    "compatibility": "Vegas package contract; TypeScript isolated compile PASS",
+    "qualification_history": [
+      "independent 300-trial legality/immutability/reproducibility verification"
+    ],
+    "project_consumption_outcome": "PACKAGE_CAPABILITY_VALIDATED; USER_VALUE_NOT_MEASURED",
+    "freshness_or_expiry": "REVALIDATE_ON_SOURCE_OR_RULE_CHANGE",
+    "supersession_lineage": [],
+    "accumulated_reuse_evidence": [],
+    "raw_project_context_persisted": false,
+    "pool_candidate": false
+  },
+  "pool_promotion": {
+    "eligible": false,
+    "reason": "Intrinsic project value and cross-project reusability are not proven"
+  },
+  "next_action": "V5 value proof requires separately bounded server/UI adoption wiring and baseline/outcome measurement; current authority scope does not include that mutation",
+  "completed_at": "2026-09-07T11:49:22.243555Z"
+}
