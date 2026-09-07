@@ -1,10 +1,10 @@
 {
   "version": 1,
   "created_at": "2026-09-06T05:47:00Z",
-  "last_updated": "2026-09-07T13:04:32.992815Z",
+  "last_updated": "2026-09-07T13:12:34.767168Z",
   "execution": {
     "current_task": null,
-    "current_step": "v5_clean_lockfile_reconstruction_failed",
+    "current_step": "v5_replacement_consumer_selected",
     "completed_steps": [
       "od_resolution",
       "task_status_update",
@@ -16,18 +16,18 @@
       "phase_closure"
     ],
     "attempts": 1,
-    "last_result": "Clean lockfile reconstruction attempted in isolation; MUI5 5.18.0 identified but no complete accepted workspace lockfile produced. Original lock restored; no build or V5 proof resumed.",
-    "last_result_time": "2026-09-07T13:04:32.992815Z"
+    "last_result": "Retired BaziGB legacy value path as CONSUMER_TESTBED_ENVIRONMENT_BLOCKED. Preserved Vegas implementation/evidence and PROJECT_VALUE=NOT_PROVEN. Selected Apex-AHF-Orchestrator-Testbed as replacement consumer candidate; no mutation performed.",
+    "last_result_time": "2026-09-07T13:12:34.767168Z"
   },
   "queue": {
     "next_tasks": []
   },
   "blocked": {
     "items": [
-      "No accepted complete MUI5 workspace lockfile candidate; requires corrected lockfile reconstruction execution with proper workspace cwd"
+      "Replacement adoption authority required for Apex-AHF-Orchestrator-Testbed; BaziGB legacy path retired"
     ]
   },
-  "state_revision": 77,
+  "state_revision": 78,
   "summary": {
     "total_tasks": 25,
     "open_tasks": 0,
