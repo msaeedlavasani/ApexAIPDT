@@ -1,27 +1,36 @@
 {
-  "certification_id": "DPT-PAUSE-READINESS-20260908-FINAL",
-  "timestamp": "2026-09-07T23:10:18.515222Z",
+  "certification_id": "DPT-PAUSE-READINESS-FINAL-TRACKING-20260908",
+  "timestamp": "2026-09-07T23:41:06.454716Z",
+  "safe_to_pause": true,
+  "dpt_state": "SAFE_IDLE_AWAITING_DEFERRED_DEPENDENCY",
   "development_completeness": "PASS",
   "repository_integrity": "PASS",
   "ci_fitness": "PASS",
-  "safe_to_pause": true,
-  "dpt_state": "SAFE_IDLE_AWAITING_DEFERRED_DEPENDENCY",
   "checks": {
+    "current_branch_main": true,
+    "main_tracks_authoritative_remote": true,
     "local_main_equals_origin_main": true,
+    "ahead_behind_origin": "0/0",
     "worktree_clean": true,
-    "ahead_behind_zero_zero": true,
-    "no_unpushed_canonical_work": true,
-    "no_uncommitted_work": true,
-    "no_unmerged_required_work": true,
-    "no_orphaned_interrupted_run_artifacts": true,
-    "no_stale_retirable_local_branches": true,
-    "no_stale_retirable_remote_branches": true,
-    "no_purposeless_preservation_branches": true,
-    "all_remaining_branches_intentional": true,
-    "no_stale_open_prs": true,
-    "current_ci_fitness": "PASS",
+    "no_unpushed_origin_work": true,
+    "github_desktop_push_indicator": "CLEAN",
+    "no_open_prs": true,
+    "no_extra_worktrees": true,
+    "upstream_remote_purpose": "historical fixture provenance only; removed",
     "current_required_ci": "PASS",
     "ci_cannot_regress_canonical_state": true,
     "durable_dpt_state_present_on_origin_main": true
-  }
+  },
+  "remaining_work_dependency_matrix": [
+    {
+      "item": "Catan ISS-005",
+      "status": "DEFERRED",
+      "dependency": "coding substrate selection"
+    },
+    {
+      "item": "operational deployment evidence",
+      "status": "DEFERRED",
+      "dependency": "Decision 26/deployment boundary"
+    }
+  ]
 }
