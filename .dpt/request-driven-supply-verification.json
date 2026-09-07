@@ -1,0 +1,32 @@
+{
+  "verification_id": "ADR-056-REQUEST-SUPPLY-INTERNAL-VERTICAL-SLICE",
+  "decision": "ADR-056",
+  "status": "PASSED",
+  "v5_objective": "REQUEST \u2192 BEST AVAILABLE SUPPLY \u2192 PROJECT VALUE",
+  "scope": "resolver-only against already-observed BaziGB need; no sourcing and no BaziGB mutation",
+  "tests": {
+    "total": 6,
+    "passed": 6,
+    "failed": 0
+  },
+  "paths": {
+    "pool_hit": "POOL_HIT",
+    "memory_hit": "MEMORY_HIT_NO_AUTOMATIC_REDISCOVERY",
+    "miss": "TARGETED_EXTERNAL_SOURCING"
+  },
+  "checks": [
+    "pool_memory_conflation",
+    "project_intelligence_leakage",
+    "stale_memory_reuse",
+    "repeated_request_false_promotion",
+    "consumer_success_self_certification",
+    "license_security_drift",
+    "duplicate_resolution_identity",
+    "cross_project_privacy_leakage"
+  ],
+  "bazigb_mutated": false,
+  "external_sourcing_performed": false,
+  "adoption_authority_requested": false,
+  "outcome": "RESOLVER_VERTICAL_SLICE_PROVEN; NO_ADOPTION_CANDIDATE_CREATED",
+  "completed_at": "2026-09-07T11:23:15.729811Z"
+}
