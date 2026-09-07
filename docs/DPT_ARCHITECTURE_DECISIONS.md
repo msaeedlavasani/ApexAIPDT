@@ -3871,3 +3871,37 @@ PROVENANCE_CHECK
 ```
 
 External write requires an explicit derived permission envelope and credentials. Missing credentials produce `GENUINE_HUMAN_GATE = EXTERNAL_WRITE_AUTHORITY_PROVISIONING_REQUIRED`; they do not justify synthetic evidence or V4 closure. No phase, architecture, public-contract, packaging, or V6+ work may be created under this admission.
+
+## ADR-055 — Pool Supply Governance Evolution (Prerequisite to V5)
+
+**Status:** ACCEPTED — 2026-09-07  
+**Relationship:** Prerequisite to V5 `POOL → PROJECT REUSABLE VALUE`; not a new Foundation or version.  
+**Evolution:** Append-only reconciliation of ADR-049. ADR-049's typed Pools, lifecycle, validation tiers, compatibility dimensions, and Pool ≠ Project Intelligence invariant remain valid. This decision adds the supply-side entity and qualification distinctions.
+
+### Canonical entities
+
+```text
+CANDIDATE / INVENTORY ≠ QUALIFIED_REUSABLE_ASSET ≠ CONSUMABLE_POOL_ENTRY
+```
+
+A Candidate records an observed or proposed source. A Qualified Reusable Asset has passed the common qualification contract. A Consumable Pool Entry is an admitted, versioned, policy-scoped projection of a qualified asset. No lower layer is consumable by implication.
+
+### Origins and architecture
+
+Supply origins are `DPT_PRODUCED`, `PROJECT_CONTRIBUTION`, and `EXTERNAL_ECOSYSTEM`. The architecture is federated Source Adapters → deterministic Supply Service → cognitive Scout/Curator → independent Falsifier/Reviewer → deterministic Admission Controller. No monolithic authority-bearing Source Agent exists. Discovery and curation cannot finalize qualification; qualification cannot grant project adoption authority.
+
+### Acquisition outcomes
+
+`REFERENCE`, `DEPENDENCY`, `ADAPTER_WRAPPER`, `EXTRACTED_PATTERN`, `REUSABLE_COMPONENT_MODULE`, `SKILL_WORKFLOW`, `KNOWLEDGE_EVIDENCE`, and `REJECT` are distinct outcomes. External discovery defaults to `REFERENCE`. License or provenance ambiguity is `NO_COPY → REFERENCE_ONLY`.
+
+### Common qualification contract
+
+Every qualified asset records stable identity, origin, provenance, license, security/supply-chain status, maintenance health, compatibility, reusability rationale, qualification evidence, maintainer responsibility, version/update lineage, and deprecation semantics. Consumer demand may prioritize investigation but cannot prove reusability. `POOL_PUBLICATION ≠ PROJECT_VALUE_PROVEN`; value requires baseline → bounded consumption → independent project validation → measurable outcome.
+
+### Typed semantics and maintenance
+
+Typed Pools are preserved. Consumable capability Pools are distinct from Reference, Dependency, Evidence/Knowledge, and Source catalogs. Upstream changes create a new qualification revision; published entries never silently mutate. Deprecation preserves lineage, reason, impact, migration guidance, and authority-impact evaluation. Pool publication does not inherit or grant project execution authority.
+
+### Durable control
+
+Candidate, qualification, publication, and version identities are durable idempotency keys. Recovery and repeated discovery reconcile by identity and evidence digest; equivalent records cannot create duplicate consumable entries.
