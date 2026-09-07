@@ -1,10 +1,10 @@
 {
   "version": 1,
   "created_at": "2026-09-06T05:47:00Z",
-  "last_updated": "2026-09-07T22:28:27.240530Z",
+  "last_updated": "2026-09-07T22:39:54.635185Z",
   "execution": {
     "current_task": null,
-    "current_step": "rev95_admission_idle_deferred_gaps",
+    "current_step": "pre_pause_audit_material_untasked_reconciliation",
     "completed_steps": [
       "od_resolution",
       "task_status_update",
@@ -16,19 +16,20 @@
       "phase_closure"
     ],
     "attempts": 1,
-    "last_result": "ADR-052 admission check complete across all non-satisfied inventory capabilities. No independent admissible material work survives; Catan and operational gaps depend on deferred decisions, UNPROVEN alone is not a gap.",
-    "last_result_time": "2026-09-07T22:28:27.240530Z"
+    "last_result": "Fresh evidence-first pause audit found material untasked canonical projection inconsistency: Persistence and V4 task blocks remain stale BACKLOG/READY despite durable closure evidence. CANONICAL_DURABLE_STATE_RECONCILIATION is ADR-052-admissible and must be admitted; SAFE_TO_PAUSE_DPT=NO.",
+    "last_result_time": "2026-09-07T22:39:54.635185Z"
   },
   "queue": {
-    "next_tasks": []
+    "next_tasks": [
+      "CANONICAL_DURABLE_STATE_RECONCILIATION"
+    ]
   },
   "blocked": {
     "items": [
-      "Catan ISS-005 depends on deferred coding substrate selection",
-      "Operational deployment depends on Decision 26/deployment boundary"
+      "Canonical task ledger/status/checkpoint reconciliation is READY for admission"
     ]
   },
-  "state_revision": 96,
+  "state_revision": 97,
   "summary": {
     "total_tasks": 25,
     "open_tasks": 0,

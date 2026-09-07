@@ -1,0 +1,45 @@
+{
+  "audit_id": "PRE-PAUSE-COMPLETENESS-20260908",
+  "timestamp": "2026-09-07T22:39:54.635185Z",
+  "status": "MATERIAL_UNTASKED_WORK_REMAINS",
+  "canonical_task_source": "docs/TASKS.md",
+  "projection_conflicts": [
+    {
+      "ids": [
+        "DPT-PERSISTENCE-001",
+        "DPT-PERSISTENCE-002",
+        "DPT-PERSISTENCE-003",
+        "DPT-PERSISTENCE-004"
+      ],
+      "issue": "task blocks still BACKLOG despite durable closure artifacts and status revision 58"
+    },
+    {
+      "ids": [
+        "DPT-V4-001",
+        "DPT-V4-002",
+        "DPT-V4-003"
+      ],
+      "issue": "task blocks still READY/BACKLOG despite V4 completion evidence"
+    }
+  ],
+  "reconciliation_plan": {
+    "preserve_history": true,
+    "append_only_correction": true,
+    "reopen_closed_work": false,
+    "project_checkpoints": {
+      "catan": "MIGRATION_IN_PROGRESS/LIFECYCLE READY but deferred substrate",
+      "v4": "completed evidence",
+      "v5": "deferred/blocked"
+    },
+    "capability_inventory": "scope-qualified but incomplete until task/projection reconciliation"
+  },
+  "admission": {
+    "candidate": "CANONICAL_DURABLE_STATE_RECONCILIATION",
+    "adr052_admissible": true,
+    "reason": "material reproducible canonical-state inconsistency independently affects scheduling and terminal classification",
+    "executed": false
+  },
+  "safe_to_pause": false,
+  "human_gate_required": false,
+  "next_action": "admit reconciliation task and correct TASKS.md/status projections append-only"
+}
