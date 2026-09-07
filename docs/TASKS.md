@@ -1936,3 +1936,66 @@ notes: |
   Evidence classification: EXTERNAL_CLOSED_LOOP for this bounded test effect.
 evidence_refs: .dpt/e2e-verification/V4-COMPLETION.json, .dpt/e2e-verification/V4-002-external-write-readback.json
 [/DELTA]
+
+[DELTA]
+task_id: DPT-PERSISTENCE-001
+base_state_revision: 97
+changes: status=BACKLOG→CLOSED, state_revision=97→98
+applied_by: CANONICAL_DURABLE_STATE_RECONCILIATION
+notes: Historical Persistence Foundation implementation and independent runtime evidence already prove closure. This append-only correction reconciles the stale task projection; historical task blocks are preserved.
+evidence_refs: .dpt/e2e-verification/PERSISTENCE-FOUNDATION-E2E.json, providers/goose/test-durable-state.mjs
+[/DELTA]
+
+[DELTA]
+task_id: DPT-PERSISTENCE-002
+base_state_revision: 98
+changes: status=BACKLOG→CLOSED, state_revision=98→99
+applied_by: CANONICAL_DURABLE_STATE_RECONCILIATION
+notes: Historical lease enforcement evidence proves closure; stale projection corrected append-only.
+evidence_refs: providers/goose/test-lease-enforcement.mjs
+[/DELTA]
+
+[DELTA]
+task_id: DPT-PERSISTENCE-003
+base_state_revision: 99
+changes: status=BACKLOG→CLOSED, state_revision=99→100
+applied_by: CANONICAL_DURABLE_STATE_RECONCILIATION
+notes: Historical retry/cancel/revocation evidence proves closure; stale projection corrected append-only.
+evidence_refs: providers/goose/test-retry-cancel-revoke.mjs
+[/DELTA]
+
+[DELTA]
+task_id: DPT-PERSISTENCE-004
+base_state_revision: 100
+changes: status=BACKLOG→CLOSED, state_revision=100→101
+applied_by: CANONICAL_DURABLE_STATE_RECONCILIATION
+notes: Historical crash/restart recovery evidence proves closure; stale projection corrected append-only.
+evidence_refs: providers/goose/test-recovery-orchestration.mjs
+[/DELTA]
+
+[DELTA]
+task_id: DPT-V4-001
+base_state_revision: 101
+changes: status=READY→CLOSED, state_revision=101→102
+applied_by: CANONICAL_DURABLE_STATE_RECONCILIATION
+notes: Historical V4 read evidence proves closure; stale projection corrected append-only.
+evidence_refs: .dpt/e2e-verification/V4-001-real-project-read.json
+[/DELTA]
+
+[DELTA]
+task_id: DPT-V4-002
+base_state_revision: 102
+changes: status=BACKLOG→CLOSED, state_revision=102→103
+applied_by: CANONICAL_DURABLE_STATE_RECONCILIATION
+notes: Historical bounded reversible external write/readback evidence proves closure; stale projection corrected append-only.
+evidence_refs: .dpt/e2e-verification/V4-002-external-write-readback.json
+[/DELTA]
+
+[DELTA]
+task_id: DPT-V4-003
+base_state_revision: 103
+changes: status=BACKLOG→CLOSED, state_revision=103→104
+applied_by: CANONICAL_DURABLE_STATE_RECONCILIATION
+notes: Historical independent V4 verification proves closure; stale projection corrected append-only.
+evidence_refs: .dpt/e2e-verification/V4-COMPLETION.json
+[/DELTA]
