@@ -12,7 +12,7 @@
     {
       "id": "STORE_CONTRACT",
       "status": "CLOSED",
-      "evidence": "RoomStateStore contract and revision/conflict test added"
+      "evidence": "RoomStateStore contract, revision commit, stale conflict test"
     },
     {
       "id": "LIFECYCLE",
@@ -49,5 +49,12 @@
     "PROJECT_VALUE remains NOT_PROVEN",
     "obsolete Map authority explicitly transitional"
   ],
-  "last_checkpoint": "2026-09-07T19:02:27.299340Z"
+  "last_checkpoint": "2026-09-07T19:05:39.061689Z",
+  "observed": {
+    "authoritative_bypasses": [
+      "server/src/index.js broadcast reads rooms Map",
+      "server/src/index.js handleAction mutates rooms Map",
+      "server/src/rooms.js lifecycle remains Map-authoritative"
+    ]
+  }
 }

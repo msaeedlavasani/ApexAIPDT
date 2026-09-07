@@ -1,7 +1,7 @@
 {
   "version": 1,
   "created_at": "2026-09-06T05:47:00Z",
-  "last_updated": "2026-09-07T19:02:27.299340Z",
+  "last_updated": "2026-09-07T19:05:39.061689Z",
   "execution": {
     "current_task": null,
     "current_step": "catan_authority_migration_in_progress",
@@ -16,18 +16,18 @@
       "phase_closure"
     ],
     "attempts": 1,
-    "last_result": "Migration resumed across durable stages. Inventory and RoomStateStore contract checkpoint complete; lifecycle/game-action/test migration remain pending. No value or closure promotion.",
-    "last_result_time": "2026-09-07T19:02:27.299340Z"
+    "last_result": "Multi-turn migration progressed: RoomStateStore contract and stale revision test complete; all existing server tests 251 pass, client tests/build pass. Direct Map authority remains in lifecycle and game-action paths; final authority transition not complete.",
+    "last_result_time": "2026-09-07T19:05:39.061689Z"
   },
   "queue": {
     "next_tasks": []
   },
   "blocked": {
     "items": [
-      "Catan migration READY stage: lifecycle API conversion"
+      "Migration READY stage: convert lifecycle and all game-action entry points; direct Map bypasses remain"
     ]
   },
-  "state_revision": 82,
+  "state_revision": 83,
   "summary": {
     "total_tasks": 25,
     "open_tasks": 0,
