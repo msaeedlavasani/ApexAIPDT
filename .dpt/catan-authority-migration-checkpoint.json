@@ -16,10 +16,11 @@
     },
     {
       "id": "LIFECYCLE",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "depends_on": [
         "STORE_CONTRACT"
-      ]
+      ],
+      "evidence": "transactional create/join/read handlers added; regression suite exposes test bootstrap/storage readiness incompatibility"
     },
     {
       "id": "GAME_ACTIONS",
@@ -49,12 +50,17 @@
     "PROJECT_VALUE remains NOT_PROVEN",
     "obsolete Map authority explicitly transitional"
   ],
-  "last_checkpoint": "2026-09-07T19:05:39.061689Z",
+  "last_checkpoint": "2026-09-07T19:20:30.587033Z",
   "observed": {
     "authoritative_bypasses": [
       "server/src/index.js broadcast reads rooms Map",
       "server/src/index.js handleAction mutates rooms Map",
       "server/src/rooms.js lifecycle remains Map-authoritative"
+    ],
+    "current_failures": [
+      "integration tests timeout because transactional create requires ready authoritative backend while legacy socket tests do not initialize storage",
+      "direct game-action handleAction still reads and mutates local Map",
+      "disconnect remains legacy synchronous path"
     ]
   }
 }

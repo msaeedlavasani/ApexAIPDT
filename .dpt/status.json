@@ -1,10 +1,10 @@
 {
   "version": 1,
   "created_at": "2026-09-06T05:47:00Z",
-  "last_updated": "2026-09-07T19:05:39.061689Z",
+  "last_updated": "2026-09-07T19:20:30.587033Z",
   "execution": {
     "current_task": null,
-    "current_step": "catan_authority_migration_in_progress",
+    "current_step": "catan_lifecycle_migration_in_progress",
     "completed_steps": [
       "od_resolution",
       "task_status_update",
@@ -16,18 +16,18 @@
       "phase_closure"
     ],
     "attempts": 1,
-    "last_result": "Multi-turn migration progressed: RoomStateStore contract and stale revision test complete; all existing server tests 251 pass, client tests/build pass. Direct Map authority remains in lifecycle and game-action paths; final authority transition not complete.",
-    "last_result_time": "2026-09-07T19:05:39.061689Z"
+    "last_result": "Lifecycle transactional handlers introduced and syntax fixed. Full server regression currently fails in integration tests due to legacy test bootstrap not initializing authoritative storage; game-action and disconnect Map bypasses remain. No final authority/value claim.",
+    "last_result_time": "2026-09-07T19:20:30.587033Z"
   },
   "queue": {
     "next_tasks": []
   },
   "blocked": {
     "items": [
-      "Migration READY stage: convert lifecycle and all game-action entry points; direct Map bypasses remain"
+      "Repair test bootstrap and migrate handleAction/disconnect to RoomStateStore"
     ]
   },
-  "state_revision": 83,
+  "state_revision": 84,
   "summary": {
     "total_tasks": 25,
     "open_tasks": 0,
