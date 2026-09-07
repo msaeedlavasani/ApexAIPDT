@@ -81,7 +81,7 @@
     "failure": "TypeError: (0 , a.unstable_createUseMediaQuery) is not a function during Next.js page data collection",
     "classification": "PRE_EXISTING_TESTBED_DEPENDENCY_OR_BUILD_DEFECT; not a V5 Vegas regression"
   },
-  "last_checkpoint": "2026-09-07T12:31:34.857446Z",
+  "last_checkpoint": "2026-09-07T12:42:16.197437Z",
   "testbed_recovery": {
     "classification": "PRE_EXISTING_TESTBED_DEPENDENCY_OR_BUILD_DEFECT",
     "diagnosis": "package manifest declares @mui/material and @mui/icons-material ^5.15.0, but tracked package-lock apps/web workspace resolves both to 9.3.0; installed node_modules materializes MUI 9.3.0. MUI 9 runtime expects React 19-era exports and fails Next page collection with unstable_createUseMediaQuery mismatch under React 18/Emotion 11. This is a package-version/lockfile incompatibility, not a Vegas source defect.",
@@ -99,5 +99,19 @@
     "attempted_recovery": "npm ci preserved tracked metadata; compile passed through server; web failed. npm lock regeneration showed stale workspace resolution and would require package-lock correction.",
     "metadata_restored": true,
     "required_additional_boundary": "Authorize correction of the tracked package-lock.json to resolve MUI 5 versions matching apps/web/package.json, then npm ci and full build. No package.json change is required; exact lockfile correction must be reviewed before mutation."
+  },
+  "testbed_recovery_attempt": {
+    "classification": "TESTBED_RECOVERY",
+    "owner_authorized": true,
+    "lockfile_diff_inspected": true,
+    "diff_scope": "workspace MUI ranges plus npm metadata cleanup (fsevents/yaml); rejected as not minimal enough without regenerated valid MUI5 tree",
+    "package_json_modified": false,
+    "package_lock_finally_restored": true,
+    "declared_metadata_sha256": "f7ee1c88448792b768b90359bc0916ccfef36b41b7c48bd495ff897391de7044",
+    "lockfile_restored_sha256": "981adf6a70bcf54e15a17634a6b6837c3f6db10195faba2f0a5ded4b67f497c2",
+    "mui5_isolated_resolution": "5.18.0 in isolated npm project",
+    "actual_repository_lock_repaired": false,
+    "reason": "npm workspace lock regeneration continues to retain stale apps/web nested MUI 9 resolution; accepting generated diff would not yield a verified MUI5 lock and would include unrelated metadata churn",
+    "required_next_boundary": "A lockfile-aware repair method that writes the complete MUI5 workspace resolution (or explicit authorization to use a clean lockfile regeneration tool/version) is required."
   }
 }
