@@ -50,7 +50,7 @@
     "PROJECT_VALUE remains NOT_PROVEN",
     "obsolete Map authority explicitly transitional"
   ],
-  "last_checkpoint": "2026-09-07T19:20:30.587033Z",
+  "last_checkpoint": "2026-09-07T19:26:42.409756Z",
   "observed": {
     "authoritative_bypasses": [
       "server/src/index.js broadcast reads rooms Map",
@@ -62,5 +62,10 @@
       "direct game-action handleAction still reads and mutates local Map",
       "disconnect remains legacy synchronous path"
     ]
+  },
+  "control_plane_repair": {
+    "status": "PROVEN",
+    "regression": "durable nonterminal checkpoint rehydrates and auto-admits next attempt",
+    "tests": 10
   }
 }
