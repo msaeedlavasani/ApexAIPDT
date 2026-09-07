@@ -1923,3 +1923,16 @@ notes: |
   EXTERNAL_WRITE evidence recorded. No production or unrelated repository effect.
 evidence_refs: .dpt/e2e-verification/V4-002-external-write-readback.json, .dpt/v4-permission-envelope.json
 [/DELTA]
+
+[DELTA]
+task_id: DPT-V4-003
+base_state_revision: 62
+changes: status=BACKLOG→CLOSED, state_revision=62→63
+applied_by: V4-003_INDEPENDENT_VERIFICATION
+notes: |
+  Independent fresh-process verification passed for V4-001 and V4-002.
+  Fixture identity, bounded scope, authenticated write acknowledgement, external readback,
+  reversible cleanup, and final closed state verified. V4 CLOSED.
+  Evidence classification: EXTERNAL_CLOSED_LOOP for this bounded test effect.
+evidence_refs: .dpt/e2e-verification/V4-COMPLETION.json, .dpt/e2e-verification/V4-002-external-write-readback.json
+[/DELTA]
