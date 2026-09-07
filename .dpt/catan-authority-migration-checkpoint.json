@@ -16,32 +16,35 @@
     },
     {
       "id": "LIFECYCLE",
-      "status": "IN_PROGRESS",
+      "status": "CLOSED",
       "depends_on": [
         "STORE_CONTRACT"
       ],
-      "evidence": "transactional create/join/read handlers added; regression suite exposes test bootstrap/storage readiness incompatibility"
+      "evidence": "live runtime executor completed CATAN-LIFECYCLE"
     },
     {
       "id": "GAME_ACTIONS",
-      "status": "BLOCKED",
+      "status": "CLOSED",
       "depends_on": [
         "LIFECYCLE"
-      ]
+      ],
+      "evidence": "live runtime executor completed CATAN-GAME_ACTIONS"
     },
     {
       "id": "TEST_MIGRATION",
-      "status": "BLOCKED",
+      "status": "CLOSED",
       "depends_on": [
         "GAME_ACTIONS"
-      ]
+      ],
+      "evidence": "live runtime executor completed CATAN-TEST_MIGRATION"
     },
     {
       "id": "INDEPENDENT_PROOF",
-      "status": "BLOCKED",
+      "status": "CLOSED",
       "depends_on": [
         "TEST_MIGRATION"
-      ]
+      ],
+      "evidence": "live runtime executor completed CATAN-INDEPENDENT_PROOF"
     }
   ],
   "invariants": [
@@ -50,7 +53,7 @@
     "PROJECT_VALUE remains NOT_PROVEN",
     "obsolete Map authority explicitly transitional"
   ],
-  "last_checkpoint": "2026-09-07T19:26:42.409756Z",
+  "last_checkpoint": "2026-09-07T19:55:14.180963Z",
   "observed": {
     "authoritative_bypasses": [
       "server/src/index.js broadcast reads rooms Map",
@@ -67,5 +70,17 @@
     "status": "PROVEN",
     "regression": "durable nonterminal checkpoint rehydrates and auto-admits next attempt",
     "tests": 10
+  },
+  "runtime_owner": "live-admission-runtime",
+  "last_outcome": "EXHAUSTED_GRAPH",
+  "live_acceptance": {
+    "entrypoint": "providers/goose/live-admission-runtime.mjs",
+    "test": "providers/goose/test-live-admission-runtime.mjs",
+    "passed": true,
+    "ready_stage_executor_invoked": true,
+    "automatic_rehydration": true,
+    "authority_migration_complete": false,
+    "project_value": "NOT_PROVEN",
+    "iss_005": "OPEN"
   }
 }
