@@ -140,3 +140,20 @@ function defaultVerify(tasks) {
 }
 
 export function createAutonomousAdmissionLoop(config) { return new AutonomousAdmissionLoop(config); }
+
+/** Rehydrate and continue across durable nonterminal attempt boundaries. */
+export async function continueAutonomously(config = {}, { maxAttempts = 10 } = {}) {
+  let attempts = 0;
+  let nextConfig = { ...config };
+  while (attempts < maxAttempts) {
+    attempts++;
+    const loop = createAutonomousAdmissionLoop(nextConfig);
+    const outcome = await loop.run();
+    if (outcome !== LoopOutcome.AUTONOMOUS_LOOP_FAILURE) return { outcome, attempts, loop };
+    const hasWork = loop.tasks.some(task => !TERMINAL.has(task.status) &&
+      (task.status === 'READY' || task.status === 'BACKLOG' || task.status === 'RUNNING'));
+    if (!hasWork) return { outcome, attempts, loop };
+    nextConfig = { ...nextConfig, failureInjection: {} };
+  }
+  return { outcome: LoopOutcome.AUTONOMOUS_LOOP_FAILURE, attempts };
+}
