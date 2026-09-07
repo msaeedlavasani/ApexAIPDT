@@ -1,10 +1,10 @@
-name: DPT Foundation CI
+name: DPT Current Validation
 
 on:
   push:
-    branches: ['**']  # Run on every push to every branch
+    branches: ['**']
   pull_request:
-    branches: [main]  # Run on every PR targeting main
+    branches: [main]
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -20,359 +20,102 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Check git hygiene
+      - name: Validate repository structure and hygiene
         run: |
-          echo "=== Repository Integrity Checks ==="
-          # Verify no large binary files in repo
-          large_files=$(git ls-files | xargs du -b 2>/dev/null | awk '$1 > 1000000 {print "LARGE FILE:", $2}' | head -5)
-          if [ -n "$large_files" ]; then
-            echo "WARNING: Large files detected (potential accidental commits)"
-            echo "$large_files"
-          fi
-          # Verify .gitignore exists
-          test -f .gitignore && echo "✓ .gitignore exists" || echo "⚠ .gitignore missing (optional for this project)"
-          # Verify required directories exist
-          test -d docs && echo "✓ docs/ exists" || echo "⚠ docs/ missing"
-          test -d providers && echo "✓ providers/ exists" || echo "⚠ providers/ missing (may not be initialized)"
-          # Verify key structural files
-          test -f README.md && echo "✓ README.md exists" || (echo "✗ README.md missing"; exit 1)
-      
-      - name: Validate file encodings
-        run: |
-          echo "=== File Encoding Validation ==="
-          find . -name "*.md" -type f ! -path "./.git/*" | while read f; do
-            if file "$f" | grep -q "UTF-8"; then
-              echo "✓ $f is UTF-8"
-            else
-              echo "⚠ $f has non-UTF-8 encoding: $(file "$f")"
-            fi
-          done
+          set -euo pipefail
+          test -f README.md
+          test -f docs/TASKS.md
+          test -f .dpt/status.json
+          test -f docs/DPT_OPEN_DECISIONS.md
+          test -f docs/DPT_ARCHITECTURE_DECISIONS.md
+          test -f .gitignore
+          test -z "$(git status --porcelain)"
+          git diff --check "${{ github.event.pull_request.base.sha || github.event.before }}" "${{ github.sha }}" || git diff --check
 
   canonical-governance:
     name: Canonical Governance
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Validate TASKS.md structure
+      - name: Validate durable governance without mutation
         run: |
-          echo "=== TASKS.md Governance Checks ==="
-          if [ ! -f docs/TASKS.md ]; then
-            echo "⚠ docs/TASKS.md not found - governance checks skipped"
-            echo "This is acceptable during initial repository setup"
-            exit 0
-          fi
-          # Check for DELTA records
-          if ! grep -q "\[DELTA\]" docs/TASKS.md; then
-            echo "✗ No DELTA records found in TASKS.md"
-            exit 1
-          fi
-          # Count DELTA records
-          delta_count=$(grep -c "\[DELTA\]" docs/TASKS.md)
-          echo "✓ Found $delta_count DELTA records"
-          # Check state_revision progression
-          revisions=$(grep -oP 'state_revision:\s*\K\d+' docs/TASKS.md | sort -n | uniq | tail -5)
-          echo "✓ Latest state_revisions: $revisions"
-          # Verify phase boundaries
-          if grep -q "PHASE_5_ADMITTED_CORRECTED" docs/TASKS.md; then
-            echo "✓ Phase 5 canonical state correctly recorded"
-          fi
-          if grep -q "PHASE_6_AUTHORIZED" docs/TASKS.md; then
-            echo "✓ Phase 6 authorization correctly recorded"
-          fi
-      
-      - name: Validate decision registry
-        run: |
-          echo "=== Decision Registry Checks ==="
-          if [ -f docs/DPT_OPEN_DECISIONS.md ]; then
-            echo "✓ DPT_OPEN_DECISIONS.md exists"
-            # Check for open decisions structure
-            if grep -q "| # | Question | Options | Status |" docs/DPT_OPEN_DECISIONS.md; then
-              echo "✓ Decision table structure valid"
-            else
-              echo "⚠ Decision table structure may be malformed"
-            fi
-          fi
-          if [ -f docs/v1-decision-resolutions.json ]; then
-            python3 -c "import json; json.load(open('docs/v1-decision-resolutions.json'))" && echo "✓ v1-decision-resolutions.json is valid JSON"
-          fi
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          status=json.loads(Path('.dpt/status.json').read_text())
+          assert isinstance(status.get('state_revision'), int)
+          assert isinstance(status.get('summary'), dict)
+          assert Path('docs/TASKS.md').read_text().count('[DELTA]') > 0
+          json.loads(Path('.dpt/capability-inventory.json').read_text())
+          json.loads(Path('.dpt/pause-readiness-certification.json').read_text())
+          print('canonical state is syntactically valid and CI will not rewrite it')
+          PY
 
   schemas:
     name: Schema Validation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Install schema validation tools
-        run: npm install -g ajv-cli json-schema
-  
-      - name: Validate all JSON schemas
+      - name: Validate JSON schemas and registries
         run: |
-          echo "=== Schema Validation ==="
-          schema_dir="docs/schemas"
-          if [ ! -d "$schema_dir" ]; then
-            echo "⚠ No schemas directory found - skipping"
-            exit 0
-          fi
-          for schema in $schema_dir/*.json; do
-            if [ -f "$schema" ]; then
-              basename=$(basename "$schema")
-              echo "Validating $basename..."
-              # Basic JSON syntax check
-              if ! python3 -c "import json; json.load(open('$schema'))"; then
-                echo "✗ $basename is not valid JSON"
-                exit 1
-              fi
-              echo "✓ $basename is valid JSON"
-            fi
-          done
-          echo "✓ All schemas are syntactically valid JSON"
-  
-      - name: Validate component registry
-        run: |
-          echo "=== Component Registry Validation ==="
-          if [ -f docs/component-registry.json ]; then
-            python3 -c "import json; d=json.load(open('docs/component-registry.json')); assert isinstance(d, dict), 'Must be object'; print(f'✓ component-registry.json: {len(d)} components')"
-          else
-            echo "⚠ component-registry.json not found"
-          fi
-          if [ -f docs/asset-registry.json ]; then
-            # asset-registry.json is an object with 'assets' array, not a flat array
-            python3 -c "import json; d=json.load(open('docs/asset-registry.json')); assert isinstance(d, dict), 'Must be object'; assert 'assets' in d, 'Must have assets key'; print(f'✓ asset-registry.json: {len(d[\"assets\"])} assets')"
-          else
-            echo "⚠ asset-registry.json not found"
-          fi
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          for p in Path('docs/schemas').glob('*.json'): json.loads(p.read_text())
+          for p in [Path('docs/component-registry.json'),Path('docs/asset-registry.json')]:
+            if p.exists(): json.loads(p.read_text())
+          PY
 
   deterministic-runtime:
     name: Deterministic Runtime
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      
-      - name: Validate provider extensions
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Syntax and deterministic runtime proof
         run: |
-          echo "=== Provider Extension Validation ==="
-          if [ ! -d providers/goose ]; then
-            echo "⚠ providers/goose not found - runtime checks skipped"
-            exit 0
-          fi
-          cd providers/goose
-          for ext in *.mjs; do
-            if [ -f "$ext" ]; then
-              echo "Checking syntax: $ext"
-              node --check "$ext" || (echo "✗ Syntax error in $ext"; exit 1)
-              echo "✓ $ext syntax valid"
-            fi
-          done
-      
-      - name: Validate contract implementations
-        run: |
-          echo "=== Contract Validation ==="
-          if [ ! -d providers/contract ]; then
-            echo "⚠ providers/contract not found - contract checks skipped"
-            exit 0
-          fi
-          cd providers/contract
-          for impl in *.mjs; do
-            if [ -f "$impl" ]; then
-              echo "Checking syntax: $impl"
-              node --check "$impl" || (echo "✗ Syntax error in $impl"; exit 1)
-              echo "✓ $impl syntax valid"
-            fi
-          done
+          set -euo pipefail
+          for f in providers/goose/*.mjs; do node --check "$f"; done
+          node --test providers/goose/test-adapter-conformance.mjs providers/goose/test-capability-reconciliation.mjs providers/goose/test-autonomous-handoff.mjs providers/goose/test-autonomous-admission-loop.mjs
 
   provider-contracts:
     name: Provider Contracts
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Validate provider manifests
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Validate provider-neutral contracts
         run: |
-          echo "=== Provider Manifest Validation ==="
-          if [ ! -d providers/goose ]; then
-            echo "⚠ providers/goose not found - manifest checks skipped"
-            exit 0
-          fi
-          if [ -f providers/goose/dpt-recipe.yaml ]; then
-            echo "✓ dpt-recipe.yaml exists"
-            if command -v yamllint &> /dev/null; then
-              yamllint providers/goose/dpt-recipe.yaml || echo "⚠ YAML lint warnings (non-blocking)"
-            fi
-          fi
-          # Check for required provider files (optional)
-          if [ -f providers/goose/dpt-extension.mjs ]; then
-            echo "✓ dpt-extension.mjs exists"
-          fi
-          if [ -f providers/goose/orchestrator-core.mjs ]; then
-            echo "✓ orchestrator-core.mjs exists"
-          fi
-      
-      - name: Validate extension exports
-        run: |
-          echo "=== Extension Export Validation ==="
-          if [ ! -d providers/goose ]; then
-            exit 0
-          fi
-          cd providers/goose
-          for ext in dpt-extension.mjs orchestrator-core.mjs; do
-            if [ -f "$ext" ]; then
-              if grep -q "module.exports\|export default" "$ext"; then
-                echo "✓ $ext has export statements"
-              else
-                echo "⚠ $ext may lack proper exports"
-              fi
-            fi
-          done
+          set -euo pipefail
+          node --test providers/goose/test-executor-binding.mjs providers/goose/test-catan-task-projection.mjs providers/goose/test-catan-stage-instructions.mjs providers/goose/test-live-admission-runtime.mjs
 
   orchestrator-smoke:
     name: Orchestrator Smoke Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      
-      - name: Import validation
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Validate live owner and fail-closed semantics
         run: |
-          echo "=== Module Import Validation ==="
-          if [ ! -d providers/goose ]; then
-            echo "⚠ providers/goose not found - smoke tests skipped"
-            exit 0
-          fi
-          cd providers/goose
-          # Test that core modules can be loaded without runtime errors
-          if [ -f orchestrator-core.mjs ]; then
-            node -e "require('./orchestrator-core.mjs')" 2>&1 || echo "⚠ orchestrator-core requires runtime context (expected)"
-          fi
-          if [ -f dag-calculator.mjs ]; then
-            node -e "require('./dag-calculator.mjs')" 2>&1 || echo "⚠ dag-calculator requires runtime context (expected)"
-          fi
-          echo "✓ Core modules load without syntax errors"
-      
-      - name: Configuration validation
-        run: |
-          echo "=== Configuration Validation ==="
-          if [ -f docs/bootstrap/bootstrap-state.json ]; then
-            python3 -c "import json; json.load(open('docs/bootstrap/bootstrap-state.json'))" && echo "✓ bootstrap-state.json is valid JSON"
-          fi
-          if [ -f docs/capability-boundaries.json ]; then
-            python3 -c "import json; json.load(open('docs/capability-boundaries.json'))" && echo "✓ capability-boundaries.json is valid JSON"
-          fi
-  
-  pr-integration:
-    name: PR Integration Checks
-    if: github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main'
-    runs-on: ubuntu-latest
-    needs: [repository-integrity, canonical-governance, schemas, deterministic-runtime, provider-contracts]
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-      
-      - name: Re-run critical CI checks against PR
-        run: |
-          echo "=== PR Integration Validation ==="
-          echo "Re-running canonical governance checks on integration candidate..."
-          # Validate TASKS.md has new DELTA if present
-          if git log --oneline origin/main..HEAD | head -5; then
-            echo "✓ PR contains commits"
-          fi
-          # Ensure no conflicts with main
-          git merge-base --is-ancestor origin/main HEAD && echo "✓ PR is based on current main" || echo "⚠ PR may have conflicts with main"
-      
-      - name: Generate integration report
-        run: |
-          echo "=== Integration Report ==="
-          echo "Branch: ${{ github.head_ref }}"
-          echo "Target: ${{ github.base_ref }}"
-          echo "Commits: $(git log --oneline origin/main..HEAD | wc -l)"
-          echo "Status: All prerequisite checks passed"
+          set -euo pipefail
+          node --test providers/goose/test-autonomous-admission-loop.mjs providers/goose/test-live-admission-runtime.mjs
 
-  main-protection:
-    name: Main Branch Protection
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Verify direct push policy
-        run: |
-          echo "=== Main Branch Push Verification ==="
-          echo "Direct push to main is restricted by branch protection rules."
-          echo "Ensure PRs target main only after all checks PASS."
-
-  update-status:
-    name: Update Execution Status
-    needs: [repository-integrity, canonical-governance, schemas, deterministic-runtime, provider-contracts, orchestrator-smoke]
+  ci-gate:
+    name: DPT CI Gate
     if: always()
+    needs: [repository-integrity, canonical-governance, schemas, deterministic-runtime, provider-contracts, orchestrator-smoke]
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
-      - name: Update .dpt/status.json
-        run: |
-          echo "=== Updating Execution Status ==="
-          mkdir -p .dpt
-          CONCLUSION="${{ needs.schemas.conclusion }}"
-          for job in repository-integrity canonical-governance deterministic-runtime provider-contracts orchestrator-smoke; do
-            JOB_CONC=$(gh api "repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/jobs" --jq ".jobs[] | select(.name == \$job) | .conclusion" 2>/dev/null || echo "unknown")
-            if [[ "$JOB_CONC" == "failure" ]]; then
-              CONCLUSION="failure"
-              break
-            fi
-          done
-          cat > .dpt/status.json << JSONEOF
-          {
-            "version": 1,
-            "last_updated": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
-            "execution": {
-              "current_task": null,
-              "current_step": null,
-              "completed_steps": [],
-              "attempts": 0,
-              "last_result": null,
-              "last_result_time": null
-            },
-            "queue": {
-              "next_tasks": []
-            },
-            "blocked": {
-              "items": []
-            },
-            "ci": {
-              "last_run_id": ${{ github.run_id }},
-              "last_conclusion": "$CONCLUSION",
-              "last_sha": "${{ github.sha }}",
-              "last_run_time": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-            },
-            "state_revision": 19,
-            "summary": {
-              "total_tasks": 8,
-              "open_tasks": 6,
-              "closed_tasks": 2,
-              "progress_pct": 25
-            }
-          }
-          JSONEOF
-          echo "✓ .dpt/status.json updated (conclusion: $CONCLUSION)"
-      
-      - name: Commit status update
+      - name: Aggregate required validation
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMIT_USER: github-actions[bot]
-          COMMIT_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          RESULTS: ${{ join(needs.*.result, ',') }}
         run: |
-          git config --local user.name "$COMMIT_USER"
-          git config --local user.email "$COMMIT_EMAIL"
-          git add .dpt/status.json
-          git commit -m "ci: update execution status (DPT-CI-001) [skip ci]" || echo "No changes to commit"
-          git push origin HEAD 2>&1 || echo "Push skipped (PR head may be read-only)"
+          set -euo pipefail
+          echo "Results: $RESULTS"
+          [[ "$RESULTS" != *failure* && "$RESULTS" != *cancelled* ]]
+          echo "DPT CI Gate PASS"
