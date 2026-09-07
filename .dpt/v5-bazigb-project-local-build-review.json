@@ -1,0 +1,57 @@
+{
+  "request_id": "REQ-V5-BAZIGB-20260907",
+  "route": "PROJECT_LOCAL_BUILD",
+  "preferred_candidate": "AI_VEGAS",
+  "status": "GENUINE_HUMAN_GATE",
+  "read_only": true,
+  "external_qualified_supply": "NONE",
+  "project": {
+    "name": "BaziGB",
+    "repository": "msaeedlavasani/bazigb",
+    "evidence_source": "local clean checkout bazigb_clean; project docs/source read only"
+  },
+  "capability_gap": {
+    "statement": "Vegas has no AI module/interface and is explicitly listed as incomplete; Chess/Vegas AI and UI difficulty selection remain open.",
+    "baseline": [
+      "packages/games/vegas/src/index.ts exports Vegas game only; no ai.ts",
+      "Vegas rules expose setup/placeDice/nextRound/endIf; no AI move-selection contract",
+      "docs/ISSUES.md lists Vegas AI and difficulty levels as in development",
+      "docs/ROADMAP.md lists AI completion for chess and Vegas as open"
+    ],
+    "existing_patterns": [
+      "packages/games/tic-tac-toe/src/ai.ts exports difficulty-aware getBestMove",
+      "packages/games/backgammon/src/ai.ts exports difficulty-aware move generation",
+      "Vegas is a pure game package with no server/client dependency"
+    ]
+  },
+  "proposal": {
+    "scope": "add packages/games/vegas/src/ai.ts with pure deterministic seeded/testable candidate selection for legal placeDice actions at easy/medium/hard; export from package; add unit/contract tests only. UI/server wiring excluded from first slice unless separately admitted.",
+    "difficulty": [
+      "easy",
+      "medium",
+      "hard"
+    ],
+    "value_metric": "AI selects legal actions and completes bounded Vegas simulations; compare baseline no-AI capability against post-build AI availability, legality, deterministic reproducibility, and per-difficulty behavioral separation",
+    "affected_resources": [
+      "packages/games/vegas/src/ai.ts",
+      "packages/games/vegas/src/index.ts",
+      "packages/games/vegas tests/config as needed"
+    ],
+    "rollback": "remove the new AI module/export/tests; no database, API, schema, production, or external dependency mutation",
+    "authority_required": "BaziGB repository write authority limited to the listed test/build files; no production deployment authority; no dependency changes"
+  },
+  "falsification": {
+    "reusable_supply_fit": "PROJECT_LOCAL_BUILD survives; external candidates did not",
+    "project_specific_boundary": "AI policy is BaziGB/Vegas-rules-specific and should not enter DPT Pool from this slice",
+    "measurability": "survives via legal-action, deterministic-seed, simulation-completion, and difficulty-contract metrics",
+    "scope": "bounded if UI/server integration excluded",
+    "contamination_control": "proposal based on project-side source baseline; implementation outcome cannot establish Pool reusability"
+  },
+  "pool_memory_update": {
+    "external_candidates_preserved": "existing .dpt/v5-bazigb-targeted-sourcing.json remains unchanged",
+    "pool_promotion": false,
+    "memory_record": "not created: no qualified supply or project consumption occurred"
+  },
+  "mutation_performed": false,
+  "next": "exact bounded BaziGB mutation authority required before implementation"
+}
