@@ -1,10 +1,10 @@
 {
   "version": 1,
   "created_at": "2026-09-06T05:47:00Z",
-  "last_updated": "2026-09-07T20:09:54.512521Z",
+  "last_updated": "2026-09-07T20:45:51.939270Z",
   "execution": {
     "current_task": null,
-    "current_step": "catan_executor_integration_defect",
+    "current_step": "executor_binding_implemented_live_catan_binding_pending",
     "completed_steps": [
       "od_resolution",
       "task_status_update",
@@ -16,18 +16,18 @@
       "phase_closure"
     ],
     "attempts": 1,
-    "last_result": "Rejected prior stage closures: live executor only mutated the DPT checkpoint and produced no Catan repository effects. Actual Work Order/Permission Envelope executor substrate is not wired.",
-    "last_result_time": "2026-09-07T20:09:54.512521Z"
+    "last_result": "ADR-058 canonicalized. Provider-neutral executor contract and bounded child-process transport implemented; 3 contract/live-owner tests pass. Catan live Work Order integration remains pending; no stage closure or project-value promotion.",
+    "last_result_time": "2026-09-07T20:45:51.939270Z"
   },
   "queue": {
     "next_tasks": []
   },
   "blocked": {
     "items": [
-      "Executor integration defect: no real target-repository Work Order executor/effect readback/independent validation substrate"
+      "Bind live Catan stage execution to real Work Order/Permission Envelope child executor and effect/readback verifier"
     ]
   },
-  "state_revision": 87,
+  "state_revision": 88,
   "summary": {
     "total_tasks": 25,
     "open_tasks": 0,

@@ -53,7 +53,7 @@
     "PROJECT_VALUE remains NOT_PROVEN",
     "obsolete Map authority explicitly transitional"
   ],
-  "last_checkpoint": "2026-09-07T20:09:54.512521Z",
+  "last_checkpoint": "2026-09-07T20:45:51.939270Z",
   "observed": {
     "authoritative_bypasses": [
       "server/src/index.js broadcast reads rooms Map",
@@ -88,5 +88,13 @@
     "required": "real target-repository Work Order executor with Permission Envelope, effect capture, readback, independent validation",
     "actual": "checkpoint-only callback",
     "false_closure_rejected": true
+  },
+  "executor_binding": {
+    "adr": "ADR-058",
+    "core_contract": "provider-neutral",
+    "transport": "bounded child process",
+    "adapter": "separate provider/substrate adapter",
+    "contract_tests": 3,
+    "binding_to_live_catan_executor": "NOT_COMPLETE"
   }
 }
