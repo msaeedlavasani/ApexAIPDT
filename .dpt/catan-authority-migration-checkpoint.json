@@ -16,11 +16,11 @@
     },
     {
       "id": "LIFECYCLE",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "depends_on": [
         "STORE_CONTRACT"
       ],
-      "evidence": "Work Order/Permission Envelope executor binding implemented and contract-tested; repository-effect migration still pending"
+      "evidence": "Work Order projected; execution failed closed because no repository effect/readback verifier"
     },
     {
       "id": "GAME_ACTIONS",
@@ -53,7 +53,7 @@
     "PROJECT_VALUE remains NOT_PROVEN",
     "obsolete Map authority explicitly transitional"
   ],
-  "last_checkpoint": "2026-09-07T20:56:13.313308Z",
+  "last_checkpoint": "2026-09-07T21:06:07.966237Z",
   "observed": {
     "authoritative_bypasses": [
       "server/src/index.js broadcast reads rooms Map",
@@ -72,7 +72,7 @@
     "tests": 10
   },
   "runtime_owner": "live-admission-runtime",
-  "last_outcome": "EXECUTOR_INTEGRATION_DEFECT",
+  "last_outcome": "PROVEN_BLOCKER",
   "live_acceptance": {
     "entrypoint": "providers/goose/live-admission-runtime.mjs",
     "test": "providers/goose/test-live-admission-runtime.mjs",
@@ -84,12 +84,13 @@
     "iss_005": "OPEN"
   },
   "executor_contract": {
-    "status": "IMPLEMENTED",
+    "status": "BLOCKED_ON_EFFECT_VERIFICATION",
     "work_order_executor": "providers/goose/catan-work-order-executor.mjs",
     "transport": "bounded child process",
     "contract_tests": 3,
     "repository_effect_verification": "PENDING",
-    "stage_closure_allowed": false
+    "stage_closure_allowed": false,
+    "actual": "real Work Order child transport invoked, but stages contain no executable repository instructions/effect verifier; transport result alone cannot close"
   },
   "executor_binding": {
     "adr": "ADR-058",
