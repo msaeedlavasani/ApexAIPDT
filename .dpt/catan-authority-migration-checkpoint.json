@@ -53,7 +53,7 @@
     "PROJECT_VALUE remains NOT_PROVEN",
     "obsolete Map authority explicitly transitional"
   ],
-  "last_checkpoint": "2026-09-07T21:06:07.966237Z",
+  "last_checkpoint": "2026-09-07T21:20:50.076881Z",
   "observed": {
     "authoritative_bypasses": [
       "server/src/index.js broadcast reads rooms Map",
@@ -84,13 +84,14 @@
     "iss_005": "OPEN"
   },
   "executor_contract": {
-    "status": "BLOCKED_ON_EFFECT_VERIFICATION",
+    "status": "BLOCKED_ON_REAL_CODE_EXECUTOR",
     "work_order_executor": "providers/goose/catan-work-order-executor.mjs",
     "transport": "bounded child process",
     "contract_tests": 3,
     "repository_effect_verification": "PENDING",
     "stage_closure_allowed": false,
-    "actual": "real Work Order child transport invoked, but stages contain no executable repository instructions/effect verifier; transport result alone cannot close"
+    "actual": "bounded instructions now exist and are passed in Work Order, but child transport only runs node command and no repository-editing substrate is bound",
+    "missing_boundary": "provider/substrate adapter capable of executing declared repository mutation instructions and returning effect/readback evidence"
   },
   "executor_binding": {
     "adr": "ADR-058",
