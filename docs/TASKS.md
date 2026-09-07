@@ -1910,3 +1910,16 @@ notes: |
   Real external read and compatibility assessment completed against the admitted fixture.
   External read evidence proven; external write not attempted because no credentials are available.
 [/DELTA]
+
+[DELTA]
+task_id: DPT-V4-002
+base_state_revision: 61
+changes: status=BLOCKED→CLOSED, state_revision=61→62
+applied_by: V4-002_EXECUTION
+notes: |
+  OWNER bounded external-write authority resolved through existing authenticated GitHub identity.
+  Minimum permission envelope materialized for fixture repository only; credential material not persisted.
+  One reversible test issue created, acknowledged, read back, closed, and read back again.
+  EXTERNAL_WRITE evidence recorded. No production or unrelated repository effect.
+evidence_refs: .dpt/e2e-verification/V4-002-external-write-readback.json, .dpt/v4-permission-envelope.json
+[/DELTA]

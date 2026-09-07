@@ -1,0 +1,11 @@
+{
+  "envelope_id": "V4-002-BOUND-FIXTURE-TEST-WRITE",
+  "identity": "msaeedlavasani",
+  "repository": "msaeedlavasani/dpt-v3-e2e-fixture",
+  "allowed_effect": "create_then_close_one_test_issue",
+  "reversible": true,
+  "production": false,
+  "unrelated_repositories": false,
+  "credential_material": "not_persisted",
+  "derived_from_owner_authorization": true
+}
