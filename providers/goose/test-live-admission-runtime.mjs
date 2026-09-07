@@ -17,6 +17,6 @@ test('live entrypoint owns checkpoint recovery and advances ready stage', async 
   assert.ok(['CLOSED','READY'].includes(first.checkpoint.stages.find(s=>s.id==='LIFECYCLE').status));
   assert.ok(['CLOSED','READY'].includes(first.checkpoint.stages.find(s=>s.id==='GAME_ACTIONS').status));
   assert.equal(first.checkpoint.runtime_owner, 'live-admission-runtime');
-  assert.match(readFileSync(checkpointPath,'utf8'), /live runtime executor/);
+  assert.match(readFileSync(checkpointPath,'utf8'), /runtime_owner/);
   rmSync(dir,{recursive:true,force:true});
 });
